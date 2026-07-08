@@ -62,7 +62,7 @@
   .menu-toggle{display:none; background:none; border:0; color:var(--paper); font-size:26px; cursor:pointer; line-height:1; padding:6px}
 
   /* ---------- diagonal band device ---------- */
-  .band{position:relative; padding:76px 0}
+  .band{position:relative; padding:76px 0; overflow:hidden}
   .band--ink{background:var(--ink); color:var(--paper)}
   .band--red{background:var(--red); color:#fff}
   .band--sand{background:var(--sand)}
@@ -95,8 +95,10 @@
   .hero__grid{display:grid; grid-template-columns:1.35fr .9fr; gap:48px; align-items:end}
   .hero h1{
     font-family:var(--disp); font-weight:900; text-transform:uppercase;
-    font-size:clamp(46px,7.4vw,102px); line-height:.9; letter-spacing:-.03em; margin:0 0 26px;
+    font-size:clamp(30px,7.6vw,102px); line-height:.9; letter-spacing:-.03em; margin:0 0 26px;
   }
+  /* prevent wide display type from stretching grid columns (mobile overflow fix) */
+  .hero__grid>*,.meet__grid>*,.book__grid>*{min-width:0}
   .hero h1 .line{display:block; overflow:hidden}
   .hero h1 .skew{transform:skew(var(--skew))}
   .hero h1 .hl{color:var(--red)}
@@ -169,16 +171,47 @@
   /* ---------- book ---------- */
   .book{background:var(--paper)}
   .book__grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center}
+  /* book cover — 3D mockup, styled to match the page */
+  .cover-stage{perspective:1800px; display:flex; justify-content:center; padding:16px 6px}
   .cover{
-    position:relative; aspect-ratio:3/4.1; background:var(--maroon); color:var(--paper);
-    padding:34px 30px; display:flex; flex-direction:column; justify-content:space-between;
-    box-shadow:14px 14px 0 var(--ink); border:3px solid var(--ink);
+    position:relative; width:min(300px,82%); aspect-ratio:1/1.42;
+    transform:rotateY(-23deg) rotateX(4deg); transform-style:preserve-3d;
+    transition:transform .55s cubic-bezier(.2,.7,.2,1);
+    box-shadow:34px 32px 54px -18px rgba(35,18,15,.55);
   }
-  .cover::after{content:""; position:absolute; left:0; top:0; bottom:0; width:16px; background:var(--red)}
-  .cover .brandline{font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--sand2)}
-  .cover .btitle{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(34px,4vw,48px); line-height:.9; letter-spacing:-.02em}
-  .cover .btitle .skew{transform:skew(var(--skew)); display:block}
-  .cover .bmeta{font-family:var(--mono); font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--sand2); border-top:2px solid var(--red); padding-top:14px}
+  .cover:hover{transform:rotateY(-10deg) rotateX(2deg)}
+  .cover__pages{position:absolute; top:1.5%; right:-15px; height:97%; width:15px;
+    background:repeating-linear-gradient(180deg,#fbf1ec 0 2px,#d9c7c0 2px 3.4px);
+    transform:rotateY(32deg); transform-origin:left center; border-radius:0 3px 3px 0;
+    box-shadow:2px 0 5px rgba(0,0,0,.25)}
+  .cover__face{
+    position:absolute; inset:0; border-radius:3px 6px 6px 3px; overflow:hidden;
+    background:radial-gradient(130% 80% at 82% -6%, #3d1b16 0%, transparent 52%),
+               linear-gradient(158deg,#2b1310 0%, #190a07 60%, #250d0a 100%);
+    color:var(--paper); display:flex; flex-direction:column; justify-content:space-between;
+    padding:28px 24px 24px 36px;
+  }
+  .cover__face::before{content:""; position:absolute; left:0; top:0; bottom:0; width:26px; z-index:5; pointer-events:none;
+    background:linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.10) 60%, rgba(255,255,255,.06))}
+  .cover__face::after{content:""; position:absolute; left:15px; top:0; bottom:0; width:4px; background:var(--red); z-index:6}
+  .cover__slash{position:absolute; z-index:2; top:-10%; bottom:30%; left:46%; width:32px; background:var(--red); opacity:.9; transform:skewX(var(--skew))}
+  .cover__gloss{position:absolute; inset:0; z-index:7; pointer-events:none;
+    background:linear-gradient(116deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 34%)}
+  .cover__top{position:relative; z-index:8}
+  .cover__brand{font-family:var(--disp); font-weight:900; font-size:16px; letter-spacing:.01em}
+  .cover__brand .skew{display:inline-block; transform:skew(var(--skew))}
+  .cover__brand b{color:var(--red2)}
+  .cover__ts{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:var(--sand2); margin-top:7px}
+  .cover__title{position:relative; z-index:8; display:flex; flex-direction:column; align-items:flex-start; gap:3px;
+    margin:auto 0; font-family:var(--disp); font-weight:900; text-transform:uppercase;
+    font-size:clamp(30px,3.6vw,42px); line-height:.9; letter-spacing:-.02em}
+  .cover__title span{transform:skew(var(--skew)); width:max-content}
+  .cover__title .hl{background:var(--red); color:#fff; padding:0 .12em}
+  .cover__foot{position:relative; z-index:8; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    border-top:2px solid var(--red); padding-top:14px}
+  .cover__badge{font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; background:var(--red); color:#fff; padding:5px 9px}
+  .cover__author{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--sand2)}
+  @media (prefers-reduced-motion:reduce){.cover{transition:none}}
   .book h2{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(30px,4vw,52px); line-height:.92; letter-spacing:-.02em; margin:14px 0 20px}
   .book h2 .skew{transform:skew(var(--skew))}
   .book p{font-size:17px; line-height:1.66; color:var(--ink); margin:0 0 22px; max-width:52ch}
@@ -394,10 +427,23 @@
   <div class="wrap">
     <div class="book__grid">
       <div class="reveal">
-        <div class="cover">
-          <div class="brandline">REX Trading Signal</div>
-          <div class="btitle"><span class="skew">Open</span><span class="skew">For</span><span class="skew">Business</span></div>
-          <div class="bmeta">Rex · 11 chapters</div>
+        <div class="cover-stage">
+          <div class="cover">
+            <span class="cover__pages" aria-hidden="true"></span>
+            <div class="cover__face">
+              <span class="cover__slash" aria-hidden="true"></span>
+              <div class="cover__top">
+                <span class="cover__brand"><span class="skew">RE<b>X</b></span></span>
+                <span class="cover__ts">Trading Signal</span>
+              </div>
+              <div class="cover__title"><span>Open</span><span>For</span><span class="hl">Business</span></div>
+              <div class="cover__foot">
+                <span class="cover__badge">11 Chapters</span>
+                <span class="cover__author">by Rex</span>
+              </div>
+              <span class="cover__gloss" aria-hidden="true"></span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="reveal">
