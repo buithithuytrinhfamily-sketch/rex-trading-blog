@@ -3,371 +3,256 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free: The Trader's Business Plan — REX Trading Signal</title>
-<meta name="description" content="Grab The Trader's Business Plan — a one-page business plan for your trading account, the daily operating routine, and the 5 rookie mistakes that quietly bankrupt new gold traders. Free PDF from Rex.">
-<meta name="theme-color" content="#23120f">
+<title>Free: The Trader's Business Plan — REX TRADING SIGNAL</title>
+<meta name="description" content="The Trader's Business Plan — a one-page business plan for your trading, the daily operating routine, and the 5 rookie mistakes that quietly bankrupt new gold traders. Free PDF from Rex.">
+<meta name="theme-color" content="#0d0d0f">
 <link rel="canonical" href="https://rextradingsignal.com/business-plan/">
-<meta property="og:title" content="Free: The Trader's Business Plan — REX Trading Signal">
-<meta property="og:description" content="A one-page business plan for your trading account, the daily operating routine, and the 5 mistakes that bankrupt new gold traders. Free PDF.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rextradingsignal.com/business-plan/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#fdf6f2; --sand:#f8e9e4; --sand2:#f0d6cd;
-    --ink:#23120f; --red:#d6262c; --red2:#e01722; --deepred:#a31b20; --maroon:#7e0f14;
-    --win:#3f8557; --loss:#a3181d;
-    --disp:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;
-    --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
-    --skew:-6deg;
+    --bg:#0d0d0f;             /* REX deep charcoal-black */
+    --bg-2:#151318;           /* raised panel */
+    --bg-3:#1b1418;           /* card */
+    --line:rgba(214,38,44,.28);
+    --line-2:rgba(244,236,235,.10);
+    --ink:#f4eceb;            /* warm off-white */
+    --ink-2:#e6dcda;
+    --muted:#b39a96;          /* warm taupe */
+    --muted-2:#8a726e;
+    --red:#d6262c;            /* REX signal red — channel theme color */
+    --red-lite:#f2635f;
+    --red-deep:#a31b20;
+    --disp:"Oswald",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;  /* condensed, echoes Arial Black logo */
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
+  *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--paper); color:var(--ink);
-    font-family:var(--sans); line-height:1.55;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden; font-size:17px;
-  }
-  a{color:inherit; text-decoration:none}
-  img{max-width:100%; display:block}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 24px}
-  .wrap--tight{max-width:960px}
-  .skew{display:inline-block; transform:skew(var(--skew)); transform-origin:left bottom}
-  .disp{font-family:var(--disp); font-weight:900; letter-spacing:-.02em; line-height:.92; text-transform:uppercase}
-  :focus-visible{outline:3px solid var(--red2); outline-offset:3px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--red-lite);text-decoration:none}
+  a:hover{color:var(--red)}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .wrap{max-width:660px;margin:0 auto;padding:0 24px}
 
-  /* ---------- header ---------- */
-  header{position:sticky; top:0; z-index:60; background:var(--ink); color:var(--paper); border-bottom:3px solid var(--red)}
-  .nav{display:flex; align-items:center; gap:22px; height:64px}
-  .brand{font-family:var(--disp); font-weight:900; font-size:21px; letter-spacing:-.01em; color:var(--paper); white-space:nowrap}
-  .brand b{color:var(--red2)}
-  .brand .skew{transform:skew(var(--skew))}
-  .nav .spacer{flex:1}
-  .nav .home{font-family:var(--mono); font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--sand2)}
-  .nav .home:hover{color:var(--paper)}
+  /* topbar wordmark */
+  .topbar{text-align:center;padding:26px 0 8px}
+  .wordmark{font-family:var(--disp);font-weight:700;font-size:1.05rem;letter-spacing:.24em;color:var(--ink)}
+  .wordmark b{color:var(--red)}
 
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; justify-content:center;
-    font-family:var(--sans); font-weight:800; text-transform:uppercase; letter-spacing:.05em;
-    font-size:15px; padding:14px 24px; border:0; cursor:pointer;
-    background:var(--red); color:#fff; transition:transform .12s, background .2s;
-  }
-  .btn:hover{background:var(--red2); transform:translateY(-2px)}
-  .btn:active{transform:translateY(0)}
-  .btn--onlight{background:var(--ink); color:var(--paper)}
-  .btn--onlight:hover{background:var(--maroon)}
-  .btn--lg{font-size:16px; padding:16px 28px}
+  /* hero */
+  .hero{text-align:center;padding:24px 0 6px}
+  .pill{display:inline-block;font-family:var(--disp);font-weight:600;font-size:.7rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--red-lite);border:1px solid var(--line);border-radius:100px;
+    padding:7px 16px;margin-bottom:22px}
+  .pre{font-family:var(--disp);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:16px}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.1rem,6.6vw,3.1rem);line-height:1.05;
+    letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
+  h1 .red{color:var(--red)}
+  .sub{color:var(--muted);font-size:1.08rem;max-width:56ch;margin:22px auto 0;line-height:1.65}
+  .sub b{color:var(--ink)}
 
-  /* ---------- ticker ---------- */
-  .ticker{background:var(--maroon); color:var(--paper); overflow:hidden; border-bottom:3px solid var(--red)}
-  .ticker__track{display:flex; white-space:nowrap; animation:scroll 30s linear infinite; will-change:transform}
-  .ticker__track span{font-family:var(--mono); font-size:12.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; padding:10px 26px; display:inline-flex; align-items:center}
-  .ticker__track span::before{content:"◆"; color:var(--red2); margin-right:26px; font-size:9px}
-  @keyframes scroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+  /* mock cover — swap for the real cover image once generated */
+  .mock{margin:38px auto 6px;width:216px;min-height:300px;border:1px solid var(--red);
+    background:linear-gradient(160deg,#1a1114,#0d0d0f);position:relative;
+    box-shadow:0 24px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:28px 20px}
+  .mock .mw{font-family:var(--disp);font-weight:700;letter-spacing:.2em;font-size:.6rem;
+    color:var(--ink);text-transform:uppercase;margin-bottom:18px}
+  .mock .mw b{color:var(--red)}
+  .mock .meye{font-family:var(--disp);font-weight:600;letter-spacing:.12em;font-size:.52rem;
+    text-transform:uppercase;color:var(--red-lite);margin-bottom:12px}
+  .mock .mt{font-family:var(--disp);font-weight:700;color:var(--ink);font-size:1.24rem;line-height:1.1;
+    text-transform:uppercase}
+  .mock .mbar{width:48px;height:2px;background:var(--red);margin:16px 0}
+  .mock .mm{font-family:var(--sans);font-style:italic;font-size:.72rem;color:var(--muted)}
+  .mock .badge{position:absolute;top:-13px;right:-13px;
+    background:linear-gradient(180deg,var(--red-lite),var(--red));color:#fff;
+    font-family:var(--disp);font-weight:700;font-size:.66rem;letter-spacing:.08em;
+    padding:7px 12px;transform:rotate(5deg)}
 
-  /* ---------- bands & devices ---------- */
-  .band{position:relative; padding:72px 0; overflow:hidden}
-  .band--ink{background:var(--ink); color:var(--paper)}
-  .band--sand{background:var(--sand)}
-  .slash{position:absolute; top:0; bottom:0; width:70px; background:var(--red); transform:skewX(var(--skew)); pointer-events:none}
-  .kicker{display:inline-block; font-family:var(--mono); font-size:12.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; padding:6px 12px; background:var(--red); color:#fff; margin-bottom:22px}
-  .kicker--ink{background:var(--ink); color:var(--paper)}
-  .kicker--paper{background:var(--paper); color:var(--ink)}
+  /* form card */
+  .card{background:var(--bg-2);border:1px solid var(--red);padding:30px 26px;margin:28px 0;text-align:center}
+  .card h2{font-family:var(--disp);font-weight:700;font-size:1.4rem;text-transform:uppercase;
+    letter-spacing:.02em;color:var(--ink);margin-bottom:8px}
+  .card p.lead{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+  form{display:flex;flex-direction:column;gap:13px}
+  input[type=email]{width:100%;padding:16px;font-size:1rem;border-radius:0;
+    border:1px solid var(--line);background:#0a0709;color:var(--ink);font-family:var(--sans)}
+  input[type=email]::placeholder{color:var(--muted-2)}
+  input[type=email]:focus{outline:none;border-color:var(--red)}
+  button{width:100%;padding:16px;font-family:var(--disp);font-weight:700;font-size:.92rem;
+    letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:0;
+    background:linear-gradient(180deg,var(--red),var(--red-deep));color:#fff;
+    border:1px solid var(--red-lite);transition:.2s}
+  button:hover{filter:brightness(1.1)}
+  .btn-red{display:block;width:100%;padding:16px;font-family:var(--disp);font-weight:700;font-size:.92rem;
+    letter-spacing:.1em;text-transform:uppercase;text-align:center;border-radius:0;
+    background:linear-gradient(180deg,var(--red),var(--red-deep));color:#fff;
+    border:1px solid var(--red-lite);transition:.2s}
+  .btn-red:hover{filter:brightness(1.1);color:#fff}
+  .micro{color:var(--muted-2);font-size:.78rem;margin-top:16px;line-height:1.55}
+  .formnote{color:var(--red-lite);font-size:.85rem;margin-top:12px;text-align:center}
+  button:disabled{opacity:.7;cursor:default}
 
-  /* ---------- hero ---------- */
-  .hero{background:var(--paper); position:relative; overflow:hidden; padding:64px 0 72px}
-  .hero__grid{display:grid; grid-template-columns:1.25fr .95fr; gap:52px; align-items:center}
-  .hero__grid>*{min-width:0}
-  .hero h1{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(34px,6.6vw,84px); line-height:.9; letter-spacing:-.03em; margin:0 0 24px}
-  .hero h1 .line{display:block; overflow:hidden}
-  .hero h1 .skew{transform:skew(var(--skew))}
-  .hero h1 .hl{color:var(--red)}
-  .stand{font-size:18px; max-width:560px; margin:0 0 26px; line-height:1.62}
-  .stand b{color:var(--deepred)}
+  /* what's inside */
+  .inside{margin:44px 0 12px}
+  .inside h3,.who h3{font-family:var(--disp);text-align:center;color:var(--red-lite);
+    letter-spacing:.2em;text-transform:uppercase;font-size:.82rem;font-weight:700;margin-bottom:24px}
+  .item{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line-2)}
+  .item:last-child{border-bottom:1px solid var(--line-2)}
+  .item .mk{color:var(--red);font-weight:700;font-size:1rem;min-width:20px}
+  .item .t{font-size:.98rem;color:var(--ink-2)}
+  .item .t b{color:var(--ink);font-family:var(--disp);font-weight:600}
+  .inside .kicker{text-align:center;color:var(--muted);font-size:.95rem;font-style:italic;margin-top:22px}
 
-  /* ---------- opt-in card ---------- */
-  .optin{background:var(--ink); color:var(--paper); padding:28px 26px 24px; border-top:6px solid var(--red); position:relative; overflow:hidden; max-width:560px}
-  .optin::before{content:""; position:absolute; right:-24px; top:-24px; width:96px; height:96px; background:var(--red); transform:skewX(var(--skew)); opacity:.9}
-  .optin__eye{position:relative; z-index:1; font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--sand2)}
-  .optin h2{position:relative; z-index:1; font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.4vw,30px); line-height:.98; letter-spacing:-.01em; margin:10px 0 6px}
-  .optin p.lead{position:relative; z-index:1; font-size:15px; color:var(--sand2); margin:0 0 18px; line-height:1.5}
-  .optin form{position:relative; z-index:1; display:flex; flex-direction:column; gap:12px}
-  .optin input[type=email]{width:100%; padding:16px 15px; font-size:16px; border:0; background:var(--paper); color:var(--ink); font-family:var(--sans)}
-  .optin input[type=email]::placeholder{color:#9a7d76}
-  .optin .btn{width:100%}
-  .optin .micro{position:relative; z-index:1; font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:#b79a92; margin:14px 0 0; line-height:1.6; text-transform:uppercase}
+  /* who */
+  .who{margin:44px 0}
+  .who .quote{background:var(--bg-2);border-left:3px solid var(--red);padding:22px 24px}
+  .who .quote p{font-size:1rem;color:var(--ink-2)}
+  .who .quote p b{color:var(--red-lite)}
+  .who .name{font-family:var(--disp);color:var(--red-lite);font-weight:600;margin-top:12px;
+    font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
 
-  /* ---------- book cover (3D) ---------- */
-  .cover-stage{perspective:1800px; display:flex; justify-content:center; padding:10px 6px}
-  .cover{position:relative; width:min(300px,84%); aspect-ratio:1/1.42; transform:rotateY(-23deg) rotateX(4deg); transform-style:preserve-3d; transition:transform .55s cubic-bezier(.2,.7,.2,1); box-shadow:34px 32px 54px -18px rgba(35,18,15,.55)}
-  .cover:hover{transform:rotateY(-10deg) rotateX(2deg)}
-  .cover__pages{position:absolute; top:1.5%; right:-15px; height:97%; width:15px; background:repeating-linear-gradient(180deg,#fbf1ec 0 2px,#d9c7c0 2px 3.4px); transform:rotateY(32deg); transform-origin:left center; border-radius:0 3px 3px 0; box-shadow:2px 0 5px rgba(0,0,0,.25)}
-  .cover__face{position:absolute; inset:0; border-radius:3px 6px 6px 3px; overflow:hidden;
-    background:radial-gradient(130% 80% at 82% -6%, #3d1b16 0%, transparent 52%), linear-gradient(158deg,#2b1310 0%, #190a07 60%, #250d0a 100%);
-    color:var(--paper); display:flex; flex-direction:column; justify-content:space-between; padding:28px 24px 24px 36px}
-  .cover__face::before{content:""; position:absolute; left:0; top:0; bottom:0; width:26px; z-index:5; pointer-events:none; background:linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.10) 60%, rgba(255,255,255,.06))}
-  .cover__face::after{content:""; position:absolute; left:15px; top:0; bottom:0; width:4px; background:var(--red); z-index:6}
-  .cover__slash{position:absolute; z-index:2; top:-10%; bottom:30%; left:46%; width:32px; background:var(--red); opacity:.9; transform:skewX(var(--skew))}
-  .cover__gloss{position:absolute; inset:0; z-index:7; pointer-events:none; background:linear-gradient(116deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 34%)}
-  .cover__top{position:relative; z-index:8}
-  .cover__brand{font-family:var(--disp); font-weight:900; font-size:16px; letter-spacing:.01em}
-  .cover__brand .skew{display:inline-block; transform:skew(var(--skew))}
-  .cover__brand b{color:var(--red2)}
-  .cover__ts{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:var(--sand2); margin-top:7px}
-  .cover__title{position:relative; z-index:8; display:flex; flex-direction:column; align-items:flex-start; gap:3px; margin:auto 0; font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(26px,3.2vw,38px); line-height:.9; letter-spacing:-.02em}
-  .cover__title span{transform:skew(var(--skew)); width:max-content}
-  .cover__title .hl{background:var(--red); color:#fff; padding:0 .12em}
-  .cover__foot{position:relative; z-index:8; display:flex; align-items:center; justify-content:space-between; gap:10px; border-top:2px solid var(--red); padding-top:14px}
-  .cover__badge{font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; background:var(--red); color:#fff; padding:5px 9px}
-  .cover__author{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--sand2)}
+  /* honest strip */
+  .honest{text-align:center;margin:34px 0}
+  .honest span{display:inline-block;font-family:var(--disp);font-weight:500;font-size:.86rem;
+    color:var(--muted);margin:5px 9px;letter-spacing:.03em}
+  .honest b{color:var(--ink)}
 
-  /* ---------- what's inside (rules) ---------- */
-  .sec-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:42px}
-  .sec-head h2{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(28px,4.4vw,54px); line-height:.92; letter-spacing:-.025em; margin:12px 0 0; max-width:18ch}
-  .sec-head h2 .hl{color:var(--red2)}
-  .sec-head h2 .skew{transform:skew(var(--skew))}
-  .sec-head--onlight h2{color:var(--ink)}
-  .rules__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(253,246,242,.14)}
-  .rule{background:var(--ink); padding:34px 28px 38px; position:relative}
-  .rule__no{font-family:var(--disp); font-weight:900; font-size:56px; line-height:1; color:var(--red); letter-spacing:-.04em; margin-bottom:18px; display:inline-block; transform:skew(var(--skew))}
-  .rule h3{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:21px; line-height:1.05; letter-spacing:-.01em; margin:0 0 12px; color:var(--paper)}
-  .rule p{font-size:15.5px; color:var(--sand2); margin:0; line-height:1.6}
-  .rule__bonus{background:var(--red); }
-  .rule__bonus .rule__no{color:#fff; opacity:.85}
-  .rule__bonus p{color:rgba(255,255,255,.92)}
+  /* repeat invite */
+  .invite-line{text-align:center;color:var(--muted);font-size:1.02rem;max-width:54ch;
+    margin:44px auto 0;line-height:1.6}
+  .invite-line b{color:var(--ink)}
 
-  /* ---------- meet rex ---------- */
-  .meet__grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:52px; align-items:center}
-  .meet__grid>*{min-width:0}
-  .portrait{position:relative; max-width:340px}
-  .portrait__frame{position:relative; background:var(--ink); padding:14px}
-  .portrait__frame::before{content:""; position:absolute; top:-14px; left:-14px; width:56px; height:56px; background:var(--red); z-index:0}
-  .portrait__frame::after{content:""; position:absolute; bottom:-14px; right:-14px; width:56px; height:56px; background:var(--red); z-index:0}
-  .portrait__img{position:relative; z-index:1; aspect-ratio:4/4.4; overflow:hidden; background:var(--sand2)}
-  .portrait__img img{width:100%; height:100%; object-fit:cover; filter:grayscale(.15) contrast(1.05)}
-  .portrait__cap{position:relative; z-index:2; background:var(--red); color:#fff; margin-top:14px; font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:9px 14px; text-align:center}
-  .meet__side .who{font-family:var(--mono); font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--deepred); font-weight:700; margin-bottom:14px}
-  .meet h2{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(26px,3.4vw,44px); line-height:.94; letter-spacing:-.02em; margin:0 0 20px}
-  .meet h2 .skew{transform:skew(var(--skew))}
-  .meet p{font-size:16.5px; margin:0 0 16px; line-height:1.66}
-  .meet .sig{font-family:var(--disp); font-weight:900; font-size:24px; text-transform:uppercase; color:var(--ink); margin:22px 0 0; letter-spacing:-.01em}
+  /* footer */
+  footer{border-top:1px solid var(--line-2);margin-top:40px;padding:28px 0 44px;text-align:center}
+  .risk{color:var(--muted-2);font-size:.76rem;line-height:1.6;max-width:580px;margin:0 auto 16px}
+  .risk b{color:var(--muted)}
+  .fmark{font-family:var(--disp);font-weight:700;letter-spacing:.22em;font-size:.76rem;
+    color:var(--red-lite);text-transform:uppercase}
+  .tg{margin-top:12px;font-size:.82rem;color:var(--muted)}
 
-  /* ---------- honest strip ---------- */
-  .honest{background:var(--ink); color:var(--paper); border-top:6px solid var(--red); padding:30px 0}
-  .honest__row{display:flex; flex-wrap:wrap; justify-content:center; gap:12px 30px}
-  .honest__item{font-family:var(--mono); font-size:13px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--sand2); display:inline-flex; align-items:center; gap:9px}
-  .honest__item b{color:var(--paper)}
-  .honest__item .y{color:var(--win)} .honest__item .n{color:var(--red2)}
-
-  /* ---------- cta band ---------- */
-  .cta{background:var(--red); color:#fff; text-align:center; position:relative; overflow:hidden}
-  .cta::before,.cta::after{content:""; position:absolute; top:-30%; height:160%; width:80px; background:rgba(35,18,15,.16); transform:skewX(var(--skew))}
-  .cta::before{left:8%} .cta::after{right:8%}
-  .cta__inner{position:relative; z-index:1}
-  .cta h2{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(30px,4.8vw,58px); line-height:.92; letter-spacing:-.025em; margin:0 auto 18px; max-width:18ch}
-  .cta h2 .skew{transform:skew(var(--skew))}
-  .cta p{font-size:18px; max-width:56ch; margin:0 auto 28px; line-height:1.55}
-  .cta .fine{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; margin-top:20px; color:rgba(255,255,255,.85)}
-
-  /* ---------- footer ---------- */
-  footer{background:var(--ink); color:var(--sand2); padding:52px 0 40px}
-  .foot-mark{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(30px,5.5vw,64px); line-height:.9; letter-spacing:-.03em; color:var(--paper); margin-bottom:8px}
-  .foot-mark .skew{transform:skew(var(--skew))}
-  .foot-mark b{color:var(--red2)}
-  .disclosure{max-width:900px; font-size:13px; line-height:1.6; color:var(--sand2); margin:24px 0 20px; border-top:3px solid var(--red); padding-top:20px}
-  .copy{font-family:var(--mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:#8a6a66}
-
-  /* ---------- reveal ---------- */
-  .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease}
-  .reveal.in{opacity:1; transform:none}
-
-  @media (max-width:920px){
-    .hero__grid,.meet__grid{grid-template-columns:1fr; gap:40px}
-    .hero{padding:44px 0 56px}
-    .hero__book{order:-1; max-width:320px; margin:0 auto}
-    .rules__grid{grid-template-columns:1fr}
-    .portrait{margin:0 auto}
-  }
-  @media (max-width:520px){
-    .optin{padding:24px 20px 22px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none !important; transition:none !important}
-    .reveal{opacity:1; transform:none}
-    .ticker__track{animation:none; justify-content:center}
-    .cover{transform:none}
+  @media (max-width:480px){
+    .sub{font-size:1rem} .card{padding:26px 20px}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="../" aria-label="REX Trading Signal home"><span class="skew">RE<b>X</b></span> TRADING SIGNAL</a>
-    <span class="spacer"></span>
-    <a class="home" href="../">← Home</a>
-  </div>
-</header>
+  <div class="topbar"><div class="wordmark">REX<b>·</b>TRADING SIGNAL</div></div>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track">
-    <span>Free PDF</span><span>One page. One click.</span><span>XAUUSD only</span><span>No profit promises</span><span>Losses posted, not hidden</span>
-    <span>Free PDF</span><span>One page. One click.</span><span>XAUUSD only</span><span>No profit promises</span><span>Losses posted, not hidden</span>
-  </div>
-</div>
-
-<!-- ===================== HERO + OPT-IN ===================== -->
-<section class="hero">
   <div class="wrap">
-    <div class="hero__grid">
-      <div class="hero__copy reveal">
-        <span class="kicker">Free PDF · For new XAUUSD traders</span>
-        <h1>
-          <span class="line"><span class="skew">The one-page</span></span>
-          <span class="line"><span class="skew hl">business plan</span></span>
-          <span class="line"><span class="skew">for your trading.</span></span>
-        </h1>
-        <p class="stand">Grab <b>The Trader's Business Plan</b> — a one-page plan for your account, the daily operating routine I've run for five years, and the five rookie mistakes that quietly bankrupt new gold traders. Yours free.</p>
 
-        <div class="optin" id="get">
-          <span class="optin__eye">Send it to my inbox</span>
-          <h2>Send me the Business Plan</h2>
-          <p class="lead">Enter your best email — the PDF lands in your inbox in about two minutes.</p>
-          <!-- FORM: replace this block with the REX GetResponse web-form embed
-               (list "rex-trading-signal", double opt-in OFF). Fields/button below mirror the intended form. -->
-          <form action="#" method="post" onsubmit="return false;">
-            <input type="email" name="email" placeholder="Your best email" autocomplete="email" required>
-            <button class="btn btn--lg" type="submit">Send me the Business Plan →</button>
-          </form>
-          <p class="micro">Free · No spam, unsubscribe anytime · Educational only, not financial advice.</p>
-        </div>
-      </div>
+    <section class="hero">
+      <div class="pill">Free · PDF</div>
+      <div class="pre">For new gold (XAUUSD) traders who treat trading like a lottery ticket</div>
+      <h1>Run your trading like a business — <span class="red">not a bet</span></h1>
+      <p class="sub">Grab <b>The Trader's Business Plan</b> — a one-page business plan for your trading, the daily operating routine I've run for 5 years, and the 5 rookie mistakes that quietly bankrupt new traders. Yours free.</p>
 
-      <div class="hero__book reveal">
-        <div class="cover-stage">
-          <div class="cover">
-            <span class="cover__pages" aria-hidden="true"></span>
-            <div class="cover__face">
-              <span class="cover__slash" aria-hidden="true"></span>
-              <div class="cover__top">
-                <span class="cover__brand"><span class="skew">RE<b>X</b></span></span>
-                <span class="cover__ts">Trading Signal</span>
-              </div>
-              <div class="cover__title"><span>Trader's</span><span>Business</span><span class="hl">Plan</span></div>
-              <div class="cover__foot">
-                <span class="cover__badge">1 Page + Routine</span>
-                <span class="cover__author">by Rex</span>
-              </div>
-              <span class="cover__gloss" aria-hidden="true"></span>
-            </div>
-          </div>
-        </div>
+      <!-- MOCK COVER: replace this block with the real cover image once generated
+           (see cover-prompts-lead-magnet.md) — e.g. <img src="cover.png" alt="The Trader's Business Plan"> -->
+      <div class="mock">
+        <span class="badge">FREE</span>
+        <div class="mw">REX<b>·</b>TRADING SIGNAL</div>
+        <div class="meye">Run it like a business</div>
+        <div class="mt">The Trader's<br>Business Plan</div>
+        <div class="mbar"></div>
+        <div class="mm">Your account is a company.</div>
       </div>
+    </section>
+
+    <section class="card" id="get">
+      <h2>Send me the Business Plan</h2>
+      <p class="lead">Enter your best email — you'll get the PDF on the very next page.</p>
+      <!-- Posts to the Cloudflare "rex-subscribe" Worker, which adds the contact to
+           the GetResponse list rex-trading-signal (campaign 7aRUZ) at cycle day 0 so
+           the REX-1 autoresponder emails the PDF. Success -> the thank-you page. -->
+      <form id="rex-form" novalidate>
+        <input type="email" name="email" placeholder="Your best email" required autocomplete="email">
+        <button type="submit">Send me the Business Plan →</button>
+      </form>
+      <p class="formnote" id="rex-note" role="status" aria-live="polite" hidden></p>
+      <p class="micro">Free. No spam — unsubscribe anytime. Educational only, not financial advice.</p>
+    </section>
+
+    <section class="inside">
+      <h3>What's in the plan</h3>
+      <div class="item"><div class="mk">✓</div><div class="t"><b>Your trading business plan on one page</b> — capital is inventory; run out and the shop closes.</div></div>
+      <div class="item"><div class="mk">✓</div><div class="t"><b>The daily operating routine</b> — pre-market checklist, one session, books closed like a real business.</div></div>
+      <div class="item"><div class="mk">✓</div><div class="t"><b>The 5 beginner mistakes that bankrupt the business</b> — and the business rule that blocks each one.</div></div>
+      <div class="item"><div class="mk">✓</div><div class="t"><b>The printable "Open for business" checklist</b> — run it before you touch a single trade.</div></div>
+      <p class="kicker">Five years of running businesses taught me more about trading than any indicator ever did.</p>
+    </section>
+
+    <section class="who">
+      <h3>Who's handing you this</h3>
+      <div class="quote">
+        <p>I'm <b>Rex</b>. I built businesses for 5 years before I traded gold full-time — and the day I started treating my trading account like a company balance sheet instead of a casino chip, everything changed. On my channel I share my plans and my thinking live, wins and losses in the open. This business plan is the first thing I hand every beginner — because you can't grow a business you can't keep open.</p>
+        <div class="name">— Rex · REX TRADING SIGNAL 📈</div>
+      </div>
+    </section>
+
+    <section class="honest">
+      <span><b>✅</b> Real plans, live</span>
+      <span><b>✅</b> Losses posted next to wins</span>
+      <span><b>❌</b> No profit promises</span>
+      <span><b>❌</b> No get-rich-quick</span>
+    </section>
+
+    <p class="invite-line">Grab the plan, fill in your one-page business plan tonight, and open for business tomorrow — <b>properly this time.</b></p>
+
+    <section class="card">
+      <h2>Send me the Business Plan</h2>
+      <p class="lead">One field. One click. Open for business tomorrow.</p>
+      <a class="btn-red" href="#get">Send me the Business Plan →</a>
+      <p class="micro">Free. No spam — unsubscribe anytime. Educational only, not financial advice.</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p class="risk"><b>Risk warning.</b> Trading Forex and gold (XAUUSD) carries a high level of risk and can result in the loss of your capital. Nothing here is financial advice or a promise of profit. Only trade with money you can afford to lose.</p>
+      <div class="fmark">REX · TRADING SIGNAL · Run it like a business</div>
+      <p class="tg">Watch how I plan my week → <a href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a></p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ===================== WHAT'S INSIDE ===================== -->
-<section class="band band--ink">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker kicker--paper">What's in the plan</span>
-      <h2><span class="skew">Four pages.</span> <span class="hl">Zero fluff.</span></h2>
-    </div>
-    <div class="rules__grid">
-      <div class="rule reveal">
-        <span class="rule__no">01</span>
-        <h3>Your account on one page</h3>
-        <p>Capital is inventory; run out and the shop closes. Set your fixed cost per trade and your daily loss ceiling before the candle ever moves.</p>
-      </div>
-      <div class="rule reveal">
-        <span class="rule__no">02</span>
-        <h3>The daily operating routine</h3>
-        <p>The pre-market checklist, one clean session, and the nightly books — the exact rhythm I've run for five years to keep the account open.</p>
-      </div>
-      <div class="rule reveal">
-        <span class="rule__no">03</span>
-        <h3>The 5 mistakes that bankrupt you</h3>
-        <p>The five rookie moves that quietly empty a new gold account — and the one business rule that blocks each one.</p>
-      </div>
-      <div class="rule rule__bonus reveal">
-        <span class="rule__no">★</span>
-        <h3>The "Open for business" checklist</h3>
-        <p>A printable pre-trade checklist. Run it before you touch a single trade — so you open for business properly, every session.</p>
-      </div>
-      <div class="rule reveal" style="grid-column:span 2; display:flex; flex-direction:column; justify-content:center">
-        <p style="font-size:18px; color:var(--paper); line-height:1.5; margin:0"><span class="disp" style="color:var(--red2); font-size:22px; display:block; margin-bottom:6px">Five years of running businesses</span> taught me more about trading than any indicator ever did. This is that lesson on one page.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== MEET REX ===================== -->
-<section class="band band--sand" id="who">
-  <span class="slash" style="left:0" aria-hidden="true"></span>
-  <div class="wrap">
-    <div class="meet__grid">
-      <div class="portrait reveal">
-        <div class="portrait__frame">
-          <div class="portrait__img">
-            <img src="../avatar.jpg" alt="Rex, seated in an open convertible wearing dark sunglasses">
-          </div>
-          <div class="portrait__cap">Rex — Operator, five years · Trader by discipline</div>
-        </div>
-      </div>
-      <div class="meet__side reveal">
-        <div class="who">Who's handing you this</div>
-        <h2><span class="skew">I built businesses</span> before I traded gold.</h2>
-        <p>For five years I signed the purchase orders, capped the costs, and audited the numbers every night. The day I started treating my trading account like a company balance sheet instead of a casino chip, everything changed.</p>
-        <p>On the channel I share my plans and my thinking live — wins and losses in the open. This one-page business plan is the first thing I hand every beginner, because you can't grow a business you can't keep open.</p>
-        <div class="sig">— Rex · REX Trading Signal 📈</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HONEST STRIP ===================== -->
-<section class="honest">
-  <div class="wrap">
-    <div class="honest__row reveal">
-      <span class="honest__item"><span class="y">✔</span> <b>Real plans, live</b></span>
-      <span class="honest__item"><span class="y">✔</span> <b>Losses posted next to wins</b></span>
-      <span class="honest__item"><span class="n">✘</span> No profit promises</span>
-      <span class="honest__item"><span class="n">✘</span> No get-rich-quick</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SECOND CTA ===================== -->
-<section class="band cta">
-  <div class="wrap cta__inner">
-    <h2 class="reveal"><span class="skew">Fill in your one-page plan</span> tonight.</h2>
-    <p class="reveal">Grab The Trader's Business Plan, write in your numbers, and open for business tomorrow — properly this time.</p>
-    <a class="btn btn--onlight btn--lg reveal" href="#get">Send me the Business Plan →</a>
-    <p class="fine reveal">Free · One field, one click · Educational only, not financial advice</p>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  <div class="wrap">
-    <div class="foot-mark"><span class="skew">RE<b>X</b>·TRADING</span> SIGNAL</div>
-    <p class="disclosure">Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance — including any results shared on this site or on Telegram — does not guarantee future results. Nothing here is financial advice or a solicitation to trade; it reflects one trader's personal views, shared for education and reference only. Never risk money you cannot afford to lose.</p>
-    <p class="copy">© 2026 REX Trading Signal · Telegram: @REXTradingSignal · Personal views, for reference only.</p>
-  </div>
-</footer>
-
-<script>
-  (function(){
-    var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var els=document.querySelectorAll('.reveal');
-    if(rm||!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in');});return;}
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){io.observe(e);});
-  })();
-</script>
+  <script>
+    (function () {
+      var f = document.getElementById("rex-form");
+      var note = document.getElementById("rex-note");
+      if (!f) return;
+      var ENDPOINT = "https://rex-subscribe.buithithuytrinh-family.workers.dev";
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var btn = f.querySelector("button");
+        var email = (f.email.value || "").trim();
+        if (!email) { f.email.focus(); return; }
+        var original = btn.innerHTML;
+        btn.disabled = true; btn.innerHTML = "Sending…";
+        if (note) { note.hidden = true; }
+        fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
+        })
+          .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+          .then(function (res) {
+            if (res.ok && res.d && res.d.ok) { window.location.href = "/thank-you/"; return; }
+            throw new Error("subscribe failed");
+          })
+          .catch(function () {
+            btn.disabled = false; btn.innerHTML = original;
+            if (note) { note.hidden = false; note.textContent = "Hmm, that didn't go through — check the email and try again."; }
+          });
+      });
+    })();
+  </script>
 
 </body>
 </html>
