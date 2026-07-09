@@ -1,0 +1,719 @@
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  BẢN NHÁP — CHỜ CHỊ DUYỆT, CHƯA DEPLOY (không đăng, không push git).
+  Trang: VIP Room sale page 16 bước — REX Trading Signal.
+  Nguồn nội dung: 4-vip-ib-offer/vip-sale-page-16-buoc-EN.md (2.392 từ EN,
+  dùng NGUYÊN VĂN từ pre-headline tới P.P.S., không lấy phụ lục tiếng Việt).
+  Phong cách: "The Challenger" — bắt chước home-A.html (đỏ #E01722/#D6262C,
+  maroon #7E0F14, giấy #FDF6F2, đen #23120F, Arial Black 900, lát chéo skew -6°).
+  Mỗi khối đánh dấu B_Ư_Ớ_C n bằng comment HTML để chị soi đúng 16 bước.
+  KHỐI THÊM MỚI duy nhất: bảng so sánh 3 cột tại vùng neo giá (giữa bước 10-11).
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The VIP Room — REX Trading Signal</title>
+<meta name="description" content="Inside Rex's private room every XAU/USD idea is posted before he takes it — entry, stop loss, reasoning, and the cost if it goes wrong. Losing trades included. No monthly fee. Don't trust this page — audit it.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+<style>
+  :root{
+    --paper:#fdf6f2; --sand:#f8e9e4; --sand2:#f0d6cd;
+    --ink:#23120f; --red:#d6262c; --red2:#e01722; --deepred:#a31b20; --maroon:#7e0f14;
+    --win:#3f8557; --loss:#a3181d;
+    --disp:"Arial Black","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+    --skew:-6deg;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); line-height:1.62;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    font-size:17px;
+  }
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; display:block}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px}
+  .skew{display:inline-block; transform:skew(var(--skew)); transform-origin:left bottom}
+  :focus-visible{outline:3px solid var(--red2); outline-offset:3px}
+
+  /* ---------- header (giống trang chủ) ---------- */
+  header{
+    position:sticky; top:0; z-index:60;
+    background:var(--ink); color:var(--paper);
+    border-bottom:3px solid var(--red);
+  }
+  .nav{display:flex; align-items:center; gap:22px; height:66px}
+  .brand{font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em; color:var(--paper); white-space:nowrap}
+  .brand b{color:var(--red2)}
+  .menu{display:flex; gap:20px; margin-left:18px; flex:1}
+  .menu a{font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--sand2); padding:6px 2px; position:relative}
+  .menu a:hover{color:var(--paper)}
+  .menu a::after{content:""; position:absolute; left:0; right:100%; bottom:0; height:2px; background:var(--red2); transition:right .25s}
+  .menu a:hover::after{right:0}
+  .menu a[aria-current]{color:var(--paper)}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; justify-content:center; text-align:center;
+    font-family:var(--sans); font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    font-size:14px; padding:12px 20px; border:0; cursor:pointer;
+    background:var(--red); color:#fff; transition:transform .12s, background .2s;
+  }
+  .btn:hover{background:var(--red2); transform:translateY(-2px)}
+  .btn:active{transform:translateY(0)}
+  .btn--onlight{background:var(--ink); color:var(--paper)}
+  .btn--onlight:hover{background:var(--maroon)}
+  .btn--lg{font-size:16px; padding:17px 30px}
+  .menu-toggle{display:none; background:none; border:0; color:var(--paper); font-size:26px; cursor:pointer; line-height:1; padding:6px}
+
+  /* ---------- bands / slashes ---------- */
+  .band{position:relative; padding:74px 0; overflow:hidden}
+  .band--ink{background:var(--ink); color:var(--paper)}
+  .band--sand{background:var(--sand)}
+  .band--paper{background:var(--paper)}
+  .slash{position:absolute; top:0; bottom:0; width:70px; background:var(--red); transform:skewX(var(--skew)); pointer-events:none}
+  .slash--dim{background:rgba(214,38,44,.14)}
+
+  .kicker{
+    display:inline-block; font-family:var(--mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.22em; text-transform:uppercase; padding:6px 12px;
+    background:var(--red); color:#fff; margin-bottom:22px;
+  }
+  .kicker--ink{background:var(--ink); color:var(--paper)}
+  .kicker--paper{background:var(--paper); color:var(--ink)}
+
+  /* ---------- ticker ---------- */
+  .ticker{background:var(--maroon); color:var(--paper); overflow:hidden; border-bottom:3px solid var(--red)}
+  .ticker__track{display:flex; gap:0; white-space:nowrap; animation:scroll 32s linear infinite; will-change:transform}
+  .ticker__track span{
+    font-family:var(--mono); font-size:12.5px; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; padding:10px 26px; display:inline-flex; align-items:center;
+  }
+  .ticker__track span::before{content:"◆"; color:var(--red2); margin-right:26px; font-size:9px}
+  @keyframes scroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--ink); color:var(--paper); position:relative; overflow:hidden; padding:78px 0 70px}
+  .hero .slash{opacity:.92}
+  .hero .wrap{position:relative; z-index:2}
+  .hero__pre{font-size:16.5px; font-style:italic; color:var(--sand2); max-width:64ch; margin:0 0 10px; line-height:1.6}
+  .hero__pre b{color:var(--paper)}
+  .hero h1{
+    font-family:var(--disp); font-weight:900; text-transform:uppercase;
+    font-size:clamp(30px,6.4vw,84px); line-height:.92; letter-spacing:-.03em; margin:30px 0 18px;
+  }
+  .hero h1 .line{display:block; overflow:hidden}
+  .hero h1 .hl{color:var(--red2)}
+  .hero__h1b{
+    font-family:var(--disp); font-weight:900; text-transform:uppercase;
+    font-size:clamp(19px,2.6vw,34px); line-height:1.06; letter-spacing:-.015em;
+    color:var(--paper); max-width:30ch; margin:0 0 30px;
+  }
+  .hero__h1b .u{box-shadow:inset 0 -0.28em var(--maroon)}
+  .hero__sub{font-size:18px; line-height:1.65; max-width:66ch; margin:0 0 30px; color:var(--sand2)}
+  .hero__sub strong{color:var(--paper)}
+  .hero__cta{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-bottom:14px}
+  .hero__alt{font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; color:var(--sand2); line-height:1.8}
+  .hero__alt a{color:var(--paper); border-bottom:2px solid var(--red); padding-bottom:1px}
+
+  /* ---------- long-form article ---------- */
+  .article{max-width:720px; margin:0 auto}
+  .article p{margin:0 0 1.2em}
+  .article p:last-child{margin-bottom:0}
+  .article i,.article em{font-style:italic}
+  .article strong{color:var(--deepred)}
+  .band--ink .article strong{color:var(--red2)}
+  .h2disp{
+    font-family:var(--disp); font-weight:900; text-transform:uppercase;
+    font-size:clamp(26px,3.8vw,44px); line-height:.96; letter-spacing:-.02em;
+    margin:0 0 30px;
+  }
+  .h2disp .skew{transform:skew(var(--skew))}
+  .h2disp .hl{color:var(--red)}
+  .band--ink .h2disp .hl{color:var(--red2)}
+  .lede-time{font-family:var(--mono); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--deepred); font-weight:700; margin-bottom:18px}
+
+  /* compare rows (BƯỚC 7 They/I) */
+  .vs{border-left:8px solid var(--red); background:var(--paper); padding:18px 22px; margin:0 0 14px}
+  .band--sand .vs{background:var(--paper)}
+  .vs p{margin:0}
+
+  /* benefits (BƯỚC 8) */
+  .benefits{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(253,246,242,.16); margin:34px 0}
+  .benefit{background:var(--ink); padding:26px 26px 28px}
+  .benefit h3{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:16.5px; line-height:1.12; letter-spacing:-.005em; margin:0 0 10px; color:var(--paper)}
+  .benefit p{font-size:15px; color:var(--sand2); margin:0; line-height:1.6}
+
+  /* signal ticket (BƯỚC 9) */
+  .ticket{border:3px solid var(--ink); background:#fff; margin:28px 0; box-shadow:8px 8px 0 var(--red)}
+  .ticket__head{background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; padding:9px 16px}
+  .ticket__body{font-family:var(--mono); font-weight:700; font-size:clamp(14px,2.4vw,19px); letter-spacing:.02em; padding:20px 16px; text-align:center}
+  .ticket__body b{color:var(--loss)}
+
+  /* offer stack (BƯỚC 10) */
+  .stack{counter-reset:it; margin:30px 0; border:3px solid var(--ink); background:#fff}
+  .stack li{list-style:none; counter-increment:it; display:flex; gap:18px; padding:16px 20px; border-bottom:1px solid var(--sand2); align-items:baseline}
+  .stack li:last-child{border-bottom:0}
+  .stack li::before{content:counter(it,decimal-leading-zero); font-family:var(--disp); font-weight:900; font-size:22px; color:var(--red); transform:skew(var(--skew)); flex:0 0 auto}
+  .stack li p{margin:0; font-size:16px}
+  .stack{padding:0}
+
+  /* ---------- COMPARISON TABLE (khối thêm mới, bước 10-11) ---------- */
+  .compare{display:grid; grid-template-columns:1fr 1fr 1.12fr; gap:20px; align-items:end; margin:44px 0 10px}
+  .plan{background:#fff; border:3px solid var(--ink); display:flex; flex-direction:column}
+  .plan__head{padding:22px 22px 18px; border-bottom:3px solid var(--ink)}
+  .plan__label{font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--maroon); margin-bottom:10px}
+  .plan__name{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:19px; line-height:1.05; letter-spacing:-.01em; margin:0 0 14px}
+  .plan__price{font-family:var(--disp); font-weight:900; font-size:clamp(28px,3vw,38px); line-height:1; letter-spacing:-.03em}
+  .plan__price small{font-family:var(--sans); font-weight:800; font-size:13px; letter-spacing:.03em; text-transform:uppercase}
+  .plan__per{font-family:var(--mono); font-size:12px; color:var(--maroon); margin-top:8px; line-height:1.5}
+  .plan ul{margin:0; padding:18px 22px 24px; flex:1}
+  .plan li{list-style:none; display:flex; gap:11px; align-items:flex-start; font-size:14.5px; line-height:1.5; padding:7px 0}
+  .plan li+li{border-top:1px dashed var(--sand2)}
+  .plan .x{color:var(--loss); font-weight:900; flex:0 0 auto}
+  .plan .ok{color:var(--win); font-weight:900; flex:0 0 auto}
+  .plan--muted{background:var(--sand)}
+  .plan--muted .plan__price{color:var(--loss)}
+  .plan--vip{background:var(--ink); color:var(--paper); border-color:var(--ink); box-shadow:10px 10px 0 var(--red); transform:translateY(-16px); position:relative}
+  .plan--vip .plan__head{border-bottom-color:var(--red)}
+  .plan--vip .plan__label{color:var(--red2)}
+  .plan--vip .plan__price{color:var(--red2)}
+  .plan--vip .plan__per{color:var(--sand2)}
+  .plan--vip li+li{border-top-color:rgba(253,246,242,.14)}
+  .plan__badge{
+    position:absolute; top:-15px; left:18px; right:auto;
+    background:var(--red); color:#fff; font-family:var(--mono); font-size:10.5px;
+    font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:6px 12px;
+    transform:skew(var(--skew));
+  }
+  .plan__cta{padding:0 22px 24px}
+  .plan__cta .btn{width:100%}
+  .plan__cta .plan__alt{font-family:var(--mono); font-size:11px; color:var(--sand2); margin-top:12px; line-height:1.7; text-align:center}
+  .plan__cta .plan__alt a{color:var(--paper); border-bottom:1px solid var(--red)}
+  .compare-note{font-family:var(--mono); font-size:12.5px; color:var(--maroon); text-align:center; max-width:70ch; margin:26px auto 0; line-height:1.7}
+
+  /* ---------- mid CTA strips ---------- */
+  .midcta{
+    border:3px solid var(--ink); background:#fff; box-shadow:8px 8px 0 var(--red);
+    padding:26px 28px; margin:40px 0 8px;
+  }
+  .band--ink .midcta{background:var(--paper); color:var(--ink); border-color:var(--paper)}
+  .midcta p{margin:0 0 18px; font-size:16.5px}
+  .midcta p strong{color:var(--deepred)}
+  .midcta a.inline{color:var(--deepred); font-weight:700; border-bottom:2px solid var(--red); word-break:break-all}
+  .midcta .btn{margin-top:2px}
+
+  /* gift card (BƯỚC 12) */
+  .gift{border:3px solid var(--ink); background:#fff; box-shadow:10px 10px 0 var(--ink); padding:34px 32px; position:relative; overflow:hidden}
+  .gift::before{content:""; position:absolute; right:-26px; top:-26px; width:96px; height:96px; background:var(--red); transform:skewX(var(--skew))}
+  .gift .kicker{margin-bottom:18px}
+
+  /* final CTA (BƯỚC 15) */
+  .final{background:var(--red); color:#fff; text-align:center; position:relative; overflow:hidden}
+  .final::before,.final::after{content:""; position:absolute; top:-30%; height:160%; width:80px; background:rgba(35,18,15,.16); transform:skewX(var(--skew))}
+  .final::before{left:6%}
+  .final::after{right:6%}
+  .final__inner{position:relative; z-index:1; max-width:860px; margin:0 auto}
+  .final h2{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(30px,4.8vw,58px); line-height:.94; letter-spacing:-.025em; margin:0 0 14px}
+  .final .lead-in{font-size:18px; margin:0 0 34px}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; text-align:left; margin:0 0 34px}
+  .step{background:rgba(35,18,15,.24); padding:22px 20px 24px}
+  .step .no{font-family:var(--disp); font-weight:900; font-size:34px; line-height:1; transform:skew(var(--skew)); display:inline-block; color:#fff; margin-bottom:12px}
+  .step p{margin:0; font-size:15px; line-height:1.6}
+  .step a{border-bottom:2px solid #fff; font-weight:700; word-break:break-all}
+  .final .btn--onlight{box-shadow:8px 8px 0 rgba(35,18,15,.35)}
+  .final .fine{font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; margin:24px auto 0; color:rgba(255,255,255,.9); line-height:2}
+  .final .close-line{font-size:17px; margin:26px auto 0; max-width:52ch}
+  .risk{
+    font-style:italic; font-size:14px; line-height:1.7; color:rgba(255,255,255,.92);
+    border-top:2px solid rgba(255,255,255,.4); max-width:78ch; margin:34px auto 0; padding-top:20px; text-align:center;
+  }
+
+  /* FAQ (BƯỚC 16) */
+  .faq{max-width:760px; margin:34px auto 0}
+  .faq details{border:3px solid var(--ink); background:#fff; margin-bottom:12px}
+  .faq summary{
+    cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px;
+    font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:15.5px;
+    letter-spacing:-.005em; padding:17px 20px; line-height:1.25;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"+"; font-family:var(--disp); font-weight:900; font-size:22px; color:var(--red); flex:0 0 auto; transform:skew(var(--skew)); transition:transform .2s}
+  .faq details[open] summary::before{content:"–"; color:var(--maroon)}
+  .faq details[open] summary{border-bottom:1px solid var(--sand2)}
+  .faq details p{margin:0; padding:16px 20px 20px; font-size:15.5px; color:var(--ink); line-height:1.65}
+  .faq details p strong{color:var(--deepred)}
+
+  /* P.S. */
+  .ps{max-width:720px; margin:44px auto 0; border-left:8px solid var(--red); padding:6px 0 6px 26px}
+  .ps p{margin:0 0 1.1em; font-size:16.5px}
+  .ps p:last-child{margin-bottom:0}
+  .ps a.inline{color:var(--deepred); font-weight:700; border-bottom:2px solid var(--red); word-break:break-all}
+
+  /* footer (giống trang chủ) */
+  footer{background:var(--ink); color:var(--sand2); padding:56px 0 40px}
+  .foot-mark{font-family:var(--disp); font-weight:900; text-transform:uppercase; font-size:clamp(34px,6vw,72px); line-height:.9; letter-spacing:-.03em; color:var(--paper); margin-bottom:8px}
+  .foot-mark b{color:var(--red2)}
+  .disclosure{max-width:900px; font-size:13.5px; line-height:1.6; color:var(--sand2); margin:26px 0 22px; border-top:3px solid var(--red); padding-top:22px}
+  .copy{font-family:var(--mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:#8a6a66}
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1; transform:none}
+
+  @media (max-width:920px){
+    .benefits{grid-template-columns:1fr}
+    .compare{grid-template-columns:1fr; align-items:stretch; gap:34px}
+    .plan--vip{transform:none; margin-top:6px}
+    .steps{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .menu,.nav>.btn{display:none}
+    .menu-toggle{display:block}
+    .menu.open{display:flex; position:absolute; top:66px; left:0; right:0; flex-direction:column; background:var(--ink); padding:16px 24px; gap:10px; border-bottom:3px solid var(--red); z-index:70}
+    .band{padding:54px 0}
+    .hero{padding:54px 0 56px}
+    .midcta{box-shadow:6px 6px 0 var(--red)}
+    .plan--vip{box-shadow:6px 6px 0 var(--red)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important}
+    .reveal{opacity:1; transform:none}
+    .ticker__track{animation:none; justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./index.html" aria-label="REX Trading Signal home"><span class="skew">RE<b>X</b></span> TRADING SIGNAL</a>
+    <nav class="menu" id="menu" aria-label="Primary">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">Story</a>
+      <a href="#room" aria-current="page">VIP Room</a>
+    </nav>
+    <a class="btn" href="https://vtm.pro/la2-com/en/">Open Your Account</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Every trade posted before it happens</span><span>Losing trades included</span><span>No monthly fee</span><span>Never your password</span><span>Leave anytime</span>
+    <span>Every trade posted before it happens</span><span>Losing trades included</span><span>No monthly fee</span><span>Never your password</span><span>Leave anytime</span>
+  </div>
+</div>
+
+<!-- BƯỚC 1 · PRE-HEADLINE + BƯỚC 2 · HEADLINE + BƯỚC 3 · SUB-HEADLINE -->
+<section class="hero" id="room">
+  <span class="slash" style="left:-10px; opacity:.9" aria-hidden="true"></span>
+  <span class="slash slash--dim" style="left:80px" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">Don&rsquo;t trust this page. Audit it.</span>
+      <!-- BƯỚC 1 -->
+      <p class="hero__pre"><i>For business owners who sign off on every invoice by day &mdash; and buy gold at midnight with no stop loss, no plan, no ceiling.</i></p>
+      <p class="hero__pre"><i>Shopping for a &ldquo;95% win-rate&rdquo; room? Close this tab. I fire that customer on page one.</i></p>
+      <!-- BƯỚC 2 -->
+      <h1>
+        <span class="line"><span class="skew">Stop trading gold</span></span>
+        <span class="line"><span class="skew">on <span class="hl">gut feeling.</span></span></span>
+      </h1>
+      <p class="hero__h1b"><span class="skew">Run your account the way you already run your company &mdash; with a system, a risk ceiling, and an operator who <span class="u">shows every trade before it happens.</span></span></p>
+      <!-- BƯỚC 3 -->
+      <p class="hero__sub"><strong>Inside my private room, every XAU/USD idea is posted before I take it &mdash; entry, stop loss, reasoning, and the cost of the trade if it goes wrong. Losing trades included, because that&rsquo;s what honest books look like. No monthly fee, no passwords, no money ever leaves your own account.</strong></p>
+      <div class="hero__cta">
+        <a class="btn btn--lg" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+      </div>
+      <p class="hero__alt">Prefer PU Prime? <a href="https://puvip.co/la-partners/REXGOLD">puvip.co/la-partners/REXGOLD</a> &nbsp;·&nbsp; Then DM <a href="https://t.me/Rextrading_gold">@Rextrading_gold</a> on Telegram</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 4 · LEAD (PROBLEM) -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="article reveal">
+      <div class="lede-time">2:07 A.M.</div>
+      <p>It&rsquo;s 2:07 a.m. and you&rsquo;re staring at the ceiling again.</p>
+      <p>Yesterday you questioned a $340 invoice &mdash; made your ops manager walk you through it line by line. Nothing leaves the account without a reason attached.</p>
+      <p>Then, at 11:40 last night, you doubled a losing gold position. No stop loss. No plan. Just one word in your head: <i>recover.</i></p>
+      <p>If an employee did that with company money, you&rsquo;d fire him before lunch. You did it in your pajamas.</p>
+      <p>I know that ceiling.</p>
+      <p>I ran a business for five years &mdash; budgets, suppliers, payroll. Then a polished man promised me &ldquo;fixed returns, zero risk,&rdquo; and I handed him three years of company profit. After that, I burned four trading accounts on my own &mdash; chasing, doubling, hoping. Company on spreadsheets; trading on hope.</p>
+      <p>Here&rsquo;s what took me too long to see: you don&rsquo;t have a discipline problem. You&rsquo;ve just never brought that operator into your trading account.</p>
+      <p>He&rsquo;s been standing outside the whole time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 5 · KHUẤY SÂU NỖI ĐAU (AGITATE) -->
+<section class="band band--sand">
+  <span class="slash" style="right:0" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="article reveal">
+      <h2 class="h2disp"><span class="skew">The real cost of</span> <span class="skew hl">&ldquo;I&rsquo;ll figure it out myself&rdquo;</span></h2>
+      <p>Start with the money. Every revenge trade is an unrecorded expense. No approval, no receipt, no line item. If your bookkeeper ran your company the way you run your gold account, you&rsquo;d call an auditor by Friday. You are that bookkeeper &mdash; after hours.</p>
+      <p>Then the hours. You snap at your kid over dinner because a red candle moved against you. Gold is open almost 24 hours a day &mdash; and lately, so are you. No business survives an operator who never closes.</p>
+      <p>Then the quiet one. Competent everywhere except your own trading account. And you tell no one &mdash; not your spouse, not your partner &mdash; what last month&rsquo;s &ldquo;hobby&rdquo; cost.</p>
+      <p>Here&rsquo;s the part that isn&rsquo;t your fault. Those $50-a-month VIP rooms &mdash; $200 for the &ldquo;elite&rdquo; ones &mdash; run on subscription fees, so they post the wins and quietly delete the losses. Revenue with the expense column hidden. If a supplier hid every bad invoice, would you keep paying him monthly?</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 6 · BƯỚC NGOẶT / GIẢI PHÁP -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="article reveal">
+      <h2 class="h2disp"><span class="skew">The night I stopped hunting trades</span> <span class="skew hl">and built a back office</span></h2>
+      <p>The night after my fourth account died, I sat with my company&rsquo;s books on one screen and my trading history on the other. Five years running that business, and it never spent a dollar I hadn&rsquo;t approved. Every invoice. Every coffee machine.</p>
+      <p>My chart had no such rule. My chart spent whatever my pulse told it to.</p>
+      <p>That night I saw it: the problem was never the trades. It was the operating system. So I built a back office instead.</p>
+      <p>A risk ceiling &mdash; a spending limit no single position can breach. Cost per trade, calculated before entry, like a contract read before signing. A trade journal, because a business without books isn&rsquo;t a business. Three questions every night to close the books. And one rule above it all: <strong>protect your capital first. Opportunities will always come.</strong></p>
+      <p>A losing trade stopped being a crisis. It became a line item.</p>
+      <p>Now my 9 p.m. looks like this: journal open, one win, one stop-loss hit, recorded as one approved expense. Laptop closed. Dinner. Sleep.</p>
+      <p>You already know how to run a business. You&rsquo;ve just never had an office to run your account from.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 7 · GIỚI THIỆU SẢN PHẨM -->
+<section class="band band--sand">
+  <span class="slash" style="left:0" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="article reveal">
+      <span class="kicker kicker--ink">The private room</span>
+      <h2 class="h2disp"><span class="skew">The REX Trading Signal</span> <span class="skew hl">VIP Room</span></h2>
+      <p>Though &ldquo;signal room&rdquo; is the wrong name for it. Think of it as a shared back office. Pull up a chair.</p>
+      <p>You&rsquo;ve been in the other rooms. Compare the books:</p>
+      <div class="vs"><p><strong>They</strong> post the wins and quietly delete the losses. <strong>I</strong> post every trade &mdash; losing trades stay on the record. A P&amp;L with the expense column torn out isn&rsquo;t a P&amp;L.</p></div>
+      <div class="vs"><p><strong>They</strong> shout &ldquo;BUY NOW&rdquo; with no stop. <strong>Every</strong> position here comes with entry, stop loss, and my reasoning &mdash; before I&rsquo;m in, not after.</p></div>
+      <div class="vs"><p><strong>They</strong> hide what a trade can cost you. <strong>I</strong> publish the cost per trade up front &mdash; a line item you approve before the money moves.</p></div>
+      <div class="vs"><p><strong>They</strong> charge $50&ndash;$200 a month for that highlight reel. <strong>This room costs $0.</strong> I&rsquo;ll open those books below.</p></div>
+      <div class="vs"><p><strong>They</strong> promise win rates. <strong>House Rule #3</strong> bans guaranteed-profit talk inside the room &mdash; mine included. Find me one scam room that would dare install that rule.</p></div>
+      <p style="margin-top:26px">You don&rsquo;t have to take this on faith. The room is the private extension of a public channel with 11,900 people watching. Audit it before you knock.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 8 · LỢI ÍCH "BẠN SẼ CÓ ĐƯỢC" -->
+<section class="band band--ink">
+  <div class="wrap">
+    <div class="article reveal">
+      <span class="kicker">Read it like a service agreement</span>
+      <h2 class="h2disp"><span class="skew">What you</span> <span class="skew hl">actually get</span></h2>
+      <p>Features are what I do. Here&rsquo;s what changes for you.</p>
+    </div>
+    <div class="benefits reveal">
+      <div class="benefit"><h3>Every trade posted before it happens &mdash; entry, stop, reasoning.</h3><p>Which means you never sit in a position you couldn&rsquo;t explain to your own board.</p></div>
+      <div class="benefit"><h3>Cost per trade published up front.</h3><p>Which means a loss is a budgeted line item &mdash; not a 2 a.m. emergency meeting with yourself.</p></div>
+      <div class="benefit"><h3>Losing trades posted next to the winners.</h3><p>Which means you calibrate to reality, not somebody&rsquo;s highlight reel.</p></div>
+      <div class="benefit"><h3>A daily morning brief on gold.</h3><p>Which means the market gets ten planned minutes of your day &mdash; not one anxious glance at a time, all day.</p></div>
+      <div class="benefit"><h3>A weekly books review &mdash; including where my own week went wrong.</h3><p>Which means you close the trading week like you close the month: honestly, on schedule.</p></div>
+      <div class="benefit"><h3>A skill lesson every two weeks &mdash; trade management, psychology after a losing streak, the news calendar.</h3><p>Which means the system becomes yours. Not rented. Owned.</p></div>
+      <div class="benefit"><h3>Three House Rules &mdash; Cost first. No revenge. No guaranteed-profit talk.</h3><p>Which means the room&rsquo;s culture holds your discipline up on the days you can&rsquo;t.</p></div>
+      <div class="benefit"><h3>Direct questions, answered by me.</h3><p>Which means at 2 a.m., you have a fellow operator to ask &mdash; instead of a ceiling to stare at.</p></div>
+    </div>
+    <div class="article reveal">
+      <p>No line promises profit. Every line promises the same thing: a calmer operator in the chair.</p>
+      <div class="midcta">
+        <p><strong>Ready now?</strong> Open your account at <a class="inline" href="https://vtm.pro/la2-com/en/">https://vtm.pro/la2-com/en/</a> &rarr; screenshot your dashboard (never your password) &rarr; DM <a class="inline" href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a>. I verify you myself.</p>
+        <a class="btn" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 9 · BẰNG CHỨNG / UY TÍN -->
+<section class="band band--paper">
+  <span class="slash slash--dim" style="right:40px" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="article reveal">
+      <span class="kicker kicker--ink">The audit</span>
+      <h2 class="h2disp"><span class="skew">Don&rsquo;t take my word for it.</span> <span class="skew hl">Audit me.</span></h2>
+      <p>You&rsquo;d never hire a supplier off a brochure &mdash; you&rsquo;d pull their records. So pull mine.</p>
+      <p>Open <strong><a class="inline" style="color:var(--deepred); border-bottom:2px solid var(--red)" href="https://t.me/+CR21qcOU0QI4ZDg9">t.me/+CR21qcOU0QI4ZDg9</a></strong>. It&rsquo;s public. 11,900 subscribers, 5 to 8 posts a day, every one on the books.</p>
+      <p>Find any signal. Read it line by line:</p>
+      <div class="ticket">
+        <div class="ticket__head">Live signal format &mdash; public channel</div>
+        <div class="ticket__body">BUY ZONE 4106-4109 / <b>SL 4101</b> / TP 4114-4119-4124</div>
+      </div>
+      <p>That SL is the stop loss &mdash; the cost of the trade, printed before the trade. Every signal has one. No exceptions.</p>
+      <p>Keep scrolling. You&rsquo;ll find setups cancelled when they stopped making sense. You&rsquo;ll find <i>&ldquo;Good thing we always use a Stop Loss&rdquo;</i> &mdash; written after a stop saved us, not after a win. You&rsquo;ll find, more than once: <i>&ldquo;Consistency beats excitement.&rdquo;</i></p>
+      <p>Scroll the last two weeks. Try to find a signal without a stop loss &mdash; you won&rsquo;t. Try to find a trade that went wrong &mdash; you will.</p>
+      <p>Now notice what&rsquo;s missing: no profit screenshots, no win-rate claims, no testimonials. You&rsquo;ve been burned; you know the props. The absence is the proof.</p>
+      <div class="midcta">
+        <p><strong>Books check out?</strong> <a class="inline" href="https://vtm.pro/la2-com/en/">https://vtm.pro/la2-com/en/</a> &rarr; screenshot your dashboard &rarr; DM <a class="inline" href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a>.</p>
+        <a class="btn" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 10 · OFFER STACK -->
+<section class="band band--sand">
+  <span class="slash" style="right:0" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="article reveal">
+      <h2 class="h2disp"><span class="skew">Everything</span> <span class="skew hl">on the table</span></h2>
+      <p>The full inventory:</p>
+      <ol class="stack">
+        <li><p><strong>Real-time XAU/USD ideas</strong> &mdash; entry, stop loss, and my reasoning, posted before I take the trade.</p></li>
+        <li><p><strong>Cost per trade, published upfront</strong> &mdash; you know the price of the position before you&rsquo;re in it.</p></li>
+        <li><p><strong>Full transparency</strong> &mdash; losing trades posted next to winning ones. The whole expense column.</p></li>
+        <li><p><strong>Daily morning brief</strong> &mdash; gold in ten minutes, before your real workday starts.</p></li>
+        <li><p><strong>Weekly books review</strong> &mdash; what held, what broke, including my own ledger.</p></li>
+        <li><p><strong>Skill lessons every two weeks</strong> &mdash; trade management, psychology after a losing streak, the news calendar.</p></li>
+        <li><p><strong>Three House Rules</strong> &mdash; Cost first. No revenge. No guaranteed-profit talk.</p></li>
+        <li><p><strong>Direct Q&amp;A with me</strong> &mdash; a fellow operator, not a support bot.</p></li>
+      </ol>
+      <p>Other rooms charge $50&ndash;$200 a month &mdash; $600 to $2,400 a year &mdash; for item one alone, with item three quietly deleted. No &ldquo;$9,997 value&rdquo; sticker here. You compare supplier quotes for a living; price the market yourself.</p>
+      <p>So what does a seat cost? That&rsquo;s where it gets strange.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 11 · GIÁ + VÌ SAO $0 -->
+<section class="band band--paper" id="price">
+  <div class="wrap">
+    <div class="article reveal">
+      <span class="kicker kicker--ink">Open the books</span>
+      <h2 class="h2disp"><span class="skew">The price:</span> <span class="skew hl">free.</span> <span class="skew">You should be suspicious.</span></h2>
+      <p>Free. You should be suspicious. I would be.</p>
+      <p>So let&rsquo;s open the books.</p>
+      <p>The room costs $0 a month. No credit card. No hidden fees. No upsell.</p>
+      <p>But nothing runs on air. Rent gets paid by somebody. So who pays?</p>
+      <p>Here&rsquo;s the line item: you open your trading account through my partner link. <strong>The broker funds the room as their partner. That&rsquo;s why you never pay me a cent &mdash; and why my only incentive is keeping your account alive and trading for years, not squeezing you once.</strong></p>
+      <p>Compare the incentives. A $150-a-month room gets paid when you&rsquo;re excited enough to renew. I get paid when your account is still standing next quarter. Their revenue runs on your adrenaline. Mine runs on your survival.</p>
+      <p>Your money sits at a licensed broker. Your name. Your withdrawal button. I never touch a dollar. I never see a password. And gold carries real risk &mdash; never fund an account with money your business can&rsquo;t afford to lose.</p>
+    </div>
+
+    <!-- ═══ KHỐI TRỰC QUAN THÊM MỚI (giữa BƯỚC 10–11): BẢNG SO SÁNH 3 CỘT ═══
+         Cột 1 = chim mồi (phòng trả phí) · Cột 2 = kênh công khai · Cột 3 = VIP $0 (highlight).
+         Danh sách dài dần 4 → 5 → 9 mục. Không % bịa, không đếm ngược. -->
+    <div class="compare reveal" aria-label="Compare the rooms">
+      <div class="plan plan--muted">
+        <div class="plan__head">
+          <div class="plan__label">What you&rsquo;ve been offered</div>
+          <h3 class="plan__name">Paid signal rooms out there</h3>
+          <div class="plan__price">$50&ndash;$200 <small>/month</small></div>
+          <div class="plan__per">$600&ndash;$2,400 a year</div>
+        </div>
+        <ul>
+          <li><span class="x">✗</span> Winning trades posted, losses quietly deleted</li>
+          <li><span class="x">✗</span> &ldquo;BUY NOW&rdquo; calls with no public stop loss</li>
+          <li><span class="x">✗</span> Win-rate promises to keep you renewing</li>
+          <li><span class="x">✗</span> Paid by your subscription &mdash; win or lose</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <div class="plan__head">
+          <div class="plan__label">Audit it first</div>
+          <h3 class="plan__name">REX public channel</h3>
+          <div class="plan__price">Free</div>
+          <div class="plan__per">t.me/+CR21qcOU0QI4ZDg9 &middot; 11,900 subscribers</div>
+        </div>
+        <ul>
+          <li><span class="ok">✓</span> XAUUSD signals &mdash; every one with a stop loss</li>
+          <li><span class="ok">✓</span> Losing trades posted next to the winners</li>
+          <li><span class="ok">✓</span> 5&ndash;8 posts a day, on the public record</li>
+          <li><span class="ok">✓</span> Setups cancelled when they stop making sense</li>
+          <li><span class="ok">✓</span> Open to audit &mdash; scroll the last two weeks</li>
+        </ul>
+      </div>
+
+      <div class="plan plan--vip">
+        <span class="plan__badge">How? The broker funds it</span>
+        <div class="plan__head">
+          <div class="plan__label">The shared back office</div>
+          <h3 class="plan__name">REX VIP Room</h3>
+          <div class="plan__price">$0 <small>/month</small></div>
+          <div class="plan__per">No card &middot; no hidden fees &middot; no upsell</div>
+        </div>
+        <ul>
+          <li><span class="ok">✓</span> Everything in the public channel</li>
+          <li><span class="ok">✓</span> Real-time ideas before the trade &mdash; entry, stop, reasoning</li>
+          <li><span class="ok">✓</span> Cost per trade published up front</li>
+          <li><span class="ok">✓</span> Daily morning brief on gold</li>
+          <li><span class="ok">✓</span> Weekly books review &mdash; Rex&rsquo;s own ledger included</li>
+          <li><span class="ok">✓</span> Skill lessons every two weeks</li>
+          <li><span class="ok">✓</span> Three House Rules holding the room&rsquo;s discipline</li>
+          <li><span class="ok">✓</span> Direct Q&amp;A with Rex</li>
+          <li><span class="ok">✓</span> The Trader&rsquo;s Business Plan &mdash; yours to keep</li>
+        </ul>
+        <div class="plan__cta">
+          <a class="btn" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+          <p class="plan__alt">Prefer PU Prime? <a href="https://puvip.co/la-partners/REXGOLD">puvip.co/la-partners/REXGOLD</a><br>Then DM <a href="https://t.me/Rextrading_gold">@Rextrading_gold</a></p>
+        </div>
+      </div>
+    </div>
+    <p class="compare-note">No countdown. No fake seat counter. The lists above are the whole inventory &mdash; audit every line on the public channel first.</p>
+    <!-- ═══ HẾT KHỐI THÊM MỚI ═══ -->
+
+    <div class="article reveal">
+      <div class="midcta">
+        <p><strong>Ready to see the office?</strong> Open your account: <a class="inline" href="https://vtm.pro/la2-com/en/">https://vtm.pro/la2-com/en/</a> &rarr; screenshot &rarr; DM <a class="inline" href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a>.</p>
+        <a class="btn" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 12 · QUÀ TẶNG -->
+<section class="band band--sand">
+  <span class="slash" style="left:0" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="article reveal">
+      <div class="gift">
+        <span class="kicker kicker--ink">Free &mdash; join or don&rsquo;t</span>
+        <h2 class="h2disp" style="margin-bottom:22px"><span class="skew">A gift, before you</span> <span class="skew hl">decide anything</span></h2>
+        <p>Join or don&rsquo;t &mdash; either way, take <strong>The Trader&rsquo;s Business Plan</strong> with you.</p>
+        <p>It&rsquo;s one page. The same page I used to rebuild after account number four: my risk ceiling, my trade journal template, and the three questions I answer every night before I close the laptop.</p>
+        <p>You&rsquo;d never open a company without a business plan. I opened four trading accounts without one.</p>
+        <p>Keep it forever, whether you ever pull up a chair or not. And if this page is a trap, it&rsquo;s a strange one &mdash; it hands you the tools to trade without me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 13 · BẢO HÀNH / ĐẢO NGƯỢC RỦI RO -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="article reveal">
+      <span class="kicker kicker--ink">The fine print, up front</span>
+      <h2 class="h2disp"><span class="skew">The exit clause &mdash;</span> <span class="skew hl">read it before you sign</span></h2>
+      <p>You read contracts backwards, starting with how you get out. So here&rsquo;s mine.</p>
+      <p>There&rsquo;s no monthly fee, so there&rsquo;s nothing to refund. Leave the room anytime &mdash; one click, no exit interview, nobody holding the door shut.</p>
+      <p>Your account stays yours, at a licensed broker. Your name, your money, your withdrawal button. I never touch it. I never ask for your password &mdash; anyone who does is a red flag, including me.</p>
+      <p>You set your deposit inside your own risk ceiling. Skipping a trade you don&rsquo;t understand isn&rsquo;t weakness here &mdash; it&rsquo;s respected. An owner reads the contract or doesn&rsquo;t sign.</p>
+      <p>The only risk on my books? You pull up a chair, look around, and walk. I can live with that.</p>
+      <div class="midcta">
+        <p><strong>Contract read?</strong> Then sign: <a class="inline" href="https://vtm.pro/la2-com/en/">https://vtm.pro/la2-com/en/</a> &rarr; screenshot &rarr; DM <a class="inline" href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a>.</p>
+        <a class="btn" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 14 · KHAN HIẾM THẬT -->
+<section class="band band--ink">
+  <span class="slash" style="right:30px; opacity:.85" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="article reveal">
+      <h2 class="h2disp"><span class="skew">Why I don&rsquo;t</span> <span class="skew hl">take everyone</span></h2>
+      <p>No countdown timer on this page. No &ldquo;only 2 seats left.&rdquo; You&rsquo;ve seen those tricks.</p>
+      <p>The real constraint: I verify every screenshot myself and answer questions in the room myself. One operator, so many hours. So I only seat people who read the House Rules and run their account like payroll is on the line. Come looking for &ldquo;guaranteed calls&rdquo; and I&rsquo;ll walk you out. I&rsquo;ve fired customers before. Same policy here.</p>
+      <p>The only honest urgency is your own ledger: every week you trade on emotion, the expense column grows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 15 · CTA 3 BƯỚC -->
+<section class="band final" id="join">
+  <div class="wrap final__inner">
+    <div class="reveal">
+      <span class="kicker kicker--ink">Three steps. That&rsquo;s the whole SOP.</span>
+      <h2><span class="skew">Your next SOP</span> has three steps</h2>
+      <p class="lead-in">You&rsquo;ve signed harder contracts than this.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="no">1</span>
+        <p><strong>Step 1 &mdash; Open your account.</strong> Free, about five minutes: <a href="https://vtm.pro/la2-com/en/">https://vtm.pro/la2-com/en/</a> (prefer PU Prime? Use <a href="https://puvip.co/la-partners/REXGOLD">https://puvip.co/la-partners/REXGOLD</a>)</p>
+      </div>
+      <div class="step">
+        <span class="no">2</span>
+        <p><strong>Step 2 &mdash; Screenshot your account dashboard.</strong> Never your password. Not to me, not to anyone. Send the screenshot to <a href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a> on Telegram.</p>
+      </div>
+      <div class="step">
+        <span class="no">3</span>
+        <p><strong>Step 3 &mdash; I verify you personally</strong> and send your invite to the private room.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <a class="btn btn--onlight btn--lg" href="https://vtm.pro/la2-com/en/">Open Your Account &amp; Pull Up a Chair</a>
+      <p class="fine">Free to open &middot; Fund it to your own risk ceiling &middot; The money sits in your name, at a licensed broker &middot; Leave anytime</p>
+      <p class="close-line">Your next 9 p.m. can look like that quiet close-the-books evening. Three steps between here and there.</p>
+      <p class="risk"><i>Trading gold involves real risk. You can lose money &mdash; I have, four accounts&rsquo; worth. Nothing here is financial advice; my trades are mine, your account is your business. Never trade money your business can&rsquo;t afford to lose.</i></p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 16 · FAQ + P.S. -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="article reveal" style="max-width:760px">
+      <h2 class="h2disp"><span class="skew">Questions you&rsquo;d ask before signing anything.</span> <span class="skew hl">Good. Ask them.</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Is this really free?</summary>
+        <p>Yes. No monthly fee, no card, no upsell. The broker funds the room as their partner &mdash; plain English, not fine print.</p>
+      </details>
+      <details>
+        <summary>Why does the broker pay you?</summary>
+        <p>Brokers pay partners who bring them clients who trade for years &mdash; not clients who blow up in a month. My income depends on your account staying alive.</p>
+      </details>
+      <details>
+        <summary>Do I have to give you my money or passwords?</summary>
+        <p>Never. Not a cent, not a login. Anyone who asks for your password is a red flag &mdash; including me.</p>
+      </details>
+      <details>
+        <summary>What if I already have a broker?</summary>
+        <p>Keep it. The room runs on accounts opened through my partner link &mdash; that&rsquo;s how it&rsquo;s funded. A second account takes five minutes and costs nothing.</p>
+      </details>
+      <details>
+        <summary>Is this financial advice?</summary>
+        <p>No. My trades are mine; your account is your business. You can lose money trading gold. I did &mdash; four accounts&rsquo; worth. Never trade money your business can&rsquo;t afford to lose.</p>
+      </details>
+      <details>
+        <summary>How much do I need to start?</summary>
+        <p>Your call, inside your own risk ceiling. The Trader&rsquo;s Business Plan helps you set the number before you deposit it.</p>
+      </details>
+      <details>
+        <summary>What if I&rsquo;m new?</summary>
+        <p>Fine &mdash; if you&rsquo;ll learn and keep the House Rules. This room teaches operating. It does not hand out sure things.</p>
+      </details>
+      <details>
+        <summary>Can I leave?</summary>
+        <p>Anytime. One click. Your account walks out with you.</p>
+      </details>
+    </div>
+
+    <div class="ps reveal">
+      <p><strong>P.S.</strong> You already run one business with discipline. Tonight at 2 a.m., when your finger hovers over another revenge trade, remember: nothing changes until the way you operate changes.</p>
+      <p><strong>P.P.S.</strong> Not ready? Don&rsquo;t join. Follow the public channel, take The Trader&rsquo;s Business Plan, and audit me for a month. Then decide like an owner. When you do: open your account at <a class="inline" href="https://vtm.pro/la2-com/en/">https://vtm.pro/la2-com/en/</a> (or PU Prime: <a class="inline" href="https://puvip.co/la-partners/REXGOLD">https://puvip.co/la-partners/REXGOLD</a>), screenshot the dashboard &mdash; never your password &mdash; and DM <a class="inline" href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a>. Pull up a chair.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark"><span class="skew">RE<b>X</b>&middot;TRADING</span> SIGNAL</div>
+    <p class="disclosure">Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance &mdash; including any results shared on this site or on Telegram &mdash; does not guarantee future results. Nothing here is financial advice or a solicitation to trade; it reflects one trader&rsquo;s personal views, shared for education and reference only. Never risk money you cannot afford to lose.</p>
+    <p class="copy">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var t=document.getElementById('menuToggle'), m=document.getElementById('menu');
+    if(t&&m){t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+      m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');t.setAttribute('aria-expanded',false);});});}
+    var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=document.querySelectorAll('.reveal');
+    if(rm||!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+
+</body>
+</html>
