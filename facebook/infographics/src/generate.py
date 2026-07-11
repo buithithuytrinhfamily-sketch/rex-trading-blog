@@ -198,25 +198,44 @@ s+= T(120,540,24,"SUPPORT &mdash; the floor","start",800,GREEN)
 pages.append(page("rex_09_sr","REX TRADING SIGNAL &middot; MARKET STRUCTURE","The floor and the ceiling","Support &amp; Resistance",s,vbh=600))
 
 # ---------- 10. READING THE TREND ----------
-s = T(250,80,28,"UPTREND",fill=GREEN)
-s+= '<polyline points="110,520 190,400 160,440 300,300 270,340 410,190" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round"/>'%GREEN
-s+= L(120,520,405,200,"arG",GREEN,5)
-s+= T(250,560,20,"higher highs + higher lows",fill=BROWN)
-s+= '<line x1="450" y1="120" x2="450" y2="560" stroke="rgba(22,19,15,.18)" stroke-width="2" stroke-dasharray="7 8"/>'
-s+= T(680,80,28,"DOWNTREND",fill=RED)
-s+= '<polyline points="510,200 590,320 560,280 700,420 670,380 810,520" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round"/>'%RED
-s+= L(520,205,805,515,"arR",RED,5)
-s+= T(680,560,20,"lower highs + lower lows",fill=BROWN)
-pages.append(page("rex_10_trend","REX TRADING SIGNAL &middot; MARKET STRUCTURE","Structure over noise","Reading the Trend",s,vbh=600))
+def dot(x,y,c): return '<circle cx="%d" cy="%d" r="8" fill="%s"/>'%(x,y,c)
+# UPTREND: clean rising staircase of higher highs + higher lows
+up=[(100,470),(170,330),(235,405),(305,255),(370,325),(430,175)]
+s = T(262,74,28,"UPTREND",fill=GREEN)
+s+= '<polyline points="%s" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>'%(" ".join("%d,%d"%p for p in up),GREEN)
+for x,y in up: s+=dot(x,y,GREEN)
+s+= T(305,238,20,"HH",fill=GREEN)+T(430,158,20,"HH",fill=GREEN)
+s+= T(235,440,20,"HL",fill=GREEN)+T(370,360,20,"HL",fill=GREEN)
+s+= T(262,600,22,"higher highs + higher lows",fill=BROWN)
+s+= '<line x1="460" y1="130" x2="460" y2="560" stroke="rgba(22,19,15,.18)" stroke-width="2" stroke-dasharray="7 8"/>'
+# DOWNTREND: clean falling staircase of lower highs + lower lows
+dn=[(500,175),(560,320),(625,250),(690,400),(750,330),(810,470)]
+s+= T(672,74,28,"DOWNTREND",fill=RED)
+s+= '<polyline points="%s" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>'%(" ".join("%d,%d"%p for p in dn),RED)
+for x,y in dn: s+=dot(x,y,RED)
+s+= T(625,234,20,"LH",fill=RED)+T(750,314,20,"LH",fill=RED)
+s+= T(690,440,20,"LL",fill=RED)+T(810,508,20,"LL",fill=RED)
+s+= T(672,600,22,"lower highs + lower lows",fill=BROWN)
+pages.append(page("rex_10_trend","REX TRADING SIGNAL &middot; MARKET STRUCTURE","Structure over noise","Reading the Trend",s,vbh=640))
 
 # ---------- 11. BREAK OF STRUCTURE ----------
-s = '<polyline points="110,470 210,330 175,380 330,240 290,300 360,360" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round"/>'%GREEN
-s+= '<line x1="80" y1="360" x2="470" y2="360" stroke="%s" stroke-width="3" stroke-dasharray="10 7"/>'%GOLD
-s+= T(90,345,20,"last higher low","start",800,GOLD)
-s+= '<polyline points="360,360 470,470 440,430 560,540" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round"/>'%RED
-s+= '<circle cx="405" cy="405" r="16" fill="none" stroke="%s" stroke-width="4"/>'%RED
-s+= T(560,395,26,"BOS","start",900,RED)
-s+= T(560,428,19,"break of structure","start",700,BROWN)
+# uptrend makes HH & HL, then price closes below the last higher low -> BOS
+HLY=372
+# dashed 'last higher low' level
+s = '<line x1="95" y1="%d" x2="645" y2="%d" stroke="%s" stroke-width="3" stroke-dasharray="11 8"/>'%(HLY,HLY,GOLD)
+s+= T(280,406,20,"last higher low","middle",800,GOLD)
+# green structure: start low -> HH -> HL(on line) -> higher HH -> falling to the break level
+s+= '<polyline points="120,430 205,300 280,372 370,240 479,372" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>'%GREEN
+# red leg after breaking below the last higher low
+s+= '<polyline points="479,372 560,470" fill="none" stroke="%s" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arR)"/>'%RED
+# swing dots + labels
+s+= dot(205,300,GREEN)+T(205,282,20,"HH",fill=GREEN)
+s+= dot(370,240,GREEN)+T(370,222,20,"HH",fill=GREEN)
+s+= dot(280,372,GOLD)
+# break marker
+s+= '<circle cx="479" cy="372" r="17" fill="none" stroke="%s" stroke-width="4"/>'%RED
+s+= T(600,364,28,"BOS","start",900,RED)
+s+= T(600,394,19,"break of structure","start",700,BROWN)
 s+= T(450,600,20,"Price closes below the last higher low &#8594; the trend shifts.",fill=BROWN)
 pages.append(page("rex_11_bos","REX TRADING SIGNAL &middot; MARKET STRUCTURE","When the trend cracks","Break of Structure",s,vbh=640))
 
