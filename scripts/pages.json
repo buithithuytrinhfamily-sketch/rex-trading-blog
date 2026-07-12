@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Rex Trading Signals",
+    "page_id_env": "REX_PAGE_ID",
+    "token_env": "REX_PAGE_TOKEN",
+    "csv": "facebook/schedule/rex_schedule.csv",
+    "state": "facebook/schedule/.posted_rex.json"
+  },
+  {
+    "name": "harcosfx",
+    "page_id_env": "HARCOS_PAGE_ID",
+    "token_env": "HARCOS_PAGE_TOKEN",
+    "csv": "facebook/schedule/harcos_schedule.csv",
+    "state": "facebook/schedule/.posted_harcos.json"
+  }
+]
