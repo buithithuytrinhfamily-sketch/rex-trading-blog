@@ -3,6 +3,9 @@
 File lịch: `REX_Facebook_Publer_Infographics.csv` — 3 bài, mỗi bài 4 ảnh, ảnh đã có
 link công khai sẵn (Publer tự tải về khi import).
 
+> Dùng **ảnh vuông 1080×1080** (`infographics/square/`) để lưới 4 ảnh trên Facebook
+> KHÔNG bị cắt tiêu đề / logo. (Bản dọc 4:5 vẫn còn trong `infographics/` nếu cần đăng lẻ.)
+
 ## Các bước (làm 1 lần)
 1. Vào **publer.com** → chọn workspace có kết nối **trang Facebook Rex Trading Signals**.
    (Nếu chưa kết nối: Settings → Social Accounts → Connect → Facebook Page → chọn Rex Trading Signals.)
