@@ -344,6 +344,13 @@
     .reveal{opacity:1; transform:none}
     .ticker__track{animation:none; justify-content:center}
   }
+  /* one-tap helpers on the pay block */
+  .copy-btn{margin-top:9px; font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; background:transparent; color:var(--paper); border:2px solid var(--red2); padding:7px 13px; cursor:pointer; transition:background .15s}
+  .copy-btn:hover{background:var(--red2); color:#fff}
+  .copy-btn.copied{background:var(--win); border-color:var(--win); color:#fff}
+  .dm-tiers{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:14px 0 6px}
+  .dm-tiers .btn{font-size:13.5px}
+  .dm-tiers-label{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; text-align:center; color:var(--sand2); margin:30px 0 0}
   /* member video reviews */
   .vgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; max-width:920px; margin:42px auto 0}
   .vcard{margin:0}
@@ -756,6 +763,7 @@
             <div class="coin-name">₿ Bitcoin <span class="paren">(BTC)</span></div>
             <div class="coin-net">Bitcoin network</div>
             <div class="wallet">1CCe6nmPdxFb9gsW9ujhQzfmaTAKFsnjgw</div>
+            <button class="copy-btn" type="button" data-copy="1CCe6nmPdxFb9gsW9ujhQzfmaTAKFsnjgw" data-coin="BTC">Copy address</button>
           </div>
         </div>
         <div class="coin">
@@ -764,6 +772,7 @@
             <div class="coin-name">◆ Ethereum <span class="paren">(ETH)</span></div>
             <div class="coin-net">Ethereum (ERC20) network</div>
             <div class="wallet">0xc64dd682bdb920defda16e7b77c34fc7346e6f98</div>
+            <button class="copy-btn" type="button" data-copy="0xc64dd682bdb920defda16e7b77c34fc7346e6f98" data-coin="ETH">Copy address</button>
           </div>
         </div>
         <div class="coin">
@@ -772,6 +781,7 @@
             <div class="coin-name">₮ USDT &middot; TRC20 <span class="rec">Lowest fee</span></div>
             <div class="coin-net">TRC20 (Tron) network</div>
             <div class="wallet">TVF22a1qKYLHXWV6FUSgRAT1hKEGLfJm22</div>
+            <button class="copy-btn" type="button" data-copy="TVF22a1qKYLHXWV6FUSgRAT1hKEGLfJm22" data-coin="USDT-TRC20">Copy address</button>
           </div>
         </div>
         <div class="coin">
@@ -780,6 +790,7 @@
             <div class="coin-name">₮ USDT <span class="paren">&middot; BEP20</span></div>
             <div class="coin-net">BNB Smart Chain (BEP20) network</div>
             <div class="wallet">0xc64dd682bdb920defda16e7b77c34fc7346e6f98</div>
+            <button class="copy-btn" type="button" data-copy="0xc64dd682bdb920defda16e7b77c34fc7346e6f98" data-coin="USDT-BEP20">Copy address</button>
           </div>
         </div>
         <div class="coin">
@@ -788,7 +799,16 @@
             <div class="coin-name">₮ USDT <span class="paren">&middot; ERC20</span></div>
             <div class="coin-net">Ethereum (ERC20) network</div>
             <div class="wallet">0xc64dd682bdb920defda16e7b77c34fc7346e6f98</div>
+            <button class="copy-btn" type="button" data-copy="0xc64dd682bdb920defda16e7b77c34fc7346e6f98" data-coin="USDT-ERC20">Copy address</button>
           </div>
+        </div>
+
+
+        <p class="dm-tiers-label">Paid? One tap to send your receipt &darr;</p>
+        <div class="dm-tiers">
+          <a class="btn" data-tier="general-9" href="https://t.me/Rextrading_gold?text=Hi%20Rex%20%E2%80%94%20I%20just%20paid%20%249%20for%20the%20GENERAL%20kit.%20Here%27s%20my%20receipt%3A" target="_blank" rel="noopener">I paid $9 &mdash; send receipt</a>
+          <a class="btn" data-tier="vip-29" href="https://t.me/Rextrading_gold?text=Hi%20Rex%20%E2%80%94%20I%20just%20paid%20%2429%20for%20the%20VIP%20kit.%20Here%27s%20my%20receipt%3A" target="_blank" rel="noopener">I paid $29 &mdash; send receipt</a>
+          <a class="btn" data-tier="veryvip-49" href="https://t.me/Rextrading_gold?text=Hi%20Rex%20%E2%80%94%20I%20just%20paid%20%2449%20for%20the%20VERY%20VIP%20kit.%20Here%27s%20my%20receipt%3A" target="_blank" rel="noopener">I paid $49 &mdash; send receipt</a>
         </div>
 
         <p class="pay-confirm">✅ <b>After you pay</b>, send your payment screenshot to <a href="https://t.me/Rextrading_gold" target="_blank" rel="noopener">@Rextrading_gold</a> on Telegram and tell us <b>which tier ($9, $29 or $49)</b> &mdash; we&rsquo;ll send your book, business plan &amp; Operators&rsquo; Room link, usually <b>within a few hours</b>. It&rsquo;s handled by a real person, not a bot, so allow a little time on busy days.</p>
@@ -867,5 +887,6 @@
   })();
 </script>
 
+<script defer src="/assets/track.js"></script>
 </body>
 </html>
