@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Gap Between Knowing and Doing: Why Traders With the Right Plan Still Lose — REX Trading Signal</title>
+<meta name="description" content="You know exactly what to do — and you do the opposite anyway. Here's why the gap between knowing and doing empties trading accounts, and the operator's system that closes it.">
+<meta property="og:title" content="The Gap Between Knowing and Doing: Why Traders With the Right Plan Still Lose — REX Trading Signal">
+<meta property="og:description" content="You know exactly what to do — and you do the opposite anyway. Here's why the gap between knowing and doing empties trading accounts, and the operator's system that closes it.">
+<meta property="og:image" content="https://buithithuytrinhfamily-sketch.github.io/rex-trading-blog/avatar.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://buithithuytrinhfamily-sketch.github.io/rex-trading-blog/the-gap-between-knowing-and-doing.html">
+<link rel="canonical" href="https://rextradingsignal.com/the-gap-between-knowing-and-doing.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+</head>
+<body>
+<style>
+  :root{
+    --paper:#fdf6f2;          /* trang giấy — trắng hồng như wallpaper kênh */
+    --sand:#f8e9e4;           /* nền panel — cát vàng nhạt */
+    --sand-2:#f0d6cd;
+    --ink:#23120f;            /* đen kính râm / nội thất xe */
+    --muted:#85655e;          /* xám ấm ngả cát */
+    --gold:#d6262c;           /* đỏ logo REX — màu chủ đề kênh */
+    --gold-deep:#a31b20;
+    --loss:#a3181d;           /* semantic: stop loss / lệnh thua */
+    --win:#3f8557;            /* semantic: lệnh thắng */
+    --hairline:rgba(163,27,32,.20);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+  a{color:var(--gold-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+  /* ── top bar (dải đen kính râm) ──────── */
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+  .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+  .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+  .wordmark b{color:var(--gold)}
+  .wordmark:hover{text-decoration:none}
+  nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+  nav.menu a{color:#c9a29b;text-transform:uppercase}
+  nav.menu a[aria-current]{color:#faf1ee}
+  .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+  .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+
+  /* ── ticker strip ────────────────────── */
+  .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+  .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+  .ticker span b{color:var(--ink);font-weight:500}
+  .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+
+  /* ── hero (nắng hoàng hôn) ───────────── */
+  .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+    background:
+      radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+      radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+      var(--paper);}
+  .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+  .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+  .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+  .hero h1 .q{color:var(--gold-deep)}
+  .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+  .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+  .byline b{color:var(--ink);font-weight:600}
+  .portrait{justify-self:end;text-align:center}
+  .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+    box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+  .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+  .portrait .cap b{color:var(--ink)}
+  @media (max-width:820px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px}
+    .portrait{justify-self:start;text-align:left}
+    .portrait img{margin:0}
+  }
+  .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+  .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+
+  /* ── three rules band ────────────────── */
+  .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+  .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+  .rule{background:var(--sand);padding:28px 26px}
+  .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+  .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+  .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+  @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+
+  /* ── article ─────────────────────────── */
+  .article{padding:72px 0 40px}
+  .article .body{max-width:65ch;margin:0 auto}
+  .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+  .article h2:first-child{margin-top:0}
+  .article p{margin:0 0 1.15em}
+  .article p.big{font-size:1.16rem}
+  .article strong{color:var(--ink);font-weight:700}
+  .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+  .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+
+  /* ledger — sổ ghi 4 tài khoản */
+  .ledger{border:1px solid var(--hairline);border-radius:4px;overflow:hidden;margin:34px 0;background:#fff}
+  .ledger .head{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#faf1ee;background:var(--ink);padding:12px 20px}
+  .entry{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:18px 20px;border-bottom:1px solid var(--sand-2)}
+  .entry:last-child{border-bottom:0}
+  .entry .id{font-family:var(--mono);font-size:.74rem;color:var(--loss);padding-top:4px;font-variant-numeric:tabular-nums}
+  .entry h4{font-family:var(--sans);font-size:.95rem;font-weight:700;margin:0 0 4px}
+  .entry p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+  @media (max-width:560px){.entry{grid-template-columns:1fr;gap:6px}}
+
+  /* nightly journal — cuốn sổ dòng kẻ */
+  .journal{border:1px solid var(--hairline);border-radius:4px;margin:34px 0;padding:26px 28px 22px;
+    background:#fffafa repeating-linear-gradient(to bottom, transparent 0 31px, rgba(163,27,32,.13) 31px 32px)}
+  .journal .head{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+  .journal ol{margin:0;padding-left:1.2em;font-style:italic;font-size:1.02rem}
+  .journal ol li{margin-bottom:8px}
+  .journal .footnote{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin:14px 0 0;font-style:normal}
+  .journal .footnote b{color:var(--loss);font-weight:700}
+
+  .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+  .article h3 + p{margin-top:0}
+  .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+  .article li{margin:0 0 .55em;padding-left:.2em}
+  .article li::marker{color:var(--gold-deep)}
+  /* ── cta (dải đen + nắng vàng) ───────── */
+  .cta{border-top:1px solid var(--hairline);background:
+    radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+  .cta .wrap{padding:72px 24px;text-align:center}
+  .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+  .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+  .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+  .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+
+  /* ── more posts ──────────────────────── */
+  .more{padding:70px 0;background:var(--paper)}
+  .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+  .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+  .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+  .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+  .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+  .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+  @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+
+  /* ── footer ──────────────────────────── */
+  footer{background:var(--ink);color:#d4aca6}
+  footer .wrap{padding:44px 24px;display:grid;gap:18px}
+  footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+  footer .brand b{color:var(--gold)}
+  footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+  footer p strong{color:#faf1ee}
+  footer .fine{color:#97726b}
+</style>
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="./">REX<b>·</b>TRADING</a>
+    <nav class="menu" aria-label="Main">
+      <a href="./">Home</a>
+      <a href="./about.html">About</a>
+    </nav>
+    <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="wrap">
+    <span>MARKET <b>XAUUSD — GOLD</b></span>
+    <span>FOCUS <b>DISCIPLINE OVER KNOWLEDGE</b></span>
+    <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+    <span>JOURNAL <b>ENTRY #08 — KNOWING vs DOING</b></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow fade">The knowing–doing gap</p>
+      <h1 class="fade d1">The Gap Between Knowing and Doing <span class="q">(and Why It Empties Accounts)</span></h1>
+      <p class="standfirst fade d2">You know where the stop goes. You know not to chase. Then you do the opposite anyway. The problem was never your knowledge — it's the gap between what you know and what you do under pressure. Here's how an operator closes it.</p>
+      <div class="byline fade d3">
+        <div>By <b>Rex</b> &nbsp;·&nbsp; XAUUSD &nbsp;·&nbsp; 9 min read</div>
+      </div>
+    </div>
+    <figure class="portrait fade d2" style="margin:0">
+      <img src="avatar.jpg" alt="Rex, founder of REX Trading Signal" width="260" height="260">
+      <figcaption class="cap"><b>Rex</b> · @REXTradingSignal · 11.9K followers</figcaption>
+    </figure>
+  </div>
+</section>
+
+<article class="article">
+  <div class="wrap"><div class="body">
+<p class="big">Here is the most expensive sentence in trading, and almost nobody says it out loud: <span class="key">you already know what to do — and you do the opposite anyway.</span></p>
+<p>You know where the stop loss goes — the price where you agreed, in advance, to get out if you're wrong. You know you shouldn't move it. You know chasing a runaway candle is how accounts die. You've read it, watched it, nodded along to it a hundred times. And then the moment arrives, the pressure hits, and you drag the stop, or you pile in late, or you double up to win back the last one. You do the exact thing you knew not to do — while you were doing it.</p>
+<p>I spent years thinking I had a knowledge problem. So I bought more knowledge. Another course, another indicator, another book with a red cover promising the piece I was missing. None of it worked, because none of it touched the actual problem. I didn't have a knowledge gap. I had a <em>doing</em> gap. And in this business, that's the only gap that ever sends you broke.</p>
+<p>Let me show you where that gap comes from, why more information will never close it, and the operator's system that finally did — for me and for the people who run their account like I do.</p>
+
+<h2>Knowledge Gets You Into the Trade. Discipline Decides How You Leave It.</h2>
+<p>Sit with this line, because it reorganised how I think about the whole game: <strong>knowledge helps you enter a trade; discipline is what protects your account.</strong></p>
+<p>Entering is the easy half. Anyone can learn a setup — where price tends to react, what a clean level looks like, when the odds tilt your way. That knowledge is real and it matters. But notice when it stops helping you. The instant you're <em>in</em> the position, knowledge goes quiet, and something else takes the wheel. Now it's about whether you can sit still while a green trade tempts you to grab profit early. Whether you can hold your stop when price pokes at it. Whether you can take the loss you planned for without turning it into a fight.</p>
+<p>None of that is knowledge. All of it is doing. And that's the part no course sells you, because it can't be downloaded — it has to be built, rep by rep, under real pressure.</p>
+<p>Think of it like any trade you'd make as an operator. Knowing the market rate for a supplier gets you to the negotiating table. It doesn't stop you from panic-signing a bad contract when you're tired and the other side pushes. The knowledge was never the weak link. Your conduct at the table was.</p>
+<div class="pull">The market doesn't test what you know. It tests what you'll actually do when your money's on the line and your pulse is up.</div>
+
+<h2>The Three Emotions That Open the Gap</h2>
+<p>So what widens the space between knowing and doing? In my experience, three things, and they show up in the same three costumes every time. When I finally wrote out my blown accounts as an audit — the way I'd audit a failing department — the losses didn't come from ignorance. They came from these three, wearing my own face.</p>
+
+<div class="ledger">
+  <div class="head">Audit — where the account actually leaked</div>
+  <div class="entry">
+    <div class="id">FEAR</div>
+    <div>
+      <h4>Cuts the winners, freezes on the losers</h4>
+      <p>You know to let a trade reach its target. Fear grabs the profit early "to be safe," then freezes when a loss needs closing — because clicking the button makes it real. Same emotion, both mistakes. It shrinks your wins and stretches your losses, which is the exact opposite of how the math is supposed to work.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="id">GREED</div>
+    <div>
+      <h4>Sizes up when it shouldn't, holds past the plan</h4>
+      <p>You know your risk cap. Greed whispers that this one's different — bigger size, hold past the target, skip the stop because "it's obviously going higher." Greed doesn't feel reckless in the moment. It feels like confidence. That's what makes it expensive.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="id">REVENGE</div>
+    <div>
+      <h4>Trades to get even, not to get it right</h4>
+      <p>You take a loss, and the next trade stops being about the setup — it's about clawing back what you lost, right now. You know better. You do it anyway, at double size, on a chart that doesn't warrant it. No operator bets the reserves to fix one bad quarter. But at the screen, alone, that's exactly the deal you sign.</p>
+    </div>
+  </div>
+</div>
+
+<p>Notice the pattern. In every row, the trader <em>knew</em> the right move. The gap wasn't information. It was the three feet between the head and the hand — and fear, greed and revenge live in that gap, waiting for pressure to let them drive.</p>
+<p>You can't delete those emotions. Anyone selling you "trade with no emotion" is selling a fantasy. What you can do is build a system that decides in advance, so the feeling arrives too late to change anything. That's the whole job.</p>
+
+<h2>Why More Knowledge Never Closes the Gap</h2>
+<p>Here's the trap I lived in for three years, and I watch traders live in it every week. When you keep doing the thing you know not to do, it feels like a knowledge problem. So you go get more knowledge. Another strategy. A sharper indicator. A guru's premium room.</p>
+<p>It never works, and now you can see exactly why. You didn't lose the last account because you didn't <em>know</em> where the stop went. You lost it because you moved the stop you already knew was right. Piling on more information to fix a doing problem is like reading another book on nutrition while standing in the kitchen at midnight with a fork. The book was never the issue.</p>
+<p>Worse, chasing knowledge feels productive. It scratches the itch of "doing something about it" while quietly avoiding the only thing that would help — building the discipline to execute what you already know. That's why the gap is so durable. The cure feels like effort, and the disease disguises itself as a need for more study.</p>
+<p>So stop trying to know more. Start building the machine that makes you <em>do</em> what you already know. Here's mine.</p>
+
+<h2>The Operator's System That Closes the Gap</h2>
+<p>You don't close the gap with willpower. Willpower is exactly the thing that fails under pressure — that's the whole problem. You close it with structure, decided while you're calm, that removes the decision from the heated moment entirely. Three parts.</p>
+
+<h3>Decide the exit before you enter</h3>
+<p>Write the stop and the target into the plan <em>before</em> the position is open — while you're still the calm operator, not the one with money on the line. Once you're in, there's no fresh decision to make and no room for fear or greed to renegotiate. You're not deciding under pressure anymore. You're just executing a decision you already made when your head was clear. This one move closes most of the gap by itself.</p>
+
+<h3>Run the nightly audit — three questions, two minutes</h3>
+<p>Every night, close the books like a business does. Not on your profit and loss — on your <em>behaviour</em>.</p>
+
+<div class="journal">
+  <div class="head">The nightly audit</div>
+  <ol>
+    <li>Did I follow my plan today — or did I improvise once I was in?</li>
+    <li>Did I respect my stop, exactly where I set it?</li>
+    <li>Would I take today's trades again tomorrow, knowing what I knew going in?</li>
+  </ol>
+  <p class="footnote">If two answers are <b>"no,"</b> you cut your size the next day. No negotiation. The audit watches your conduct, not your P&amp;L — because the process going quiet is the first thing to fail, long before the money shows it.</p>
+</div>
+
+<p>This is the rep that builds the muscle no course can sell. Most people only ask "did I make money?" — which teaches you nothing, because a reckless trade can win and a disciplined one can lose. Grading your <em>conduct</em> instead is how you finally see the gap while it's small enough to fix.</p>
+
+<h3>Shrink the pressure until you can execute</h3>
+<p>Here's the part traders skip. If the size is so big that fear and greed take the wheel, the size is wrong — full stop. Trade small enough that you can actually do what you know. Then let size grow only as your <em>conduct</em> proves itself in the nightly audit, never because you had a hot week. Discipline earns the right to size up. Emotion never does.</p>
+<p>Trading gold and other leveraged products carries a real risk of loss, and most retail traders lose money. This system doesn't erase that risk — nothing does. What it does is make sure the account survives long enough for the discipline to compound, instead of getting emptied in the gap between what you knew and what you did.</p>
+
+<h2>The Real Cost — and What It Shouldn't Be</h2>
+<p>There's a quieter version of this gap, and I'd be dishonest to skip it. It's not just your account that leaks into the space between knowing and doing. It's your peace.</p>
+<p>When you keep betraying your own plan, you don't just lose money — you lose sleep, you lose the ability to be present with the people around you, you carry the last trade to the dinner table and into bed. I know traders who "won" a week and were miserable the whole time, because they'd broken every rule to get there and knew the reckoning was coming.</p>
+<p>So let me say plainly what the cost of trading should never be. Not your peace of mind. Not your relationships. Not the version of you that people who love you recognise. A trade is a business decision. The moment it starts costing you those things, the size is too big or the discipline is too small — and both are fixable tonight.</p>
+<div class="pull">Closing the gap isn't just how you protect the account. It's how you get to stay a person while you trade it.</div>
+
+<h2>Frequently Asked Questions</h2>
+<p><strong>What is the "gap between knowing and doing" in trading?</strong> It's the space between understanding the right move and actually making it under pressure. You know where the stop goes, you know not to chase — and then you do the opposite anyway when your money's on the line and your pulse is up. Almost every blown account dies in that gap, not from a lack of knowledge.</p>
+<p><strong>If it's not a knowledge problem, why do I keep buying courses?</strong> Because chasing knowledge feels productive while quietly avoiding the real work. When you keep doing what you know not to do, it feels like you must be missing information, so you go get more. But you didn't lose the account because you didn't know where the stop went — you lost it because you moved the stop you knew was right. More information can't fix a doing problem.</p>
+<p><strong>How do I stop trading emotionally?</strong> You don't delete the emotion — that's a fantasy. You build structure that decides before the emotion arrives: write your stop and target before you enter, run a two-minute nightly audit on your conduct, and cut your size whenever discipline slips. The feeling still shows up. It just shows up too late to change anything, because the decision was already made.</p>
+<p><strong>What's the fastest way to start closing the gap tonight?</strong> Shrink your position size until you can actually follow your own plan without panic, and write your exit before every entry. If the trade is small enough that fear and greed can't grab the wheel, you'll do what you already know — and that single change closes most of the gap on its own.</p>
+
+<h2>About Rex</h2>
+<p>I'm Rex. I ran a real business for five years — payroll, suppliers, customers, audits — before I ever placed a trade. Then I spent three years and four accounts learning the hardest lesson in this game: I never had a knowledge problem. I had a doing problem. I knew where the stop went and moved it anyway. I rebuilt by running an audit on myself, writing out every trade and the real reason behind it, and installing the same discipline I'd used to keep a company alive — a written plan, a risk ceiling, and a nightly review of my conduct, not my profit.</p>
+<p>Today I run the REX Trading Signal channel, around 11,900 people, on three rules I don't break: every signal carries a stop loss; I post my losing trades, not just the winners; and I never promise profit — no "guaranteed," no "fixed," no "risk-free." Because there are two kinds of traders: the ones who chase profit, and the ones who protect capital. Only one kind is still here after a year. Run your account like a business, and you get to be the second kind.</p>
+  </div></div>
+</article>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Watch how I do what I know — losses and all.</h2>
+    <p>Daily XAUUSD setups with a stop loss, a reason, and a rule — posted live on Telegram, wins and losses alike.</p>
+    <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal →</a>
+    <span class="sub">Free to follow. No pressure, no countdown — stay as long as it earns your trust.</span>
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <p class="label">More from the journal</p>
+    <div class="grid3">
+      <a class="card" href="treat-trading-like-a-business.html">
+        <span class="tag">Mindset · The core idea</span>
+        <h3>How to Treat Trading Like a Business (and Stop Blowing Up Your Account)</h3>
+        <p>The five-part operating system: a written plan, a risk ceiling, a journal, and a nightly audit.</p>
+        <span class="read">Read →</span>
+      </a>
+      <a class="card" href="why-do-most-traders-blow-their-accounts.html">
+        <span class="tag loss">Risk · Diagnosis</span>
+        <h3>Why Do Most Traders Blow Their Accounts?</h3>
+        <p>Not the strategy, not bad luck. The four patterns that quietly empty most accounts — find which one is yours.</p>
+        <span class="read">Read →</span>
+      </a>
+      <a class="card" href="https://rextradingsignal.com/business-plan/" target="_blank" rel="noopener">
+        <span class="tag win">Free · One page</span>
+        <h3>The Trader's Business Plan</h3>
+        <p>The one-page sheet: a risk ceiling, a simple trade-journal layout, and the three questions to ask every night.</p>
+        <span class="read">Get it free →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">REX<b>·</b>TRADING</div>
+    <p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance — including any results shared on this site or on Telegram — does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+    <p class="fine">© 2026 REX Trading Signal · Telegram: @REXTradingSignal · Personal views, for reference only.</p>
+  </div>
+</footer>
+
+</body>
+</html>
