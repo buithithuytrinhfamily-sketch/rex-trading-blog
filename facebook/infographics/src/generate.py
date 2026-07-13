@@ -234,10 +234,10 @@ s+= dot(370,240,GREEN)+T(370,222,20,"HH",fill=GREEN)
 s+= dot(280,372,GOLD)
 # break marker
 s+= '<circle cx="479" cy="372" r="17" fill="none" stroke="%s" stroke-width="4"/>'%RED
-s+= T(600,364,28,"BOS","start",900,RED)
-s+= T(600,394,19,"break of structure","start",700,BROWN)
-s+= T(450,600,20,"Price closes below the last higher low &#8594; the trend shifts.",fill=BROWN)
-pages.append(page("rex_11_bos","REX TRADING SIGNAL &middot; MARKET STRUCTURE","When the trend cracks","Break of Structure",s,vbh=640))
+s+= T(600,364,28,"CHoCH","start",900,RED)
+s+= T(600,394,19,"change of character","start",700,BROWN)
+s+= T(450,600,20,"Price breaks the last higher low &#8594; the character of the trend changes.",fill=BROWN)
+pages.append(page("rex_11_bos","REX TRADING SIGNAL &middot; MARKET STRUCTURE","The first reversal sign","Change of Character",s,vbh=640))
 
 # ---------- 12. THE 3 RULES ----------
 rules=[("01","Every signal has a stop loss","you decide what you'll lose before profit"),

@@ -121,7 +121,7 @@ Stop staring at every tiny move. Zoom out and read the map. Three tools + the ru
 
 🏠 Support & Resistance — the floor and ceiling of price
 📈 Trend — higher highs/lows vs lower highs/lows
-⚠️ Break of Structure — the early sign a trend is cracking
+⚠️ Change of Character — the early sign a trend is cracking
 🔒 The 3 rules REX never breaks
 
 👉 Each one explained in the comments 👇
@@ -145,8 +145,8 @@ Downtrend = highs and lows both lower.
 Trade WITH the trend — fighting it is donating money.
 ```
 ```
-⚠️ 3) BREAK OF STRUCTURE (BOS)
-In an uptrend, when price closes BELOW the last higher low → the structure breaks.
+⚠️ 3) CHANGE OF CHARACTER (CHoCH)
+In an uptrend, when price closes BELOW the last higher low → the trend's character changes.
 Early warning that control is shifting. Respect it.
 ```
 ```

@@ -154,15 +154,15 @@ Go with the trend and the odds are on your side. Fight it and you're just donati
 #XAUUSD #gold #trend #trendtrading #forex
 ```
 
-### 11. `rex_11_bos.png` — Break of Structure (BOS)
+### 11. `rex_11_bos.png` — Change of Character (CHoCH)
 ```
 When a trend starts to CRACK… ⚠️
 
-Price was rising nicely (higher highs & lows), then it closes BELOW the last higher low → Break of Structure (BOS).
+Price was rising nicely (higher highs & lows), then it closes BELOW the last higher low → Change of Character (CHoCH).
 
 It's an EARLY warning: control is shifting. Don't ignore it.
 
-💬 Type "BOS" if you want a deeper post on this topic!
+💬 Type "CHoCH" if you want a deeper post on this topic!
 
 #XAUUSD #gold #marketstructure #priceaction #forex
 ```
