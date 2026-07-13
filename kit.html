@@ -344,6 +344,17 @@
     .reveal{opacity:1; transform:none}
     .ticker__track{animation:none; justify-content:center}
   }
+  /* member video reviews */
+  .vgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; max-width:920px; margin:42px auto 0}
+  .vcard{margin:0}
+  .vcard video{width:100%; aspect-ratio:464/848; display:block; background:#000; border:3px solid var(--paper); box-shadow:10px 10px 0 var(--red2)}
+  .vcard figcaption{font-family:var(--sans); font-size:14.5px; line-height:1.55; margin-top:16px; color:rgba(253,246,242,.92)}
+  .vcard figcaption .vwho{display:block; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; margin-top:8px; color:var(--red2)}
+  .vnote{font-family:var(--mono); font-size:12px; letter-spacing:.05em; text-align:center; max-width:720px; margin:34px auto 0; color:rgba(253,246,242,.65)}
+  @media (max-width:760px){
+    .vgrid{grid-template-columns:1fr; max-width:320px; gap:36px}
+    .vcard video{box-shadow:6px 6px 0 var(--red2)}
+  }
 </style>
 </head>
 <body>
@@ -502,12 +513,44 @@
       <p>That SL is the stop loss &mdash; the cost of the trade, printed before the trade. Every signal has one. No exceptions. That is the exact thinking the kit teaches you to do for yourself.</p>
       <p>Keep scrolling. You&rsquo;ll find setups cancelled when they stopped making sense. You&rsquo;ll find <i>&ldquo;Good thing we always use a Stop Loss&rdquo;</i> &mdash; written after a stop saved us, not after a win. You&rsquo;ll find, more than once: <i>&ldquo;Consistency beats excitement.&rdquo;</i></p>
       <p>Scroll the last two weeks. Try to find a signal without a stop loss &mdash; you won&rsquo;t. Try to find a trade that went wrong &mdash; you will.</p>
-      <p>Now notice what&rsquo;s missing: no profit screenshots, no win-rate claims, no testimonials. You&rsquo;ve been burned; you know the props. The absence is the proof.</p>
+      <p>Now notice what&rsquo;s missing from that feed: no profit screenshots, no win-rate claims. You&rsquo;ve been burned; you know the props. The absence is the proof.</p>
       <div class="midcta">
         <p><strong>Books check out?</strong> Then the kit is a $9 rounding error. Grab it below &rarr; send your receipt to <a class="inline" href="https://t.me/Rextrading_gold"><strong>@Rextrading_gold</strong></a>.</p>
         <a class="btn" href="#pay">Get the Kit &mdash; from $9 &rarr;</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MEMBER VIDEO REVIEWS -->
+<section class="band band--ink" id="reviews">
+  <div class="wrap">
+    <div class="article reveal">
+      <span class="kicker kicker--paper">In their own words</span>
+      <h2 class="h2disp"><span class="skew">The people</span> <span class="skew hl">in the room</span></h2>
+      <p>The books are public &mdash; you just audited them. Here are three members who run their accounts alongside Rex, on camera, in their own words.</p>
+    </div>
+    <div class="vgrid">
+      <figure class="vcard reveal">
+        <video controls playsinline preload="metadata" poster="./videos/review-andrea-poster.jpg">
+          <source src="./videos/review-andrea.mp4" type="video/mp4">
+        </video>
+        <figcaption>&ldquo;He has been my mentor, my friend, and my go-to when I need advice.&rdquo;<span class="vwho">Andrea &middot; member</span></figcaption>
+      </figure>
+      <figure class="vcard reveal">
+        <video controls playsinline preload="metadata" poster="./videos/review-member-3months-poster.jpg">
+          <source src="./videos/review-member-3months.mp4" type="video/mp4">
+        </video>
+        <figcaption>&ldquo;He doesn&rsquo;t sugarcoat his losses &mdash; it&rsquo;s always a next-trade-up mentality.&rdquo;<span class="vwho">Premium member &middot; 3 months in</span></figcaption>
+      </figure>
+      <figure class="vcard reveal">
+        <video controls playsinline preload="metadata" poster="./videos/review-member-poland-poster.jpg">
+          <source src="./videos/review-member-poland.mp4" type="video/mp4">
+        </video>
+        <figcaption>&ldquo;The level of education is excellent. Warm greetings from Poland.&rdquo;<span class="vwho">Member &middot; Poland</span></figcaption>
+      </figure>
+    </div>
+    <p class="vnote reveal">Individual member experiences &mdash; not a promise of results. Trading involves risk; read the full disclosure at the bottom of this page.</p>
   </div>
 </section>
 
