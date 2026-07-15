@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+facebook/schedule/.scheduled_*.json
+facebook/schedule/.posted_*.json

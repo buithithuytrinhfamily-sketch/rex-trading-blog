@@ -1,0 +1,41 @@
+name: Facebook auto-post
+
+# Chạy tự động mỗi ngày lúc 12:30 UTC = 19:30 giờ Việt Nam.
+# Có thể bấm "Run workflow" để chạy tay (test).
+on:
+  schedule:
+    - cron: "30 12 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # để commit lại file trạng thái (.posted_*.json), tránh đăng trùng
+
+concurrency:
+  group: fb-autopost
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Post due content to Facebook
+        env:
+          REX_PAGE_ID: ${{ secrets.REX_PAGE_ID }}
+          REX_PAGE_TOKEN: ${{ secrets.REX_PAGE_TOKEN }}
+          HARCOS_PAGE_ID: ${{ secrets.HARCOS_PAGE_ID }}
+          HARCOS_PAGE_TOKEN: ${{ secrets.HARCOS_PAGE_TOKEN }}
+        run: python scripts/fb_autopost.py
+
+      - name: Save posted-state so nothing posts twice
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add facebook/schedule/.posted_*.json 2>/dev/null || true
+          git commit -m "chore: update auto-post state [skip ci]" || echo "no state change"
+          git push || echo "nothing to push"
