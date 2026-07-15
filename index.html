@@ -89,6 +89,12 @@
   .hero__cta{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:20px}
   .trust{font-family:var(--mono); font-size:13px; color:var(--maroon); letter-spacing:.02em; border-left:4px solid var(--red); padding-left:12px; max-width:520px}
 
+  /* ---------- pain hook (turns the pain to the reader — Longpt step 2) ---------- */
+  .painhook{background:var(--maroon); color:var(--paper); text-align:center}
+  .painhook .lead{display:inline-block; font-family:var(--mono); font-size:12.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#ffb3a0; margin-bottom:18px}
+  .painhook p{font-size:clamp(19px,2.3vw,26px); line-height:1.5; max-width:800px; margin:0 auto; font-weight:600}
+  .painhook b{color:#ffcf9e}
+
   /* ---------- proof card (the loss board — shows, doesn't just claim) ---------- */
   .proof{background:var(--ink); color:var(--paper); padding:22px 22px 24px; position:relative; box-shadow:14px 14px 0 var(--sand2)}
   .proof::before{content:""; position:absolute; top:-10px; left:-10px; width:54px; height:54px; background:var(--red); z-index:0}
@@ -383,6 +389,13 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band painhook reveal">
+  <div class="wrap">
+    <span class="lead">Sound familiar?</span>
+    <p>If you’ve ever jumped into a trade because you were scared to miss it, held a loser because you couldn’t bear to close it, then wondered why the account keeps drifting back to zero — <b>you’re not stupid. You’ve just been running it like a bet, not like a business.</b></p>
   </div>
 </section>
 
