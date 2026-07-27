@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Build a Pre-Market Routine for Your Trading Business, REX Trading Signal</title>
+<meta name="description" content="A shop opens the same way every morning, and so should a trading business. Here is a simple pre-market routine that sets your context, risk and plan before the first candle, so you trade the plan, not the mood.">
+<meta property="og:title" content="How to Build a Pre-Market Routine for Your Trading Business, REX Trading Signal">
+<meta property="og:description" content="A shop opens the same way every morning, and so should a trading business. Here is a simple pre-market routine that sets your context, risk and plan before the first candle, so you trade the plan, not the mood.">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/how-to-build-a-pre-market-routine-for-your-trading-business.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rextradingsignal.com/how-to-build-a-pre-market-routine-for-your-trading-business.html">
+<link rel="canonical" href="https://rextradingsignal.com/how-to-build-a-pre-market-routine-for-your-trading-business.html">
+<link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<style>
+ :root{
+ --paper:#fdf6f2; /* trang giấy, trắng hồng như wallpaper kênh */
+ --sand:#f8e9e4; /* nền panel, cát vàng nhạt */
+ --sand-2:#f0d6cd;
+ --ink:#23120f; /* đen kính râm / nội thất xe */
+ --muted:#85655e; /* xám ấm ngả cát */
+ --gold:#d6262c; /* đỏ logo REX, màu chủ đề kênh */
+ --gold-deep:#a31b20;
+ --loss:#a3181d; /* semantic: stop loss / lệnh thua */
+ --win:#3f8557; /* semantic: lệnh thắng */
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+ /* ── top bar (dải đen kính râm) ──────── */
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+
+ /* ── ticker strip ────────────────────── */
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+
+ /* ── hero (nắng hoàng hôn) ───────────── */
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+
+ /* ── three rules band ────────────────── */
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+
+ /* ── article ─────────────────────────── */
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+
+ /* ledger, sổ ghi 4 tài khoản */
+ .ledger{border:1px solid var(--hairline);border-radius:4px;overflow:hidden;margin:34px 0;background:#fff}
+ .ledger .head{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#faf1ee;background:var(--ink);padding:12px 20px}
+ .entry{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:18px 20px;border-bottom:1px solid var(--sand-2)}
+ .entry:last-child{border-bottom:0}
+ .entry .id{font-family:var(--mono);font-size:.74rem;color:var(--loss);padding-top:4px;font-variant-numeric:tabular-nums}
+ .entry h4{font-family:var(--sans);font-size:.95rem;font-weight:700;margin:0 0 4px}
+ .entry p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:560px){.entry{grid-template-columns:1fr;gap:6px}}
+
+ /* nightly journal, cuốn sổ dòng kẻ */
+ .journal{border:1px solid var(--hairline);border-radius:4px;margin:34px 0;padding:26px 28px 22px;
+ background:#fffafa repeating-linear-gradient(to bottom, transparent 0 31px, rgba(163,27,32,.13) 31px 32px)}
+ .journal .head{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+ .journal ol{margin:0;padding-left:1.2em;font-style:italic;font-size:1.02rem}
+ .journal ol li{margin-bottom:8px}
+ .journal .footnote{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin:14px 0 0;font-style:normal}
+ .journal .footnote b{color:var(--loss);font-weight:700}
+
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ /* ── cta (dải đen + nắng vàng) ───────── */
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+
+ /* ── more posts ──────────────────────── */
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+
+ /* ── footer ──────────────────────────── */
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+</style>
+<header class="topbar">
+ <div class="wrap">
+ <a class="wordmark" href="./">REX<b>·</b>TRADING</a>
+ <nav class="menu" aria-label="Main">
+ <a href="./">Home</a>
+ <a href="./about.html">About</a>
+ </nav>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a>
+ </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>ENTRY, THE PRE-MARKET ROUTINE</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+ <p class="eyebrow fade">Operations, the operator view</p>
+ <h1 class="fade d1">How to Build a Pre-Market Routine <span class="q">for Your Trading Business</span></h1>
+ <p class="standfirst fade d2">A shop opens the same way every morning. A trading business should too. Here is the pre-market routine that sets your context, risk and plan before the first candle, so you trade the plan and not the mood.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 10 min read</div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="Rex, founder of REX Trading Signal" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+
+<figure style="margin:0 0 34px">
+<img src="/assets/hero/how-to-build-a-pre-market-routine-for-your-trading-business.png" alt="How to build a pre-market routine for your trading business">
+</figure>
+<p>For a long time my trading day started the same lazy way. I would roll out of bed, open the chart, see gold already moving, and jump straight in because I did not want to miss it. No plan, no preparation, just me and a live candle and a strong opinion I had formed in the last ninety seconds. Some days it worked. Most days it did not, and the ones that really hurt were always the ones where I traded first and thought later.</p>
+<p>Then I noticed something about the actual business I used to run. We never just flung the doors open and started serving. There was an opening routine. Lights, float in the till, check what was low on the shelves, glance at what the day had booked in. It was boring and it took ten minutes and it meant that by the time the first customer walked in, we were ready instead of scrambling. Trading had no equivalent, and it showed.</p>
+<p>This is the piece almost nobody sets up, because it happens before the exciting part. <span class="key">A trading business needs an opening routine, a fixed set of things you do before you are allowed to place a single trade.</span> Not a strategy for finding trades, a procedure for showing up prepared. Here is the one I run every session, and why each step earns its place.</p>
+<figure style="margin:34px 0;padding:22px 20px 16px;background:#fbf7f1;border:1px solid #f0d6cd;border-radius:10px;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="100%" height="auto" role="img" aria-label="A pre-market opening routine shown as four steps done before trading: check the context or higher-timeframe trend, check the calendar for news, set today's risk limits, and write the plan and watchlist. Only then do the doors open and you trade only what fits the plan.">
+<rect x="0" y="0" width="760" height="440" rx="10" fill="#fbf7f1" stroke="#f0d6cd" stroke-width="1"></rect>
+<text x="380" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2a2018">Open the shop the same way every day</text>
+<text x="380" y="64" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#4a3b34">Four steps you finish before you are allowed to place a trade</text>
+<g font-family="Arial,Helvetica,sans-serif">
+<rect x="30" y="92" width="165" height="118" rx="8" fill="#ffffff" stroke="#8a6d3b" stroke-width="1.5"></rect>
+<text x="112" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#8a6d3b">1 &middot; CONTEXT</text>
+<text x="112" y="146" text-anchor="middle" font-size="11" fill="#4a3b34">Higher-timeframe</text>
+<text x="112" y="163" text-anchor="middle" font-size="11" fill="#4a3b34">trend and the key</text>
+<text x="112" y="180" text-anchor="middle" font-size="11" fill="#4a3b34">levels for the day</text>
+<rect x="215" y="92" width="165" height="118" rx="8" fill="#ffffff" stroke="#8a6d3b" stroke-width="1.5"></rect>
+<text x="297" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#8a6d3b">2 &middot; CALENDAR</text>
+<text x="297" y="146" text-anchor="middle" font-size="11" fill="#4a3b34">Any high-impact</text>
+<text x="297" y="163" text-anchor="middle" font-size="11" fill="#4a3b34">news due, and</text>
+<text x="297" y="180" text-anchor="middle" font-size="11" fill="#4a3b34">at what time</text>
+<rect x="400" y="92" width="165" height="118" rx="8" fill="#ffffff" stroke="#d6262c" stroke-width="1.5"></rect>
+<text x="482" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#d6262c">3 &middot; RISK</text>
+<text x="482" y="146" text-anchor="middle" font-size="11" fill="#4a3b34">Max loss for</text>
+<text x="482" y="163" text-anchor="middle" font-size="11" fill="#4a3b34">the day and max</text>
+<text x="482" y="180" text-anchor="middle" font-size="11" fill="#4a3b34">number of trades</text>
+<rect x="585" y="92" width="165" height="118" rx="8" fill="#ffffff" stroke="#2f7d4f" stroke-width="1.5"></rect>
+<text x="667" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#2f7d4f">4 &middot; THE PLAN</text>
+<text x="667" y="146" text-anchor="middle" font-size="11" fill="#4a3b34">Watchlist and</text>
+<text x="667" y="163" text-anchor="middle" font-size="11" fill="#4a3b34">what would have</text>
+<text x="667" y="180" text-anchor="middle" font-size="11" fill="#4a3b34">to happen to act</text>
+</g>
+<text x="205" y="158" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#a31b20">&#8594;</text>
+<text x="390" y="158" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#a31b20">&#8594;</text>
+<text x="575" y="158" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#a31b20">&#8594;</text>
+<rect x="150" y="250" width="460" height="58" rx="8" fill="#2f7d4f"></rect>
+<text x="380" y="277" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#ffffff">DOORS OPEN</text>
+<text x="380" y="298" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#dff0e6">Now, and only now, you trade, and only what fits the plan</text>
+<rect x="60" y="340" width="640" height="40" rx="8" fill="#f8e9e4" stroke="rgba(163,27,32,.3)"></rect>
+<text x="380" y="365" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#a31b20">No routine, no trade. The procedure decides before the emotion does.</text>
+<text x="380" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" fill="#8a6d3b" font-style="italic">EDUCATIONAL ILLUSTRATION, NO PRICES, NO SIGNALS</text>
+</svg>
+<figcaption style="font-family:var(--sans);font-size:.84rem;color:var(--muted);margin-top:12px;text-align:center;font-style:italic">How to build a pre-market routine for your trading business: context, calendar, risk and plan, done before the doors open.</figcaption>
+</figure>
+
+<h2>Why "Just Open the Chart" Quietly Fails</h2>
+<p>Starting your day by opening a live chart feels efficient. It is actually the most dangerous way to begin, because you are asking your brain to do two opposite jobs at once: read the market calmly and decide whether to risk money, both while price is already ticking in front of you. Preparation and execution are different mental gears, and trying to do them in the same moment is how you end up in trades you cannot explain an hour later.</p>
+<p>A shop owner never decides what the shop sells while a queue of customers is waiting at the counter. Those decisions were made earlier, in the quiet, on purpose. The pre-market routine is simply moving your thinking out of the heat and into the calm, so that when the market is live you are executing decisions, not making them under pressure.</p>
+<div class="pull">If your first decision of the day is made with a live candle staring at you, the candle is running your business, not you.</div>
+<p>The whole point of a routine is that it is done before the emotion arrives. It is a set of rails you lay down while you are calm, so that the version of you who gets excited or scared later has somewhere safe to run.</p>
+
+<h2>The Four Steps, and Why Each One Earns Its Place</h2>
+<p>My routine has four steps and it takes about ten minutes. The order matters, because each step frames the next. Here they are.</p>
+<p><strong>Step one: check the context.</strong> Before anything else I read the higher-timeframe picture, the trend and the levels that actually matter, so I know which way the market is leaning and where the important lines sit. This is the same habit I describe in <a href="how-to-review-the-trend-like-a-business-owner.html">reviewing the trend like a business owner</a>: I am not predicting, I am orienting. Everything I do that day sits inside this context.</p>
+<p><strong>Step two: check the calendar.</strong> Two minutes to see whether any high-impact news is due today and at what time. Gold can turn violent around scheduled releases, and knowing a big event lands at, say, mid-session changes how and whether I trade around it. Getting blindsided by a news spike you could have seen coming is an unforced error, and the calendar removes it.</p>
+<p><strong>Step three: set today's risk.</strong> Before I look for a single setup, I decide the two numbers that cap the damage: the most I am willing to lose today, and the most trades I will take. This is the till float of the trading business, decided in the cold, and it is what stops one bad hour turning into a blown week. It works hand in hand with sensible <a href="position-sizing-for-gold-trading.html">position sizing</a> on every individual trade.</p>
+<p><strong>Step four: write the plan.</strong> Last, I write down a short watchlist and, for each idea, what would actually have to happen for me to act. Not a prediction, a condition. "If price does X at level Y, I am interested." That single sentence, written in advance, is the difference between waiting for your setup and chasing whatever moves.</p>
+<blockquote>The routine does not have to be long. It has to exist before the market opens, because the market opening is exactly when you will want to skip it.</blockquote>
+
+<!-- giftbox-v1 -->
+<div style="background:#f8e9e4;border:1px solid rgba(163,27,32,.22);border-left:4px solid #d6262c;border-radius:8px;padding:22px 24px;margin:38px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#a31b20;margin-bottom:8px">Free one-page trading business plan</div><p style="margin:0 0 14px;color:#23120f;font-size:1rem;line-height:1.55">Grab the free one-page plan: a risk ceiling, a simple journal layout, a reserve line, and room to write the pre-market routine you will actually run before the first candle. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#d6262c;color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free plan &rarr;</a></div>
+
+<h2>The Routine Also Tells You When Not to Trade</h2>
+<p>Here is the benefit nobody mentions. A good opening routine does not just prepare you to trade, it regularly tells you not to. Some mornings I run the four steps and the honest conclusion is: no clear context, big news at an awkward time, nothing on the watchlist worth the risk. On those days the routine hands me permission to sit out, and sitting out is a decision, not a failure.</p>
+<p>Without a routine, a quiet, unclear market feels like a problem to solve by forcing a trade. With a routine, the same market simply fails to meet your conditions, so you do nothing and protect the account. That is exactly how an operator behaves, the same instinct I wrote about in <a href="what-a-business-owner-does-when-the-market-goes-quiet.html">what a business owner does when the market goes quiet</a>. The best traders I know are not the ones who trade the most mornings. They are the ones whose routine keeps them out of the bad ones.</p>
+
+<h2>How to Make the Routine Actually Stick</h2>
+<p>Knowing the four steps is easy. Doing them every single day, especially on a morning when gold is already flying and you are itching to jump in, is the hard part. A few things helped me make it automatic.</p>
+<p>Write it down as a physical checklist, on paper or a note you have to tick off, so it is a thing you complete, not a vague intention. Do it at the same time each day so it becomes a trigger, the way brushing your teeth needs no willpower once it is a habit. And treat "trade before the routine is done" as a rule you never break, the same weight as "always use a stop." The moment you let yourself trade first and prepare later, the routine is dead. Logging whether you followed it in your journal, alongside your <a href="key-metrics-every-trading-business-should-track.html">key business metrics</a>, keeps you honest about it.</p>
+<p>None of this is a strategy for finding trades. It is the opening procedure that makes sure the person placing them showed up prepared. That is the whole theme of how I think about this work, and you will find the rest of it laid out in <a href="one-page-trading-business-plan-template.html">the one-page trading business plan</a>, and a bit more of my own story on my <a href="about.html">about page</a>.</p>
+
+<h2>A Word on Risk (Read This Before You Trade)</h2>
+<p>This is education drawn from my own experience, not financial advice, and not a recommendation to trade. A pre-market routine is a structure for preparing and managing risk, it does not find winning trades for you and it does not remove any risk from the trading itself. Trading gold and other leveraged products carries a substantial risk of loss, and most retail traders lose money. A routine makes you more prepared and more disciplined; it cannot make an uncertain market certain. If in doubt, speak to a licensed professional who knows your full situation. <strong>Nothing here is financial advice, and no entry, stop or target discussed should be treated as a signal.</strong></p>
+
+<h2>Frequently Asked Questions</h2>
+<p><strong>What is a pre-market routine in trading?</strong> It is a fixed set of steps you complete before you place any trade: reading the higher-timeframe context, checking the news calendar, setting the day's risk limits, and writing a short plan or watchlist. It moves your decisions out of the live, emotional moment and into the calm before the market opens, so you execute a plan instead of reacting to a candle.</p>
+<p><strong>How long should a trading routine take?</strong> It does not need to be long. Mine takes about ten minutes. The value is not in the length, it is in doing the same steps every day so you are consistently prepared. A short routine you actually run beats an elaborate one you skip the moment the market looks exciting.</p>
+<p><strong>What should I check before the trading day starts?</strong> Four things, in order: the higher-timeframe trend and key levels, whether any high-impact news is due and when, your maximum loss and maximum number of trades for the day, and a short watchlist with the specific condition that would make each idea worth acting on. Context first, risk before setups, plan last.</p>
+<p><strong>Does a routine improve trading results?</strong> It improves your consistency and your risk discipline, which is where most retail damage actually happens, rather than magically finding winners. By deciding your risk and your conditions in advance, you avoid impulsive, oversized, or off-plan trades. It is a structure for behaving well, not a system for predicting price, and no routine removes the underlying risk of trading.</p>
+<p><strong>What if my routine says there is nothing to trade?</strong> Then you do not trade, and that is the routine working, not failing. Some mornings the context is unclear, the news timing is awkward, or nothing meets your conditions. Sitting out on those days protects the account, and over a career the trades you skip matter as much as the ones you take.</p>
+
+<h2>About Rex</h2>
+<p>I'm Rex. Before I ever placed a trade I ran a real business for five years, and every morning we opened it the same deliberate way, so that by the time the first customer arrived we were ready instead of flustered. When I started trading I threw all of that away and just opened the chart cold, and it cost me. My worst trades were almost never bad strategies, they were mornings where I acted before I had prepared.</p>
+<p>Fixing it was not clever, it was a checklist: context, calendar, risk, plan, done before the doors open, every single day. Today I run the REX Trading Signal channel, around 11,900 people, on three rules I don't break: every signal carries a stop loss; I post my losing trades, not just the winners; and I never promise profit, no "guaranteed," no "fixed," no "risk-free." An operator who prepares the same way every morning makes calmer decisions than a trader chasing whatever is already moving, and calm is what keeps you in business.</p>
+ 
+ </div></div>
+</article>
+
+<section class="cta">
+ <div class="wrap">
+ <h2>See how an operator runs the business, not just the trades.</h2>
+ <p>Daily XAUUSD setups with a stop loss, a reason, and a rule, posted live on Telegram, wins and losses alike.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+ <div class="grid3">
+ <a class="card" href="one-page-trading-business-plan-template.html">
+ <span class="tag">Template &middot; Do it tonight</span>
+ <h3>Your One-Page Trading Business Plan</h3>
+ <p>The exact one-page template, field by field, mission, risk ceiling, trade ticket, journal, reserve line, and where your routine lives.</p>
+ <span class="read">Read &rarr;</span>
+ </a>
+ <a class="card" href="how-to-review-the-trend-like-a-business-owner.html">
+ <span class="tag">Analysis &middot; Step one</span>
+ <h3>How to Review the Trend Like a Business Owner</h3>
+ <p>The context step of the routine in full: orienting to the higher-timeframe trend and the levels that matter before you act.</p>
+ <span class="read">Read &rarr;</span>
+ </a>
+ <a class="card" href="what-a-business-owner-does-when-the-market-goes-quiet.html">
+ <span class="tag">Discipline &middot; When to sit out</span>
+ <h3>What a Business Owner Does When the Market Goes Quiet</h3>
+ <p>The days your routine says do not trade, and why sitting out is a decision an operator makes on purpose.</p>
+ <span class="read">Read &rarr;</span>
+ </a>
+ </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+ <div class="brand">REX<b>·</b>TRADING</div>
+ <p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">© 2026 REX Trading Signal · Telegram: @REXTradingSignal · Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+</body>
+</html>
