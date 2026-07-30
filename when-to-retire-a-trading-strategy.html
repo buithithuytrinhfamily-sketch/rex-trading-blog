@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When to Retire a Trading Strategy That Stopped Working, REX Trading Signal</title>
+<meta name="description" content="A strategy is a product line, not an identity. How an operator tells variance from execution drift from changed conditions, why the retirement rule gets written while things are calm, and why you demote a strategy before you fire it.">
+<meta property="og:title" content="When to Retire a Trading Strategy That Stopped Working, REX Trading Signal">
+<meta property="og:description" content="A strategy is a product line, not an identity. How an operator tells variance from execution drift from changed conditions, why the retirement rule gets written while things are calm, and why you demote a strategy before you fire it.">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/when-to-retire-a-trading-strategy.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rextradingsignal.com/when-to-retire-a-trading-strategy.html">
+<link rel="canonical" href="https://rextradingsignal.com/when-to-retire-a-trading-strategy.html">
+<link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- seo-schema-v1 -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "When to Retire a Trading Strategy That Stopped Working", "description": "A strategy is a product line, not an identity. How an operator tells variance from execution drift from changed conditions, why the retirement rule gets written while things are calm, and why you demote a strategy before you fire it.", "image": "https://rextradingsignal.com/assets/hero/when-to-retire-a-trading-strategy.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-07-30T08:30:00+07:00", "dateModified": "2026-07-30T08:30:00+07:00", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/when-to-retire-a-trading-strategy.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "When to Retire a Trading Strategy That Stopped Working", "item": "https://rextradingsignal.com/when-to-retire-a-trading-strategy.html"}]}</script>
+</head>
+<body>
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+</style>
+<header class="topbar">
+ <div class="wrap">
+ <a class="wordmark" href="./">REX<b>·</b>TRADING</a>
+ <nav class="menu" aria-label="Main">
+ <a href="./">Home</a>
+ <a href="./about.html">About</a>
+ </nav>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a>
+ </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>ENTRY, RETIRING A STRATEGY</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+ <p class="eyebrow fade">The books, the operator view</p>
+ <h1 class="fade d1">When to Retire a Trading Strategy <span class="q">That Stopped Working</span></h1>
+ <p class="standfirst fade d2">Some traders fire a good strategy after three losing trades. Others defend a broken one for a year and pay for it every month. Both mistakes come from the same missing document, and it takes ten minutes to write.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 11 min read</div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="Rex, founder of REX Trading Signal" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+
+<figure style="margin:0 0 34px">
+<img src="/assets/hero/when-to-retire-a-trading-strategy.png" alt="When to retire a trading strategy that stopped working">
+</figure>
+<p>In my second year running a shop, I killed a product that had paid the rent for eighteen months. Sales had slid for a quarter, then another, and I had a folder of reasons why the next quarter would be different. The weather. A road closure. A competitor's promotion. Every reason was true and none of them were the point.</p>
+<p>What finally made the decision was not a feeling. It was a number I had written down a year earlier, in a quiet week, when I decided in advance what "this line is finished" would look like. When the number arrived, the decision had already been made by a calmer version of me.</p>
+<p><span class="key">A trading strategy is a product line, and every product line eventually comes up for review.</span> Traders are terrible at this in both directions. Some fire a perfectly good strategy after three losing trades. Others defend one for a year past its expiry date, paying for the privilege every month. Both mistakes come from the same missing document: a written rule for when a strategy retires.</p>
+<p>Everything below is how I run that review as an operator. It is education about running your own books, not instructions, and there are no prices, levels or signals here on purpose.</p>
+<figure style="margin:34px 0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="100%" height="auto" role="img" aria-label="Two ways a trading business gets the strategy decision wrong. On the left, a strategy is retired during an ordinary drawdown and then recovers without its owner, because the sample was never finished. On the right, a strategy is kept running month after month while the account declines, because each month produced a new reason to wait. Below, the fix: a retirement rule written in advance with a minimum sample, a maximum drawdown and a review date, and a demotion step of cutting size and observing before retiring anything."><rect width="760" height="470" fill="#fbf7f1"/><text x="380" y="36" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#23120f">Two ways to get the strategy decision wrong</text><text x="380" y="58" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#4a3b34">One retires a working strategy. The other keeps paying a broken one. Both skip the evidence.</text><rect x="46" y="82" width="320" height="212" rx="8" fill="#ffffff" stroke="#f0d6cd" stroke-width="2"/><text x="66" y="108" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#a31b20" letter-spacing="1">RETIRED TOO EARLY</text><line x1="66" y1="266" x2="346" y2="266" stroke="#c9b8b2" stroke-width="1.2"/><polyline points="66,200 100,188 132,208 164,232 196,246 228,224 262,204 296,182 330,164" fill="none" stroke="#3f8557" stroke-width="2.4"/><circle cx="196" cy="246" r="6" fill="#a31b20"/><text x="196" y="286" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11.5" font-weight="700" fill="#a31b20">quit here</text><text x="346" y="246" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="11.5" fill="#3f8557">recovers without you</text><text x="66" y="136" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">An ordinary drawdown read as failure.</text><text x="66" y="155" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">The sample was never finished.</text><rect x="394" y="82" width="320" height="212" rx="8" fill="#ffffff" stroke="#f0d6cd" stroke-width="2"/><text x="414" y="108" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#a31b20" letter-spacing="1">HELD TOO LONG</text><line x1="414" y1="266" x2="694" y2="266" stroke="#c9b8b2" stroke-width="1.2"/><polyline points="414,164 448,180 480,172 512,198 546,214 578,206 612,236 646,250 680,252" fill="none" stroke="#a3181d" stroke-width="2.4"/><circle cx="512" cy="198" r="5" fill="#85655e"/><circle cx="578" cy="206" r="5" fill="#85655e"/><circle cx="646" cy="250" r="5" fill="#85655e"/><text x="554" y="286" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11.5" font-weight="700" fill="#85655e">one more month, every month</text><text x="414" y="136" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Conditions changed. The plan did not.</text><text x="414" y="155" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Each loss bought another excuse.</text><rect x="46" y="322" width="668" height="112" rx="8" fill="#f8e9e4" stroke="#f0d6cd" stroke-width="2" stroke-dasharray="7 5"/><text x="70" y="348" font-family="Arial,Helvetica,sans-serif" font-size="12.5" font-weight="700" fill="#a31b20" letter-spacing="1">WHAT AN OPERATOR DOES INSTEAD</text><text x="70" y="372" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">1. Write the retirement rule before you need it: minimum sample, maximum drawdown, review date.</text><text x="70" y="392" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">2. Ask why it stopped working: variance, your own execution, or changed conditions. Three different answers.</text><text x="70" y="412" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">3. Demote before you retire. Cut size to the minimum, keep recording, decide on the record.</text><text x="46" y="458" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#8a7c74" letter-spacing="1">EDUCATIONAL ILLUSTRATION &#183; NO PRICES, NO SIGNALS</text></svg><figcaption>When to retire a trading strategy: retired too early during an ordinary drawdown, or held too long past the evidence.</figcaption></figure>
+<h2>A Strategy Is a Product Line, Not an Identity</h2>
+<p>The first problem is not analytical, it is emotional, and it needs saying before any of the mechanics matter.</p>
+<p>Most traders do not own a strategy, they <em>are</em> their strategy. It is the thing they explain to people, the thing they defend in group chats, the thing they spent months learning. Retiring it feels like admitting that the months were wasted, so the decision stops being a business decision and becomes a question about their competence.</p>
+<p>A shop owner does not feel that way about a product. Discontinuing a line that stopped selling is Tuesday's admin, not a personal failure. The owner keeps the shop; the shelf gets restocked with something else. That distance is not coldness. It is what lets the decision get made at the right time instead of two quarters late.</p>
+<p>So the first move is to demote the strategy in your own head. It is a line item. It earns its shelf space or it loses it, and neither outcome says anything about you.</p>
+<h2>You Cannot Judge a Strategy on How the Last Few Trades Felt</h2>
+<p>Here is where most retirements are wrong: they happen after a run of losses that was always going to happen.</p>
+<p>Any approach with a genuine edge still loses regularly. Losing runs are not evidence of failure, they are a feature of the arithmetic. If your approach is right slightly more often than it is wrong, sequences of consecutive losses are guaranteed to appear, and they will feel exactly like the strategy breaking. They feel that way to everyone.</p>
+<p>Which means a run of losses on its own tells you almost nothing. What tells you something is a run of losses set against what your strategy's normal bad patch looks like. And you cannot know that unless you have recorded enough of them, which is why this whole subject collapses without a journal. If you do not have one, the <a href="trading-journal-template.html">trading journal template</a> is the foundation everything here rests on.</p>
+<p>The uncomfortable implication: <strong>you are not allowed to retire a strategy you have not measured.</strong> Not because the rule is unfair, but because without a record you are not making a decision, you are reacting to the last thing that happened to you.</p>
+<h2>Four Different Things That Look Identical</h2>
+<p>When results deteriorate, exactly one of four things is happening, and they demand completely different responses. Most traders never separate them, which is why they fix the wrong thing.</p>
+<p><strong>1. Variance.</strong> Nothing changed. You are inside a normal losing patch, and it looks like collapse because you are living through it one trade at a time. Correct response: nothing. Keep size where the plan says and let the sample finish.</p>
+<p><strong>2. Execution drift.</strong> The strategy is fine and you stopped following it. You widened a stop once and it worked. You started taking setups that were nearly right. You skipped the boring part of the process on a busy morning. The strategy did not stop working, you stopped running it. Correct response: fix the operator, not the product. This is the gap I wrote about in <a href="the-gap-between-knowing-and-doing.html">the gap between knowing and doing</a>, and it is by far the most common answer of the four.</p>
+<p><strong>3. Changed conditions.</strong> The strategy needed something the market is no longer offering. A range approach in a market that now trends, a breakout approach in a market that keeps failing at the edges, an approach built for wide daily movement in a quiet month. Nothing is broken, the environment simply moved out from under it. Correct response: reduce or pause, note the conditions it needs, and revisit when they return. This is where genuine retirement or hibernation belongs.</p>
+<p><strong>4. It never worked.</strong> There was never evidence, only a good explanation and a promising first week. Correct response: retire it without ceremony. There is nothing to mourn, because there was never anything there.</p>
+<p>Notice that only two of these four call for retirement, and neither of them is the one that hurts most in the moment.</p>
+<h2>Write the Retirement Rule Before You Need It</h2>
+<p>Every business I respect makes discontinuation decisions against criteria set in advance, when nobody is panicking and nobody is defending anything. You can do exactly the same on one line of your plan.</p>
+<p>Three components, all of them decided in a calm week:</p>
+<ul>
+<li><strong>A minimum sample.</strong> A number of trades below which you will not judge anything at all. This single line stops most premature retirements, because it makes "three bad days" an inadmissible argument.</li>
+<li><strong>A maximum drawdown.</strong> A loss level for this strategy at which it stops trading regardless of how convinced you are. Not a level at which you think about it, a level at which it stops. This is the line that stops the second failure mode, the year of one-more-month.</li>
+<li><strong>A review date.</strong> A fixed point in the calendar when the line comes up for assessment whether or not it is in trouble. Reviews that only happen during pain get made during pain.</li>
+</ul>
+<p>Write those three next to each strategy on your <a href="one-page-trading-business-plan-template.html">one-page trading business plan</a>. The value is not in the numbers being clever. It is that the decision gets made by the version of you that is not currently down money.</p>
+<h2>Demote Before You Retire</h2>
+<p>This is the step almost nobody takes, and it is the most useful thing in this article.</p>
+<p>A shop does not usually go from full shelf to gone. It cuts the order, gives the line less space, and watches for a period before clearing it out entirely. You can do the same, and it turns a binary decision into a reversible one.</p>
+<p>Demotion looks like this: cut the strategy to your smallest workable size, keep following it exactly as written, and keep recording. You are no longer risking meaningful money on something you have doubts about, but you are still collecting evidence rather than throwing the sample away. If it recovers, you have proof rather than a hunch, and you scale it back up deliberately, the way I described in <a href="when-to-scale-up-your-trading-business.html">when to scale up your trading business</a>. If it keeps deteriorating at minimum size, retirement becomes an easy call made on a record instead of an argument.</p>
+<p>Demotion also solves the emotional problem. Nobody has to be wrong. You are not admitting failure, you are reducing exposure to uncertainty, which is the most ordinary business decision there is.</p>
+<blockquote>
+<p>Firing a strategy after a bad week and defending one for a year are the same mistake. Both replace evidence with feeling. The only difference is which feeling won.</p>
+</blockquote>
+<!-- giftbox-v1 -->
+<div style="background:#f8e9e4;border:1px solid rgba(163,27,32,.22);border-left:4px solid #d6262c;border-radius:8px;padding:22px 24px;margin:38px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#a31b20;margin-bottom:8px">Free one-page trading business plan</div><p style="margin:0 0 14px;color:#23120f;font-size:1rem;line-height:1.55">Grab the free one-page plan: a risk ceiling, a simple journal layout, a reserve line, and room to write the retirement rule for each strategy you run, minimum sample, maximum drawdown, review date. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#d6262c;color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free plan &rarr;</a></div>
+<h2>The Hidden Cost of Strategy Hopping</h2>
+<p>There is a reason I push demotion rather than replacement, and it is a cost that never appears in anyone's accounts.</p>
+<p>Every time you swap strategies, you reset the clock. Your sample starts from zero, so you cannot tell for months whether the new approach is any good. The learning curve restarts too, which means your execution gets worse for a while regardless of how sound the method is. And crucially, the switch usually happens at the worst possible moment: right after a losing run, when your confidence is lowest and your judgement is at its least reliable.</p>
+<p>The pattern that follows is familiar to anyone who has run a chaotic business. New approach, hopeful start, first losing patch arrives, and because there is no sample and no rule, it gets fired too. Eighteen months of that and a trader has three years of experience in nothing.</p>
+<p>An operator running two or three lines properly beats one running twelve badly, in trading exactly as in retail. The metrics that let you tell them apart are in <a href="key-metrics-every-trading-business-should-track.html">the key metrics every trading business should track</a>, and they only mean something if you stay in one place long enough to gather them.</p>
+<h2>What to Do With the Capital You Free Up</h2>
+<p>When a line is retired, its shelf space does not have to be filled the same week.</p>
+<p>The instinct is to deploy that capital immediately, usually into whatever looked good while you were losing. Resist it. There is nothing wrong with a business holding cash while it decides, and a strategy retired properly is often followed by a quieter month by design. That is not lost time. It is the period where you are reading conditions rather than paying for opinions, which is the whole argument in <a href="what-a-business-owner-does-when-the-market-goes-quiet.html">what a business owner does when the market goes quiet</a>.</p>
+<p>If the freed capital goes anywhere first, the reserve is a better home than a new experiment. A business with a buffer makes better decisions than one that needs the next month to work, and that logic is laid out in <a href="how-to-build-a-cash-reserve-for-your-trading-business.html">how to build a cash reserve for your trading business</a>.</p>
+<h2>The Review That Makes All of This Routine</h2>
+<p>None of this needs to be a dramatic event. It fits inside the reviews you should already be running.</p>
+<p>Your <a href="how-to-run-a-weekly-review-for-your-trading-business.html">weekly review</a> is where execution drift gets caught, which handles the most common of the four causes before it ever looks like a strategy problem. Your <a href="your-monthly-profit-and-loss-review.html">monthly profit and loss review</a> is where the line gets held against its retirement criteria, and where you write one sentence on whether the conditions it needs are still present.</p>
+<p>Do those two consistently and the retirement decision stops being a crisis. It becomes an entry in a meeting you were having anyway, which is exactly what it should be.</p>
+<h2>What I Would Want You to Take Away</h2>
+<p><strong>Write the retirement rule while things are calm.</strong> Minimum sample, maximum drawdown, review date. One line per strategy. Ten minutes of work that will one day save you from an expensive decision made at the worst moment.</p>
+<p><strong>Diagnose before you decide.</strong> Variance, your own execution, changed conditions, or never worked. Four different answers, and only two of them mean retirement.</p>
+<p><strong>Demote instead of firing.</strong> Minimum size, same rules, keep recording. Reversible beats final.</p>
+<p><strong>Do not swap in a replacement out of frustration.</strong> A retired line and an empty shelf is a fine position for a business to be in for a few weeks.</p>
+<p>And the one that took me longest to accept: <strong>the strategy is not you.</strong> The business is you. Products come and go, and the operator who can retire one without flinching is the one still trading in five years.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>How do I know if my trading strategy has stopped working?</strong> You cannot know from results alone, and certainly not from a handful of trades. You need enough recorded trades to know what a normal losing patch looks like for that strategy, then you check whether current results fall outside it. Before concluding anything, rule out the two more likely explanations: ordinary variance, and your own execution drifting away from the written rules.</p>
+<p><strong>How many losing trades in a row mean a strategy is broken?</strong> There is no universal number, and any specific figure someone quotes you is invented. Losing runs of several trades occur naturally in approaches with a real edge. This is exactly why the minimum sample and maximum drawdown belong in writing beforehand, so the answer is your own recorded number rather than a feeling on a bad afternoon.</p>
+<p><strong>Should I change my strategy after a losing month?</strong> Usually not, and a losing month is the worst possible moment to make the decision. Diagnose first. If the month broke your written retirement criteria, act on the criteria. If it did not, the month was data and not a verdict.</p>
+<p><strong>What is the difference between a strategy that stopped working and one that never worked?</strong> Evidence. A strategy that stopped working has a recorded period where it performed as intended under conditions you can describe. One that never worked has an explanation, a promising first week and no record. The second needs no ceremony to retire.</p>
+<p><strong>Can a retired strategy be brought back?</strong> Yes, and this is why I prefer the word retired to dead. If a strategy needed conditions the market stopped offering, it may be worth running again at small size when those conditions return. Write down what it needed at the moment you shelve it, because in six months you will not remember accurately.</p>
+<p><strong>How many strategies should a trading business run?</strong> Fewer than most people think. Each one needs its own sample, its own metrics and its own review to be judged at all, and attention divides faster than results improve. Two or three run properly is a business. A dozen run loosely is a hobby with a spreadsheet.</p>
+<h2>About Rex</h2>
+<p>I'm Rex. Before I ever placed a trade I spent five years running a real business, and the habit that transferred best was unglamorous: decide what "finished" looks like before you are emotionally involved. I killed a product line once on a number I had written down twelve months earlier, and it was the easiest hard decision I ever made, precisely because the deciding was already done. Traders rarely give themselves that gift, which is why so many of them fire the good approaches and marry the bad ones.</p>
+<p>Today I run the REX Trading Signal channel, around 11,900 people, on three rules I don't break: every setup carries a stop loss; I post the losing trades, not only the winners; and I never promise profit, no "guaranteed," no "fixed," no "risk-free." Nothing here is financial advice, and no entry, stop or target discussed should be treated as a signal. An operator who can retire a strategy calmly is running a business. Everyone else is defending a purchase.</p>
+
+
+ </div></div>
+</article>
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Review the lines like an operator, not just the trades.</h2>
+ <p>Daily XAUUSD setups with a stop loss, a reason, and a rule, posted live on Telegram, wins and losses alike.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+ <div class="grid3">
+ <a class="card" href="key-metrics-every-trading-business-should-track.html">
+ <span class="tag">The books</span>
+ <h3>Key Metrics Every Trading Business Should Track</h3>
+ <p>The handful of numbers that tell you whether a line is earning its shelf space.</p>
+ <span class="read">Read the article &rarr;</span>
+ </a>
+ <a class="card" href="your-monthly-profit-and-loss-review.html">
+ <span class="tag">The books</span>
+ <h3>Your Monthly Profit and Loss Review</h3>
+ <p>The meeting where a strategy gets held against its own criteria.</p>
+ <span class="read">Read the article &rarr;</span>
+ </a>
+ <a class="card" href="one-page-trading-business-plan-template.html">
+ <span class="tag">Foundations</span>
+ <h3>Your One-Page Trading Business Plan</h3>
+ <p>The single page that decides how the business is run before the market opens.</p>
+ <span class="read">Read the article &rarr;</span>
+ </a>
+ </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+ <div class="brand">REX<b>·</b>TRADING</div>
+ <p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">© 2026 REX Trading Signal · Telegram: @REXTradingSignal · Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+</body>
+</html>
