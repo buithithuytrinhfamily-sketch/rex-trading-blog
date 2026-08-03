@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Measuring Trading Results in Pips Hurts Your Business | REX Trading Signal</title>
+<meta name="description" content="Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why Measuring Trading Results in Pips Hurts Your Business">
+<meta property="og:description" content="Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.">
+<meta property="og:url" content="https://rextradingsignal.com/measuring-trading-results-in-pips.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/measuring-trading-results-in-pips.png">
+<link rel="canonical" href="https://rextradingsignal.com/measuring-trading-results-in-pips.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why Measuring Trading Results in Pips Hurts Your Business", "description": "Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.", "image": "https://rextradingsignal.com/assets/hero/measuring-trading-results-in-pips.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-08-03T08:30:00+07:00", "dateModified": "2026-08-03T08:30:00+07:00", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/measuring-trading-results-in-pips.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "Why Measuring Trading Results in Pips Hurts Your Business", "item": "https://rextradingsignal.com/measuring-trading-results-in-pips.html"}]}</script>
+</head>
+<body>
+
+<header class="topbar">
+ <div class="wrap">
+ <a class="wordmark" href="./">REX<b>&#183;</b>TRADING</a>
+ <nav class="menu" aria-label="Main">
+ <a href="./">Home</a>
+ <a href="./about.html">About</a>
+ </nav>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a>
+ </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>ENTRY, MEASURING RESULTS</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+ <p class="eyebrow fade">The books, the operator view</p>
+ <h1 class="fade d1">Why Measuring Trading Results in Pips <span class="q">Hurts Your Business</span></h1>
+ <p class="standfirst fade d2">Two operators take the same ten trades and both post the same +230 pips. One finishes $230 up, the other $100 down. The pip count cannot see the difference, and the difference is the whole business.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 11 min read</div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="Rex, founder of REX Trading Signal" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+
+<figure style="margin:0 0 34px">
+<img src="/assets/hero/measuring-trading-results-in-pips.png" alt="Measuring trading results in pips hides the risk and the money behind the number">
+</figure>
+<p>The shop I ran before I ever traded had a whiteboard by the back door, and for the first year the number on it was units sold. It went up. I felt good about it going up. What I did not write on the board was what each unit cost me to sell, so I spent eleven months celebrating a figure that had almost nothing to do with whether the business was working.</p>
+<p>Trading has its own version of units sold, and every channel in this industry posts it, including mine. It is the pip count.</p>
+<p><span class="key">Measuring trading results in pips tells you how far price travelled. It does not tell you what happened to your business.</span> Those are different questions, and confusing them is one of the most common reasons a trader can look at a green monthly report while the account balance goes the other way.</p>
+<p>This is an operator's article, not a signal article. There are no levels, no entries and no prices here on purpose.</p>
+<figure style="margin:34px 0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="100%" height="auto" role="img" aria-label="A diagram showing two traders who take identical trades and post an identical result of plus 230 pips. Operator A uses the same position size on every trade and finishes the period 230 dollars up. Operator B increases position size after each loss and finishes the same period 100 dollars down. A note explains that the trades and the pip total were identical, that the gap between the two outcomes is 330 dollars, and that pips measure distance while a business is measured in money, which depends on position size and risk."><rect width="760" height="470" fill="#fbf7f1"/><text x="380" y="36" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#23120f">The same report, two different businesses</text><text x="380" y="58" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#4a3b34">Identical trades. Identical pip total. Only one of these accounts grew.</text><rect x="180" y="78" width="400" height="56" rx="8" fill="#ffffff" stroke="#c9b8b2" stroke-width="2"/><text x="380" y="103" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#23120f">THE REPORT: +230 PIPS</text><text x="380" y="123" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#4a3b34">10 trades, 7 wins, 3 losses, same trades for both</text><path d="M 300 134 L 210 172" stroke="#85655e" stroke-width="2"/><polygon points="204,176 216,170 214,182" fill="#85655e"/><path d="M 460 134 L 550 172" stroke="#85655e" stroke-width="2"/><polygon points="556,176 544,170 546,182" fill="#85655e"/><rect x="46" y="180" width="320" height="150" rx="8" fill="#ffffff" stroke="#f0d6cd" stroke-width="2"/><text x="66" y="206" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#3f8557" letter-spacing="1">OPERATOR A</text><text x="66" y="228" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Same size on every trade.</text><text x="66" y="247" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Risk decided before the trade.</text><text x="206" y="298" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#3f8557">+$230</text><text x="206" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11.5" fill="#4a3b34">the account grew</text><rect x="394" y="180" width="320" height="150" rx="8" fill="#ffffff" stroke="#f0d6cd" stroke-width="2"/><text x="414" y="206" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#a31b20" letter-spacing="1">OPERATOR B</text><text x="414" y="228" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Bigger size after each loss.</text><text x="414" y="247" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Risk decided by how it felt.</text><text x="554" y="298" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#a3181d">-$100</text><text x="554" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11.5" fill="#4a3b34">the account shrank</text><rect x="46" y="346" width="668" height="88" rx="8" fill="#f8e9e4" stroke="#f0d6cd" stroke-width="2" stroke-dasharray="7 5"/><text x="70" y="372" font-family="Arial,Helvetica,sans-serif" font-size="12.5" font-weight="700" fill="#a31b20" letter-spacing="1">WHY THE PIP COUNT MISSED IT</text><text x="70" y="396" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">The pip total is a sum of distances. It has no idea how much money was on each trade.</text><text x="70" y="416" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#23120f">Same trades, a $330 gap in the only column that pays the rent. Size and risk decided it.</text><text x="46" y="458" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#8a7c74" letter-spacing="1">EDUCATIONAL ILLUSTRATION &#183; NO PRICES, NO SIGNALS</text></svg><figcaption>Measuring trading results in pips: two operators, identical trades, and a $330 difference the pip count cannot see.</figcaption></figure>
+<h2>What a Pip Actually Measures</h2>
+<p>A pip is a unit of distance. It says how far price moved, nothing else. It is a perfectly good unit for that job, the same way a mile is a good unit for describing a journey.</p>
+<p>What it cannot tell you is what the journey cost. A mile in a hire car and a mile in a taxi produce identical mileage and very different invoices, and the difference is not in the distance. It is in the rate.</p>
+<p>In trading, the rate is your position size. Forty pips at one size and forty pips at four times that size are the same number on the report and four times the money in the account. The pip count is the mileage. Your size is the rate. And nobody publishes their rate.</p>
+<h2>Why Measuring Trading Results in Pips Hurts Your Business</h2>
+<p>Three specific failures come out of it, and each one costs money in a different way.</p>
+<h3>It hides position size, which is where the money actually lives</h3>
+<p>This is the big one, so let me show it rather than assert it.</p>
+<p>Below are ten trades. Both operators take exactly the same trades and finish with exactly the same pip total. Operator A uses the same size every time. Operator B increases size after a loss, which is the single most common sizing habit in retail trading and the one nobody admits to in a report.</p>
+<div style="overflow-x:auto;margin:22px 0">
+<table style="width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:.92rem">
+<thead><tr style="background:#f8e9e4">
+<th style="text-align:left;padding:9px 10px;border-bottom:2px solid #f0d6cd">Trade</th>
+<th style="text-align:right;padding:9px 10px;border-bottom:2px solid #f0d6cd">Result (pips)</th>
+<th style="text-align:right;padding:9px 10px;border-bottom:2px solid #f0d6cd">A: size</th>
+<th style="text-align:right;padding:9px 10px;border-bottom:2px solid #f0d6cd">A: money</th>
+<th style="text-align:right;padding:9px 10px;border-bottom:2px solid #f0d6cd">B: size</th>
+<th style="text-align:right;padding:9px 10px;border-bottom:2px solid #f0d6cd">B: money</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">1</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">2</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+60</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$60</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$60</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">3</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-50</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-$50</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$2/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-$100</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">4</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">5</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+90</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$90</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$90</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">6</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-60</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-$60</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$4/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-$240</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">7</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">8</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-50</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-$50</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$3/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">-$150</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">9</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+80</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$80</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$80</td></tr>
+<tr><td style="padding:7px 10px;border-bottom:1px solid #eee">10</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">$1/pip</td><td style="text-align:right;padding:7px 10px;border-bottom:1px solid #eee">+$40</td></tr>
+<tr style="background:#f8e9e4;font-weight:700">
+<td style="padding:10px">Total</td><td style="text-align:right;padding:10px">+230 pips</td><td style="text-align:right;padding:10px"></td><td style="text-align:right;padding:10px;color:#3f8557">+$230</td><td style="text-align:right;padding:10px"></td><td style="text-align:right;padding:10px;color:#a3181d">-$100</td></tr>
+</tbody></table>
+</div>
+<p>Seven wins from ten. A 70 percent strike rate. A tidy plus 230 pips on the report, and both operators would post exactly the same screenshot. One of them made $230 and one of them lost $100, a gap of $330 on identical trades.</p>
+<p>The assumptions are stated so you can check them: a base rate of $1 per pip, and Operator B multiplying size after losing trades, at two, four and three times the base. Nothing else differs. No extra trades, no different exits. If you want to test your own version, take your last thirty trades, list the pips, then list what each one actually paid.</p>
+<p>Note what the pip column did here. It did not just fail to warn Operator B. It actively reassured him, because the number was green.</p>
+<h3>It hides risk, so a good trade and a reckless one look identical</h3>
+<p>The second failure is about what a result cost to obtain.</p>
+<p>Two trades both finish plus 40 pips. On the first, the stop was 20 pips away, so the trader risked 20 to make 40. On the second, the stop was 80 pips away, so the trader risked 80 to make 40.</p>
+<ul>
+<li>Trade with a 20 pip stop: <strong>+2.0R</strong>. It returned double what it risked.</li>
+<li>Trade with an 80 pip stop: <strong>+0.5R</strong>. It returned half what it risked.</li>
+</ul>
+<p>R simply means one unit of risk, the amount you decided to lose if the trade failed. Both trades are "+40 pips" in the report. As business results they are four times apart, and a portfolio of the second kind loses money over time even with a strong win rate, because one full loss wipes out two winners.</p>
+<p>This is why <a href="how-to-manage-risk-in-gold-trading.html">risk has to be defined before the trade</a> rather than measured after it. The pip count is calculated at the end. R is decided at the start, which is the only moment you control anything.</p>
+<h3>It flatters the win rate and hides the drawdown</h3>
+<p>Third, a pip total is a single figure at the end of a period, and single figures hide the road taken to get there.</p>
+<p>Two operators finish the month at the same pip total. One took a smooth path. The other was 40 percent down mid-month and recovered. Same report, completely different businesses, and only one of them will still be trading if next month starts badly. The peak-to-trough decline is the number that tells you whether the business can survive a repeat, and it does not appear in a pip count at all. It belongs in your <a href="your-monthly-profit-and-loss-review.html">monthly profit and loss review</a>, alongside the money.</p>
+<h2>Nobody Who Matters Measures in Pips</h2>
+<p>Here is a test worth applying. Every serious party who looks at trading performance measures it in money or in percentage terms, never in distance.</p>
+<p>When European regulators examined retail trading and moved to restrict how these products are sold, their finding was reported in exactly those terms: national regulators found that 74 to 89 percent of retail accounts typically lose money, with average losses per client ranging from EUR 1,600 to EUR 29,000 (<a href="https://www.esma.europa.eu/press-news/esma-news/esma-agrees-prohibit-binary-options-and-restrict-cfds-protect-retail-investors" rel="noopener nofollow" target="_blank">ESMA, 27 March 2018</a>). That is an older study and the numbers will have moved since, but the unit has not. Euros lost per client. Not pips.</p>
+<p>Your bank measures your account in money. Your tax authority measures it in money. The person who has to be paid at the end of the month measures it in money. If every stakeholder in your business uses one unit, and your internal reporting uses a different one, your reporting is not measuring the business.</p>
+<div style="background:#fdf4e4;border:1px solid rgba(163,27,32,.22);border-left:4px solid #d6262c;border-radius:8px;padding:22px 24px;margin:38px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#a31b20;margin-bottom:8px">Free one-page trading business plan</div><p style="margin:0 0 14px;color:#23120f;font-size:1rem;line-height:1.55">Grab the free one-page plan: a risk ceiling, a simple journal layout with the money and R columns already in it, a reserve line, and space for the three numbers this article argues you should actually report. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#d6262c;color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free plan &rarr;</a></div>
+<h2>The Three Numbers to Report Instead</h2>
+<p>You do not need a dashboard. You need three columns, and they take about the same effort as counting pips.</p>
+<p><strong>1. Net profit and loss in money, after costs.</strong> After spread, after commission, after swap. This is the only figure that answers whether the month worked. Costs are not a footnote, and if you have never itemised them, our piece on the <a href="fixed-and-variable-costs-of-a-trading-business.html">fixed and variable costs of a trading business</a> is where to start.</p>
+<p><strong>2. Average result in R.</strong> Take every trade's result and divide it by what you risked on it. The average across your trades is your expectancy per unit of risk, and it is the closest thing trading has to a gross margin. It is also the only metric that lets you compare a scalp with a swing honestly.</p>
+<p><strong>3. Maximum drawdown, as a percentage of the account.</strong> The worst peak-to-trough decline in the period. This is your survivability figure, and it is the one that decides whether you get to keep operating long enough for the first two to compound. There is more on the full set in <a href="key-metrics-every-trading-business-should-track.html">key metrics every trading business should track</a>.</p>
+<p>Money says whether it worked. R says whether it works for a reason. Drawdown says whether you can survive doing it again.</p>
+<h2>Ten Minutes to Convert Your Journal</h2>
+<p>If your journal already logs pips, this is a small job and you can do it today.</p>
+<ul>
+<li>Add a column for <strong>money risked</strong> on each trade. Not the size, the amount you stood to lose if the stop was hit.</li>
+<li>Add a column for <strong>money result</strong> after costs.</li>
+<li>Add a column for <strong>R</strong>, which is simply the money result divided by the money risked.</li>
+<li>Keep the pip column. It is still useful for describing a move, comparing setups on the same instrument, and sanity-checking your stop distances.</li>
+<li>Sort by R and read the worst five trades. In most journals, those five are the entire difference between the year working and not working.</li>
+</ul>
+<p>Our <a href="trading-journal-template.html">trading journal template</a> has these columns already laid out, and the habit of filling them in is the same habit that makes the <a href="one-page-trading-business-plan-template.html">one-page trading business plan</a> worth writing in the first place.</p>
+<h2>What This Does Not Mean</h2>
+<p>I am not going to tell you pips are useless, because that would be an overcorrection and you would rightly ignore it.</p>
+<p>Pips are the correct unit for describing a market move, for stating how far away a stop sits, for comparing the size of two setups on the same instrument, and for talking about the market with other people. When we post a result on the channel in pips, that is what it is doing: describing the trade, not reporting your business.</p>
+<p>Which is exactly the distinction. A channel can only report distance, because it does not know your size, your risk or your balance, and it should never pretend to. The conversion from distance into money is your job, and it is not an administrative chore. It is the job.</p>
+<p>That is also why the same pip result is genuinely a good day for one member and a bad one for another. It is not the calls that differ. It is what each person did with them, which is the same argument as <a href="the-gap-between-knowing-and-doing.html">the gap between knowing and doing</a>.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>What does measuring trading results in pips actually miss?</strong> Two things: position size and risk. A pip is a unit of distance, so a pip total sums how far price moved across your trades without any knowledge of how much money was on each one, or how much you stood to lose. Two traders with identical pip totals can finish a month hundreds of dollars apart, in opposite directions.</p>
+<p><strong>Is R better than pips for measuring performance?</strong> For judging quality, yes. R expresses each result as a multiple of what you risked, so it compares trades of different sizes and different stop distances on the same scale. R does not replace money though. Money tells you whether the business paid, R tells you whether it paid for a reason you can repeat.</p>
+<p><strong>Why do signal channels report in pips then?</strong> Because it is the only unit that is honest for them to use. A channel cannot know your account size, your position size or your risk, so reporting a result in money would be a fabrication. Distance is what the market provided. Money is what you did with it.</p>
+<p><strong>Can I have a positive pip month and a negative account?</strong> Yes, and it is common. It happens whenever your losing trades carry more size than your winning ones, which is the natural result of increasing size after a loss or cutting size after one. Costs make it worse, since spread and commission are charged in money regardless of the pip result.</p>
+<p><strong>How do I calculate R on a trade?</strong> Divide the money result by the money you risked. Risk 100 dollars and make 250, that is +2.5R. Risk 100 dollars and hit your stop, that is -1R. If you cannot state what you risked on a trade, you did not have a defined risk on it, and that is the finding, not the calculation.</p>
+<p><strong>Should I stop tracking pips completely?</strong> No. Keep the column, demote it. Pips describe a move and check your stop distances. They are simply not the figure you use to decide whether the business is working, or whether to change anything about how you run it.</p>
+<h2>What I Would Want You to Take Away</h2>
+<p><strong>Distance is not revenue.</strong> A pip total is mileage. It is a real measurement of a real thing, and that thing is not your business.</p>
+<p><strong>Size and risk decide the outcome, and neither one is in the pip count.</strong> That is why identical trades produced a $330 gap in the table above.</p>
+<p><strong>Report in money, judge in R, survive on drawdown.</strong> Three columns. Ten minutes to add them.</p>
+<p>And the one I had to learn twice, once with a whiteboard and once with a trading account: <strong>the number you put on the board is the number you will optimise for.</strong> Choose it carefully, because you will get more of it whether or not it pays you.</p>
+<h2>About Rex</h2>
+<p>I'm Rex. Before I ever placed a trade I spent five years running a real business, and the lesson that transferred hardest was about measurement: for a whole year I tracked units sold and congratulated myself, while the number that decided whether I made rent sat in a column I was not looking at. Trading gave me the chance to make the identical mistake a second time, in a different unit, and I took it. Counting distance is comfortable because distance is public. Counting money is uncomfortable because money is yours. <a href="about.html">More about how I run the channel</a>.</p>
+<p>Today I run the REX Trading Signal channel, around 11,900 people, on three rules I don't break: every setup carries a stop loss; I post the losing trades, not only the winners; and I never promise profit, no "guaranteed," no "fixed," no "risk-free." The pip results we post describe a move, and nothing more. What that move is worth is decided by your size and your risk, which is your side of the desk and nobody else's. Nothing here is financial advice, and no entry, stop or target discussed should be treated as a signal.</p>
+
+
+ </div></div>
+</article>
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Report the number that pays the rent.</h2>
+ <p>Daily XAUUSD setups with a stop loss, a reason, and a rule, posted live on Telegram, wins and losses alike.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+ <div class="grid3">
+ <a class="card" href="key-metrics-every-trading-business-should-track.html">
+ <span class="tag">The books</span>
+ <h3>Key Metrics Every Trading Business Should Track</h3>
+ <p>The handful of numbers that tell you whether a line is earning its shelf space.</p>
+ <span class="read">Read the article &rarr;</span>
+ </a>
+ <a class="card" href="trading-journal-template.html">
+ <span class="tag">The books</span>
+ <h3>The Trading Journal Template</h3>
+ <p>The columns that turn a list of trades into a set of accounts.</p>
+ <span class="read">Read the article &rarr;</span>
+ </a>
+ <a class="card" href="one-page-trading-business-plan-template.html">
+ <span class="tag">Foundations</span>
+ <h3>Your One-Page Trading Business Plan</h3>
+ <p>The single page that decides how the business is run before the market opens.</p>
+ <span class="read">Read the article &rarr;</span>
+ </a>
+ </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+ <div class="brand">REX<b>&#183;</b>TRADING</div>
+ <p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+</body>
+</html>
