@@ -202,18 +202,23 @@
  .ticker__track{animation:none; justify-content:center}
  .cover{transform:none}
  }
- /* GetResponse embedded form wrapper, frames the white signup card on the paper hero */
- .optin-embed{max-width:560px; border:3px solid var(--ink); box-shadow:9px 9px 0 var(--red); background:#fff}
- .optin-embed getresponse-form{display:block}
+ /* Signup card on the paper hero. Posts to our own endpoint, which writes to EmailOctopus. */
+ .optin-embed{max-width:560px; border:3px solid var(--ink); box-shadow:9px 9px 0 var(--red); background:#fff; padding:22px}
+ .optin-embed h3{margin:0 0 6px; font-size:20px; line-height:1.25}
+ .optin-embed p.sub{margin:0 0 16px; font-size:14px; opacity:.75}
+ .optin-embed label{display:block; font-size:13px; font-weight:700; margin:0 0 5px}
+ .optin-embed input[type=email], .optin-embed input[type=text]{width:100%; box-sizing:border-box; padding:12px 13px; margin:0 0 13px; font:inherit; font-size:16px; border:2px solid var(--ink); background:#fff; color:var(--ink); border-radius:0}
+ .optin-embed input:focus{outline:3px solid var(--red); outline-offset:1px}
+ .optin-embed button{width:100%; padding:14px 16px; font:inherit; font-size:16px; font-weight:800; letter-spacing:.02em; color:#fff; background:var(--red); border:3px solid var(--ink); cursor:pointer; box-shadow:5px 5px 0 var(--ink)}
+ .optin-embed button:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink)}
+ .optin-embed button[disabled]{opacity:.6; cursor:default; transform:none}
+ .optin-embed .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+ .optin-embed .note{margin:12px 0 0; font-size:12px; opacity:.65; line-height:1.5}
+ .optin-embed .msg{margin:12px 0 0; font-size:14px; font-weight:700; line-height:1.45}
+ .optin-embed .msg.bad{color:var(--red)}
+ .optin-embed .done{font-size:16px; line-height:1.5}
 </style>
-<!-- GetResponse Analytics (Web Connect) -->
-<script type="text/javascript">
-(function(m, o, n, t, e, r, _){
-m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
-r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode.insertBefore(r, _);
-})(window, document, 'script', 'https://an.gr-wcon.com/script/139ea6dd-9e44-4f65-bc85-927794d39f12/ga.js', 'GrTracking');
-</script>
-<!-- End GetResponse Analytics -->
+
 </head>
 <body>
 
@@ -246,8 +251,18 @@ r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.
  <p class="stand">Grab <b>The Trader's Business Plan</b>, a one-page plan for your account, the daily operating routine I've run for five years, and the five rookie mistakes that quietly bankrupt new gold traders. Yours free.</p>
 
  <div class="optin-embed" id="get">
- <!-- REX GetResponse embedded form → list "rex-trading-signal", double opt-in OFF -->
- <getresponse-form form-id="4e04c36a-b68a-4aca-b640-43bf3fa21b93" e="1"></getresponse-form>
+ <form id="rexOptin" novalidate>
+ <h3>Send me The Trader's Business Plan</h3>
+ <p class="sub">One page. No cost. Straight to your inbox.</p>
+ <label for="rexName">First name</label>
+ <input id="rexName" name="firstName" type="text" autocomplete="given-name" placeholder="Alex">
+ <label for="rexEmail">Email address</label>
+ <input id="rexEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+ <div class="hp" aria-hidden="true"><label for="rexWebsite">Website</label><input id="rexWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="rexBtn">Send me the plan</button>
+ <p class="msg" id="rexMsg" role="status" aria-live="polite"></p>
+ <p class="note">Trading carries risk and past results never guarantee future ones. Nothing here is financial advice. Unsubscribe any time, one click.</p>
+ </form>
  </div>
  </div>
 
@@ -376,5 +391,54 @@ r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.
 </script>
 
 <script defer src="/assets/track.js"></script>
+<script>
+/* Gửi email khách về endpoint của mình, endpoint đó ghi vào EmailOctopus.
+   Chìa khoá nằm trên máy chủ, không bao giờ xuất hiện ở đây. */
+(function(){
+  var f = document.getElementById('rexOptin');
+  if (!f) return;
+  var btn = document.getElementById('rexBtn');
+  var msg = document.getElementById('rexMsg');
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (document.getElementById('rexEmail').value || '').trim();
+    msg.className = 'msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    btn.disabled = true;
+    var nhan = btn.textContent;
+    btn.textContent = 'Sending...';
+
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: email,
+        firstName: (document.getElementById('rexName').value || '').trim(),
+        website: (document.getElementById('rexWebsite').value || '')
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(d){
+        if (d && d.ok) {
+          if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_business_plan'});
+          window.location.href = '/thank-you/';
+        } else {
+          btn.disabled = false; btn.textContent = nhan;
+          msg.className = 'msg bad';
+          msg.textContent = 'Something went wrong. Please try again in a moment.';
+        }
+      }).catch(function(){
+        btn.disabled = false; btn.textContent = nhan;
+        msg.className = 'msg bad';
+        msg.textContent = 'Network error. Please try again.';
+      });
+  });
+})();
+</script>
 </body>
 </html>
