@@ -165,6 +165,21 @@
  footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
  footer p strong{color:#faf1ee}
  footer .fine{color:#97726b}
+
+ /* Ô xin email trong khối CTA cuối bài, thêm 07/08/2026 theo yêu cầu chị Trinh. */
+ .cta .optin{max-width:520px;margin:0 auto 26px;text-align:left}
+ .cta .optin h3{font-family:var(--sans);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#f0d9d6;margin:0 0 10px;text-align:center}
+ .cta .optin .row{display:flex;gap:10px;flex-wrap:wrap}
+ .cta .optin input[type=email]{flex:1 1 240px;min-width:0;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:#2b1a17;background:#fff;border:2px solid #2b1a17;border-radius:3px}
+ .cta .optin input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .cta .optin button{flex:0 0 auto;padding:13px 22px;font-family:var(--sans);font-size:.86rem;font-weight:700;color:#fff;background:var(--gold);border:2px solid #2b1a17;border-radius:3px;cursor:pointer}
+ .cta .optin button[disabled]{opacity:.6;cursor:default}
+ .cta .optin .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .cta .optin .msg{font-family:var(--sans);font-size:.8rem;margin:10px 0 0;min-height:1em;text-align:center;color:#f0d9d6}
+ .cta .optin .msg.bad{color:#ffb3ae}
+ .cta .optin .note{font-family:var(--sans);font-size:.72rem;color:#ab837d;margin:12px auto 0;text-align:center;line-height:1.55;max-width:44ch}
+ @media (max-width:520px){ .cta .optin button{flex:1 1 100%} }
+ .cta .or{display:block;font-family:var(--sans);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:#ab837d;margin:0 0 18px}
 </style>
 <header class="topbar">
  <div class="wrap">
@@ -346,6 +361,17 @@
  <div class="wrap">
  <h2>Watch how I trade the losses, not just the wins.</h2>
  <p>Daily XAUUSD setups with a stop loss, a reason, and a rule, posted live on Telegram, wins and losses alike.</p>
+  <form class="optin" id="ctaOptin" novalidate>
+ <h3>Get the one page trading business plan, free</h3>
+ <div class="row">
+ <input id="ctaEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <button type="submit" id="ctaBtn">Send it to me</button>
+ </div>
+ <div class="hp" aria-hidden="true"><label for="ctaWebsite">Website</label><input id="ctaWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+ <p class="msg" id="ctaMsg" role="status" aria-live="polite"></p>
+ <p class="note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </form>
+ <span class="or">Or just come and watch</span>
  <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal →</a>
  <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
  </div>
@@ -387,5 +413,53 @@
 </footer>
 
 <script defer src="/assets/track.js"></script>
+<!-- rex-cta-optin -->
+<script>
+/* Ô xin email cuối bài. Gửi về endpoint của mình, endpoint ghi vào EmailOctopus.
+   Chìa khoá nằm trên máy chủ, không bao giờ xuất hiện ở đây. */
+(function(){
+  var f = document.getElementById('ctaOptin');
+  if (!f) return;
+  var btn = document.getElementById('ctaBtn');
+  var msg = document.getElementById('ctaMsg');
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (document.getElementById('ctaEmail').value || '').trim();
+    msg.className = 'msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    btn.disabled = true;
+    var label = btn.textContent;
+    btn.textContent = 'Sending...';
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: email,
+        firstName: '',
+        website: (document.getElementById('ctaWebsite').value || '')
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(d){
+        if (d && d.ok) {
+          if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_article_cta'});
+          window.location.href = '/thank-you/';
+        } else {
+          btn.disabled = false; btn.textContent = label;
+          msg.className = 'msg bad';
+          msg.textContent = 'Something went wrong. Please try again in a moment.';
+        }
+      }).catch(function(){
+        btn.disabled = false; btn.textContent = label;
+        msg.className = 'msg bad';
+        msg.textContent = 'Network error. Please try again.';
+      });
+  });
+})();
+</script>
 </body>
 </html>
