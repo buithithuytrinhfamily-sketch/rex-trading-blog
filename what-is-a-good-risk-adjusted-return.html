@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is a Good Risk Adjusted Return, and How Do You Score Your Own, REX Trading Signal</title>
+<meta name="description" content="What is a good risk adjusted return: two traders with the same edge, same expected return, and 1.67% against 17.25% of years ending at a loss. Measured on gold and on 100,000 simulated years.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is a Good Risk Adjusted Return, and How Do You Score Your Own">
+<meta property="og:description" content="What is a good risk adjusted return: two traders with the same edge, same expected return, and 1.67% against 17.25% of years ending at a loss. Measured on gold and on 100,000 simulated years.">
+<meta property="og:url" content="https://rextradingsignal.com/what-is-a-good-risk-adjusted-return.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/what-is-a-good-risk-adjusted-return.png">
+<link rel="canonical" href="https://rextradingsignal.com/what-is-a-good-risk-adjusted-return.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What Is a Good Risk Adjusted Return, and How Do You Score Your Own", "description": "What is a good risk adjusted return: two traders with the same edge, same expected return, and 1.67% against 17.25% of years ending at a loss. Measured on gold and on 100,000 simulated years.", "image": "https://rextradingsignal.com/assets/hero/what-is-a-good-risk-adjusted-return.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-08-17T06:00:00+07:00", "dateModified": "2026-08-17T06:00:00+07:00", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/what-is-a-good-risk-adjusted-return.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "What Is a Good Risk Adjusted Return, and How Do You Score Your Own", "item": "https://rextradingsignal.com/what-is-a-good-risk-adjusted-return.html"}]}</script>
+</head>
+<body>
+
+<header class="topbar">
+ <div class="wrap">
+ <a class="wordmark" href="./">REX<b>&#183;</b>TRADING</a>
+ <nav class="menu" aria-label="Main">
+ <a href="./">Home</a>
+ <a href="./about.html">About</a>
+ </nav>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a>
+ </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>ENTRY, MEASURE IT BEFORE YOU JUDGE IT</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+ <p class="eyebrow fade">The books, dividing by the risk</p>
+ <h1 class="fade d1">What Is a Good <span class="q">Risk Adjusted</span> Return, and How Do You Score Your Own</h1>
+ <p class="standfirst fade d2">Same edge, same expected return, four times the bet size. The drawdowns are not close and neither is the chance of a losing year: 1.67% against 17.25%.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 10 min read</div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="Rex, founder of REX Trading Signal" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<img src="/assets/hero/what-is-a-good-risk-adjusted-return.png" alt="What is a good risk adjusted return, REX Trading Signal cover image on dividing a result by the risk that produced it" style="width:100%;height:auto;border-radius:6px;margin:0 0 30px">
+
+<p>What is a good risk adjusted return is the question a business owner asks and a gambler does not. The gambler asks what the return was. The owner asks what it cost to get, because a business that made 30 percent by nearly going under twice is not the same business as one that made 30 percent quietly, and only one of them can be repeated on purpose.</p>
+
+<p>The trouble is that almost nobody puts a number on the second half. So I did. I scored an asset anybody can look up, then simulated two traders with an identical edge and a different bet size to show what the raw return figure hides. The gap between them is large enough that a return quoted without its denominator is not a weak number, it is not a number at all.</p>
+
+<h2>What Is a Good Risk Adjusted Return, in Business Terms</h2>
+
+<p>A risk adjusted return is a result divided by what was risked to produce it. That is the whole idea. Any business that borrows or exposes capital does the same thing: revenue on its own means nothing until you know how much was tied up and how close the company came to running out of cash.</p>
+
+<p>The reason it matters more in this business than in most is that here the numerator is easy to inflate. Doubling your bet size roughly doubles your expected return and does considerably worse than double to your worst month. Nobody has to lie for a headline return to be misleading. They just have to quote it alone.</p>
+
+<p>There is no single good number, and any article that gives you one is selling something. What there is instead is a method, two sensible denominators and a way of comparing like with like.</p>
+
+<h2>The Two Denominators Worth Keeping</h2>
+
+<p><strong>Return per unit of volatility.</strong> Take the annual return, subtract what cash would have paid you for doing nothing, and divide by the year's standard deviation of returns. This is the family the Sharpe ratio belongs to. It answers: how much return did each unit of bumpiness buy? Its weakness is that it treats upside jumps as risk, which they are not, to you.</p>
+
+<p><strong>Return per unit of drawdown.</strong> Take the annual return and divide by the worst peak to trough fall during the year. This one is closer to how the business actually feels, because drawdown is the number that decides whether you keep trading and whether anyone else keeps backing you. Its weakness is that it depends on a single worst episode, so it moves around a lot from year to year.</p>
+
+<p>Use both. When they disagree, the disagreement is telling you something about the shape of the results rather than about which one is right.</p>
+
+<h2>Score Something You Can Look Up First</h2>
+
+<p>Before scoring an account, it helps to score something public, so that the method is checkable and the number has some context around it.</p>
+
+<p>I took the published <a href="https://www.lbma.org.uk/prices-and-data/precious-metal-prices" rel="noopener nofollow" target="_blank">LBMA gold benchmark</a>, afternoon fix, from 4 January 2016 to 14 August 2026, which is 2,663 sessions and 10.61 years, and treated it as a business: buy at the start, hold, no leverage, no costs. For the cash rate I used the three month Treasury constant maturity from the Federal Reserve's <a href="https://www.federalreserve.gov/releases/h15/" rel="noopener nofollow" target="_blank">H.15 release</a>, averaged over exactly the same days.</p>
+
+<p>The result. Total return over the period was 305.70 percent, which annualises to 14.11 percent. Annualised volatility was 16.05 percent. The worst peak to trough fall was 26.11 percent, from 29 January 2026 to 16 July 2026. The average cash rate over the same days was 2.33 percent.</p>
+
+<p>Now divide. Return per unit of volatility comes out at 0.734. Return per unit of drawdown comes out at 0.540. Those two numbers describe the same decade as the headline 14.11 percent, and they describe it far more usefully, because they tell you the 14.11 percent came attached to a period where a quarter of the position's value disappeared and did not come back for months.</p>
+
+<h3>One Year Is Not Enough to Judge Anything</h3>
+
+<p>The same measurements taken over rolling one year windows, 2,411 of them, show why a single annual figure is such a poor basis for a verdict. The median one year return was 10.65 percent, but the 5th percentile was minus 6.56 percent and the 95th was plus 48.05 percent. Return per unit of volatility ran from minus 0.706 to plus 2.795 with a median of 0.625. Return per unit of drawdown ran from minus 0.430 to plus 6.077 with a median of 0.984.</p>
+
+<p>Same asset, same method, same decade. Depending on which twelve months you look at, the score is anywhere from clearly bad to spectacular. If that is the spread on a passive hold of a single metal, be very careful about what one year of your own results proves. The same lesson from a different angle sits in <a href="/how-to-calculate-consistency-in-trading.html">how to calculate consistency in trading</a>.</p>
+
+<h2>Same Edge, Same Expected Return, Two Different Businesses</h2>
+
+<p>Here is the part that makes the denominator non negotiable. I simulated two traders who have exactly the same edge and differ in one respect only: how much they put on each trade.</p>
+
+<p>Both have a 40 percent win rate where a win pays two units of risk and a loss costs one, an expectancy of plus 0.20 units per trade. Trader A risks 0.5 percent per trade and takes 252 trades a year. Trader B risks 2.0 percent per trade and takes 63. Their expected units of risk per year are identical by construction: 0.20 times 252 times 0.005 equals 0.20 times 63 times 0.020. On paper they are the same business. I ran a full trading year 100,000 times for each.</p>
+
+<figure style="margin:0 0 26px"><img src="/assets/hero/what-is-a-good-risk-adjusted-return-chart.png" alt="What is a good risk adjusted return shown by comparing two traders with an identical edge sized differently, on return and on drawdown" style="width:100%;height:auto;border-radius:6px"><figcaption style="font-size:.85rem;color:#6f5433;margin-top:8px">What is a good risk adjusted return: the same edge, sized two ways, produces similar returns and completely different businesses.</figcaption></figure>
+
+<p>Trader A: median annual return 28.16 percent, 5th to 95th percentile from plus 5.50 to plus 55.68 percent, median worst drawdown 6.42 percent, 95th percentile drawdown 11.53 percent. Years ending at a loss: 1.67 percent. Years touching minus 20 percent: 0.05 percent.</p>
+
+<p>Trader B: median annual return 23.72 percent, 5th to 95th percentile from minus 13.39 to plus 87.53 percent, median worst drawdown 15.23 percent, 95th percentile drawdown 28.39 percent. Years ending at a loss: 17.25 percent. Years touching minus 20 percent: 25.97 percent. Years touching minus 30 percent: 3.55 percent.</p>
+
+<p>Put those side by side. The headline returns are within about four and a half points of each other, close enough that in any year either could be quoted as the better result. The drawdowns are not close at all, and neither is the chance of a losing year: 1.67 percent against 17.25 percent, a factor of ten. Return per unit of drawdown at the medians is 4.386 for A and 1.558 for B.</p>
+
+<p>One of those is a business you can run for a decade. The other is a business where roughly one year in four goes 20 percent underwater, which is where financing gets pulled, plans get abandoned and people quit at the worst possible moment. The trading is identical.</p>
+
+<h2>The Detail Almost Everyone Gets Backwards</h2>
+
+<p>Look again at the median returns. Trader B, who bets four times bigger, has the <em>lower</em> median: 23.72 percent against 28.16 percent. Their expected units of risk are identical, so this is not a difference in edge.</p>
+
+<p>It is compounding. Losses take a larger bite out of a smaller base than the same sized gains add back, and the bigger the swings, the more of the average return that effect quietly eats. The bigger bettor gets a wider distribution, a fatter right tail, and a lower middle. The 95th percentile outcome for B is plus 87.53 percent, which is why the approach sells itself. The median is worse and the floor is far worse.</p>
+
+<p>That is the strongest argument for the denominator I know. It is not merely that risk adjusted return is a fairer measure. It is that ignoring risk adjustment leads to a bet size that lowers the result you are most likely to get.</p>
+
+<h2>So What Number Is Actually Good</h2>
+
+<p>Three honest reference points, in the order I would use them.</p>
+
+<p><strong>Against doing nothing.</strong> Cash paid 2.33 percent a year on average over this sample, with no drawdown at all. A return per unit of volatility near zero means the risk you took was not paid for. That is the floor, and it is a lower bar than most people expect.</p>
+
+<p><strong>Against the simplest alternative.</strong> Holding the metal scored 0.734 on volatility and 0.540 on drawdown over the decade. Any active approach in this instrument is competing with that, and it should be measured against it rather than against zero.</p>
+
+<p><strong>Against your own record.</strong> This is the one that matters. Compute the two ratios for each of your own quarters and years and watch what happens to them as you change things. If a change raises the return and raises the drawdown proportionally, you have not improved the business, you have resized it. Resizing is a decision anyone can make in ten seconds and it deserves none of the credit.</p>
+
+<p>What I would not do is chase a published threshold. Numbers like "a Sharpe above 1 is good" come from institutional contexts with different constraints, cost structures and holding periods, and they are computed over far more data than a retail account ever produces. On the rolling windows above, a passive gold hold cleared 2.795 in its best year and minus 0.706 in its worst, which should end any temptation to treat one year's ratio as a grade.</p>
+
+<h2>Putting It in the Books</h2>
+
+<p>Practically, this is three lines added to a monthly review and nothing more.</p>
+
+<p>Record the period return. Record the worst peak to trough fall inside the period, measured on the equity curve rather than on closed trades, because open losses are real losses. Divide the first by the second. Keep the standard deviation of your monthly returns alongside, and once you have twelve of them, divide the annual return above cash by the annualised standard deviation.</p>
+
+<p>Then compare only like periods, and never let a change in size masquerade as an improvement in method. <a href="/key-metrics-every-trading-business-should-track.html">The key metrics every trading business should track</a> is where these two belong, <a href="/your-monthly-profit-and-loss-review.html">your monthly profit and loss review</a> is the meeting where they get read out, and <a href="/position-sizing-for-gold-trading.html">position sizing for gold trading</a> is the lever that moves them.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free one page trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page business plan, the sheet where your risk per trade and the drawdown you are willing to fund sit on the same page, so a result always arrives with the denominator attached. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a good risk adjusted return for a retail trader?</h3>
+
+<p>There is no threshold worth quoting, and that is the honest answer rather than a dodge. The useful comparisons are the cash rate, the simplest passive alternative in the same instrument, and your own previous periods. For scale, a passive gold hold over the last decade scored 0.734 on return per unit of volatility and 0.540 on return per unit of drawdown.</p>
+
+<h3>Is the Sharpe ratio the best measure?</h3>
+
+<p>It is the most widely understood, which has real value when you need to be compared to something. It penalises upside volatility as if it were risk, and it needs a lot of data to be stable. For a trading account I would read it next to return per unit of drawdown rather than instead of it.</p>
+
+<h3>Why does a bigger position size lower my median return?</h3>
+
+<p>Because gains and losses compound on a moving base. A loss of a given size removes more than the same sized gain adds back, and that gap widens with the size of the swings. In the simulation above, the trader risking four times as much had the same expected units of risk and a median return 4.44 points lower.</p>
+
+<h3>Should I use maximum drawdown or standard deviation?</h3>
+
+<p>Both, for different questions. Standard deviation describes the ordinary texture of the results. Maximum drawdown describes the worst moment, which is the one that ends businesses. If you only ever track one, track the drawdown, since it is the number that predicts whether you will still be trading next year.</p>
+
+<h3>How long before my own risk adjusted return means anything?</h3>
+
+<p>Longer than feels reasonable. The rolling windows above show a single asset's one year score ranging from minus 0.706 to plus 2.795 depending only on which twelve months you picked. A trading account with fewer observations and changing behaviour is noisier still, so treat one year as a data point and not a verdict.</p>
+
+<h3>Does a high risk adjusted return prove I have an edge?</h3>
+
+<p>Not on its own, and not over a short record. It proves the results you have were efficient relative to the risk you took over that period. Whether that repeats is a separate question that only more observations can answer.</p>
+
+<h2>What These Numbers Do Not Say</h2>
+
+<p>The two simulated traders are models, not people and not forecasts. They assume an edge that stays constant, trades that are independent of each other, no costs, no financing and no slippage, and a win rate that holds through every market condition. Real accounts have none of those properties, and adding any of the missing ones makes both traders worse, the bigger bettor considerably more so. Nothing above is a claim that a 28 percent or a 23 percent annual return is achievable, expected or on offer here. The comparison between the two is the point. The levels are an artefact of assumptions I chose and stated.</p>
+
+<p>The gold figures are a measurement of what one public benchmark did over one particular decade, with no costs and no leverage subtracted. They are context for a method, not a projection of anything.</p>
+
+<h2>Where This Leaves You</h2>
+
+<p>A return is half a sentence. Finish it before you judge it, and insist that anyone quoting one at you finishes it too.</p>
+
+<p>The version of this I would take into next month is short. Every result gets a denominator. Comparisons happen between periods of the same length. And when the two ratios go up together while the raw return stays flat, that is the month something in the business genuinely improved, which is worth far more than the month the number was big. The framework it all hangs on is <a href="/one-page-trading-business-plan-template.html">the one page trading business plan template</a>, and <a href="/treat-trading-like-a-business.html">treat trading like a business</a> is where the habit starts.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal, where a trading account is treated as a small business with costs, capacity limits and a set of books. He is more interested in the constraint that ends the quarter than in the trade that started it.</p>
+
+<p><em>Disclaimer: This article is general educational content about measuring results against the risk taken to produce them. It is not financial advice, not a recommendation to buy or sell gold or any other instrument, and not a suggestion to open any particular position. Trading gold, CFDs and leveraged products carries a high risk of losing money rapidly. No entry, stop or target discussed should be treated as a signal. The gold figures were computed by me from the published <a href="https://www.lbma.org.uk/prices-and-data/precious-metal-prices" rel="noopener nofollow" target="_blank">LBMA gold benchmark</a>, afternoon fix, across 2,663 published sessions from 4 January 2016 to 14 August 2026, with the cash rate taken as the three month Treasury constant maturity from the Federal Reserve <a href="https://www.federalreserve.gov/releases/h15/" rel="noopener nofollow" target="_blank">H.15 release</a> averaged over the same days, assuming no leverage, no dealing costs and no taxes. The two trader comparisons are outputs of a Monte Carlo simulation I wrote, 100,000 simulated years per configuration, under the stated assumptions of a 40 percent win rate at a two to one payoff, expectancy of plus 0.20 units of risk per trade, fixed fractional sizing, independent trades and no costs. They describe a model, not any real account and not any real trader's results, and they are not a target, a projection or a promise. Past behaviour of a public benchmark is not a prediction.</em></p>
+</div></div>
+</article>
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Attach a denominator to every result, because a return on its own is half a sentence.</h2>
+ <p>Daily XAUUSD setups with a stop loss, a reason, and a rule, posted live on Telegram, wins and losses alike.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/key-metrics-every-trading-business-should-track.html">
+<span class="tag">The books</span>
+<h3>The Key Metrics Every Trading Business Should Track</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/your-monthly-profit-and-loss-review.html">
+<span class="tag">The books</span>
+<h3>Your Monthly Profit and Loss Review</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/position-sizing-for-gold-trading.html">
+<span class="tag">Risk</span>
+<h3>Position Sizing for Gold Trading</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+ <div class="brand">REX<b>&#183;</b>TRADING</div>
+ <p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(){
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      /* loi ben minh thi khong giu khach lai */
+      remember(); go();
+    });
+  });
+})();
+</script>
+</body>
+</html>
