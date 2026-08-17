@@ -63,8 +63,12 @@
     });
   });
 
-  // opt-in form submit (GetResponse embedded form on /business-plan/)
-  document.addEventListener('submit', function(){
-    send('lead_form_submit', { page: page });
-  }, true);
+  // KHONG dem form submit o day nua (14/08/2026).
+  // Vi sao: listener nay chay o pha capture, tuc la ban su kien TRUOC ca khi form kiem tra
+  // email va TRUOC khi may chu tra loi. Ket qua: email go sai, loi mang, may chu tu choi...
+  // deu bi dem thanh "co nguoi dang ky". Do la ly do GA4 bao 15 luot trong 28 ngay ma
+  // danh sach REX chi co 5 lien he.
+  // Gio moi form tu ban su kien cua no khi THAT SU thanh cong:
+  //   /business-plan/  -> lead_form_submit {form:'rex_business_plan'}
+  //   cua chan Telegram -> lead_form_submit {form:'rex_telegram_gate'} + lead_form_error khi hong
 })();
