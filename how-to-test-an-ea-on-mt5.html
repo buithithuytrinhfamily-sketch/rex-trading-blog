@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Test an EA on MT5, and What the Result Entitles You to Believe, REX Trading Signal</title>
+<meta name="description" content="How to test an ea on mt5 as due diligence, not clicks: 55 wins in 100 trades has a 95% interval of 45.2% to 64.8%, and pinning the rate to 2 points needs about 2,377 trades.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Test an EA on MT5, and What the Result Entitles You to Believe">
+<meta property="og:description" content="How to test an ea on mt5 as due diligence, not clicks: 55 wins in 100 trades has a 95% interval of 45.2% to 64.8%, and pinning the rate to 2 points needs about 2,377 trades.">
+<meta property="og:url" content="https://rextradingsignal.com/how-to-test-an-ea-on-mt5.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/how-to-test-an-ea-on-mt5.png">
+<link rel="canonical" href="https://rextradingsignal.com/how-to-test-an-ea-on-mt5.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Test an EA on MT5, and What the Result Entitles You to Believe", "description": "How to test an ea on mt5 as due diligence, not clicks: 55 wins in 100 trades has a 95% interval of 45.2% to 64.8%, and pinning the rate to 2 points needs about 2,377 trades.", "image": "https://rextradingsignal.com/assets/hero/how-to-test-an-ea-on-mt5.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-08-21T06:00:00+07:00", "dateModified": "2026-08-21T06:00:00+07:00", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/how-to-test-an-ea-on-mt5.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "How to Test an EA on MT5, and What the Result Entitles You to Believe", "item": "https://rextradingsignal.com/how-to-test-an-ea-on-mt5.html"}]}</script>
+</head>
+<body>
+
+<header class="topbar">
+ <div class="wrap">
+ <a class="wordmark" href="./">REX<b>&#183;</b>TRADING</a>
+ <nav class="menu" aria-label="Main">
+ <a href="./">Home</a>
+ <a href="./about.html">About</a>
+ </nav>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Join on Telegram</a>
+ </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>ENTRY, MEASURE IT BEFORE YOU JUDGE IT</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+ <p class="eyebrow fade">The hiring interview</p>
+ <h1 class="fade d1">How to Test an <span class="q">EA on MT5</span>, and What the Result Entitles You to Believe</h1>
+ <p class="standfirst fade d2">An Expert Advisor is a machine you hand your capital to, and the Strategy Tester is the only interview it ever sits. The clicks take ten minutes. Reading the result honestly takes arithmetic.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 10 min read</div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<img src="/assets/hero/how-to-test-an-ea-on-mt5.png" alt="How to test an ea on mt5, REX Trading Signal cover image on treating a backtest as due diligence before funding a robot" style="width:100%;height:auto;border-radius:6px;margin:0 0 30px">
+
+<p>How to test an ea on mt5 is usually taught as a sequence of clicks, and the clicks take about ten minutes to learn. That is not the hard part and it never was. The hard part is knowing what the result entitles you to believe, because an Expert Advisor is a machine you are about to hand your capital to, and the Strategy Tester is the only interview it will ever sit.</p>
+
+<p>Treat it the way you would treat hiring someone to work unsupervised with the company float. You would not read the CV and hand over the keys. You would check the references, run a trial, write down in advance what would make you end the trial, and keep the trial small enough that being wrong is survivable. That framing decides everything below.</p>
+
+<h2>What the Strategy Tester Actually Does</h2>
+
+<p>The MT5 Strategy Tester replays historical price data through your EA's logic and records the orders it would have placed. It is a simulation, and it is only ever as good as three things: the quality of the history it replays, the fidelity of the execution model, and the honesty of the person reading the output.</p>
+
+<p>The first two are technical and improvable. The third is where accounts are lost. A tester will happily produce a beautiful equity curve for a strategy that cannot work, because you asked it to, and it has no opinion about whether your question was a good one.</p>
+
+<h2>How to Test an EA on MT5, in the Order That Matters</h2>
+
+<p>The mechanical sequence first, so it is out of the way. Open the Strategy Tester from the View menu or with Ctrl and R. Select the EA, the symbol and the timeframe. Choose a date range. Choose a modelling mode. Set the deposit and leverage to something resembling the account you would actually use. Run it, then read the report and the graph tabs.</p>
+
+<p>Now the parts that decide whether the answer means anything.</p>
+
+<p><strong>Use every tick based on real ticks</strong> where your broker provides it, rather than the faster approximations. The cheaper modes interpolate what happened between the recorded points, and a strategy whose entries or stops depend on precise intrabar behaviour will look very different under interpolation than under real data. If your EA trades on the close of completed bars only, the cheaper modes are defensible. If it does anything intrabar, they are not.</p>
+
+<p><strong>Download the history first and check the quality figure.</strong> The tester reports a modelling quality percentage. A low figure is not a detail to be pushed past; it means large stretches of the period were reconstructed rather than replayed.</p>
+
+<p><strong>Set spread and commission to something pessimistic.</strong> Testing on a fixed minimum spread is the single most common way to manufacture a profitable backtest from a strategy that loses money in the market. If the edge disappears when you widen the spread by a realistic amount, the edge was never there, it was living inside the assumption.</p>
+
+<p><strong>Reserve data the EA has never seen.</strong> Test on one period, then test on a later period you did not touch while developing. If the second result looks nothing like the first, you have measured the curve fitting rather than the strategy.</p>
+
+<h2>The Number the Tester Prints Is Not Evidence</h2>
+
+<p>Here is the part almost nobody does, and it is arithmetic rather than opinion.</p>
+
+<p>Suppose a report shows 55 winning trades out of 100. The instinct is to read that as an edge. Statistically it is barely a whisper. Treating the trades as independent draws with a fixed underlying probability, the 95 percent confidence interval around that observation runs from 45.2 percent to 64.8 percent. It contains 50 percent. In other words, a hundred trade sample cannot distinguish that result from a coin.</p>
+
+<p>This is not a target and not a claim about what any system achieves. It is a statement about how little a small sample can tell you, in either direction.</p>
+
+<figure style="margin:34px 0">
+<img src="/assets/hero/how-to-test-an-ea-on-mt5-chart.png" alt="Chart on how to test an ea on mt5, showing how wide the 95 percent confidence interval on an observed hit rate stays at each backtest sample size" style="width:100%;height:auto;border-radius:6px">
+<figcaption style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:.86rem;color:#6F5433;margin-top:10px">How to test an ea on mt5 and read the result honestly: the margin of error either side of an observed rate, by number of trades in the sample.</figcaption>
+</figure>
+
+<p>The width of that uncertainty shrinks with the square root of the sample, which is slow. At 30 trades the interval is about 17.8 points either side of the observation. At 100 it is 9.75. At 300 it is 5.63, and the interval still reaches below 50 percent. At 1,000 it is 3.08, and only there does the observation start to separate from noise. At 5,000 it is 1.38.</p>
+
+<p>Working from the same normal approximation, pinning the underlying rate to within 2 points either way needs roughly 2,377 trades. That is the real cost of certainty, and it is why a backtest over eighteen months of a single symbol on a strategy that trades twice a week is not a body of evidence. It is one observation with error bars nobody drew.</p>
+
+<p>The assumptions are stated and they are generous: independent trades, a fixed underlying probability, no changing market regime, no curve fitting. Every one of those is violated in real testing, and each violation widens the true uncertainty rather than narrowing it.</p>
+
+<h2>What a Losing Streak Actually Proves</h2>
+
+<p>The mirror of the same arithmetic answers the question that ends most live trials prematurely: the EA has lost seven in a row, is it broken?</p>
+
+<p>Take a system that loses 45 percent of the time and treat the trades as independent. The chance that any specific block of seven consecutive trades are all losses is 0.3737 percent, which sounds like almost never. But across 300 trades there are many overlapping blocks, and the expected number of losing streaks of seven or longer works out at about 0.61. Roughly one streak of seven in every five hundred trades, as ordinary weather. A streak of ten or longer has an expected count of about 0.05 over the same 300 trades, so that one is genuinely rare.</p>
+
+<p>The business consequence is that a drawdown limit must be set in advance, from arithmetic, and not discovered in the middle of one. A limit written while you are watching losses accumulate is not a control, it is a mood.</p>
+
+<h2>The Due Diligence That Sits Outside the Tester</h2>
+
+<p>Everything above assumes the EA is what it claims to be. Often it is not, and the test that catches that is not a test of the software at all.</p>
+
+<p>The CFTC's advisory, <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/AITradingBots.html" rel="noopener nofollow" target="_blank">AI Won't Turn Trading Bots into Money Machines</a>, documents the Mirror Trading International case, and one detail in it should stop anyone shopping for an EA. Over about three years, Cornelius Johannes Steynberg took more than $1.7 billion in bitcoin from at least 23,000 people. Entry cost as little as $100 in bitcoin, no trading experience required, and the pitch was a proprietary bot trading foreign currencies with a guaranteed return of at least 10 percent a month, which is more than 200 percent a year. In reality very little money was traded at all. It was a Ponzi scheme.</p>
+
+<p>Here is the detail. According to that same advisory, the operator created fake customer accounts and balances <strong>using MetaTrader demo accounts</strong>. The screenshots people were shown, the account histories, the growing balances, all of it could be produced by the same free software sitting on your own machine right now, in an afternoon, by anyone.</p>
+
+<p>So a vendor's screenshot is worth nothing. A vendor's statement is worth nothing. A myfxbook style link is worth something only if you can confirm it is tracking a live account rather than a demo, and the distinction is not always displayed prominently. The only result that means anything is the one produced by data you supplied, on a platform you control, or by a small live account with your own money in it.</p>
+
+<p>The advisory's own checklist is the right one to borrow: research the company and the people behind it, check the age of the domain registration through ICANN's public lookup, get a second opinion from someone with no stake, and account for how fees, spreads and subscription costs eat into any claimed result. For scale, the FBI's <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" rel="noopener nofollow" target="_blank">2024 IC3 Annual Report</a> puts reported investment fraud losses at $6,570,639,864 for the year, from 47,919 complaints, up from $3,311,742,206 two years earlier. This is not a rare corner of the market.</p>
+
+<h2>Write the Acceptance Test Before You Fund It</h2>
+
+<p>A business does not buy equipment and then decide afterwards what would count as it working. Write these down before the EA touches a funded account, in the plan, dated.</p>
+
+<p>Decide the maximum drawdown that ends the trial, computed from the streak arithmetic above rather than from how it feels. Decide the trial length in number of trades rather than in weeks, because weeks are not the unit the statistics work in. Decide the capital at risk during the trial, small enough that the whole trial failing is an operating expense rather than an event. Decide what specifically you will compare against the backtest, slippage against modelled fills, spread paid against spread assumed, trade count against expected trade count. And write the review date down.</p>
+
+<p>Then, when it goes wrong, you are executing a decision you made calmly rather than making one at the worst possible moment. That is the entire value of the exercise.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free one page trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page business plan, the sheet where the drawdown limit, the trial size and the review date live in one place instead of in your memory. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>What This Does Not Say</h2>
+
+<p>It does not say EAs do not work, because plenty of professional trading is automated and none of that is in dispute. It does not say the confidence intervals above apply to your system, because real trades are not independent and real markets change regime. It does not recommend any product, vendor or platform. And it does not say a good backtest is worthless. It says a backtest is one piece of evidence with a knowable margin of error, and the margin is far wider than the report's decimal places suggest.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How to test an ea on mt5 with real tick data?</h3>
+<p>Choose the every tick based on real ticks modelling mode in the Strategy Tester and download the symbol history first, then check the modelling quality figure the report gives you. If your broker does not supply real tick history for that symbol, the cheaper modes are approximations and any strategy that depends on intrabar behaviour should be treated as untested.</p>
+
+<h3>How many trades does a backtest need before I can trust it?</h3>
+<p>More than most people run. Under the stated assumptions, a hundred trades leaves a 95 percent interval nearly 20 points wide, and pinning a rate to within 2 points needs roughly 2,377 trades. Fewer than a few hundred trades is an anecdote with a chart attached.</p>
+
+<h3>The backtest is profitable but live trading is not. Why?</h3>
+<p>The usual culprits are optimistic spread assumptions, slippage that the model did not include, a modelling mode that interpolated the moments your entries depend on, or parameters fitted to the test period. Compare the live fills against the modelled fills line by line and the difference usually names itself.</p>
+
+<h3>Should I trust a vendor's backtest or live results screenshot?</h3>
+<p>No. The CFTC's advisory describes an operator who fabricated customer accounts and balances using MetaTrader demo accounts, and anyone can produce those in an afternoon. Test on data you supplied, on a platform you control, before any money is involved.</p>
+
+<h3>Where did the figures here come from?</h3>
+<p>The fraud figures are quoted from the CFTC advisory and the FBI IC3 2024 report. Every confidence interval, sample size and streak probability was computed by me from the normal approximation to the binomial under the assumptions listed in the disclaimer.</p>
+
+<h2>Where REX Fits</h2>
+
+<p>REX Trading Signal is free to follow. Daily XAUUSD setups with a stop loss, a reason and a rule, posted live, wins and losses alike, plus an optional Kit for people who want the operating side written down. Nothing here promises a profit and nothing here ever will.</p>
+
+<p>Testing is a control, and controls belong in writing rather than in memory. <a href="/one-page-trading-business-plan-template.html">The one page trading business plan template</a> is where the drawdown limit and the review date go. <a href="/can-i-automate-my-trading-strategy.html">Can I automate my trading strategy</a> is the prior question this article assumes you have already answered. <a href="/key-metrics-every-trading-business-should-track.html">The key metrics every trading business should track</a> is what you compare the live result against once the trial starts. And <a href="/when-to-retire-a-trading-strategy.html">when to retire a trading strategy</a> is the same discipline applied at the other end of the machine's working life.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal. He is interested in the unglamorous half of this business, the costs, the controls and the review dates, on the view that an account survives on its operating discipline long before it succeeds on its ideas.</p>
+
+<p><em>Disclaimer: This article is general educational content about software testing procedure and the statistics of small samples. It is not financial advice, not a recommendation of any Expert Advisor, vendor, broker or platform, and not a suggestion to open any particular position. Trading gold, CFDs and leveraged products carries a high risk of losing money rapidly. No entry, stop or target discussed should be treated as a signal. The Mirror Trading International figures, the $1.7 billion, the 23,000 people, the $100 entry, the guaranteed 10 percent monthly claim and the use of MetaTrader demo accounts to fabricate balances, are quoted from the published <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/AITradingBots.html" rel="noopener nofollow" target="_blank">CFTC customer advisory</a> and describe a fraud rather than an achievable return. Investment fraud loss totals are quoted from the FBI Internet Crime Complaint Center's <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" rel="noopener nofollow" target="_blank">2024 IC3 Annual Report</a> and are reported losses from one reporting channel, which undercounts rather than overcounts. All confidence intervals, sample sizes and streak probabilities were computed by me using the normal approximation to the binomial distribution at 95 percent confidence, assuming independent trades, a fixed underlying probability, no regime change and no curve fitting; none of those assumptions holds exactly in real trading, and each violation widens the true uncertainty rather than narrowing it. The 55 out of 100 figure and the 45 percent loss rate are arithmetic illustrations chosen to demonstrate the width of the uncertainty and are not targets, forecasts, or claims about any strategy, system or account. The normal approximation is unreliable at very small samples and the intervals quoted should be read as indicative. Strategy Tester modes, menu names and reported statistics are set by MetaQuotes and by your broker's data feed and change between builds, so the platform's own documentation and your broker's terms are the authority and not this article. No gold price level is quoted anywhere in this article and no trading results are represented.</em></p>
+</div></div>
+</article>
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Write down what would make you stop before you fund the machine, not while you are watching it lose.</h2>
+ <p>Daily XAUUSD setups with a stop loss, a reason, and a rule, posted live on Telegram, wins and losses alike.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/can-i-automate-my-trading-strategy.html">
+<span class="tag">The system</span>
+<h3>Can I Automate My Trading Strategy?</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/key-metrics-every-trading-business-should-track.html">
+<span class="tag">The books</span>
+<h3>Key Metrics Every Trading Business Should Track</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/when-to-retire-a-trading-strategy.html">
+<span class="tag">Risk</span>
+<h3>When to Retire a Trading Strategy</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+ <div class="brand">REX<b>&#183;</b>TRADING</div>
+ <p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+</body>
+</html>
