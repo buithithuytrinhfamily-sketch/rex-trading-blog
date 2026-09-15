@@ -1,0 +1,306 @@
+{
+  "forex": [
+    {
+      "id": "currency-pairs",
+      "title": "Read a currency pair",
+      "url": "/learn/lessons/currency-pairs/"
+    },
+    {
+      "id": "pips-lots-and-costs",
+      "title": "Pips, lots and trading costs",
+      "url": "/learn/lessons/pips-lots-and-costs/"
+    },
+    {
+      "id": "margin-and-leverage",
+      "title": "Margin is not your risk limit",
+      "url": "/learn/lessons/margin-and-leverage/"
+    },
+    {
+      "id": "order-types",
+      "title": "Market, limit and stop orders",
+      "url": "/learn/lessons/order-types/"
+    },
+    {
+      "id": "choosing-a-broker-like-a-business-partner",
+      "title": "How to vet a broker like a business partner",
+      "url": "/choosing-a-broker-like-a-business-partner.html"
+    },
+    {
+      "id": "forex-scam-or-legit",
+      "title": "Forex Scam or Legit? The Check a Business Owner Runs First",
+      "url": "/forex-scam-or-legit.html"
+    },
+    {
+      "id": "forex-trading-daily-routine",
+      "title": "The Forex Trading Daily Routine That Fits the Hours You Actually Have",
+      "url": "/forex-trading-daily-routine.html"
+    },
+    {
+      "id": "how-to-use-vps-for-forex-trading",
+      "title": "How to Use VPS for Forex Trading, and How to Tell If You Need One",
+      "url": "/how-to-use-vps-for-forex-trading.html"
+    },
+    {
+      "id": "candlesticks-and-charts",
+      "title": "Read a candle in context",
+      "url": "/learn/lessons/candlesticks-and-charts/"
+    },
+    {
+      "id": "support-resistance",
+      "title": "Support and resistance as testable zones",
+      "url": "/learn/lessons/support-resistance/"
+    },
+    {
+      "id": "moving-averages",
+      "title": "Moving averages and trend filters",
+      "url": "/learn/lessons/moving-averages/"
+    },
+    {
+      "id": "indicators-momentum",
+      "title": "RSI, MACD and volatility indicators",
+      "url": "/learn/lessons/indicators-momentum/"
+    },
+    {
+      "id": "fibonacci-and-patterns",
+      "title": "Fibonacci and chart patterns",
+      "url": "/learn/lessons/fibonacci-and-patterns/"
+    },
+    {
+      "id": "what-is-price-action-trading",
+      "title": "What Is Price Action Trading? The Five Rules That Matter",
+      "url": "/what-is-price-action-trading.html"
+    },
+    {
+      "id": "how-to-identify-trend-in-trading",
+      "title": "How to Identify Trend in Trading When Noise Looks Exactly the Same",
+      "url": "/how-to-identify-trend-in-trading.html"
+    },
+    {
+      "id": "advanced-chart-methods",
+      "title": "Heikin Ashi, waves and divergence",
+      "url": "/learn/lessons/advanced-chart-methods/"
+    },
+    {
+      "id": "leading-and-lagging-indicators-in-a-trading-business",
+      "title": "Leading and Lagging Indicators in Your Trading Business",
+      "url": "/leading-and-lagging-indicators-in-a-trading-business.html"
+    },
+    {
+      "id": "how-to-review-the-trend-like-a-business-owner",
+      "title": "How to Review the Trend Like a Business Owner, Not a Gambler",
+      "url": "/how-to-review-the-trend-like-a-business-owner.html"
+    },
+    {
+      "id": "multiple-timeframes",
+      "title": "Use multiple timeframes without hindsight",
+      "url": "/learn/lessons/multiple-timeframes/"
+    },
+    {
+      "id": "trading-in-volatile-markets",
+      "title": "Trading in Volatile Markets",
+      "url": "/trading-in-volatile-markets.html"
+    },
+    {
+      "id": "what-a-business-owner-does-when-the-market-goes-quiet",
+      "title": "What a Business Owner Does When the Market Goes Quiet",
+      "url": "/what-a-business-owner-does-when-the-market-goes-quiet.html"
+    },
+    {
+      "id": "economic-news",
+      "title": "Read an economic release",
+      "url": "/learn/lessons/economic-news/"
+    },
+    {
+      "id": "central-banks-and-rates",
+      "title": "Central banks and interest-rate expectations",
+      "url": "/learn/lessons/central-banks-and-rates/"
+    },
+    {
+      "id": "currency-crosses-and-carry",
+      "title": "Currency crosses and carry",
+      "url": "/learn/lessons/currency-crosses-and-carry/"
+    },
+    {
+      "id": "intermarket-and-sentiment",
+      "title": "Gold, the dollar and market sentiment",
+      "url": "/learn/lessons/intermarket-and-sentiment/"
+    },
+    {
+      "id": "country-risk-and-liquidity",
+      "title": "Country risk, intervention and liquidity",
+      "url": "/learn/lessons/country-risk-and-liquidity/"
+    },
+    {
+      "id": "concentration-risk-in-your-trading-business",
+      "title": "Concentration Risk: When Every Trade You Own Is the Same Trade",
+      "url": "/concentration-risk-in-your-trading-business.html"
+    },
+    {
+      "id": "testing-a-trading-rule",
+      "title": "Test a rule before risking capital",
+      "url": "/learn/lessons/testing-a-trading-rule/"
+    },
+    {
+      "id": "treat-trading-like-a-business",
+      "title": "How to Treat Trading Like a Business",
+      "url": "/treat-trading-like-a-business.html"
+    },
+    {
+      "id": "one-page-trading-business-plan-template",
+      "title": "Your One-Page Trading Business Plan Template",
+      "url": "/one-page-trading-business-plan-template.html"
+    },
+    {
+      "id": "how-to-build-a-trading-system",
+      "title": "How to Build a Trading System You Can Actually Run",
+      "url": "/how-to-build-a-trading-system.html"
+    },
+    {
+      "id": "trading-journal-template",
+      "title": "The Trade Journal Template That Actually Changes How You Trade",
+      "url": "/trading-journal-template.html"
+    },
+    {
+      "id": "how-to-think-like-a-professional-trader-mark-douglas",
+      "title": "How to Think Like a Professional Trader Mark Douglas Described",
+      "url": "/how-to-think-like-a-professional-trader-mark-douglas.html"
+    },
+    {
+      "id": "how-to-manage-risk-in-gold-trading",
+      "title": "How to Manage Risk in Gold Trading: The Risk Ceiling",
+      "url": "/how-to-manage-risk-in-gold-trading.html"
+    },
+    {
+      "id": "position-sizing-for-gold-trading",
+      "title": "Position Sizing for Gold Trading, Without the Maths Headache",
+      "url": "/position-sizing-for-gold-trading.html"
+    },
+    {
+      "id": "trading-1-percent-rule",
+      "title": "The Trading 1 Percent Rule",
+      "url": "/trading-1-percent-rule.html"
+    },
+    {
+      "id": "how-to-take-profit-like-a-business",
+      "title": "How to Take Profit Like a Business: Scale Out, Don't Guess the Top",
+      "url": "/how-to-take-profit-like-a-business.html"
+    },
+    {
+      "id": "how-to-scale-forex-account",
+      "title": "How to Scale Forex Account Size",
+      "url": "/how-to-scale-forex-account.html"
+    },
+    {
+      "id": "why-do-most-traders-blow-their-accounts",
+      "title": "Why Do Most Traders Blow Their Accounts?",
+      "url": "/why-do-most-traders-blow-their-accounts.html"
+    },
+    {
+      "id": "graduation-checklist",
+      "title": "A readiness check before going live",
+      "url": "/learn/lessons/graduation-checklist/"
+    },
+    {
+      "id": "how-to-get-funded-by-a-prop-firm",
+      "title": "How to Get Funded by a Prop Firm, Priced Like a Business Decision",
+      "url": "/how-to-get-funded-by-a-prop-firm.html"
+    },
+    {
+      "id": "what-happens-if-you-fail-a-prop-firm-challenge",
+      "title": "What Happens If You Fail a Prop Firm Challenge, and What It Actually Costs",
+      "url": "/what-happens-if-you-fail-a-prop-firm-challenge.html"
+    },
+    {
+      "id": "how-to-run-a-weekly-review-for-your-trading-business",
+      "title": "How to Run a Weekly Review for Your Trading Business",
+      "url": "/how-to-run-a-weekly-review-for-your-trading-business.html"
+    },
+    {
+      "id": "what-is-a-good-risk-adjusted-return",
+      "title": "What Is a Good Risk Adjusted Return, and How Do You Score Your Own",
+      "url": "/what-is-a-good-risk-adjusted-return.html"
+    }
+  ],
+  "crypto": [
+    {
+      "id": "crypto-foundations",
+      "title": "What a cryptocurrency represents",
+      "url": "/learn/lessons/crypto-foundations/"
+    },
+    {
+      "id": "bitcoin-basics",
+      "title": "Bitcoin: scarcity and verification",
+      "url": "/learn/lessons/bitcoin-basics/"
+    },
+    {
+      "id": "bitcoin-network",
+      "title": "Nodes and transactions",
+      "url": "/learn/lessons/bitcoin-network/"
+    },
+    {
+      "id": "hashing",
+      "title": "Hashing and data integrity",
+      "url": "/learn/lessons/hashing/"
+    },
+    {
+      "id": "mining",
+      "title": "Proof of work and mining",
+      "url": "/learn/lessons/mining/"
+    },
+    {
+      "id": "blockchains",
+      "title": "Blocks, forks and consensus",
+      "url": "/learn/lessons/blockchains/"
+    },
+    {
+      "id": "wallet-security",
+      "title": "Wallets, keys and recovery phrases",
+      "url": "/learn/lessons/wallet-security/"
+    },
+    {
+      "id": "digital-signatures",
+      "title": "Digital signatures and approvals",
+      "url": "/learn/lessons/digital-signatures/"
+    },
+    {
+      "id": "altcoins-and-tokenomics",
+      "title": "Altcoins and token supply",
+      "url": "/learn/lessons/altcoins-and-tokenomics/"
+    },
+    {
+      "id": "crypto-exchanges",
+      "title": "Exchanges, custody and order books",
+      "url": "/learn/lessons/crypto-exchanges/"
+    },
+    {
+      "id": "crypto-scams",
+      "title": "Recognize common crypto scams",
+      "url": "/learn/lessons/crypto-scams/"
+    },
+    {
+      "id": "ethereum-and-smart-contracts",
+      "title": "Ethereum and smart contracts",
+      "url": "/learn/lessons/ethereum-and-smart-contracts/"
+    },
+    {
+      "id": "crypto-trading",
+      "title": "Spot, perpetuals and liquidation",
+      "url": "/learn/lessons/crypto-trading/"
+    },
+    {
+      "id": "nfts",
+      "title": "NFTs and the rights behind a token",
+      "url": "/learn/lessons/nfts/"
+    },
+    {
+      "id": "crypto-etfs",
+      "title": "Crypto funds and exchange-traded products",
+      "url": "/learn/lessons/crypto-etfs/"
+    },
+    {
+      "id": "onchain-analysis",
+      "title": "On-chain metrics with context",
+      "url": "/learn/lessons/onchain-analysis/"
+    }
+  ]
+}

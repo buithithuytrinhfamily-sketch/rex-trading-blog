@@ -1,0 +1,12 @@
+const test=require('node:test');const assert=require('node:assert/strict');const m=require('../assets/portal-math.js');
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
+test('gold position respects risk budget and lot step',()=>{const r=m.position(10000,1,10,100,1,.01,0);near(r.lots,.1);near(r.plannedLoss,100);const costs=m.position(10000,1,10,100,1,.01,15);assert.ok(costs.plannedLoss<=100);near(costs.lots,.09);});
+test('forex position with converted quote currency',()=>{const r=m.position(10000,1,.2,100000,1/150,.01,0);near(r.lots,.75);near(r.plannedLoss,100);});
+test('insufficient budget rounds down to no trade',()=>assert.equal(m.position(10,1,10,100,1,.01,0).lots,0));
+test('invalid risk inputs fail closed',()=>{assert.throws(()=>m.position(100,101,1,1,1,.1,0));assert.throws(()=>m.position(100,1,0,1,1,.1,0));assert.throws(()=>m.position(Infinity,1,1,1,1,.1,0));});
+test('pip value and account conversion',()=>{near(m.pip(.0001,100000,.1,1),1);near(m.pip(.01,100000,1,1/150),1000/150);});
+test('drawdown recovery includes zero balance',()=>{near(m.gain(100,80).percent,-20);near(m.gain(100,80).recovery,25);assert.equal(m.gain(100,0).recovery,null);assert.throws(()=>m.gain(0,10));});
+test('pivot variants use their documented formulas',()=>{const c=m.pivot(110,90,100);assert.deepEqual(c,{P:100,R1:110,R2:120,R3:130,S1:90,S2:80,S3:70});near(m.pivot(110,90,100,'fibonacci').R1,107.64);near(m.pivot(110,90,100,'camarilla').R4,111);near(m.pivot(110,90,100,'woodie').P,100);assert.deepEqual(m.pivot(110,90,100,'demark',100),{P:100,R1:110,S1:90});assert.throws(()=>m.pivot(90,110,100));});
+test('long and short risk reward validate direction',()=>{near(m.reward(100,95,110,'long').ratio,2);near(m.reward(100,105,90,'short').ratio,2);assert.throws(()=>m.reward(100,105,110,'long'));});
+test('correlation uses aligned returns and rejects constants',()=>{const a=m.returns([100,102,101,106]);near(m.correlation(a,a),1);near(m.correlation(a,a.map(x=>-x)),-1);assert.throws(()=>m.correlation([0,0,0],[1,2,3]));assert.throws(()=>m.correlation([1,2,3],[1,2]));});
+test('sample volatility is not population or annual volatility',()=>near(m.stdev([.01,.02,.03]),.01));

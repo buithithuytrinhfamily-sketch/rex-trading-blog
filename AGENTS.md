@@ -21,3 +21,15 @@
 - Check local links and assets, JavaScript syntax, navigation, and the article list.
 - Preserve article copy, canonical URLs, analytics, subscription endpoint, Telegram destinations, prices, guarantee terms, and testimonials unless explicitly asked to change them.
 - Never submit test email addresses to the live subscription endpoint.
+
+## Learning and tools portal
+
+- New portal pages are generated with `python3 scripts/build_portal.py` from `content/academy.json`, `content/glossary.json`, the existing article index and the generator's curated course/category definitions.
+- Edit the generator or content files before rebuilding; do not hand-edit generated route files and then run the generator over those edits.
+- Keep all existing articles in the home-page blog grid. The generator changes the shared header but does not rewrite article bodies or remove daily posts.
+- The portal uses `/assets/portal.css`, `portal.js`, `portal-math.js`, `portal-tools.js`, `portal-markets.js` and `portal-widgets.js`.
+- Run `python3 scripts/validate_portal.py` and `node --test tests/portal-math.test.cjs` after changes. Check any changed data integrations in a browser; an inserted iframe alone does not prove the provider display is working.
+- Forex comparison tables use Frankfurter daily reference rates and must retain effective dates and methodology. Do not relabel them as real-time executable quotes.
+- TradingView's generic screener uses `market: 'crypto'` for crypto pairs, not `crypto_mkt` (which can silently show the wrong market). The asset market-cap display instead uses `screener_type: 'crypto_mkt'` with `displayCurrency: 'USD'` on the same embed script.
+- Learning progress and scores are local-device data, with export/import. No server-side authentication or independent forum exists. Do not add a fake login, claim cloud sync, or label a manual score as live data.
+- Preserve attribution for external data displays. Paid features continue to use the original Kit terms; the portal does not introduce a new billing arrangement.

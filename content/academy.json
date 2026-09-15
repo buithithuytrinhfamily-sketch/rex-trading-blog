@@ -1,0 +1,444 @@
+[
+  {
+    "track": "forex",
+    "slug": "currency-pairs",
+    "title": "Read a currency pair",
+    "summary": "Understand what you buy, what you sell and which currency measures the result.",
+    "body": [
+      "A currency pair is an exchange ratio. In EUR/USD, EUR is the base and USD is the quote. A price of 1.1000 means one euro costs 1.10 US dollars. Buying the pair creates exposure to a rise in the euro relative to the dollar; selling creates the opposite exposure. Both currencies matter.",
+      "The instrument matters too. A spot currency conversion, a rolling retail forex position, a CFD and an exchange-traded futures contract do not have identical settlement, financing or counterparty arrangements. Read the contract specification before using any calculator. A ticker alone does not tell you the legal product you hold."
+    ],
+    "example": "Illustration: 10,000 EUR bought at 1.1000 and sold at 1.1050 produces 50 USD before spread, commission and financing. A move to 1.0950 loses 50 USD on the same size.",
+    "exercise": "In GBP/JPY, which currency is the quote currency, and in which currency is the initial price-move profit measured?",
+    "answer": "JPY is the quote currency. The initial profit or loss is measured in yen, then converted if the account uses another currency."
+  },
+  {
+    "track": "forex",
+    "slug": "pips-lots-and-costs",
+    "title": "Pips, lots and trading costs",
+    "summary": "Translate a price move into money before deciding how much to trade.",
+    "body": [
+      "For many non-JPY currency pairs a pip is 0.0001; for many JPY pairs it is 0.01. A pipette is a smaller quote increment. Gold tick and pip conventions vary between brokers, so read the tick size, tick value and contract size rather than assuming a universal gold pip.",
+      "A standard forex lot commonly represents 100,000 base units. Smaller lots change the money earned or lost per pip. Add spread, commission, financing and currency conversion to the calculation. A backtest using midpoint prices and zero costs is not an estimate of your executable result."
+    ],
+    "example": "For 10,000 EUR/USD units, a 0.0001 move is 1 USD. Twenty pips is 20 USD before costs. At the same size, a two-pip spread is about 2 USD.",
+    "exercise": "What is the pip value of 25,000 EUR/USD units when the pip size is 0.0001?",
+    "answer": "2.50 USD per pip: 25,000 × 0.0001."
+  },
+  {
+    "track": "forex",
+    "slug": "margin-and-leverage",
+    "title": "Margin is not your risk limit",
+    "summary": "Separate the deposit a broker requires from the loss a position can create.",
+    "body": [
+      "Margin is collateral required to maintain an exposure. Leverage describes exposure relative to the capital supporting it. Neither tells you how far the market can move against the position. A small margin requirement can coexist with a large possible loss.",
+      "Track equity, used margin and free margin separately. Falling equity can trigger liquidation under your broker’s rules. Stop orders may slip or gap, and protections vary by product and jurisdiction. Check the actual agreement; do not treat a calculator’s planned stop loss as a guarantee."
+    ],
+    "example": "Illustration: 20,000 USD equivalent exposure at 20:1 leverage requires 1,000 USD margin. A 1% adverse move in that exposure is 200 USD before costs, regardless of the deposit calculation.",
+    "exercise": "If the broker halves its margin requirement, does that halve the price risk of an unchanged position?",
+    "answer": "No. The same size and price move produce the same price-move loss. Only the collateral requirement changed."
+  },
+  {
+    "track": "forex",
+    "slug": "order-types",
+    "title": "Market, limit and stop orders",
+    "summary": "Choose an order by what it controls: price, activation or immediacy.",
+    "body": [
+      "A market order requests execution at available prices. A limit order restricts the execution price but may remain unfilled. A stop order activates when its trigger is reached; the resulting execution depends on the order type and broker rules. A stop-limit combines a trigger with a limit and can fail to exit during a fast move.",
+      "Before placing an order, write down direction, size, entry condition, invalidation and expiry. Check whether the platform triggers against bid, ask or last price. A chart can display a different price stream from the one used for activation. Cancel stale pending orders when the original setup is no longer valid."
+    ],
+    "example": "A hypothetical buy limit at 100 will not accept a fill above 100, but does not promise any fill. A market buy prioritizes execution and may fill above the price seen on screen.",
+    "exercise": "Which is the main trade-off of a stop-limit used as an exit?",
+    "answer": "It restricts execution price but may leave the position open if the market moves through the limit."
+  },
+  {
+    "track": "forex",
+    "slug": "candlesticks-and-charts",
+    "title": "Read a candle in context",
+    "summary": "A candle summarizes a period; it does not explain the cause of a move.",
+    "body": [
+      "A standard candle records open, high, low and close over a chosen interval. The body spans open to close; the wicks show extremes. The same trade stream creates different patterns on five-minute and daily charts because aggregation changes what you see.",
+      "A long wick only says price visited an area and closed elsewhere. It does not prove manipulation, buying pressure or the next direction. Start with a defined timeframe and objective rules for a pattern, then measure outcomes across enough examples, including losing ones."
+    ],
+    "example": "A candle opens at 100, reaches 104, falls to 99 and closes at 103. Its body runs from 100 to 103; the full range is five points. These values do not reveal the order of every intraperiod move.",
+    "exercise": "Can you determine whether the high or low came first from OHLC alone?",
+    "answer": "No. You need intraperiod data to reconstruct that sequence."
+  },
+  {
+    "track": "forex",
+    "slug": "support-resistance",
+    "title": "Support and resistance as testable zones",
+    "summary": "Define a zone before price arrives, then plan for both a hold and a break.",
+    "body": [
+      "Support and resistance describe areas where past price behavior suggests interest or congestion. They are observations, not barriers. Use a repeatable rule, such as a previous daily high or a cluster of swing points, instead of moving a line to fit the latest candle.",
+      "Write the zone width, the evidence required to act and what invalidates the idea. A breakout may continue or reverse. Account for spread and volatility when defining a trigger, and check the setup on examples you did not use to invent it."
+    ],
+    "example": "Your rule identifies yesterday’s high at 100 and a zone from 99.8 to 100.2. Decide in advance whether a close above 100.2 qualifies as a break and which timeframe supplies that close.",
+    "exercise": "Why is changing the zone after every losing example a problem?",
+    "answer": "It makes the rule impossible to evaluate fairly and can hide overfitting."
+  },
+  {
+    "track": "forex",
+    "slug": "moving-averages",
+    "title": "Moving averages and trend filters",
+    "summary": "Smoothing can make a rule clearer while delaying its response.",
+    "body": [
+      "A simple moving average is the arithmetic mean of a fixed number of observations. An exponential moving average gives more weight to recent observations. Both summarize past prices. Neither can identify a new trend without some delay or false signals.",
+      "A trend filter might allow long setups only above an average. Specify the sampling period, price input and whether the condition is checked at a closed bar. Test the filter’s net effect after costs; making a chart cleaner does not automatically improve a strategy."
+    ],
+    "example": "For closes of 10, 12 and 14, the three-period simple moving average is 12. When the next close is 16, the rolling average becomes 14 because the oldest observation drops out.",
+    "exercise": "What is the three-period SMA for 8, 10 and 12?",
+    "answer": "10. It is a summary of those three observations, not a forecast."
+  },
+  {
+    "track": "forex",
+    "slug": "indicators-momentum",
+    "title": "RSI, MACD and volatility indicators",
+    "summary": "Understand an indicator’s input before trusting its label.",
+    "body": [
+      "RSI compares recent gains and losses; MACD compares exponential averages and their signal line. ATR summarizes true ranges, including gaps relative to the previous close. These are different calculations, but they often reuse the same underlying prices.",
+      "An overbought reading does not require an immediate fall. Trends can remain extended, and a volatility measure has no direction by itself. Avoid counting several closely related indicators as independent evidence. State the exact decision an indicator changes, and remove it if it adds no measurable value."
+    ],
+    "example": "A strategy might use an ATR-based distance to normalize its stop across changing conditions. If the planned distance doubles while the cash risk stays constant, position size must fall approximately by half.",
+    "exercise": "Does a rising ATR tell you whether to buy or sell?",
+    "answer": "No. It indicates larger recent ranges, not their future direction."
+  },
+  {
+    "track": "forex",
+    "slug": "fibonacci-and-patterns",
+    "title": "Fibonacci and chart patterns",
+    "summary": "Treat drawn patterns as hypotheses, not price guarantees.",
+    "body": [
+      "Retracement tools place proportional levels between selected swing endpoints. A 50% retracement is commonly included even though 50% is not a Fibonacci ratio. Chart patterns describe geometric arrangements of swings, and their boundaries can be subjective.",
+      "Define how you choose endpoints, when a pattern qualifies, and how it becomes invalid. Do not redraw historical patterns after seeing the outcome. Compare results with a simple baseline, include all qualifying examples, and account for costs. Attractive geometry is not a substitute for evidence."
+    ],
+    "example": "A move from 100 to 120 has a 50% retracement at 110. The arithmetic locates a level; it does not establish that buyers will appear there.",
+    "exercise": "What information is still missing after calculating a retracement level?",
+    "answer": "A tested entry rule, invalidation, position size, exit process and evidence that the setup is useful after costs."
+  },
+  {
+    "track": "forex",
+    "slug": "advanced-chart-methods",
+    "title": "Heikin Ashi, waves and divergence",
+    "summary": "Know when your chart displays transformed data or subjective labels.",
+    "body": [
+      "Heikin Ashi candles transform price data to smooth the visual trend. Their displayed open and close are not necessarily prices you could trade. Elliott wave and harmonic classifications rely on labeling rules that can admit multiple interpretations.",
+      "Divergence occurs when a price extreme is not matched by an indicator extreme. It can persist while price continues. Use actual tradable prices for entries and risk calculations, record labels before the outcome, and test whether the additional complexity improves decisions."
+    ],
+    "example": "A smoothed candle can remain bullish while a standard candle pulls back. An order entered at the synthetic close may be impossible to reproduce in the market.",
+    "exercise": "Which prices should a trade execution backtest use?",
+    "answer": "Actual executable market prices, with realistic spread and slippage, not synthetic candle prices."
+  },
+  {
+    "track": "forex",
+    "slug": "multiple-timeframes",
+    "title": "Use multiple timeframes without hindsight",
+    "summary": "Assign each timeframe a job and respect when its bar closes.",
+    "body": [
+      "A higher timeframe can describe context while a lower timeframe defines an entry. More timeframes do not necessarily supply more information because they aggregate the same trades. Contradictions are normal: a small pullback can exist inside a larger uptrend.",
+      "Write which timeframe has priority and when its information becomes available. A daily candle’s final close is unknown halfway through the day. Backtesting an intraday entry with that final close introduces look-ahead bias."
+    ],
+    "example": "If the rule uses yesterday’s daily close for trend and a completed hourly candle for entry, both are known at the next hourly decision. Today’s final daily close is not.",
+    "exercise": "Why can using the completed daily high in a morning entry rule be misleading?",
+    "answer": "The final high may occur later. The strategy would be using information it did not have at the decision time."
+  },
+  {
+    "track": "forex",
+    "slug": "economic-news",
+    "title": "Read an economic release",
+    "summary": "Compare actual, expected and revised data, then observe the market response.",
+    "body": [
+      "Markets respond to surprises relative to expectations as well as to the level of a statistic. Calendars commonly show actual, forecast and previous values; the previous release may also be revised. Different components can point in different directions.",
+      "Write down the release time and timezone, the positions exposed, and whether your rules allow new entries. Spreads and execution conditions can change rapidly. A strong economic number does not always strengthen a currency because policy expectations and prior positioning also matter."
+    ],
+    "example": "Inflation of 3% can be a downside surprise if the forecast was 3.3%, and an upside surprise if the forecast was 2.7%. The same headline level can therefore have different context.",
+    "exercise": "What should you verify before comparing an actual release with the previous one?",
+    "answer": "The unit, period, seasonal adjustment and whether the previous value was revised."
+  },
+  {
+    "track": "forex",
+    "slug": "central-banks-and-rates",
+    "title": "Central banks and interest-rate expectations",
+    "summary": "Policy matters through both today’s decision and the path investors expect.",
+    "body": [
+      "Central banks influence short-term financial conditions through policy tools and communication. Currency markets consider how the expected path differs between economies. A policy rate announcement is only one part of the information released.",
+      "A currency may fall after a hike if participants expected more tightening, or rise after no change if the guidance is unexpectedly firm. Separate the announced decision, the language about future policy and the response in rates and exchange markets. Avoid reducing the entire reaction to one headline."
+    ],
+    "example": "An unchanged rate with softer future guidance can reduce expected returns on a currency even though today’s rate has not moved.",
+    "exercise": "Why can a widely expected rate hike produce little immediate movement?",
+    "answer": "The expectation may already be reflected in prices; the surprise in the decision or guidance is what changed."
+  },
+  {
+    "track": "forex",
+    "slug": "intermarket-and-sentiment",
+    "title": "Gold, the dollar and market sentiment",
+    "summary": "Use related markets as context while allowing relationships to change.",
+    "body": [
+      "Gold, currency pairs, bonds and equities can respond to shared economic forces. But a correlation measures a relationship over a particular sample, not a permanent law. A dollar rally and a gold rally can occur together under some conditions.",
+      "Distinguish a narrative from a measured relationship. Compare returns rather than raw price levels, align timestamps and test several windows. Risk-on and risk-off are shorthand descriptions; different assets can disagree. Do not add several exposures and assume they diversify simply because their names differ."
+    ],
+    "example": "Two positions each planned to risk 50 USD may both lose during the same dollar shock. Their combined planned risk is 100 USD, with possible extra loss from gaps or slippage.",
+    "exercise": "Does yesterday’s negative correlation guarantee opposite price moves tomorrow?",
+    "answer": "No. The relationship is sample-dependent and can weaken or reverse."
+  },
+  {
+    "track": "forex",
+    "slug": "currency-crosses-and-carry",
+    "title": "Currency crosses and carry",
+    "summary": "A rate advantage can be overwhelmed by an exchange-rate move.",
+    "body": [
+      "A cross pair excludes the US dollar, but it can still be influenced by dollar-related capital flows. Quotes must remain directionally consistent when deriving a cross: multiply or divide according to the units, not by memorizing a shortcut.",
+      "Carry describes the financing benefit or cost associated with holding exposure. Retail swap charges depend on product and broker terms and are not simply the difference between two central-bank rates. A positive carry does not protect against a price loss, liquidity shock or changing financing terms."
+    ],
+    "example": "If EUR/USD is 1.10 and USD/JPY is 150, the implied EUR/JPY is 165 before dealing spreads. The USD units cancel in the multiplication.",
+    "exercise": "Can a positive daily swap make a trade risk-free?",
+    "answer": "No. Adverse price moves and changes in costs can exceed the financing income."
+  },
+  {
+    "track": "forex",
+    "slug": "testing-a-trading-rule",
+    "title": "Test a rule before risking capital",
+    "summary": "Separate invention, validation and monitoring.",
+    "body": [
+      "Write the full rule before testing: eligible market, decision time, setup, entry, invalidation, sizing and exit. Keep an untouched sample for validation. Searching many variations until one looks profitable increases the chance of selecting noise.",
+      "Include realistic costs, failed fills and the sequence of trades. Evaluate drawdown, sample size and performance across different conditions alongside average returns. Paper trading can expose process problems but does not reproduce all emotional and execution effects of real money."
+    ],
+    "example": "A rule selected on 2020–2023 data can be tested on later data that was not used for parameter selection. Repeatedly tuning against that later sample turns it into another training set.",
+    "exercise": "Why does the best result from thousands of trials deserve extra skepticism?",
+    "answer": "Selection favors lucky noise. It needs independent validation and realistic implementation assumptions."
+  },
+  {
+    "track": "forex",
+    "slug": "country-risk-and-liquidity",
+    "title": "Country risk, intervention and liquidity",
+    "summary": "A price quote is only useful when you can execute and settle the trade.",
+    "body": [
+      "Political events, restrictions on capital flows, holidays and intervention can affect currency pricing and access. Liquidity varies across markets and time. A quoted price for a small order does not establish the price available for a much larger one.",
+      "Read the contract’s trading hours and exceptional-market provisions. Keep enough margin for adverse movement without assuming your stop will fill exactly. When liquidity deteriorates, using less size or staying out can be a process decision rather than a directional opinion."
+    ],
+    "example": "A pair can reopen beyond a Friday stop after a weekend event. The executed exit depends on available prices and order terms.",
+    "exercise": "What does a wider spread change besides the apparent quote?",
+    "answer": "It increases the cost of entering and exiting and can affect order triggers and the risk calculation."
+  },
+  {
+    "track": "forex",
+    "slug": "graduation-checklist",
+    "title": "A readiness check before going live",
+    "summary": "Course completion is a learning milestone, not evidence of a profitable edge.",
+    "body": [
+      "Before risking money, be able to explain your instrument, costs, position sizing and worst plausible execution conditions. Keep a written rule set, a journal and a procedure for pausing after operational failures. Know how to contact the broker and verify its legal identity.",
+      "Review a meaningful sample of decisions without changing rules after every loss. Decide in advance how much capital you can afford to lose and what would make you stop. A course or quiz cannot certify that a strategy is profitable or that live trading is suitable for you."
+    ],
+    "example": "A completed checklist could include: product specification read, sizing calculation checked, order-entry rehearsed, data backed up and a maximum loss budget documented.",
+    "exercise": "What should passing a quiz change about your position size?",
+    "answer": "Nothing by itself. A quiz tests knowledge; position size follows your risk plan and evidence, not a badge."
+  },
+  {
+    "track": "crypto",
+    "slug": "crypto-foundations",
+    "title": "What a cryptocurrency represents",
+    "summary": "Separate a network, its native asset and tokens issued on it.",
+    "body": [
+      "A cryptoasset is a digitally represented asset whose transfer or ownership is recorded using a network’s rules. Different assets offer different rights, and some offer no claim on revenue, reserves or an issuer. A familiar ticker does not establish economic value.",
+      "Before evaluating a price, identify what the token does, who can change its rules, how supply changes and where liquidity comes from. Gold setups on Rex do not become crypto trade recommendations merely because this course exists."
+    ],
+    "example": "Two tokens can both cost 1 USD while having completely different supplies and rights. Unit price alone is not a useful comparison.",
+    "exercise": "Does a lower token price make it cheaper in an economic sense?",
+    "answer": "No. Supply, rights, liquidity and the basis for valuation must also be considered."
+  },
+  {
+    "track": "crypto",
+    "slug": "bitcoin-basics",
+    "title": "Bitcoin: scarcity and verification",
+    "summary": "Learn what Bitcoin rules control and what they do not.",
+    "body": [
+      "Bitcoin participants validate transfers against shared consensus rules. Its issuance schedule limits new supply under those rules. Scarcity by itself does not determine a market price; demand, access, liquidity and willingness to hold also matter.",
+      "Holding bitcoin is different from owning shares in a company or a claim on a fixed amount of cash. Learn the difference between controlling keys directly and having a balance credited by an intermediary."
+    ],
+    "example": "A custodial account showing 0.01 BTC is a claim against the service until you can successfully withdraw it; it is not the same operational arrangement as controlling the keys.",
+    "exercise": "Does limited supply guarantee a rising price?",
+    "answer": "No. Price still depends on demand and trading conditions."
+  },
+  {
+    "track": "crypto",
+    "slug": "bitcoin-network",
+    "title": "Nodes and transactions",
+    "summary": "Understand validation, broadcasting and confirmations.",
+    "body": [
+      "A transaction is proposed to a network and checked against its rules. Full nodes verify data independently. Block production orders transactions, while additional blocks build on earlier history. Seeing a transaction in a wallet interface is not the same as final settlement.",
+      "Confirmation requirements depend on the asset, recipient and threat model. Check the correct network and address format. Never infer that two tokens can be sent on the same network because they share a name."
+    ],
+    "example": "A deposit platform may require several confirmations before crediting a balance. Its displayed processing state is distinct from the network’s own transaction state.",
+    "exercise": "What should you verify before any transfer?",
+    "answer": "Asset, network, recipient address, amount, fees and the recipient’s deposit requirements."
+  },
+  {
+    "track": "crypto",
+    "slug": "hashing",
+    "title": "Hashing and data integrity",
+    "summary": "A hash helps detect a change in data; it does not keep a secret.",
+    "body": [
+      "A cryptographic hash maps input data to a fixed-size output. Useful properties make it difficult to reverse or deliberately find colliding inputs. Changing the input usually changes the output dramatically.",
+      "Hashing differs from encryption. A public hash is not permission to spend funds and does not reveal a signing key. Blockchains use hashes in several structures, but a hash alone does not establish that the original input was truthful."
+    ],
+    "example": "A downloaded file can be checked against a trusted published hash. Matching hashes support that it is the same file, not that the file is safe or accurate.",
+    "exercise": "Is hashing a way to recover the original message later?",
+    "answer": "No. It is designed as a one-way transformation, unlike reversible encryption."
+  },
+  {
+    "track": "crypto",
+    "slug": "mining",
+    "title": "Proof of work and mining",
+    "summary": "Mining orders valid transactions under a network’s rules.",
+    "body": [
+      "In proof of work, miners compete to produce blocks that satisfy a computational target. Rewards and transaction fees create incentives, while other participants still verify that blocks follow the rules. A miner cannot make an invalid transaction valid simply by including it.",
+      "Mining economics depend on equipment, energy, competition, rewards and asset price. Buying a cloud-mining promise adds counterparty risk and does not guarantee returns. Distinguish network security concepts from an investment sales pitch."
+    ],
+    "example": "If competition rises while your equipment stays unchanged, your expected share of rewards can fall even if the token price is stable.",
+    "exercise": "Do miners alone decide whether a block is valid?",
+    "answer": "No. Other network participants independently enforce consensus rules."
+  },
+  {
+    "track": "crypto",
+    "slug": "blockchains",
+    "title": "Blocks, forks and consensus",
+    "summary": "A shared record still depends on rules and implementation.",
+    "body": [
+      "A blockchain links ordered blocks of data. Consensus mechanisms help participants agree on valid history under stated assumptions. Forks can reflect temporary competing histories or deliberate changes in rules.",
+      "Immutability is not an absolute promise for every chain or application. Understand the network’s finality model, concentration and upgrade process. An application can also depend on external data or administrators even when transactions are recorded on a blockchain."
+    ],
+    "example": "An on-chain record can prove that data was submitted at a point in the record. It cannot by itself prove that an off-chain warehouse actually held the goods described.",
+    "exercise": "Does a blockchain entry prove a real-world statement is true?",
+    "answer": "No. The quality of the external information remains a separate issue."
+  },
+  {
+    "track": "crypto",
+    "slug": "wallet-security",
+    "title": "Wallets, keys and recovery phrases",
+    "summary": "Control access and recovery without exposing secrets.",
+    "body": [
+      "A wallet manages keys and helps construct transactions. Assets remain recorded on the relevant network. A recovery phrase can recreate access in compatible wallets, so anyone who obtains it may gain control. Losing recovery access may be permanent.",
+      "Keep recovery material offline in a secure arrangement appropriate to your situation. Do not send it to support, paste it into websites or store it in a trading journal. Hardware devices reduce some risks, but they cannot rescue a user who approves a malicious transaction."
+    ],
+    "example": "A fake support agent asks for twelve words to fix a stuck transfer. Those words may grant control of the wallet; legitimate troubleshooting does not require you to disclose them.",
+    "exercise": "Should you enter a recovery phrase into a link sent by support?",
+    "answer": "No. Treat that request as an attempt to obtain control of the wallet."
+  },
+  {
+    "track": "crypto",
+    "slug": "digital-signatures",
+    "title": "Digital signatures and approvals",
+    "summary": "Signing can authorize more than the action you think you are taking.",
+    "body": [
+      "A digital signature proves that the corresponding key authorized a message under the signature system. It does not prove that the signer understood the message, or that the transaction is harmless.",
+      "Read transaction details, spending allowances, recipient addresses and network information before signing. Some approvals let an application spend tokens later. A message with no immediate network fee can still have consequences, depending on its content and protocol."
+    ],
+    "example": "Approving an unlimited token allowance can permit future transfers by the approved contract. Disconnecting a website in the wallet is not necessarily the same as revoking that allowance.",
+    "exercise": "Does a signature without a network fee have to be harmless?",
+    "answer": "No. The signed authorization may still grant rights or enable later actions."
+  },
+  {
+    "track": "crypto",
+    "slug": "altcoins-and-tokenomics",
+    "title": "Altcoins and token supply",
+    "summary": "Distinguish circulating supply from future issuance.",
+    "body": [
+      "Assets other than bitcoin can have very different issuance, governance and utility. Market capitalization uses a supply estimate times price; fully diluted valuation uses a broader supply assumption. Neither number guarantees that all holders could sell at the displayed price.",
+      "Read vesting schedules, administrator powers and concentration. A token can be technically functional while having unfavorable economics for holders. Supply and market-cap definitions differ between data providers, so compare like with like."
+    ],
+    "example": "If only 10% of an eventual token supply circulates, future unlocks may matter to holders. They do not mechanically determine a price, but ignoring them omits a real variable.",
+    "exercise": "Does market capitalization equal money invested into a token?",
+    "answer": "No. It is a calculation using an estimated supply and a marginal market price."
+  },
+  {
+    "track": "crypto",
+    "slug": "crypto-exchanges",
+    "title": "Exchanges, custody and order books",
+    "summary": "Trading access introduces its own risks.",
+    "body": [
+      "An exchange matches or intermediates trades and may hold customer assets. Review custody, withdrawals, fees and legal entity information. A proof-of-reserves snapshot alone does not provide a complete audit of liabilities or controls.",
+      "Order-book depth determines how much can trade near the displayed price. Thin markets can have large slippage. Spot purchases, margin trades and perpetual derivatives have different obligations and liquidation risks."
+    ],
+    "example": "A displayed bid for a small quantity does not mean a large position can exit at that price. Estimate price impact across the available levels.",
+    "exercise": "What can a reserve snapshot leave unanswered?",
+    "answer": "Liabilities, asset encumbrances, operational controls and whether the snapshot represents ongoing solvency."
+  },
+  {
+    "track": "crypto",
+    "slug": "crypto-scams",
+    "title": "Recognize common crypto scams",
+    "summary": "Check the request, the identity and who controls the destination.",
+    "body": [
+      "Common attacks impersonate support, promise guaranteed returns, advertise giveaways that require an advance payment, or ask users to sign misleading transactions. A copied logo or verified-looking profile is not independent evidence.",
+      "Navigate to official channels yourself and compare information across trusted sources. Avoid pressure to act immediately. If you suspect a compromise, stop interacting and seek appropriate support using independently verified contact details."
+    ],
+    "example": "A message promises to double any crypto sent to an address. The promised multiplier is not a business model or proof that repayment will occur.",
+    "exercise": "Does a small successful withdrawal prove a platform is safe?",
+    "answer": "No. Fraudulent operations can allow early withdrawals to encourage larger deposits."
+  },
+  {
+    "track": "crypto",
+    "slug": "ethereum-and-smart-contracts",
+    "title": "Ethereum and smart contracts",
+    "summary": "Programmable transactions expand both possibilities and failure modes.",
+    "body": [
+      "Ethereum supports programs that execute under network rules. Smart contracts can hold and transfer assets according to code. Code execution does not guarantee that the program is correct, economically sound or free of privileged controls.",
+      "Understand gas costs, upgrade powers and dependencies such as price oracles. A protocol can suffer a loss without the underlying network failing. An audit can reduce uncertainty but is not a guarantee."
+    ],
+    "example": "An application can use an external price feed to value collateral. If the feed or its integration fails, liquidation behavior can be wrong even when the chain keeps producing blocks.",
+    "exercise": "Does an audited smart contract remove all risk?",
+    "answer": "No. Implementation, upgrades, dependencies and economic design can still fail."
+  },
+  {
+    "track": "crypto",
+    "slug": "crypto-trading",
+    "title": "Spot, perpetuals and liquidation",
+    "summary": "Know which product you are trading before calculating risk.",
+    "body": [
+      "A spot holding and a leveraged perpetual contract are different exposures. Perpetuals often include funding payments and liquidation mechanics. The exchange’s mark price may trigger liquidation even when a chart displays another price.",
+      "Read collateral rules, maintenance margin and whether margin is isolated or shared. Leverage changes the relationship between equity and exposure. A stop order does not guarantee protection through gaps, outages or insufficient liquidity."
+    ],
+    "example": "With 5,000 USD notional exposure, a 2% adverse move changes price-move P&L by about 100 USD before costs. The margin posted does not reduce that exposure.",
+    "exercise": "Which price should you check for a perpetual’s liquidation rules?",
+    "answer": "The exchange’s specified liquidation or mark-price methodology, not merely the last traded price."
+  },
+  {
+    "track": "crypto",
+    "slug": "nfts",
+    "title": "NFTs and the rights behind a token",
+    "summary": "Owning a token is not automatically owning the underlying copyright.",
+    "body": [
+      "An NFT identifies a token under a contract’s rules. The associated media or rights may depend on external storage, licenses and an issuer. Read what ownership actually grants and whether the media can change or disappear.",
+      "Liquidity can be thin and valuations hard to compare. A listed floor price is an asking price, not proof you can sell at that level. Royalty behavior also depends on the marketplace and implementation."
+    ],
+    "example": "A token links to an image on an external server. If that server stops responding, the token record can remain while the media link fails.",
+    "exercise": "Does buying an NFT automatically transfer copyright?",
+    "answer": "No. Rights depend on the applicable license or agreement."
+  },
+  {
+    "track": "crypto",
+    "slug": "crypto-etfs",
+    "title": "Crypto funds and exchange-traded products",
+    "summary": "A fund share has its own structure, costs and trading hours.",
+    "body": [
+      "A crypto-linked exchange-traded product can hold assets, derivatives or another structure. Its share price, net asset value and tracking performance are related but not identical. Read the prospectus rather than assuming all products work the same way.",
+      "Fees, custody, market hours, premiums or discounts and tax treatment can affect the outcome. The underlying crypto market may trade while the exchange listing is closed. Product availability and legal treatment depend on jurisdiction."
+    ],
+    "example": "A crypto market moves sharply over a weekend while a listed fund is closed. The fund may reopen at a materially different price.",
+    "exercise": "Can a listed product trade at a price different from its asset value?",
+    "answer": "Yes. Premiums, discounts and tracking differences can occur."
+  },
+  {
+    "track": "crypto",
+    "slug": "onchain-analysis",
+    "title": "On-chain metrics with context",
+    "summary": "A blockchain address is not the same as a person.",
+    "body": [
+      "On-chain analysis measures network activity such as transfers, balances and fees. Metrics depend on definitions and labels. A single person can use many addresses, and an exchange address can represent many customers.",
+      "Movements between labeled wallets do not automatically indicate a buy or sell. Check how a provider builds its dataset and whether labels were known at the time. Combine on-chain observations with market structure instead of treating one metric as a trading signal."
+    ],
+    "example": "An exchange moves assets from one internal wallet to another. Transfer volume increases without a corresponding customer trade.",
+    "exercise": "Why can active-address counts overstate user growth?",
+    "answer": "One user can control multiple addresses, and automated or internal activity can inflate the count."
+  }
+]

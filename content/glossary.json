@@ -1,0 +1,527 @@
+[
+  {
+    "track": "forex",
+    "term": "Ask",
+    "definition": "The price at which a dealer offers to sell the base asset to you."
+  },
+  {
+    "track": "forex",
+    "term": "Bid",
+    "definition": "The price at which a dealer offers to buy the base asset from you."
+  },
+  {
+    "track": "forex",
+    "term": "Spread",
+    "definition": "The difference between the current ask and bid; one part of transaction cost."
+  },
+  {
+    "track": "forex",
+    "term": "Base currency",
+    "definition": "The first currency in a pair, whose units are being priced."
+  },
+  {
+    "track": "forex",
+    "term": "Quote currency",
+    "definition": "The second currency in a pair, used to express the price of the base currency."
+  },
+  {
+    "track": "forex",
+    "term": "Pip",
+    "definition": "A conventional quote increment, often 0.0001 for non-JPY pairs and 0.01 for JPY pairs; check the instrument."
+  },
+  {
+    "track": "forex",
+    "term": "Pipette",
+    "definition": "A fraction of a pip, commonly one tenth."
+  },
+  {
+    "track": "forex",
+    "term": "Lot",
+    "definition": "A contract-size convention; a standard forex lot commonly represents 100,000 base units, while other products differ."
+  },
+  {
+    "track": "forex",
+    "term": "Tick size",
+    "definition": "The smallest permitted price increment for a particular instrument."
+  },
+  {
+    "track": "forex",
+    "term": "Tick value",
+    "definition": "The cash value of one tick for a specified contract size, converted when needed."
+  },
+  {
+    "track": "forex",
+    "term": "Notional value",
+    "definition": "The amount of market exposure represented by a position."
+  },
+  {
+    "track": "forex",
+    "term": "Margin",
+    "definition": "Collateral required to support a position; it is not the maximum possible loss."
+  },
+  {
+    "track": "forex",
+    "term": "Free margin",
+    "definition": "Equity minus margin in use, subject to a platform’s definitions."
+  },
+  {
+    "track": "forex",
+    "term": "Equity",
+    "definition": "Account balance adjusted for open-position profit or loss and applicable charges."
+  },
+  {
+    "track": "forex",
+    "term": "Leverage",
+    "definition": "The ratio of exposure to the capital supporting it."
+  },
+  {
+    "track": "forex",
+    "term": "Margin call",
+    "definition": "A notification or condition related to insufficient margin under the provider’s rules."
+  },
+  {
+    "track": "forex",
+    "term": "Stop out",
+    "definition": "Forced position reduction or liquidation when a margin threshold is breached."
+  },
+  {
+    "track": "forex",
+    "term": "Stop-loss order",
+    "definition": "An instruction intended to exit at a trigger; ordinary stops do not guarantee the final execution price."
+  },
+  {
+    "track": "forex",
+    "term": "Limit order",
+    "definition": "An order that restricts the execution price but may never fill."
+  },
+  {
+    "track": "forex",
+    "term": "Market order",
+    "definition": "An order seeking execution at available prices rather than guaranteeing a price."
+  },
+  {
+    "track": "forex",
+    "term": "Stop-limit order",
+    "definition": "A stop trigger followed by a limit order; execution may fail if the market passes the limit."
+  },
+  {
+    "track": "forex",
+    "term": "Slippage",
+    "definition": "The difference between an expected or requested execution price and the actual fill."
+  },
+  {
+    "track": "forex",
+    "term": "Liquidity",
+    "definition": "The ability to trade size with limited delay and price impact under prevailing conditions."
+  },
+  {
+    "track": "forex",
+    "term": "Volatility",
+    "definition": "The variability of price changes over a stated window and sampling method."
+  },
+  {
+    "track": "forex",
+    "term": "Drawdown",
+    "definition": "The decline from a prior equity peak to a later value, usually expressed as a percentage."
+  },
+  {
+    "track": "forex",
+    "term": "Risk-reward ratio",
+    "definition": "A comparison of planned loss and planned gain; the ratio alone does not establish an edge."
+  },
+  {
+    "track": "forex",
+    "term": "Expectancy",
+    "definition": "Average expected outcome per trade under a model, including winning and losing outcomes and costs."
+  },
+  {
+    "track": "forex",
+    "term": "R multiple",
+    "definition": "An outcome divided by the original planned cash risk of that trade."
+  },
+  {
+    "track": "forex",
+    "term": "Correlation",
+    "definition": "A measure of co-movement over a stated dataset; it can change and does not prove causation."
+  },
+  {
+    "track": "forex",
+    "term": "Diversification",
+    "definition": "Spreading exposures so outcomes are not wholly driven by the same risks."
+  },
+  {
+    "track": "forex",
+    "term": "Hedge",
+    "definition": "An offsetting exposure intended to reduce a specified risk, potentially adding cost or basis risk."
+  },
+  {
+    "track": "forex",
+    "term": "Swap",
+    "definition": "A financing adjustment associated with holding certain retail forex or CFD positions overnight."
+  },
+  {
+    "track": "forex",
+    "term": "Carry trade",
+    "definition": "An exposure seeking a financing advantage while retaining exchange-rate and other risks."
+  },
+  {
+    "track": "forex",
+    "term": "Currency cross",
+    "definition": "A currency pair that does not include the US dollar."
+  },
+  {
+    "track": "forex",
+    "term": "Support",
+    "definition": "A defined price area where prior behavior suggests demand or reduced selling; it can fail."
+  },
+  {
+    "track": "forex",
+    "term": "Resistance",
+    "definition": "A defined price area where prior behavior suggests supply or reduced buying; it can fail."
+  },
+  {
+    "track": "forex",
+    "term": "Breakout",
+    "definition": "A move beyond a predefined price boundary under a stated rule."
+  },
+  {
+    "track": "forex",
+    "term": "False breakout",
+    "definition": "A move beyond a boundary that fails to continue according to the strategy’s definition."
+  },
+  {
+    "track": "forex",
+    "term": "Trend",
+    "definition": "A directional pattern measured over a specified timeframe and definition."
+  },
+  {
+    "track": "forex",
+    "term": "Range",
+    "definition": "A price interval or a market condition described by repeated movement between boundaries."
+  },
+  {
+    "track": "forex",
+    "term": "Candlestick",
+    "definition": "A display of open, high, low and close over one period."
+  },
+  {
+    "track": "forex",
+    "term": "Moving average",
+    "definition": "A rolling calculation that smooths historical observations."
+  },
+  {
+    "track": "forex",
+    "term": "RSI",
+    "definition": "A momentum calculation comparing recent gains and losses; extreme values do not guarantee reversal."
+  },
+  {
+    "track": "forex",
+    "term": "MACD",
+    "definition": "An indicator built from differences between exponential moving averages and a signal line."
+  },
+  {
+    "track": "forex",
+    "term": "ATR",
+    "definition": "Average True Range, a measure of recent ranges that includes gaps relative to the prior close."
+  },
+  {
+    "track": "forex",
+    "term": "Pivot point",
+    "definition": "A calculated reference level derived from a prior period’s prices, not a guaranteed turning point."
+  },
+  {
+    "track": "forex",
+    "term": "Fibonacci retracement",
+    "definition": "Proportional levels drawn between chosen swing endpoints; their usefulness requires testing."
+  },
+  {
+    "track": "forex",
+    "term": "Heikin Ashi",
+    "definition": "A transformed candle display whose values are not necessarily executable market prices."
+  },
+  {
+    "track": "forex",
+    "term": "Divergence",
+    "definition": "A mismatch between a price extreme and a corresponding indicator extreme."
+  },
+  {
+    "track": "forex",
+    "term": "Economic calendar",
+    "definition": "A schedule of releases and events, usually with time, expected values and importance labels."
+  },
+  {
+    "track": "forex",
+    "term": "CPI",
+    "definition": "Consumer Price Index, a measure of price changes for a defined consumer basket under an agency’s methodology."
+  },
+  {
+    "track": "forex",
+    "term": "GDP",
+    "definition": "Gross Domestic Product, a measure of production within an economy during a specified period."
+  },
+  {
+    "track": "forex",
+    "term": "NFP",
+    "definition": "Nonfarm payroll employment, part of the US employment report; revisions and other components also matter."
+  },
+  {
+    "track": "forex",
+    "term": "Central bank",
+    "definition": "An institution responsible for monetary functions defined by its mandate and jurisdiction."
+  },
+  {
+    "track": "forex",
+    "term": "Real yield",
+    "definition": "A yield adjusted for an inflation measure or expectation; the exact definition matters."
+  },
+  {
+    "track": "forex",
+    "term": "DXY",
+    "definition": "A specific US dollar index with a defined currency basket; it is not every possible measure of dollar strength."
+  },
+  {
+    "track": "forex",
+    "term": "Backtest",
+    "definition": "A historical simulation of a rule, sensitive to data quality, costs and implementation assumptions."
+  },
+  {
+    "track": "forex",
+    "term": "Overfitting",
+    "definition": "Adapting a model so closely to a sample that it captures noise rather than a stable relationship."
+  },
+  {
+    "track": "forex",
+    "term": "Look-ahead bias",
+    "definition": "Using information in a historical decision that was not available at that time."
+  },
+  {
+    "track": "forex",
+    "term": "Out-of-sample",
+    "definition": "Data kept separate from rule selection to test how a method generalizes."
+  },
+  {
+    "track": "forex",
+    "term": "CFD",
+    "definition": "A contract for difference referencing price changes rather than necessarily delivering the underlying asset."
+  },
+  {
+    "track": "forex",
+    "term": "Futures",
+    "definition": "Standardized exchange-traded contracts with specified terms, including expiration or settlement rules."
+  },
+  {
+    "track": "forex",
+    "term": "Basis risk",
+    "definition": "Risk that a hedge and the exposure it is intended to offset move differently."
+  },
+  {
+    "track": "forex",
+    "term": "Counterparty risk",
+    "definition": "The risk that the other party fails to meet its obligations."
+  },
+  {
+    "track": "forex",
+    "term": "Risk-on / risk-off",
+    "definition": "Shorthand for broad risk appetite; assets can disagree and the label is not a trade signal."
+  },
+  {
+    "track": "crypto",
+    "term": "Address",
+    "definition": "A network-specific identifier used to receive or reference assets; verify the network and format."
+  },
+  {
+    "track": "crypto",
+    "term": "Private key",
+    "definition": "Secret signing material that can authorize actions; never share it with support or websites."
+  },
+  {
+    "track": "crypto",
+    "term": "Public key",
+    "definition": "Cryptographic material used to verify signatures or derive identifiers under a protocol."
+  },
+  {
+    "track": "crypto",
+    "term": "Recovery phrase",
+    "definition": "Words encoding recovery material for compatible wallets; disclosure can grant control of funds."
+  },
+  {
+    "track": "crypto",
+    "term": "Wallet",
+    "definition": "Software or hardware that manages keys and helps construct transactions."
+  },
+  {
+    "track": "crypto",
+    "term": "Hot wallet",
+    "definition": "A wallet with signing access on an internet-connected device, adding exposure to online threats."
+  },
+  {
+    "track": "crypto",
+    "term": "Cold storage",
+    "definition": "An arrangement keeping signing keys offline; operational and recovery risks still remain."
+  },
+  {
+    "track": "crypto",
+    "term": "Custody",
+    "definition": "The arrangement determining who controls assets or the keys needed to move them."
+  },
+  {
+    "track": "crypto",
+    "term": "Blockchain",
+    "definition": "An ordered record of linked blocks maintained according to network rules."
+  },
+  {
+    "track": "crypto",
+    "term": "Node",
+    "definition": "A participant running network software; a full node independently validates relevant rules."
+  },
+  {
+    "track": "crypto",
+    "term": "Hash",
+    "definition": "A fixed-size output of a one-way data transformation used in integrity and other cryptographic structures."
+  },
+  {
+    "track": "crypto",
+    "term": "Digital signature",
+    "definition": "Cryptographic evidence that a corresponding key authorized a message; it does not prove the message is safe."
+  },
+  {
+    "track": "crypto",
+    "term": "Proof of work",
+    "definition": "A consensus-related mechanism requiring computational work to propose blocks under defined rules."
+  },
+  {
+    "track": "crypto",
+    "term": "Proof of stake",
+    "definition": "A family of consensus mechanisms using staked assets and protocol rules to select and discipline validators."
+  },
+  {
+    "track": "crypto",
+    "term": "Mining",
+    "definition": "The process of competing to produce blocks in a proof-of-work network."
+  },
+  {
+    "track": "crypto",
+    "term": "Validator",
+    "definition": "A participant performing validation and, depending on the protocol, proposing or attesting to blocks."
+  },
+  {
+    "track": "crypto",
+    "term": "Confirmation",
+    "definition": "Evidence that a transaction is included in an accepted history; finality assumptions vary by network."
+  },
+  {
+    "track": "crypto",
+    "term": "Fork",
+    "definition": "A split in history or rules, temporary or lasting depending on its cause and protocol."
+  },
+  {
+    "track": "crypto",
+    "term": "Gas",
+    "definition": "A measure used to price computation or execution resources on networks such as Ethereum."
+  },
+  {
+    "track": "crypto",
+    "term": "Smart contract",
+    "definition": "A program executed under a network’s rules, with code, dependency and governance risks."
+  },
+  {
+    "track": "crypto",
+    "term": "Oracle",
+    "definition": "A mechanism supplying external information to an application or contract."
+  },
+  {
+    "track": "crypto",
+    "term": "Token",
+    "definition": "An asset represented under a platform or contract’s rules, whose rights and supply must be investigated."
+  },
+  {
+    "track": "crypto",
+    "term": "Altcoin",
+    "definition": "A broad informal term for cryptoassets other than bitcoin."
+  },
+  {
+    "track": "crypto",
+    "term": "Stablecoin",
+    "definition": "A token designed to track a reference value; reserve, redemption and peg risks depend on its structure."
+  },
+  {
+    "track": "crypto",
+    "term": "Market capitalization",
+    "definition": "An estimated supply multiplied by a marginal price, not the amount of cash invested."
+  },
+  {
+    "track": "crypto",
+    "term": "Fully diluted valuation",
+    "definition": "A valuation using a broader supply assumption; it does not predict the price after issuance."
+  },
+  {
+    "track": "crypto",
+    "term": "Vesting",
+    "definition": "Restrictions or schedules controlling when allocated tokens become transferable."
+  },
+  {
+    "track": "crypto",
+    "term": "DeFi",
+    "definition": "Financial applications using programmable networks, often with smart-contract and liquidity risks."
+  },
+  {
+    "track": "crypto",
+    "term": "DEX",
+    "definition": "A decentralized exchange mechanism; interface, contract and execution risks still exist."
+  },
+  {
+    "track": "crypto",
+    "term": "CEX",
+    "definition": "A centralized exchange operator that may match trades and hold customer assets."
+  },
+  {
+    "track": "crypto",
+    "term": "Liquidity pool",
+    "definition": "Assets supplied to an automated trading or financial mechanism under defined rules."
+  },
+  {
+    "track": "crypto",
+    "term": "Slashing",
+    "definition": "A protocol penalty that can reduce staked assets for specified validator behavior."
+  },
+  {
+    "track": "crypto",
+    "term": "Perpetual contract",
+    "definition": "A derivative without a conventional expiration, often using funding to track a reference market."
+  },
+  {
+    "track": "crypto",
+    "term": "Funding rate",
+    "definition": "A periodic payment mechanism in certain perpetual markets; its sign and amount can change."
+  },
+  {
+    "track": "crypto",
+    "term": "Liquidation",
+    "definition": "Forced closure or reduction when collateral conditions are breached."
+  },
+  {
+    "track": "crypto",
+    "term": "NFT",
+    "definition": "A token with a distinct identifier; associated media and ownership rights depend on the contract and license."
+  },
+  {
+    "track": "crypto",
+    "term": "Bridge",
+    "definition": "A mechanism connecting assets or messages across networks, with additional implementation and custody assumptions."
+  },
+  {
+    "track": "crypto",
+    "term": "On-chain analysis",
+    "definition": "Analysis of recorded network activity using definitions and labels that can be incomplete."
+  },
+  {
+    "track": "crypto",
+    "term": "Token approval",
+    "definition": "Permission for a contract to use specified tokens; a standing allowance may remain after leaving a site."
+  },
+  {
+    "track": "crypto",
+    "term": "Rug pull",
+    "definition": "An informal term for a project insider removing support, liquidity or assets to the detriment of users."
+  }
+]
