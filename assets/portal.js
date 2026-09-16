@@ -62,3 +62,33 @@
     });quiz.addEventListener('reset',()=>{$$('[data-feedback]',quiz).forEach(x=>x.hidden=true);$('.quiz-summary',quiz).textContent='';});
   }
 })();
+
+/* quote strip */
+(function(){
+  var Q=[["Discipline is the bridge between goals and accomplishment.", "Jim Rohn"], ["What gets measured gets managed.", "Peter Drucker"], ["Plans are worthless, but planning is everything.", "Dwight D. Eisenhower"], ["By failing to prepare, you are preparing to fail.", "Benjamin Franklin"], ["Beware of little expenses; a small leak will sink a great ship.", "Benjamin Franklin"], ["An investment in knowledge pays the best interest.", "Benjamin Franklin"], ["Energy and persistence conquer all things.", "Benjamin Franklin"], ["Amateurs think about how much money they can make. Professionals think about how much they could lose.", "Jack Schwager"], ["Risk comes from not knowing what you are doing.", "Warren Buffett"], ["The market is a device for transferring money from the impatient to the patient.", "Warren Buffett"], ["Price is what you pay. Value is what you get.", "Warren Buffett"], ["Losers average losers.", "Paul Tudor Jones"], ["The elements of good trading are cutting losses, cutting losses, and cutting losses.", "Ed Seykota"], ["Win or lose, everybody gets what they want out of the market.", "Ed Seykota"], ["There is a time to go long, a time to go short, and a time to go fishing.", "Jesse Livermore"], ["Markets are never wrong; opinions often are.", "Jesse Livermore"], ["The four most dangerous words in investing are: this time it is different.", "John Templeton"], ["In investing, what is comfortable is rarely profitable.", "Robert Arnott"], ["Know what you own, and know why you own it.", "Peter Lynch"], ["The goal of a successful trader is to make the best trades. Money is secondary.", "Alexander Elder"], ["The first principle is that you must not fool yourself, and you are the easiest person to fool.", "Richard Feynman"], ["Simplicity is the ultimate sophistication.", "Leonardo da Vinci"], ["Well begun is half done.", "Aristotle"], ["Quality is not an act, it is a habit.", "Aristotle"], ["Patience is bitter, but its fruit is sweet.", "Aristotle"], ["We are what we repeatedly do. Excellence, then, is not an act, but a habit.", "Will Durant"], ["It does not matter how slowly you go as long as you do not stop.", "Confucius"], ["The man who moves a mountain begins by carrying away small stones.", "Confucius"], ["Our greatest glory is not in never falling, but in rising every time we fall.", "Confucius"], ["Victorious warriors win first and then go to war.", "Sun Tzu"], ["In the midst of chaos, there is also opportunity.", "Sun Tzu"], ["Know yourself and you need not fear the result of a hundred battles.", "Sun Tzu"], ["Success is the sum of small efforts repeated day in and day out.", "Robert Collier"], ["Do not be embarrassed by your failures, learn from them and start again.", "Richard Branson"], ["A goal without a plan is just a wish.", "Antoine de Saint-Exupery"], ["Whether you think you can, or you think you cannot, you are right.", "Henry Ford"], ["Courage is grace under pressure.", "Ernest Hemingway"], ["A person who never made a mistake never tried anything new.", "Albert Einstein"], ["Everything we hear is an opinion, not a fact.", "Marcus Aurelius"], ["The impediment to action advances action. What stands in the way becomes the way.", "Marcus Aurelius"], ["Nothing worth having comes easy.", "Theodore Roosevelt"], ["Luck is what happens when preparation meets opportunity.", "Seneca"], ["It is not that we have a short time to live, but that we waste a lot of it.", "Seneca"], ["He who has a why to live can bear almost any how.", "Friedrich Nietzsche"], ["However beautiful the strategy, you should occasionally look at the results.", "Winston Churchill"], ["If you do not know where you are going, any road will get you there.", "Lewis Carroll"], ["Beware of all enterprises that require new clothes.", "Henry David Thoreau"], ["Fall seven times, stand up eight.", "Japanese proverb"], ["The best time to plant a tree was twenty years ago. The second best time is now.", "Chinese proverb"], ["Rule number one: never lose money. Rule number two: never forget rule number one.", "Warren Buffett"]];
+  function build(){
+    var host=document.querySelector('[data-quote]');
+    if(!host){
+      var f=document.querySelector('footer.portal-footer')||document.querySelector('footer');
+      if(!f)return null;
+      var wrap=document.createElement('div');
+      wrap.className='portal-quote';
+      wrap.innerHTML='<div class="portal-shell"><blockquote data-quote><p class="pq-text"></p><cite class="pq-by"></cite></blockquote></div>';
+      f.insertBefore(wrap,f.firstChild);
+      host=wrap.querySelector('[data-quote]');
+    }
+    return host;
+  }
+  function run(){
+    try{
+      var host=build();
+      if(!host)return;
+      var t=host.querySelector('.pq-text'),b=host.querySelector('.pq-by');
+      if(!t||!b)return;
+      var q=Q[Math.floor(Math.random()*Q.length)];
+      t.textContent='\u201C'+q[0]+'\u201D';
+      b.textContent=q[1];
+    }catch(e){}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}
+})();
