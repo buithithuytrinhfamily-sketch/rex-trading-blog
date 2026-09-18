@@ -1,5 +1,37 @@
 [
   {
+    "url": "/risk-management-future-trading.html",
+    "title": "Risk Management Future Trading",
+    "desc": "Risk management future trading starts with a number you do not choose. The COMEX gold contract is 100 troy ounces and the micro is 10, and an ordinary 1 per cent day costs 10 per cent of an account one tenth the size of the contract.",
+    "date": "2026-09-19",
+    "category": "Risk  /  Contract size",
+    "image": "/assets/hero/risk-management-future-trading.png"
+  },
+  {
+    "url": "/trading-with-market-profile.html",
+    "title": "Trading With Market Profile",
+    "desc": "Half of a typical month's price range is travel rather than trade. Measured on 320 months of the London gold benchmark, the area where business actually gets done is narrower than the range suggests.",
+    "date": "2026-09-18",
+    "category": "Structure  /  Where trade happened",
+    "image": "/assets/hero/trading-with-market-profile.png"
+  },
+  {
+    "url": "/when-to-stop-trading-in-december.html",
+    "title": "When to Stop Trading in December",
+    "desc": "December is a scheduling question rather than a superstition. The benchmark calendar shows where the closures fall, and a business decides its year-end stop date in advance.",
+    "date": "2026-09-17",
+    "category": "Operations  /  Year-end close",
+    "image": "/assets/hero/when-to-stop-trading-in-december.png"
+  },
+  {
+    "url": "/when-should-you-quit-trading.html",
+    "title": "When Should You Quit Trading",
+    "desc": "Every business needs a written condition for closing its doors. Deciding it while things are calm is what separates a considered exit from a forced one.",
+    "date": "2026-09-16",
+    "category": "Operations  /  The exit decision",
+    "image": "/assets/hero/when-should-you-quit-trading.png"
+  },
+  {
     "url": "/trading-in-volatile-markets.html",
     "title": "Trading in Volatile Markets",
     "desc": "Trading in volatile markets is a pricing decision, not a courage one. ESMA charges 3.33 per cent margin on major FX and 50 per cent on crypto because limits vary with volatility. Hold the risk budget, halve the size when the range doubles.",
