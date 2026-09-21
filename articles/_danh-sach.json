@@ -1,634 +1,650 @@
 [
-  {
-    "url": "/risk-management-future-trading.html",
-    "title": "Risk Management Future Trading",
-    "desc": "Risk management future trading starts with a number you do not choose. The COMEX gold contract is 100 troy ounces and the micro is 10, and an ordinary 1 per cent day costs 10 per cent of an account one tenth the size of the contract.",
-    "date": "2026-09-19",
-    "category": "Risk  /  Contract size",
-    "image": "/assets/hero/risk-management-future-trading.png"
-  },
-  {
-    "url": "/trading-with-market-profile.html",
-    "title": "Trading With Market Profile",
-    "desc": "Half of a typical month's price range is travel rather than trade. Measured on 320 months of the London gold benchmark, the area where business actually gets done is narrower than the range suggests.",
-    "date": "2026-09-18",
-    "category": "Structure  /  Where trade happened",
-    "image": "/assets/hero/trading-with-market-profile.png"
-  },
-  {
-    "url": "/when-to-stop-trading-in-december.html",
-    "title": "When to Stop Trading in December",
-    "desc": "December is a scheduling question rather than a superstition. The benchmark calendar shows where the closures fall, and a business decides its year-end stop date in advance.",
-    "date": "2026-09-17",
-    "category": "Operations  /  Year-end close",
-    "image": "/assets/hero/when-to-stop-trading-in-december.png"
-  },
-  {
-    "url": "/when-should-you-quit-trading.html",
-    "title": "When Should You Quit Trading",
-    "desc": "Every business needs a written condition for closing its doors. Deciding it while things are calm is what separates a considered exit from a forced one.",
-    "date": "2026-09-16",
-    "category": "Operations  /  The exit decision",
-    "image": "/assets/hero/when-should-you-quit-trading.png"
-  },
-  {
-    "url": "/trading-in-volatile-markets.html",
-    "title": "Trading in Volatile Markets",
-    "desc": "Trading in volatile markets is a pricing decision, not a courage one. ESMA charges 3.33 per cent margin on major FX and 50 per cent on crypto because limits vary with volatility. Hold the risk budget, halve the size when the range doubles.",
-    "date": "2026-09-15",
-    "category": "Risk  /  Input pricing",
-    "image": "/assets/hero/trading-in-volatile-markets.png"
-  },
-  {
-    "url": "/how-to-scale-forex-account.html",
-    "title": "How to Scale Forex Account Size",
-    "desc": "How to scale forex account size without handing back the progress. Scaling multiplies the drawdown as fast as the upside: at 3 percent risk per trade it takes 7.3 straight losses to reach a 20 percent drawdown, which then needs a 25 percent gain to repair.",
-    "date": "2026-09-13",
-    "category": "Risk  /  Capacity",
-    "image": "/assets/hero/how-to-scale-forex-account.png"
-  },
-  {
-    "url": "/prop-firm-vs-hedge-fund.html",
-    "title": "Prop Firm vs Hedge Fund",
-    "desc": "Prop firm vs hedge fund is not one business with two doors. One trades the firm’s own capital under its rules, the other pools outside money and carries the paperwork that comes with it.",
-    "date": "2026-09-12",
-    "category": "Structure  /  Business model",
-    "image": "/assets/hero/prop-firm-vs-hedge-fund.png"
-  },
-  {
-    "url": "/trading-1-percent-rule.html",
-    "title": "The Trading 1 Percent Rule",
-    "desc": "The trading 1 percent rule is a spending limit, not caution. After ten losses in a row it is the difference between needing a 10.6 percent gain to recover and needing 186.8 percent.",
-    "date": "2026-09-10",
-    "category": "Risk  /  Limits",
-    "image": "/assets/hero/trading-1-percent-rule.png"
-  },
-  {
-    "url": "/how-to-open-a-trading-company.html",
-    "title": "How to Open a Trading Company",
-    "desc": "How to open a trading company: what a company actually changes, what it costs against your account size, and the break even profit before it pays for itself.",
-    "date": "2026-09-09",
-    "category": "Operations  /  Structure",
-    "image": "/assets/hero/how-to-open-a-trading-company.png"
-  },
-  {
-    "url": "/how-to-keep-a-trading-journal-like-a-professional.html",
-    "title": "How to Keep a Trading Journal Like a Professional",
-    "desc": "How to keep a trading journal like a professional: narrow fixed fields, logged at the close, reviewed on a fixed day. Plus how many trades it takes before the numbers mean anything.",
-    "date": "2026-09-08",
-    "category": "Operations  /  Records",
-    "image": "/assets/hero/how-to-keep-a-trading-journal-like-a-professional.png"
-  },
-  {
-    "url": "/how-long-to-keep-tax-records-sole-trader.html",
-    "title": "How Long to Keep Tax Records Sole Trader Rules Require",
-    "desc": "How long to keep tax records sole trader rules require: three years is the default, but a trader usually falls under the six and seven year exceptions. The published periods, and the routine.",
-    "date": "2026-09-07",
-    "category": "Operations  /  Bookkeeping",
-    "image": "/assets/hero/how-long-to-keep-tax-records-sole-trader.png"
-  },
-  {
-    "url": "/how-to-automate-tradingview-strategy.html",
-    "title": "How to Automate TradingView Strategy Execution and Keep It Running",
-    "desc": "How to automate tradingview strategy signals, and the number nobody checks first. Four links at 99.9 percent uptime each still leave the chain offline 35 hours a year.",
-    "date": "2026-09-03",
-    "category": "Operations  /  Automation",
-    "image": "/assets/hero/how-to-automate-tradingview-strategy.png"
-  },
-  {
-    "url": "/how-to-place-same-order-in-multiple-trading-accounts.html",
-    "title": "How to Place Same Order in Multiple Trading Accounts, and What It Costs",
-    "desc": "How to place same order in multiple trading accounts, the four methods and the two consequences. Four copies leave the chance all four lose at 45%, not 4.1%.",
-    "date": "2026-09-02",
-    "category": "Operations  /  Execution",
-    "image": "/assets/hero/how-to-place-same-order-in-multiple-trading-accounts.png"
-  },
-  {
-    "url": "/forex-scam-or-legit.html",
-    "title": "Forex Scam or Legit? The Check a Business Owner Runs First",
-    "desc": "Forex scam or legit is the wrong first question. Investment fraud was 5.58% of US complaints in 2024 but 39.58% of the dollars, at $137,120 per report.",
-    "date": "2026-09-01",
-    "category": "Operations  /  Due diligence",
-    "image": "/assets/hero/forex-scam-or-legit.png"
-  },
-  {
-    "url": "/what-is-a-good-expectancy-ratio-in-trading.html",
-    "title": "What Is a Good Expectancy Ratio in Trading? Ask What It Has to Cover",
-    "desc": "What is a good expectancy ratio in trading: good enough to clear your cost base and measured on enough trades to be real. 0.15R needs 246 trades before it excludes zero.",
-    "date": "2026-08-31",
-    "category": "Operations  /  Unit economics",
-    "image": "/assets/hero/what-is-a-good-expectancy-ratio-in-trading.png"
-  },
-  {
-    "url": "/how-to-know-if-trading-is-for-you.html",
-    "title": "How to Know If Trading Is for You, a Four Test Feasibility Check",
-    "desc": "How to know if trading is for you: four tests before you fund an account. The regulator's loss base rate, the streaks you have to sit through, your real hours, and the records.",
-    "date": "2026-08-30",
-    "category": "Operations  /  Feasibility",
-    "image": "/assets/hero/how-to-know-if-trading-is-for-you.png"
-  },
-  {
-    "url": "/when-do-they-halt-trading-on-a-stock.html",
-    "title": "When Do They Halt Trading on a Stock, and What It Costs You",
-    "desc": "When do they halt trading on a stock: the 7, 13 and 20 percent circuit breaker levels, and why a stop loss is not a control during a halt.",
-    "date": "2026-08-29",
-    "category": "Operations  /  Business continuity",
-    "image": "/assets/hero/when-do-they-halt-trading-on-a-stock.png"
-  },
-  {
-    "url": "/what-happens-if-my-brokerage-account-is-hacked.html",
-    "title": "What Happens If My Brokerage Account Is Hacked, and What Actually Protects You",
-    "desc": "What happens if my brokerage account is hacked: FBI IC3 froze 58 percent of stolen funds in 2025, and SIPC covers no forex or commodity trades at all. The continuity plan.",
-    "date": "2026-08-28",
-    "category": "Operations  /  Business continuity",
-    "image": "/assets/hero/what-happens-if-my-brokerage-account-is-hacked.png"
-  },
-  {
-    "url": "/what-is-impact-cost-in-trading.html",
-    "title": "What Is Impact Cost in Trading, the Cost That Grows With Your Size",
-    "desc": "What is impact cost in trading? The cost your own order causes by eating depth. Worked on a synthetic book: 20 times the size costs 100 times as much.",
-    "date": "2026-08-27",
-    "category": "Operations  /  Execution costs",
-    "image": "/assets/hero/what-is-impact-cost-in-trading.png"
-  },
-  {
-    "url": "/maximum-lot-size-forex.html",
-    "title": "Maximum Lot Size Forex: The Broker's Ceiling Is Not Yours",
-    "desc": "Maximum lot size forex has four platform answers and two real ones. Your risk ceiling as a share of the broker's is risk over stop times leverage, which is 5 percent at the 20:1 gold cap.",
-    "date": "2026-08-26",
-    "category": "Operations  /  Position limits",
-    "image": "/assets/hero/maximum-lot-size-forex.png"
-  },
-  {
-    "url": "/opportunity-cost-vs-trade-off.html",
-    "title": "Opportunity Cost vs Trade Off: What a Trading Business Gives Up Every Time It Acts",
-    "desc": "Opportunity cost vs trade off, priced for a trading business: a trade off is everything you give up, opportunity cost is the best of it. With 3 risk slots and 8 setups a week, 39.5 percent of them are declined for lack of space.",
-    "date": "2026-08-25",
-    "category": "Operations  /  Capacity",
-    "image": "/assets/hero/opportunity-cost-vs-trade-off.png"
-  },
-  {
-    "url": "/what-happens-if-you-fail-a-prop-firm-challenge.html",
-    "title": "What Happens If You Fail a Prop Firm Challenge, and What It Actually Costs",
-    "desc": "What happens if you fail a prop firm challenge, worked as a business expense: the fee is gone, and at a 20 percent pass rate the expected outlay is 5 times the fee before the funded account has earned anything.",
-    "date": "2026-08-24",
-    "category": "Operations  /  Cost control",
-    "image": "/assets/hero/what-happens-if-you-fail-a-prop-firm-challenge.png"
-  },
-  {
-    "url": "/how-to-know-when-to-stop-trading.html",
-    "title": "How to Know When to Stop Trading, the Business Owner's Version",
-    "desc": "How to know when to stop trading, set as two business limits: a daily stop that fires about one day in six, and an account level pause. Down 30 percent needs 42.9 percent to get back to flat.",
-    "date": "2026-08-23",
-    "category": "Operations  /  Risk ceilings",
-    "image": "/assets/hero/how-to-know-when-to-stop-trading.png"
-  },
-  {
-    "url": "/how-to-keep-track-of-day-trading-for-taxes.html",
-    "title": "How to Keep Track of Day Trading for Taxes, as a Bookkeeping System",
-    "desc": "How to keep track of day trading for taxes as a ledger, not a January panic: 5 round trips a day is 1,260 reportable lines a year, and 3,780 still on file under the IRS 3 year rule.",
-    "date": "2026-08-22",
-    "category": "Operations  /  Bookkeeping",
-    "image": "/assets/hero/how-to-keep-track-of-day-trading-for-taxes.png"
-  },
-  {
-    "url": "/how-to-test-an-ea-on-mt5.html",
-    "title": "How to Test an EA on MT5, and What the Result Entitles You to Believe",
-    "desc": "How to test an ea on mt5 as due diligence, not clicks: 55 wins in 100 trades has a 95% interval of 45.2% to 64.8%, and pinning the rate to 2 points needs about 2,377 trades.",
-    "date": "2026-08-21",
-    "category": "Operations  /  Due diligence",
-    "image": "/assets/hero/how-to-test-an-ea-on-mt5.png"
-  },
-  {
-    "url": "/how-to-use-vps-for-forex-trading.html",
-    "title": "How to Use VPS for Forex Trading, and How to Tell If You Need One",
-    "desc": "How to use VPS for forex trading, costed as equipment: 98% uptime is 175.2 hours offline a year, but if your stops rest on the broker's server the expected saving is $0.00.",
-    "date": "2026-08-20",
-    "category": "Operations  /  Equipment register",
-    "image": "/assets/hero/how-to-use-vps-for-forex-trading.png"
-  },
-  {
-    "url": "/how-to-protect-your-account-from-hackers.html",
-    "title": "How to Protect Your Account From Hackers, as a Business Control",
-    "desc": "How to protect your account from hackers: business email compromise averaged $123,005 per complaint in 2025, and 16 plain lowercase letters beat 8 symbol-heavy ones by 6.6 million times.",
-    "date": "2026-08-19",
-    "category": "Operations  /  Controls register",
-    "image": "/assets/hero/how-to-protect-your-account-from-hackers.png"
-  },
-  {
-    "url": "/how-to-manage-multiple-trading-accounts.html",
-    "title": "How to Manage Multiple Trading Accounts as One Business",
-    "desc": "How to manage multiple trading accounts: mirrored accounts hold a 15.76% typical drawdown no matter how many you open, while a genuinely split book at four accounts runs 5.42%.",
-    "date": "2026-08-18",
-    "category": "Operations  /  One book, many logins",
-    "image": "/assets/hero/how-to-manage-multiple-trading-accounts.png"
-  },
-  {
-    "url": "/what-is-a-good-risk-adjusted-return.html",
-    "title": "What Is a Good Risk Adjusted Return, and How Do You Score Your Own",
-    "desc": "What is a good risk adjusted return: two traders with the same edge, same expected return, and 1.67% against 17.25% of years ending at a loss. Measured on gold and on 100,000 simulated years.",
-    "date": "2026-08-17",
-    "category": "The books  /  Return over risk",
-    "image": "/assets/hero/what-is-a-good-risk-adjusted-return.png"
-  },
-  {
-    "url": "/how-to-get-funded-by-a-prop-firm.html",
-    "title": "How to Get Funded by a Prop Firm, Priced Like a Business Decision",
-    "desc": "How to get funded by a prop firm, modelled over 200,000 attempts: the daily loss limit ends 35% of them, the overall drawdown just 2%, and your trade count sets the pass rate.",
-    "date": "2026-08-16",
-    "category": "Cash flow  /  Pricing an attempt",
-    "image": "/assets/hero/how-to-get-funded-by-a-prop-firm.png"
-  },
-  {
-    "url": "/how-to-calculate-consistency-in-trading.html",
-    "title": "How to Calculate Consistency in Trading, and What Normal Actually Looks Like",
-    "desc": "How to calculate consistency in trading with three numbers from your own journal, plus what each looks like across 200,000 simulated years of a business with a real edge.",
-    "date": "2026-08-15",
-    "category": "The books  /  Measuring variance",
-    "image": "/assets/hero/how-to-calculate-consistency-in-trading.png"
-  },
-  {
-    "url": "/how-long-can-a-trade-stay-open.html",
-    "title": "How Long Can a Trade Stay Open? Price the Waiting First",
-    "desc": "How long can a trade stay open: usually forever, which is the problem. At 0.01616% a day a 2% target is gone in 124 days, while gold takes a median of 10 days to move that far.",
-    "date": "2026-08-14",
-    "category": "Operations  /  The holding decision",
-    "image": "/assets/hero/how-long-can-a-trade-stay-open.png"
-  },
-  {
-    "url": "/can-i-automate-my-trading-strategy.html",
-    "title": "Can I Automate My Trading Strategy? What the Backtest Will Not Tell You",
-    "desc": "Can I automate my trading strategy: the best of 1,683 backtested variants on gold ranked 1,247th of 1,683 on years the optimiser never saw, and lost to simply holding.",
-    "date": "2026-08-13",
-    "category": "Operations  /  The build decision",
-    "image": "/assets/hero/can-i-automate-my-trading-strategy.png"
-  },
-  {
-    "url": "/how-do-prop-firms-make-money.html",
-    "title": "How Do Prop Firms Make Money, and What That Tells You About Your Account",
-    "desc": "How do prop firms make money: two revenue lines, and a simulated evaluation that a trader with no edge at all clears 35.5 percent of the time. The arithmetic.",
-    "date": "2026-08-12",
-    "category": "Operations  /  The counterparty",
-    "image": "/assets/hero/how-do-prop-firms-make-money.png"
-  },
-  {
-    "url": "/trading-rules-checklist.html",
-    "title": "The Trading Rules Checklist That Survives a Bad Week",
-    "desc": "A trading rules checklist with the arithmetic behind it. Breaking the sizing rule one trade in twenty took the chance of a 20 percent drawdown from 6.9 to 24.9 percent.",
-    "date": "2026-08-11",
-    "category": "Operations  /  The control system",
-    "image": "/assets/hero/trading-rules-checklist.png"
-  },
-  {
-    "url": "/trading-business-model.html",
-    "title": "Your Trading Business Model: What You Sell and What It Costs",
-    "desc": "A trading business model in six lines: what you sell, what one trade costs to produce, the margin it carries and your monthly capacity. Regulators put retail losses at 74 to 89 percent.",
-    "date": "2026-08-10",
-    "category": "Operations  /  The model itself",
-    "image": "/assets/hero/trading-business-model.png"
-  },
-  {
-    "url": "/how-to-think-like-a-professional-trader-mark-douglas.html",
-    "title": "How to Think Like a Professional Trader Mark Douglas Described",
-    "desc": "How to think like a professional trader mark douglas described, turned into procedure. At a 55 percent win rate a five loss run is 64.7 percent likely inside 100 trades.",
-    "date": "2026-08-09",
-    "category": "Operations  /  The mindset decision",
-    "image": "/assets/hero/how-to-think-like-a-professional-trader-mark-douglas.png"
-  },
-  {
-    "url": "/part-time-trading-strategy.html",
-    "title": "Part Time Trading Strategy: Build the Operation Around the Hours You Have",
-    "desc": "A part time trading strategy priced as a business. A daily horizon asks for 250 decisions and 62.6 hours a year, a monthly one asks for 12.5 decisions and 9.4 hours.",
-    "date": "2026-08-09",
-    "category": "Operations  /  The capacity decision",
-    "image": "/assets/hero/part-time-trading-strategy.png"
-  },
-  {
-    "url": "/how-to-start-compound-trading.html",
-    "title": "How to Start Compound Trading Without Betting the Business On It",
-    "desc": "How to start compound trading as a business decision. A 50 percent fall needs a 100 percent gain, and fewer than 1 percent of day traders repeat a good year.",
-    "date": "2026-08-08",
-    "category": "Operations  /  The growth decision",
-    "image": "/assets/hero/how-to-start-compound-trading.png"
-  },
-  {
-    "url": "/trading-rules-and-regulations.html",
-    "title": "Trading Rules and Regulations: What They Let Your Account Do",
-    "desc": "Trading rules and regulations as business constraints: the 20:1 gold cap, the 50 percent margin close-out, and which of them actually bind your account.",
-    "date": "2026-08-07",
-    "category": "Operations  /  The constraints",
-    "image": "/assets/hero/trading-rules-and-regulations.png"
-  },
-  {
-    "url": "/how-to-identify-trend-in-trading.html",
-    "title": "How to Identify Trend in Trading When Noise Looks Exactly the Same",
-    "desc": "How to identify trend in trading: 33 percent of purely random windows show higher highs and higher lows, and only 49.9 percent of those continue. Write a definition, then calibrate it.",
-    "date": "2026-08-07",
-    "category": "Method  /  Written definitions",
-    "image": "/assets/hero/how-to-identify-trend-in-trading.png"
-  },
-  {
-    "url": "/forex-trading-daily-routine.html",
-    "title": "The Forex Trading Daily Routine That Fits the Hours You Actually Have",
-    "desc": "A forex trading daily routine priced in hours: eight trades a day costs 333 hours a year in prep and review alone. Build the routine around your real capacity, not your ambition.",
-    "date": "2026-08-06",
-    "category": "Operations  /  The working day",
-    "image": "/assets/hero/forex-trading-daily-routine.png"
-  },
-  {
-    "url": "/weekly-trading-vs-day-trading.html",
-    "title": "Weekly Trading vs Day Trading: Which Cost Base Can You Afford?",
-    "desc": "Weekly trading vs day trading, priced as a business decision. Four trades a day costs 70R a year in dealing costs; three a week costs 10.5R plus financing. The full comparison.",
-    "date": "2026-08-06",
-    "category": "Operations  /  The cost base",
-    "image": "/assets/hero/weekly-trading-vs-day-trading.png"
-  },
-  {
-    "url": "/how-to-build-a-trading-system.html",
-    "title": "How to Build a Trading System You Can Actually Run",
-    "desc": "How to build a trading system is a writing job, not a search. The four documents, and why a system with a real edge still has a 9.6 percent drawdown year.",
-    "date": "2026-08-05",
-    "category": "Operations  /  The system",
-    "image": "/assets/hero/how-to-build-a-trading-system.png"
-  },
-  {
-    "url": "/how-to-day-trade-with-a-full-time-job.html",
-    "title": "How to Day Trade With a Full Time Job",
-    "desc": "How to day trade with a full time job is a capacity question. The weekday budget leaves about 5 hours, and at two trades a week you are 11.5 months from a hundred trades.",
-    "date": "2026-08-04",
-    "category": "Operations  /  Your hours",
-    "image": "/assets/hero/how-to-day-trade-with-a-full-time-job.png"
-  },
-  {
-    "url": "/leading-and-lagging-indicators-in-a-trading-business.html",
-    "title": "Leading and Lagging Indicators in Your Trading Business",
-    "desc": "Your P&L is a lagging indicator that takes about 41 trades to confirm a broken process. Leading and lagging indicators, and the four columns that warn you the same day.",
-    "date": "2026-08-03",
-    "category": "The books  /  Early warning",
-    "image": "/assets/hero/leading-and-lagging-indicators-in-a-trading-business.png"
-  },
-  {
-    "url": "/concentration-risk-in-your-trading-business.html",
-    "title": "Concentration Risk: When Every Trade You Own Is the Same Trade",
-    "desc": "Concentration risk is the gap between how many positions your trade list shows and how many bets your account is making. Three gold trades are one bet at triple size. Here is the arithmetic.",
-    "date": "2026-08-03",
-    "category": "The books  /  Real exposure",
-    "image": "/assets/hero/concentration-risk-in-your-trading-business.png"
-  },
-  {
-    "url": "/measuring-trading-results-in-pips.html",
-    "title": "Why Measuring Trading Results in Pips Hurts Your Business",
-    "desc": "Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.",
-    "date": "2026-08-03",
-    "category": "The books  /  Measurement",
-    "image": "/assets/hero/measuring-trading-results-in-pips.png"
-  },
-  {
-    "url": "/when-to-retire-a-trading-strategy.html",
-    "title": "When to Retire a Trading Strategy That Stopped Working",
-    "desc": "A strategy is a product line, not an identity. How an operator tells variance from execution drift from changed conditions, why the retirement rule gets written while things are calm, and why you demote a strategy before you fire it.",
-    "date": "2026-07-30",
-    "category": "The books  /  Retire the line",
-    "image": "/assets/hero/when-to-retire-a-trading-strategy.png"
-  },
-  {
-    "url": "/what-is-price-action-trading.html",
-    "title": "What Is Price Action Trading? The Five Rules That Matter",
-    "desc": "Price action means reading the market's own record instead of stacking indicators on top of it. The five rules experienced traders keep coming back to, what each one honestly claims, and the one thing that outranks all five.",
-    "date": "2026-07-29",
-    "category": "Reading the market  /  Five rules",
-    "image": "/assets/hero/what-is-price-action-trading.png"
-  },
-  {
-    "url": "/what-is-the-break-even-point-of-your-trading-business.html",
-    "title": "What Is the Break-Even Point of Your Trading Business",
-    "desc": "Every business has a number it must clear before a single dollar is profit. Here is how to work out the break-even point of a trading business, why most traders count gross instead of net, and why adding costs quietly pushes you to take more risk.",
-    "date": "2026-07-29",
-    "category": "The books  /  Know your floor",
-    "image": "/assets/hero/what-is-the-break-even-point-of-your-trading-business.png"
-  },
-  {
-    "url": "/managing-an-open-trade-like-a-business.html",
-    "title": "Managing an Open Trade Like a Business",
-    "desc": "Opening a position is like opening the shop, the work starts after. Here is why your results depend on how you run a trade once it is live, not just where you got in, managed by rule like a business.",
-    "date": "2026-07-28",
-    "category": "Operations  /  Run the open trade",
-    "image": "/assets/hero/managing-an-open-trade-like-a-business.png"
-  },
-  {
-    "url": "/how-to-run-a-weekly-review-for-your-trading-business.html",
-    "title": "How to Run a Weekly Review for Your Trading Business",
-    "desc": "A business closes the week by looking at the books, not the last sale. Here is a simple weekly review for traders: what to look at, the four questions to ask, and how to turn a week of trades into one improvement.",
-    "date": "2026-07-28",
-    "category": "Operations  /  Close the week",
-    "image": "/assets/hero/how-to-run-a-weekly-review-for-your-trading-business.png"
-  },
-  {
-    "url": "/when-should-you-go-full-time-as-a-trader.html",
-    "title": "When Should You Go Full-Time as a Trader",
-    "desc": "Quitting your job on a good month is how most people blow up. Here are the four gates a trading business should clear before it becomes your main income, so the decision is made on evidence, not hope.",
-    "date": "2026-07-27",
-    "category": "Decision  /  Do not leap early",
-    "image": "/assets/hero/when-should-you-go-full-time-as-a-trader.png"
-  },
-  {
-    "url": "/how-to-build-a-pre-market-routine-for-your-trading-business.html",
-    "title": "How to Build a Pre-Market Routine for Your Trading Business",
-    "desc": "A shop opens the same way every morning, and so should a trading business. Here is a simple pre-market routine that sets your context, risk and plan before the first candle, so you trade the plan, not the mood.",
-    "date": "2026-07-27",
-    "category": "Operations  /  The opening routine",
-    "image": "/assets/hero/how-to-build-a-pre-market-routine-for-your-trading-business.png"
-  },
-  {
-    "url": "/how-to-pay-yourself-from-your-trading-business.html",
-    "title": "How to Pay Yourself from Your Trading Business",
-    "desc": "A green month is not a payday until you decide it is. Here is how to pay yourself from a trading business on a rule, so the account keeps growing and you still get to keep some of the win.",
-    "date": "2026-07-26",
-    "category": "Capital  /  Pay the operator",
-    "image": "/assets/hero/how-to-pay-yourself-from-your-trading-business.png"
-  },
-  {
-    "url": "/how-to-build-a-cash-reserve-for-your-trading-business.html",
-    "title": "How to Build a Cash Reserve for Your Trading Business",
-    "desc": "Trading capital is not the whole business. Here is how to build a cash reserve, a buffer that keeps you operating through drawdowns and quiet markets without touching your active capital.",
-    "date": "2026-07-25",
-    "category": "Capital  /  Build a reserve",
-    "image": "/assets/hero/how-to-build-a-cash-reserve-for-your-trading-business.png"
-  },
-  {
-    "url": "/key-metrics-every-trading-business-should-track.html",
-    "title": "The Key Metrics Every Trading Business Should Track",
-    "desc": "A business measures itself before it manages itself. The handful of trading KPIs that actually matter, win rate, average R, expectancy and drawdown, and why profit alone tells you almost nothing.",
-    "date": "2026-07-24",
-    "category": "Operations  /  Know your numbers",
-    "image": "/assets/hero/key-metrics-every-trading-business-should-track.png"
-  },
-  {
-    "url": "/how-your-trading-business-survives-a-market-shock.html",
-    "title": "How Your Trading Business Survives a Market Shock",
-    "desc": "A real business survives a shock because it keeps a reserve and never bets the whole company on one event. A calm, business-first guide to protecting your trading account through sudden market chaos.",
-    "date": "2026-07-23",
-    "category": "Continuity  /  Survive the shock",
-    "image": "/assets/hero/how-your-trading-business-survives-a-market-shock.png"
-  },
-  {
-    "url": "/running-the-london-session-like-a-business.html",
-    "title": "Running the London Session Like a Business",
-    "desc": "Treat the London session like your core work shift: a plan, a start time, a fixed risk budget, and a clean shutdown. A calm, business-first routine for gold.",
-    "date": "2026-07-22",
-    "category": "Operations  /  Your trading shift",
-    "image": "/assets/hero/running-the-london-session-like-a-business.png"
-  },
-  {
-    "url": "/your-monthly-profit-and-loss-review.html",
-    "title": "The Monthly Profit and Loss Review Every Trader Needs",
-    "desc": "Run a calm monthly profit and loss review of your trading like a business owner: the five numbers to pull, the questions to ask, and the discipline it builds.",
-    "date": "2026-07-22",
-    "category": "Operations  /  The monthly review",
-    "image": "/assets/hero/your-monthly-profit-and-loss-review.png"
-  },
-  {
-    "url": "/when-to-scale-up-your-trading-business.html",
-    "title": "When to Scale Up: Growing Your Trading Like a Business",
-    "desc": "Up a few trades and ready to go bigger? That's usually the most expensive moment to size up. When, and when not, to scale a trading account the way a real business grows: from retained results, not a hot streak.",
-    "date": "2026-07-21",
-    "category": "Growth  /  Scale like an operator",
-    "image": "/assets/hero/when-to-scale-up-your-trading-business.png"
-  },
-  {
-    "url": "/fixed-and-variable-costs-of-a-trading-business.html",
-    "title": "Fixed vs Variable Costs: The Numbers Most Traders Never Run",
-    "desc": "Winning months that somehow lose money? You've never counted your costs. Fixed vs variable costs, the numbers that reveal what your trading actually earns.",
-    "date": "2026-07-21",
-    "category": "Operations  /  Know your numbers",
-    "image": "/assets/hero/fixed-and-variable-costs-of-a-trading-business.png"
-  },
-  {
-    "url": "/managing-trading-psychology-like-a-business.html",
-    "title": "Managing Your Trading Psychology Like a Business",
-    "desc": "Fear, greed and revenge are real costs on your P&L. Learn to manage trading psychology like a business with systems, rules and a nightly emotional audit.",
-    "date": "2026-07-14",
-    "category": "Psychology  /  Run it like an operator",
-    "image": "/avatar.jpg"
-  },
-  {
-    "url": "/you-missed-the-trade-now-what.html",
-    "title": "You Missed the Trade, Now What? Why Chasing Is Bad Business",
-    "desc": "Missed a fast gold move and tempted to chase it? Here's why a missed trade isn't a loss, why chasing is bad business, and an operator's routine for FOMO.",
-    "date": "2026-07-14",
-    "category": "FOMO  /  Don't chase",
-    "image": "/avatar.jpg"
-  },
-  {
-    "url": "/choosing-a-broker-like-a-business-partner.html",
-    "title": "How to vet a broker like a business partner",
-    "desc": "How to vet a forex broker the way you'd vet a supplier: regulation, segregated funds, true all-in cost, execution, withdrawals, plus a 11-point checklist.",
-    "date": "2026-07-20",
-    "category": "Brokers",
-    "image": "/assets/hero/choosing-a-broker-like-a-business-partner.png"
-  },
-  {
-    "url": "/how-to-take-profit-like-a-business.html",
-    "title": "How to Take Profit Like a Business: Scale Out, Don't Guess the Top",
-    "desc": "Stop guessing the top on every trade. Learn how to take profit like a business by scaling out in portions, bank some, move your stop to breakeven, and let a runner ride. The exit plan that kills both fear of giving it back and fear of missing out.",
-    "date": "2026-07-19",
-    "category": "Exits  /  Take profit like a business",
-    "image": "/assets/hero/how-to-take-profit-like-a-business.png"
-  },
-  {
-    "url": "/what-a-business-owner-does-when-the-market-goes-quiet.html",
-    "title": "What a Business Owner Does When the Market Goes Quiet",
-    "desc": "A slow market tempts you to force a trade out of boredom. Here's why doing nothing is a real decision, and how a business owner protects capital in a dead season.",
-    "date": "2026-07-17",
-    "category": "Patience  /  The quiet market",
-    "image": "/assets/hero/what-a-business-owner-does-when-the-market-goes-quiet.png"
-  },
-  {
-    "url": "/making-money-is-easy-keeping-it-is-the-business.html",
-    "title": "Making Money Is the Easy Part, Keeping It Is the Business",
-    "desc": "Beginners get lucky wins, then give it all back. Rex on why capital preservation, discipline, and running your trading account like a business is what lasts.",
-    "date": "2026-07-16",
-    "category": "Mindset  /  Keep what you make",
-    "image": "/img/making-money-is-easy-keeping-it-is-the-business.jpg"
-  },
-  {
-    "url": "/how-to-review-the-trend-like-a-business-owner.html",
-    "title": "How to Review the Trend Like a Business Owner, Not a Gambler",
-    "desc": "Read gold's trend like an operator, not a gambler: a calm, repeatable market-review routine, name the trend, mark structure, plan, then close the laptop.",
-    "date": "2026-07-15",
-    "category": "Business  /  Market review",
-    "image": "/avatar.jpg"
-  },
-  {
-    "url": "/how-to-set-realistic-monthly-targets.html",
-    "title": "How to Set Realistic Monthly Targets for Your Trading Business",
-    "desc": "Setting a monthly profit target is what blows up trading accounts. Learn to run yours like a business, process targets, a risk budget, and staying solvent.",
-    "date": "2026-07-15",
-    "category": "Business  /  Monthly targets",
-    "image": "/assets/hero/how-to-set-realistic-monthly-targets.png"
-  },
-  {
-    "url": "/the-gap-between-knowing-and-doing.html",
-    "title": "The Gap Between Knowing and Doing (and Why It Empties Accounts)",
-    "desc": "You know exactly what to do, and you do the opposite anyway. Here's why the gap between knowing and doing empties trading accounts, and the operator's system that closes it.",
-    "date": "2026-07-13",
-    "category": "Mindset  /  Knowing vs doing",
-    "image": "/avatar.jpg"
-  },
-  {
-    "url": "/is-a-losing-trade-a-business-expense.html",
-    "title": "Is a Losing Trade a Business Expense?",
-    "desc": "Is a losing trade a business expense? A disciplined loss that followed the plan is a budgeted cost of doing business, not a failure to win back. An honest take.",
-    "date": "2026-07-12",
-    "category": "Mindset  /  The cost of doing business",
-    "image": "/img/is-a-losing-trade-a-business-expense.jpg"
-  },
-  {
-    "url": "/trading-journal-template.html",
-    "title": "The Trade Journal Template That Actually Changes How You Trade",
-    "desc": "A trading journal template built like a set of business books: the exact fields to log, what to write in each, and how to audit them to stop repeating losing trades.",
-    "date": "2026-07-11",
-    "category": "Journal  /  The template",
-    "image": "/assets/hero/trading-journal-template.png"
-  },
-  {
-    "url": "/position-sizing-for-gold-trading.html",
-    "title": "Position Sizing for Gold Trading, Without the Maths Headache",
-    "desc": "Position sizing for gold trading, minus the maths headache. One division turns your risk cap into a lot size, and why a wider stop means a smaller trade.",
-    "date": "2026-07-11",
-    "category": "Risk  /  Position sizing",
-    "image": "/assets/hero/position-sizing-for-gold-trading.png"
-  },
-  {
-    "url": "/how-to-manage-risk-in-gold-trading.html",
-    "title": "How to Manage Risk in Gold Trading: The Risk Ceiling",
-    "desc": "One bad week shouldn't be able to end your account. How to manage risk in gold trading with a monthly loss cap that cascades down to every single trade.",
-    "date": "2026-07-10",
-    "category": "Risk  /  The ceiling",
-    "image": "/assets/hero/how-to-manage-risk-in-gold-trading.png"
-  },
-  {
-    "url": "/treat-trading-like-a-business.html",
-    "title": "How to Treat Trading Like a Business",
-    "desc": "Hobby traders wing it; operators keep books. How to treat trading like a business, a written plan, a risk ceiling, a journal, and a two-minute nightly audit.",
-    "date": "2026-07-10",
-    "category": "Trade like a business",
-    "image": "/assets/hero/treat-trading-like-a-business.png"
-  },
-  {
-    "url": "/why-do-most-traders-blow-their-accounts.html",
-    "title": "Why Do Most Traders Blow Their Accounts?",
-    "desc": "Why do most traders blow their accounts? Not the strategy, not bad luck. A five-year business owner names the four failure patterns, and the real root cause.",
-    "date": "2026-07-10",
-    "category": "Risk  /  Diagnosis",
-    "image": "/assets/hero/why-do-most-traders-blow-their-accounts.png"
-  },
-  {
-    "url": "/one-page-trading-business-plan-template.html",
-    "title": "Your One-Page Trading Business Plan Template",
-    "desc": "A trading business plan template that fits on one page. Walk the six fields, mission, risk ceiling, trade ticket, journal, nightly audit, and fill your own tonight. Free.",
-    "date": "2026-07-10",
-    "category": "Template  /  Do it tonight",
-    "image": "/assets/hero/one-page-trading-business-plan-template.png"
-  }
+ {
+  "url": "/trading-choppy-market.html",
+  "title": "Trading Choppy Market Conditions",
+  "desc": "Trading choppy market conditions is a cost problem, not a skill problem. Across 361 rolling two month windows the median efficiency ratio was 0.263, and at 20 round turns a month the costs exceed the whole net movement on offer.",
+  "date": "2026-09-22",
+  "category": "Operations  /  Costs",
+  "image": "/assets/hero/trading-choppy-market.png"
+ },
+ {
+  "url": "/what-happens-if-your-broker-platform-goes-down.html",
+  "title": "What Happens If Your Broker Platform Goes Down",
+  "desc": "Resting orders and the broker's margin close out rule keep running, every click you planned does not. With six outages a year and a position open 15 per cent of the time, there is a 59.3 per cent chance at least one lands while you are exposed.",
+  "date": "2026-09-21",
+  "category": "Operations  /  Continuity",
+  "image": "/assets/hero/what-happens-if-your-broker-platform-goes-down.png"
+ },
+ {
+  "url": "/risk-management-future-trading.html",
+  "title": "Risk Management Future Trading",
+  "desc": "Risk management future trading starts with a number you do not choose. The COMEX gold contract is 100 troy ounces and the micro is 10, and an ordinary 1 per cent day costs 10 per cent of an account one tenth the size of the contract.",
+  "date": "2026-09-19",
+  "category": "Risk  /  Contract size",
+  "image": "/assets/hero/risk-management-future-trading.png"
+ },
+ {
+  "url": "/trading-with-market-profile.html",
+  "title": "Trading With Market Profile",
+  "desc": "Half of a typical month's price range is travel rather than trade. Measured on 320 months of the London gold benchmark, the area where business actually gets done is narrower than the range suggests.",
+  "date": "2026-09-18",
+  "category": "Structure  /  Where trade happened",
+  "image": "/assets/hero/trading-with-market-profile.png"
+ },
+ {
+  "url": "/when-to-stop-trading-in-december.html",
+  "title": "When to Stop Trading in December",
+  "desc": "December is a scheduling question rather than a superstition. The benchmark calendar shows where the closures fall, and a business decides its year-end stop date in advance.",
+  "date": "2026-09-17",
+  "category": "Operations  /  Year-end close",
+  "image": "/assets/hero/when-to-stop-trading-in-december.png"
+ },
+ {
+  "url": "/when-should-you-quit-trading.html",
+  "title": "When Should You Quit Trading",
+  "desc": "Every business needs a written condition for closing its doors. Deciding it while things are calm is what separates a considered exit from a forced one.",
+  "date": "2026-09-16",
+  "category": "Operations  /  The exit decision",
+  "image": "/assets/hero/when-should-you-quit-trading.png"
+ },
+ {
+  "url": "/trading-in-volatile-markets.html",
+  "title": "Trading in Volatile Markets",
+  "desc": "Trading in volatile markets is a pricing decision, not a courage one. ESMA charges 3.33 per cent margin on major FX and 50 per cent on crypto because limits vary with volatility. Hold the risk budget, halve the size when the range doubles.",
+  "date": "2026-09-15",
+  "category": "Risk  /  Input pricing",
+  "image": "/assets/hero/trading-in-volatile-markets.png"
+ },
+ {
+  "url": "/how-to-scale-forex-account.html",
+  "title": "How to Scale Forex Account Size",
+  "desc": "How to scale forex account size without handing back the progress. Scaling multiplies the drawdown as fast as the upside: at 3 percent risk per trade it takes 7.3 straight losses to reach a 20 percent drawdown, which then needs a 25 percent gain to repair.",
+  "date": "2026-09-13",
+  "category": "Risk  /  Capacity",
+  "image": "/assets/hero/how-to-scale-forex-account.png"
+ },
+ {
+  "url": "/prop-firm-vs-hedge-fund.html",
+  "title": "Prop Firm vs Hedge Fund",
+  "desc": "Prop firm vs hedge fund is not one business with two doors. One trades the firm’s own capital under its rules, the other pools outside money and carries the paperwork that comes with it.",
+  "date": "2026-09-12",
+  "category": "Structure  /  Business model",
+  "image": "/assets/hero/prop-firm-vs-hedge-fund.png"
+ },
+ {
+  "url": "/trading-1-percent-rule.html",
+  "title": "The Trading 1 Percent Rule",
+  "desc": "The trading 1 percent rule is a spending limit, not caution. After ten losses in a row it is the difference between needing a 10.6 percent gain to recover and needing 186.8 percent.",
+  "date": "2026-09-10",
+  "category": "Risk  /  Limits",
+  "image": "/assets/hero/trading-1-percent-rule.png"
+ },
+ {
+  "url": "/how-to-open-a-trading-company.html",
+  "title": "How to Open a Trading Company",
+  "desc": "How to open a trading company: what a company actually changes, what it costs against your account size, and the break even profit before it pays for itself.",
+  "date": "2026-09-09",
+  "category": "Operations  /  Structure",
+  "image": "/assets/hero/how-to-open-a-trading-company.png"
+ },
+ {
+  "url": "/how-to-keep-a-trading-journal-like-a-professional.html",
+  "title": "How to Keep a Trading Journal Like a Professional",
+  "desc": "How to keep a trading journal like a professional: narrow fixed fields, logged at the close, reviewed on a fixed day. Plus how many trades it takes before the numbers mean anything.",
+  "date": "2026-09-08",
+  "category": "Operations  /  Records",
+  "image": "/assets/hero/how-to-keep-a-trading-journal-like-a-professional.png"
+ },
+ {
+  "url": "/how-long-to-keep-tax-records-sole-trader.html",
+  "title": "How Long to Keep Tax Records Sole Trader Rules Require",
+  "desc": "How long to keep tax records sole trader rules require: three years is the default, but a trader usually falls under the six and seven year exceptions. The published periods, and the routine.",
+  "date": "2026-09-07",
+  "category": "Operations  /  Bookkeeping",
+  "image": "/assets/hero/how-long-to-keep-tax-records-sole-trader.png"
+ },
+ {
+  "url": "/how-to-automate-tradingview-strategy.html",
+  "title": "How to Automate TradingView Strategy Execution and Keep It Running",
+  "desc": "How to automate tradingview strategy signals, and the number nobody checks first. Four links at 99.9 percent uptime each still leave the chain offline 35 hours a year.",
+  "date": "2026-09-03",
+  "category": "Operations  /  Automation",
+  "image": "/assets/hero/how-to-automate-tradingview-strategy.png"
+ },
+ {
+  "url": "/how-to-place-same-order-in-multiple-trading-accounts.html",
+  "title": "How to Place Same Order in Multiple Trading Accounts, and What It Costs",
+  "desc": "How to place same order in multiple trading accounts, the four methods and the two consequences. Four copies leave the chance all four lose at 45%, not 4.1%.",
+  "date": "2026-09-02",
+  "category": "Operations  /  Execution",
+  "image": "/assets/hero/how-to-place-same-order-in-multiple-trading-accounts.png"
+ },
+ {
+  "url": "/forex-scam-or-legit.html",
+  "title": "Forex Scam or Legit? The Check a Business Owner Runs First",
+  "desc": "Forex scam or legit is the wrong first question. Investment fraud was 5.58% of US complaints in 2024 but 39.58% of the dollars, at $137,120 per report.",
+  "date": "2026-09-01",
+  "category": "Operations  /  Due diligence",
+  "image": "/assets/hero/forex-scam-or-legit.png"
+ },
+ {
+  "url": "/what-is-a-good-expectancy-ratio-in-trading.html",
+  "title": "What Is a Good Expectancy Ratio in Trading? Ask What It Has to Cover",
+  "desc": "What is a good expectancy ratio in trading: good enough to clear your cost base and measured on enough trades to be real. 0.15R needs 246 trades before it excludes zero.",
+  "date": "2026-08-31",
+  "category": "Operations  /  Unit economics",
+  "image": "/assets/hero/what-is-a-good-expectancy-ratio-in-trading.png"
+ },
+ {
+  "url": "/how-to-know-if-trading-is-for-you.html",
+  "title": "How to Know If Trading Is for You, a Four Test Feasibility Check",
+  "desc": "How to know if trading is for you: four tests before you fund an account. The regulator's loss base rate, the streaks you have to sit through, your real hours, and the records.",
+  "date": "2026-08-30",
+  "category": "Operations  /  Feasibility",
+  "image": "/assets/hero/how-to-know-if-trading-is-for-you.png"
+ },
+ {
+  "url": "/when-do-they-halt-trading-on-a-stock.html",
+  "title": "When Do They Halt Trading on a Stock, and What It Costs You",
+  "desc": "When do they halt trading on a stock: the 7, 13 and 20 percent circuit breaker levels, and why a stop loss is not a control during a halt.",
+  "date": "2026-08-29",
+  "category": "Operations  /  Business continuity",
+  "image": "/assets/hero/when-do-they-halt-trading-on-a-stock.png"
+ },
+ {
+  "url": "/what-happens-if-my-brokerage-account-is-hacked.html",
+  "title": "What Happens If My Brokerage Account Is Hacked, and What Actually Protects You",
+  "desc": "What happens if my brokerage account is hacked: FBI IC3 froze 58 percent of stolen funds in 2025, and SIPC covers no forex or commodity trades at all. The continuity plan.",
+  "date": "2026-08-28",
+  "category": "Operations  /  Business continuity",
+  "image": "/assets/hero/what-happens-if-my-brokerage-account-is-hacked.png"
+ },
+ {
+  "url": "/what-is-impact-cost-in-trading.html",
+  "title": "What Is Impact Cost in Trading, the Cost That Grows With Your Size",
+  "desc": "What is impact cost in trading? The cost your own order causes by eating depth. Worked on a synthetic book: 20 times the size costs 100 times as much.",
+  "date": "2026-08-27",
+  "category": "Operations  /  Execution costs",
+  "image": "/assets/hero/what-is-impact-cost-in-trading.png"
+ },
+ {
+  "url": "/maximum-lot-size-forex.html",
+  "title": "Maximum Lot Size Forex: The Broker's Ceiling Is Not Yours",
+  "desc": "Maximum lot size forex has four platform answers and two real ones. Your risk ceiling as a share of the broker's is risk over stop times leverage, which is 5 percent at the 20:1 gold cap.",
+  "date": "2026-08-26",
+  "category": "Operations  /  Position limits",
+  "image": "/assets/hero/maximum-lot-size-forex.png"
+ },
+ {
+  "url": "/opportunity-cost-vs-trade-off.html",
+  "title": "Opportunity Cost vs Trade Off: What a Trading Business Gives Up Every Time It Acts",
+  "desc": "Opportunity cost vs trade off, priced for a trading business: a trade off is everything you give up, opportunity cost is the best of it. With 3 risk slots and 8 setups a week, 39.5 percent of them are declined for lack of space.",
+  "date": "2026-08-25",
+  "category": "Operations  /  Capacity",
+  "image": "/assets/hero/opportunity-cost-vs-trade-off.png"
+ },
+ {
+  "url": "/what-happens-if-you-fail-a-prop-firm-challenge.html",
+  "title": "What Happens If You Fail a Prop Firm Challenge, and What It Actually Costs",
+  "desc": "What happens if you fail a prop firm challenge, worked as a business expense: the fee is gone, and at a 20 percent pass rate the expected outlay is 5 times the fee before the funded account has earned anything.",
+  "date": "2026-08-24",
+  "category": "Operations  /  Cost control",
+  "image": "/assets/hero/what-happens-if-you-fail-a-prop-firm-challenge.png"
+ },
+ {
+  "url": "/how-to-know-when-to-stop-trading.html",
+  "title": "How to Know When to Stop Trading, the Business Owner's Version",
+  "desc": "How to know when to stop trading, set as two business limits: a daily stop that fires about one day in six, and an account level pause. Down 30 percent needs 42.9 percent to get back to flat.",
+  "date": "2026-08-23",
+  "category": "Operations  /  Risk ceilings",
+  "image": "/assets/hero/how-to-know-when-to-stop-trading.png"
+ },
+ {
+  "url": "/how-to-keep-track-of-day-trading-for-taxes.html",
+  "title": "How to Keep Track of Day Trading for Taxes, as a Bookkeeping System",
+  "desc": "How to keep track of day trading for taxes as a ledger, not a January panic: 5 round trips a day is 1,260 reportable lines a year, and 3,780 still on file under the IRS 3 year rule.",
+  "date": "2026-08-22",
+  "category": "Operations  /  Bookkeeping",
+  "image": "/assets/hero/how-to-keep-track-of-day-trading-for-taxes.png"
+ },
+ {
+  "url": "/how-to-test-an-ea-on-mt5.html",
+  "title": "How to Test an EA on MT5, and What the Result Entitles You to Believe",
+  "desc": "How to test an ea on mt5 as due diligence, not clicks: 55 wins in 100 trades has a 95% interval of 45.2% to 64.8%, and pinning the rate to 2 points needs about 2,377 trades.",
+  "date": "2026-08-21",
+  "category": "Operations  /  Due diligence",
+  "image": "/assets/hero/how-to-test-an-ea-on-mt5.png"
+ },
+ {
+  "url": "/how-to-use-vps-for-forex-trading.html",
+  "title": "How to Use VPS for Forex Trading, and How to Tell If You Need One",
+  "desc": "How to use VPS for forex trading, costed as equipment: 98% uptime is 175.2 hours offline a year, but if your stops rest on the broker's server the expected saving is $0.00.",
+  "date": "2026-08-20",
+  "category": "Operations  /  Equipment register",
+  "image": "/assets/hero/how-to-use-vps-for-forex-trading.png"
+ },
+ {
+  "url": "/how-to-protect-your-account-from-hackers.html",
+  "title": "How to Protect Your Account From Hackers, as a Business Control",
+  "desc": "How to protect your account from hackers: business email compromise averaged $123,005 per complaint in 2025, and 16 plain lowercase letters beat 8 symbol-heavy ones by 6.6 million times.",
+  "date": "2026-08-19",
+  "category": "Operations  /  Controls register",
+  "image": "/assets/hero/how-to-protect-your-account-from-hackers.png"
+ },
+ {
+  "url": "/how-to-manage-multiple-trading-accounts.html",
+  "title": "How to Manage Multiple Trading Accounts as One Business",
+  "desc": "How to manage multiple trading accounts: mirrored accounts hold a 15.76% typical drawdown no matter how many you open, while a genuinely split book at four accounts runs 5.42%.",
+  "date": "2026-08-18",
+  "category": "Operations  /  One book, many logins",
+  "image": "/assets/hero/how-to-manage-multiple-trading-accounts.png"
+ },
+ {
+  "url": "/what-is-a-good-risk-adjusted-return.html",
+  "title": "What Is a Good Risk Adjusted Return, and How Do You Score Your Own",
+  "desc": "What is a good risk adjusted return: two traders with the same edge, same expected return, and 1.67% against 17.25% of years ending at a loss. Measured on gold and on 100,000 simulated years.",
+  "date": "2026-08-17",
+  "category": "The books  /  Return over risk",
+  "image": "/assets/hero/what-is-a-good-risk-adjusted-return.png"
+ },
+ {
+  "url": "/how-to-get-funded-by-a-prop-firm.html",
+  "title": "How to Get Funded by a Prop Firm, Priced Like a Business Decision",
+  "desc": "How to get funded by a prop firm, modelled over 200,000 attempts: the daily loss limit ends 35% of them, the overall drawdown just 2%, and your trade count sets the pass rate.",
+  "date": "2026-08-16",
+  "category": "Cash flow  /  Pricing an attempt",
+  "image": "/assets/hero/how-to-get-funded-by-a-prop-firm.png"
+ },
+ {
+  "url": "/how-to-calculate-consistency-in-trading.html",
+  "title": "How to Calculate Consistency in Trading, and What Normal Actually Looks Like",
+  "desc": "How to calculate consistency in trading with three numbers from your own journal, plus what each looks like across 200,000 simulated years of a business with a real edge.",
+  "date": "2026-08-15",
+  "category": "The books  /  Measuring variance",
+  "image": "/assets/hero/how-to-calculate-consistency-in-trading.png"
+ },
+ {
+  "url": "/how-long-can-a-trade-stay-open.html",
+  "title": "How Long Can a Trade Stay Open? Price the Waiting First",
+  "desc": "How long can a trade stay open: usually forever, which is the problem. At 0.01616% a day a 2% target is gone in 124 days, while gold takes a median of 10 days to move that far.",
+  "date": "2026-08-14",
+  "category": "Operations  /  The holding decision",
+  "image": "/assets/hero/how-long-can-a-trade-stay-open.png"
+ },
+ {
+  "url": "/can-i-automate-my-trading-strategy.html",
+  "title": "Can I Automate My Trading Strategy? What the Backtest Will Not Tell You",
+  "desc": "Can I automate my trading strategy: the best of 1,683 backtested variants on gold ranked 1,247th of 1,683 on years the optimiser never saw, and lost to simply holding.",
+  "date": "2026-08-13",
+  "category": "Operations  /  The build decision",
+  "image": "/assets/hero/can-i-automate-my-trading-strategy.png"
+ },
+ {
+  "url": "/how-do-prop-firms-make-money.html",
+  "title": "How Do Prop Firms Make Money, and What That Tells You About Your Account",
+  "desc": "How do prop firms make money: two revenue lines, and a simulated evaluation that a trader with no edge at all clears 35.5 percent of the time. The arithmetic.",
+  "date": "2026-08-12",
+  "category": "Operations  /  The counterparty",
+  "image": "/assets/hero/how-do-prop-firms-make-money.png"
+ },
+ {
+  "url": "/trading-rules-checklist.html",
+  "title": "The Trading Rules Checklist That Survives a Bad Week",
+  "desc": "A trading rules checklist with the arithmetic behind it. Breaking the sizing rule one trade in twenty took the chance of a 20 percent drawdown from 6.9 to 24.9 percent.",
+  "date": "2026-08-11",
+  "category": "Operations  /  The control system",
+  "image": "/assets/hero/trading-rules-checklist.png"
+ },
+ {
+  "url": "/trading-business-model.html",
+  "title": "Your Trading Business Model: What You Sell and What It Costs",
+  "desc": "A trading business model in six lines: what you sell, what one trade costs to produce, the margin it carries and your monthly capacity. Regulators put retail losses at 74 to 89 percent.",
+  "date": "2026-08-10",
+  "category": "Operations  /  The model itself",
+  "image": "/assets/hero/trading-business-model.png"
+ },
+ {
+  "url": "/how-to-think-like-a-professional-trader-mark-douglas.html",
+  "title": "How to Think Like a Professional Trader Mark Douglas Described",
+  "desc": "How to think like a professional trader mark douglas described, turned into procedure. At a 55 percent win rate a five loss run is 64.7 percent likely inside 100 trades.",
+  "date": "2026-08-09",
+  "category": "Operations  /  The mindset decision",
+  "image": "/assets/hero/how-to-think-like-a-professional-trader-mark-douglas.png"
+ },
+ {
+  "url": "/part-time-trading-strategy.html",
+  "title": "Part Time Trading Strategy: Build the Operation Around the Hours You Have",
+  "desc": "A part time trading strategy priced as a business. A daily horizon asks for 250 decisions and 62.6 hours a year, a monthly one asks for 12.5 decisions and 9.4 hours.",
+  "date": "2026-08-09",
+  "category": "Operations  /  The capacity decision",
+  "image": "/assets/hero/part-time-trading-strategy.png"
+ },
+ {
+  "url": "/how-to-start-compound-trading.html",
+  "title": "How to Start Compound Trading Without Betting the Business On It",
+  "desc": "How to start compound trading as a business decision. A 50 percent fall needs a 100 percent gain, and fewer than 1 percent of day traders repeat a good year.",
+  "date": "2026-08-08",
+  "category": "Operations  /  The growth decision",
+  "image": "/assets/hero/how-to-start-compound-trading.png"
+ },
+ {
+  "url": "/trading-rules-and-regulations.html",
+  "title": "Trading Rules and Regulations: What They Let Your Account Do",
+  "desc": "Trading rules and regulations as business constraints: the 20:1 gold cap, the 50 percent margin close-out, and which of them actually bind your account.",
+  "date": "2026-08-07",
+  "category": "Operations  /  The constraints",
+  "image": "/assets/hero/trading-rules-and-regulations.png"
+ },
+ {
+  "url": "/how-to-identify-trend-in-trading.html",
+  "title": "How to Identify Trend in Trading When Noise Looks Exactly the Same",
+  "desc": "How to identify trend in trading: 33 percent of purely random windows show higher highs and higher lows, and only 49.9 percent of those continue. Write a definition, then calibrate it.",
+  "date": "2026-08-07",
+  "category": "Method  /  Written definitions",
+  "image": "/assets/hero/how-to-identify-trend-in-trading.png"
+ },
+ {
+  "url": "/forex-trading-daily-routine.html",
+  "title": "The Forex Trading Daily Routine That Fits the Hours You Actually Have",
+  "desc": "A forex trading daily routine priced in hours: eight trades a day costs 333 hours a year in prep and review alone. Build the routine around your real capacity, not your ambition.",
+  "date": "2026-08-06",
+  "category": "Operations  /  The working day",
+  "image": "/assets/hero/forex-trading-daily-routine.png"
+ },
+ {
+  "url": "/weekly-trading-vs-day-trading.html",
+  "title": "Weekly Trading vs Day Trading: Which Cost Base Can You Afford?",
+  "desc": "Weekly trading vs day trading, priced as a business decision. Four trades a day costs 70R a year in dealing costs; three a week costs 10.5R plus financing. The full comparison.",
+  "date": "2026-08-06",
+  "category": "Operations  /  The cost base",
+  "image": "/assets/hero/weekly-trading-vs-day-trading.png"
+ },
+ {
+  "url": "/how-to-build-a-trading-system.html",
+  "title": "How to Build a Trading System You Can Actually Run",
+  "desc": "How to build a trading system is a writing job, not a search. The four documents, and why a system with a real edge still has a 9.6 percent drawdown year.",
+  "date": "2026-08-05",
+  "category": "Operations  /  The system",
+  "image": "/assets/hero/how-to-build-a-trading-system.png"
+ },
+ {
+  "url": "/how-to-day-trade-with-a-full-time-job.html",
+  "title": "How to Day Trade With a Full Time Job",
+  "desc": "How to day trade with a full time job is a capacity question. The weekday budget leaves about 5 hours, and at two trades a week you are 11.5 months from a hundred trades.",
+  "date": "2026-08-04",
+  "category": "Operations  /  Your hours",
+  "image": "/assets/hero/how-to-day-trade-with-a-full-time-job.png"
+ },
+ {
+  "url": "/leading-and-lagging-indicators-in-a-trading-business.html",
+  "title": "Leading and Lagging Indicators in Your Trading Business",
+  "desc": "Your P&L is a lagging indicator that takes about 41 trades to confirm a broken process. Leading and lagging indicators, and the four columns that warn you the same day.",
+  "date": "2026-08-03",
+  "category": "The books  /  Early warning",
+  "image": "/assets/hero/leading-and-lagging-indicators-in-a-trading-business.png"
+ },
+ {
+  "url": "/concentration-risk-in-your-trading-business.html",
+  "title": "Concentration Risk: When Every Trade You Own Is the Same Trade",
+  "desc": "Concentration risk is the gap between how many positions your trade list shows and how many bets your account is making. Three gold trades are one bet at triple size. Here is the arithmetic.",
+  "date": "2026-08-03",
+  "category": "The books  /  Real exposure",
+  "image": "/assets/hero/concentration-risk-in-your-trading-business.png"
+ },
+ {
+  "url": "/measuring-trading-results-in-pips.html",
+  "title": "Why Measuring Trading Results in Pips Hurts Your Business",
+  "desc": "Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.",
+  "date": "2026-08-03",
+  "category": "The books  /  Measurement",
+  "image": "/assets/hero/measuring-trading-results-in-pips.png"
+ },
+ {
+  "url": "/when-to-retire-a-trading-strategy.html",
+  "title": "When to Retire a Trading Strategy That Stopped Working",
+  "desc": "A strategy is a product line, not an identity. How an operator tells variance from execution drift from changed conditions, why the retirement rule gets written while things are calm, and why you demote a strategy before you fire it.",
+  "date": "2026-07-30",
+  "category": "The books  /  Retire the line",
+  "image": "/assets/hero/when-to-retire-a-trading-strategy.png"
+ },
+ {
+  "url": "/what-is-price-action-trading.html",
+  "title": "What Is Price Action Trading? The Five Rules That Matter",
+  "desc": "Price action means reading the market's own record instead of stacking indicators on top of it. The five rules experienced traders keep coming back to, what each one honestly claims, and the one thing that outranks all five.",
+  "date": "2026-07-29",
+  "category": "Reading the market  /  Five rules",
+  "image": "/assets/hero/what-is-price-action-trading.png"
+ },
+ {
+  "url": "/what-is-the-break-even-point-of-your-trading-business.html",
+  "title": "What Is the Break-Even Point of Your Trading Business",
+  "desc": "Every business has a number it must clear before a single dollar is profit. Here is how to work out the break-even point of a trading business, why most traders count gross instead of net, and why adding costs quietly pushes you to take more risk.",
+  "date": "2026-07-29",
+  "category": "The books  /  Know your floor",
+  "image": "/assets/hero/what-is-the-break-even-point-of-your-trading-business.png"
+ },
+ {
+  "url": "/managing-an-open-trade-like-a-business.html",
+  "title": "Managing an Open Trade Like a Business",
+  "desc": "Opening a position is like opening the shop, the work starts after. Here is why your results depend on how you run a trade once it is live, not just where you got in, managed by rule like a business.",
+  "date": "2026-07-28",
+  "category": "Operations  /  Run the open trade",
+  "image": "/assets/hero/managing-an-open-trade-like-a-business.png"
+ },
+ {
+  "url": "/how-to-run-a-weekly-review-for-your-trading-business.html",
+  "title": "How to Run a Weekly Review for Your Trading Business",
+  "desc": "A business closes the week by looking at the books, not the last sale. Here is a simple weekly review for traders: what to look at, the four questions to ask, and how to turn a week of trades into one improvement.",
+  "date": "2026-07-28",
+  "category": "Operations  /  Close the week",
+  "image": "/assets/hero/how-to-run-a-weekly-review-for-your-trading-business.png"
+ },
+ {
+  "url": "/when-should-you-go-full-time-as-a-trader.html",
+  "title": "When Should You Go Full-Time as a Trader",
+  "desc": "Quitting your job on a good month is how most people blow up. Here are the four gates a trading business should clear before it becomes your main income, so the decision is made on evidence, not hope.",
+  "date": "2026-07-27",
+  "category": "Decision  /  Do not leap early",
+  "image": "/assets/hero/when-should-you-go-full-time-as-a-trader.png"
+ },
+ {
+  "url": "/how-to-build-a-pre-market-routine-for-your-trading-business.html",
+  "title": "How to Build a Pre-Market Routine for Your Trading Business",
+  "desc": "A shop opens the same way every morning, and so should a trading business. Here is a simple pre-market routine that sets your context, risk and plan before the first candle, so you trade the plan, not the mood.",
+  "date": "2026-07-27",
+  "category": "Operations  /  The opening routine",
+  "image": "/assets/hero/how-to-build-a-pre-market-routine-for-your-trading-business.png"
+ },
+ {
+  "url": "/how-to-pay-yourself-from-your-trading-business.html",
+  "title": "How to Pay Yourself from Your Trading Business",
+  "desc": "A green month is not a payday until you decide it is. Here is how to pay yourself from a trading business on a rule, so the account keeps growing and you still get to keep some of the win.",
+  "date": "2026-07-26",
+  "category": "Capital  /  Pay the operator",
+  "image": "/assets/hero/how-to-pay-yourself-from-your-trading-business.png"
+ },
+ {
+  "url": "/how-to-build-a-cash-reserve-for-your-trading-business.html",
+  "title": "How to Build a Cash Reserve for Your Trading Business",
+  "desc": "Trading capital is not the whole business. Here is how to build a cash reserve, a buffer that keeps you operating through drawdowns and quiet markets without touching your active capital.",
+  "date": "2026-07-25",
+  "category": "Capital  /  Build a reserve",
+  "image": "/assets/hero/how-to-build-a-cash-reserve-for-your-trading-business.png"
+ },
+ {
+  "url": "/key-metrics-every-trading-business-should-track.html",
+  "title": "The Key Metrics Every Trading Business Should Track",
+  "desc": "A business measures itself before it manages itself. The handful of trading KPIs that actually matter, win rate, average R, expectancy and drawdown, and why profit alone tells you almost nothing.",
+  "date": "2026-07-24",
+  "category": "Operations  /  Know your numbers",
+  "image": "/assets/hero/key-metrics-every-trading-business-should-track.png"
+ },
+ {
+  "url": "/how-your-trading-business-survives-a-market-shock.html",
+  "title": "How Your Trading Business Survives a Market Shock",
+  "desc": "A real business survives a shock because it keeps a reserve and never bets the whole company on one event. A calm, business-first guide to protecting your trading account through sudden market chaos.",
+  "date": "2026-07-23",
+  "category": "Continuity  /  Survive the shock",
+  "image": "/assets/hero/how-your-trading-business-survives-a-market-shock.png"
+ },
+ {
+  "url": "/running-the-london-session-like-a-business.html",
+  "title": "Running the London Session Like a Business",
+  "desc": "Treat the London session like your core work shift: a plan, a start time, a fixed risk budget, and a clean shutdown. A calm, business-first routine for gold.",
+  "date": "2026-07-22",
+  "category": "Operations  /  Your trading shift",
+  "image": "/assets/hero/running-the-london-session-like-a-business.png"
+ },
+ {
+  "url": "/your-monthly-profit-and-loss-review.html",
+  "title": "The Monthly Profit and Loss Review Every Trader Needs",
+  "desc": "Run a calm monthly profit and loss review of your trading like a business owner: the five numbers to pull, the questions to ask, and the discipline it builds.",
+  "date": "2026-07-22",
+  "category": "Operations  /  The monthly review",
+  "image": "/assets/hero/your-monthly-profit-and-loss-review.png"
+ },
+ {
+  "url": "/when-to-scale-up-your-trading-business.html",
+  "title": "When to Scale Up: Growing Your Trading Like a Business",
+  "desc": "Up a few trades and ready to go bigger? That's usually the most expensive moment to size up. When, and when not, to scale a trading account the way a real business grows: from retained results, not a hot streak.",
+  "date": "2026-07-21",
+  "category": "Growth  /  Scale like an operator",
+  "image": "/assets/hero/when-to-scale-up-your-trading-business.png"
+ },
+ {
+  "url": "/fixed-and-variable-costs-of-a-trading-business.html",
+  "title": "Fixed vs Variable Costs: The Numbers Most Traders Never Run",
+  "desc": "Winning months that somehow lose money? You've never counted your costs. Fixed vs variable costs, the numbers that reveal what your trading actually earns.",
+  "date": "2026-07-21",
+  "category": "Operations  /  Know your numbers",
+  "image": "/assets/hero/fixed-and-variable-costs-of-a-trading-business.png"
+ },
+ {
+  "url": "/choosing-a-broker-like-a-business-partner.html",
+  "title": "How to vet a broker like a business partner",
+  "desc": "How to vet a forex broker the way you'd vet a supplier: regulation, segregated funds, true all-in cost, execution, withdrawals, plus a 11-point checklist.",
+  "date": "2026-07-20",
+  "category": "Brokers",
+  "image": "/assets/hero/choosing-a-broker-like-a-business-partner.png"
+ },
+ {
+  "url": "/how-to-take-profit-like-a-business.html",
+  "title": "How to Take Profit Like a Business: Scale Out, Don't Guess the Top",
+  "desc": "Stop guessing the top on every trade. Learn how to take profit like a business by scaling out in portions, bank some, move your stop to breakeven, and let a runner ride. The exit plan that kills both fear of giving it back and fear of missing out.",
+  "date": "2026-07-19",
+  "category": "Exits  /  Take profit like a business",
+  "image": "/assets/hero/how-to-take-profit-like-a-business.png"
+ },
+ {
+  "url": "/what-a-business-owner-does-when-the-market-goes-quiet.html",
+  "title": "What a Business Owner Does When the Market Goes Quiet",
+  "desc": "A slow market tempts you to force a trade out of boredom. Here's why doing nothing is a real decision, and how a business owner protects capital in a dead season.",
+  "date": "2026-07-17",
+  "category": "Patience  /  The quiet market",
+  "image": "/assets/hero/what-a-business-owner-does-when-the-market-goes-quiet.png"
+ },
+ {
+  "url": "/making-money-is-easy-keeping-it-is-the-business.html",
+  "title": "Making Money Is the Easy Part, Keeping It Is the Business",
+  "desc": "Beginners get lucky wins, then give it all back. Rex on why capital preservation, discipline, and running your trading account like a business is what lasts.",
+  "date": "2026-07-16",
+  "category": "Mindset  /  Keep what you make",
+  "image": "/img/making-money-is-easy-keeping-it-is-the-business.jpg"
+ },
+ {
+  "url": "/how-to-review-the-trend-like-a-business-owner.html",
+  "title": "How to Review the Trend Like a Business Owner, Not a Gambler",
+  "desc": "Read gold's trend like an operator, not a gambler: a calm, repeatable market-review routine, name the trend, mark structure, plan, then close the laptop.",
+  "date": "2026-07-15",
+  "category": "Business  /  Market review",
+  "image": "/avatar.jpg"
+ },
+ {
+  "url": "/how-to-set-realistic-monthly-targets.html",
+  "title": "How to Set Realistic Monthly Targets for Your Trading Business",
+  "desc": "Setting a monthly profit target is what blows up trading accounts. Learn to run yours like a business, process targets, a risk budget, and staying solvent.",
+  "date": "2026-07-15",
+  "category": "Business  /  Monthly targets",
+  "image": "/assets/hero/how-to-set-realistic-monthly-targets.png"
+ },
+ {
+  "url": "/managing-trading-psychology-like-a-business.html",
+  "title": "Managing Your Trading Psychology Like a Business",
+  "desc": "Fear, greed and revenge are real costs on your P&L. Learn to manage trading psychology like a business with systems, rules and a nightly emotional audit.",
+  "date": "2026-07-14",
+  "category": "Psychology  /  Run it like an operator",
+  "image": "/avatar.jpg"
+ },
+ {
+  "url": "/you-missed-the-trade-now-what.html",
+  "title": "You Missed the Trade, Now What? Why Chasing Is Bad Business",
+  "desc": "Missed a fast gold move and tempted to chase it? Here's why a missed trade isn't a loss, why chasing is bad business, and an operator's routine for FOMO.",
+  "date": "2026-07-14",
+  "category": "FOMO  /  Don't chase",
+  "image": "/avatar.jpg"
+ },
+ {
+  "url": "/the-gap-between-knowing-and-doing.html",
+  "title": "The Gap Between Knowing and Doing (and Why It Empties Accounts)",
+  "desc": "You know exactly what to do, and you do the opposite anyway. Here's why the gap between knowing and doing empties trading accounts, and the operator's system that closes it.",
+  "date": "2026-07-13",
+  "category": "Mindset  /  Knowing vs doing",
+  "image": "/avatar.jpg"
+ },
+ {
+  "url": "/is-a-losing-trade-a-business-expense.html",
+  "title": "Is a Losing Trade a Business Expense?",
+  "desc": "Is a losing trade a business expense? A disciplined loss that followed the plan is a budgeted cost of doing business, not a failure to win back. An honest take.",
+  "date": "2026-07-12",
+  "category": "Mindset  /  The cost of doing business",
+  "image": "/img/is-a-losing-trade-a-business-expense.jpg"
+ },
+ {
+  "url": "/trading-journal-template.html",
+  "title": "The Trade Journal Template That Actually Changes How You Trade",
+  "desc": "A trading journal template built like a set of business books: the exact fields to log, what to write in each, and how to audit them to stop repeating losing trades.",
+  "date": "2026-07-11",
+  "category": "Journal  /  The template",
+  "image": "/assets/hero/trading-journal-template.png"
+ },
+ {
+  "url": "/position-sizing-for-gold-trading.html",
+  "title": "Position Sizing for Gold Trading, Without the Maths Headache",
+  "desc": "Position sizing for gold trading, minus the maths headache. One division turns your risk cap into a lot size, and why a wider stop means a smaller trade.",
+  "date": "2026-07-11",
+  "category": "Risk  /  Position sizing",
+  "image": "/assets/hero/position-sizing-for-gold-trading.png"
+ },
+ {
+  "url": "/how-to-manage-risk-in-gold-trading.html",
+  "title": "How to Manage Risk in Gold Trading: The Risk Ceiling",
+  "desc": "One bad week shouldn't be able to end your account. How to manage risk in gold trading with a monthly loss cap that cascades down to every single trade.",
+  "date": "2026-07-10",
+  "category": "Risk  /  The ceiling",
+  "image": "/assets/hero/how-to-manage-risk-in-gold-trading.png"
+ },
+ {
+  "url": "/treat-trading-like-a-business.html",
+  "title": "How to Treat Trading Like a Business",
+  "desc": "Hobby traders wing it; operators keep books. How to treat trading like a business, a written plan, a risk ceiling, a journal, and a two-minute nightly audit.",
+  "date": "2026-07-10",
+  "category": "Trade like a business",
+  "image": "/assets/hero/treat-trading-like-a-business.png"
+ },
+ {
+  "url": "/why-do-most-traders-blow-their-accounts.html",
+  "title": "Why Do Most Traders Blow Their Accounts?",
+  "desc": "Why do most traders blow their accounts? Not the strategy, not bad luck. A five-year business owner names the four failure patterns, and the real root cause.",
+  "date": "2026-07-10",
+  "category": "Risk  /  Diagnosis",
+  "image": "/assets/hero/why-do-most-traders-blow-their-accounts.png"
+ },
+ {
+  "url": "/one-page-trading-business-plan-template.html",
+  "title": "Your One-Page Trading Business Plan Template",
+  "desc": "A trading business plan template that fits on one page. Walk the six fields, mission, risk ceiling, trade ticket, journal, nightly audit, and fill your own tonight. Free.",
+  "date": "2026-07-10",
+  "category": "Template  /  Do it tonight",
+  "image": "/assets/hero/one-page-trading-business-plan-template.png"
+ }
 ]
