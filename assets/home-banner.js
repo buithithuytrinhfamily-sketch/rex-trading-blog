@@ -21,8 +21,8 @@
  choices.forEach((button, i) => button.addEventListener('click', () => show(i)));
  pause.addEventListener('click', () => {
   paused = !paused;
-  pause.textContent = paused ? 'Tiếp tục' : 'Tạm dừng';
-  pause.setAttribute('aria-label', paused ? 'Tiếp tục chuyển slide' : 'Tạm dừng chuyển slide');
+  pause.textContent = paused ? 'Resume' : 'Pause';
+  pause.setAttribute('aria-label', paused ? 'Resume slideshow' : 'Pause slideshow');
   schedule();
  });
  document.addEventListener('visibilitychange', schedule);
