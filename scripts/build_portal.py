@@ -214,3 +214,7 @@ sitemap.write_text(old.replace('</urlset>',newurls+'</urlset>'))
 print('Generated',len(created),'routes;',len(course_data['forex']),'forex lessons;',len(course_data['crypto']),'crypto lessons;',len(terms),'terms;',len(quizzes),'quizzes.')
 from about_band import apply_about
 print('About band on pages:',apply_about())
+
+# Reapply curated homepage paths after refreshing the shared portal template.
+import runpy
+runpy.run_path(str(ROOT / "scripts/build_home_banner.py"))

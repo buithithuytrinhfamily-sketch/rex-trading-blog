@@ -33,3 +33,7 @@
 - TradingView's generic screener uses `market: 'crypto'` for crypto pairs, not `crypto_mkt` (which can silently show the wrong market). The asset market-cap display instead uses `screener_type: 'crypto_mkt'` with `displayCurrency: 'USD'` on the same embed script.
 - Learning progress and scores are local-device data, with export/import. No server-side authentication or independent forum exists. Do not add a fake login, claim cloud sync, or label a manual score as live data.
 - Preserve attribution for external data displays. Paid features continue to use the original Kit terms; the portal does not introduce a new billing arrangement.
+
+## Homepage banner
+- `scripts/build_home_banner.py` builds the three-slide banner and curated Forex (33) / gold (9) paths. It is also called by the portal generator.
+- Keep auto-rotation at 6500 ms on load and after manual slide selection. Only the explicit pause control stops rotation.
