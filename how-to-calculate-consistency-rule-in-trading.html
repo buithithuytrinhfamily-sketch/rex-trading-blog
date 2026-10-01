@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Consistency Rule in Trading Before It Costs You a Payout | REX Trading Signal</title>
+<meta name="description" content="How to calculate consistency rule in trading: divide your best day by total profit. A 20 per cent cap needs 5x your best day, and it still binds in 80.7 per cent of 20 day runs.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Calculate Consistency Rule in Trading Before It Costs You a Payout">
+<meta property="og:description" content="How to calculate consistency rule in trading: divide your best day by total profit. A 20 per cent cap needs 5x your best day, and it still binds in 80.7 per cent of 20 day runs.">
+<meta property="og:url" content="https://rextradingsignal.com/how-to-calculate-consistency-rule-in-trading.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/how-to-calculate-consistency-rule-in-trading.png">
+<link rel="canonical" href="https://rextradingsignal.com/how-to-calculate-consistency-rule-in-trading.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Calculate Consistency Rule in Trading Before It Costs You a Payout", "description": "How to calculate consistency rule in trading: divide your best day by total profit. A 20 per cent cap needs 5x your best day, and it still binds in 80.7 per cent of 20 day runs.", "image": "https://rextradingsignal.com/assets/hero/how-to-calculate-consistency-rule-in-trading.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/how-to-calculate-consistency-rule-in-trading.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "How to Calculate Consistency Rule in Trading Before It Costs You a Payout", "item": "https://rextradingsignal.com/how-to-calculate-consistency-rule-in-trading.html"}]}</script>
+<link rel="stylesheet" href="/assets/reading.css">
+<link rel="stylesheet" href="/assets/portal.css">
+<link rel="stylesheet" href="/assets/about.css"></head>
+<body>
+
+<header class="portal-header"><div class="portal-shell portal-masthead"><a class="portal-logo" href="/" aria-label="REX Trading Signal home">RE<span>X</span><small>TRADING SIGNAL</small></a><p class="portal-tagline">Learn the process. Protect your capital.</p><div class="portal-actions"><a href="/my-learning/">My learning</a><a class="rex-button" href="https://t.me/+CR21qcOU0QI4ZDg9">Join free on Telegram</a></div></div><div class="portal-shell portal-nav-control"><button class="portal-menu-toggle" aria-controls="rex-primary-nav" aria-expanded="false" hidden>Browse sections <span aria-hidden="true">☰</span></button></div><nav id="rex-primary-nav" class="portal-shell portal-nav" aria-label="Main navigation"><a href="/">Home</a><details><summary>Markets</summary><div class="portal-submenu"><a href="/markets/">Market overview</a><a href="/markets/forex/">Forex snapshot</a><a href="/markets/currency-strength/">Currency strength</a><a href="/markets/volatility/">Currency volatility</a><a href="/markets/movers/">Top movers</a><a href="/markets/heatmap/">Forex heatmap</a><a href="/markets/crypto/">Crypto snapshot</a><a href="/markets/crypto-strength/">Crypto strength</a><a href="/markets/crypto-volatility/">Crypto volatility</a><a href="/markets/crypto-heatmap/">Crypto heatmap</a></div></details><details><summary>Trading</summary><div class="portal-submenu"><a href="/trading/">All trading articles</a><a href="/trading/trade-ideas/">Trade ideas</a><a href="/trading/technical-analysis/">Technical analysis</a><a href="/trading/psychology/">Psychology</a><a href="/trading/systems/">Trading systems</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Learn Forex</summary><div class="portal-submenu"><a href="/learn/forex/">Forex &amp; gold academy</a><a href="/glossary/">Forex glossary</a><a href="/quizzes/">Forex quizzes</a><a href="/my-learning/">My learning</a></div></details><details><summary>Learn Crypto</summary><div class="portal-submenu"><a href="/learn/crypto/">Crypto academy</a><a href="/crypto/glossary/">Crypto glossary</a><a href="/crypto/quizzes/">Crypto quizzes</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Tools</summary><div class="portal-submenu"><a href="/tools/">All tools</a><a href="/tools/position-size/">Position size</a><a href="/tools/pip-value/">Pip value</a><a href="/tools/pivot-points/">Pivot points</a><a href="/tools/gain-loss/">Gain &amp; loss</a><a href="/tools/risk-reward/">Risk / reward</a><a href="/tools/currency-converter/">Currency converter</a><a href="/tools/currency-correlation/">Currency correlation</a><a href="/tools/market-hours/">Market hours</a><a href="/tools/risk-on-risk-off/">Risk appetite worksheet</a><a href="/tools/regulators/">Regulator directory</a></div></details><a href="/analysis/">Analysis</a><a href="/news/">News</a><a href="/economic-calendar/">Calendar</a><a href="/community/">Community</a><a href="/premium/">Premium</a></nav></header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>THE POSITION YOU NEVER SIZED</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+  <p class="eyebrow fade">A payout clause you can price before you fund the account</p>
+ <h1 class="fade d1">How to Calculate <span class="q">Consistency Rule</span> in Trading</h1>
+ <p class="standfirst fade d2">A twenty per cent cap means your total profit must reach five times your best day. On ordinary daily variation that rule still binds in 80.7 per cent of profitable twenty day runs, so it measures elapsed time as much as it measures discipline.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 9 min read</div>
+ </div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<p>A reader wrote to me in August having passed an evaluation, traded a funded account for three weeks, made money, and then been told his withdrawal was blocked. Nothing had gone wrong with his trading. He had broken a clause he had agreed to and never read, and the clause was the consistency rule. He wanted to know whether it was a scam. It was not, and that is the less comfortable answer, because the rule was in the contract and the arithmetic of it was entirely knowable in advance. Working out how to calculate consistency rule in trading takes about five minutes, and it is five minutes best spent before you fund an account rather than after your first good day.</p>
+
+<p>This article is the arithmetic. What the rule says, how to compute where you stand against it, and what it quietly demands of your position sizing. Everything numerical here is my own calculation from assumptions I state as I go, apart from two figures from public records that I have sourced and linked. Nothing here is financial advice, and the specific terms vary by firm, so treat the worked examples as a method rather than as your contract.</p>
+
+<h2>What the rule says, and the business reason it exists</h2>
+
+<p>The clause goes by different names and usually reads something like this: no single trading day may account for more than a set share of your total profit when you request a withdrawal. Twenty per cent is the most common figure I see. Twenty five per cent appears often. Some firms use fifty.</p>
+
+<p>Read it as a business and the purpose is obvious. The firm is buying a repeatable process, not a lucky week. One enormous day inside an otherwise flat month tells them very little about whether you can do it again, and quite a lot about whether you sized up and got away with it. The rule is a filter for variance dressed up as a payout condition.</p>
+
+<p>That is a legitimate commercial interest. It is also, and this is the part people miss, a constraint that binds far more often than anybody expects, including traders who have done nothing reckless at all.</p>
+
+<h2>How to calculate consistency rule in trading, step by step</h2>
+
+<p>Three numbers and one division.</p>
+
+<p><strong>Step one.</strong> Take your largest single day's profit since the account was funded. Call it your best day. Use the daily closed profit figure your firm uses, not your own spreadsheet, and check whether their day ends at your midnight or theirs.</p>
+
+<p><strong>Step two.</strong> Take your total profit over the same period.</p>
+
+<p><strong>Step three.</strong> Divide the best day by the total. If the answer is above the cap in your contract, the rule binds and the withdrawal will not clear.</p>
+
+<p>Now run it backwards, which is the version worth keeping. If your best day is fixed and the cap is twenty per cent, then your total profit must be at least five times your best day. The general form is simply one divided by the cap. A twenty per cent cap needs five times. Twenty five per cent needs four times. Fifty per cent needs two times.</p>
+
+<p>Put numbers on it. Say your best day made 1,000 dollars and the cap is twenty per cent. Your total must reach 5,000 dollars before anything can be withdrawn. You already have the 1,000, so you need 4,000 more. If a typical day for you makes 200 dollars, that is twenty more trading days of work, created by a single good afternoon.</p>
+
+<p>Nobody tells you this at the moment of the good day. The good day feels like progress. In the arithmetic of the rule it is a liability that has just extended your timeline by a month.</p>
+
+<h2>The rule is really a minimum number of trading days</h2>
+
+<p>Here is the part I had not appreciated until I simulated it, and it changed how I read these contracts.</p>
+
+<p>If every trading day produced exactly the same profit, your best day would be one divided by the number of days, so five equal days would put you exactly at the twenty per cent line. Real days are not equal, and that variation works entirely against you, because the rule looks at your maximum rather than your average.</p>
+
+<p>So I ran it. Assume daily profit and loss is independent and normally distributed with a mean of 150 dollars and a standard deviation of 400 dollars. Those assumptions are mine and they describe a modestly profitable account with ordinary daily swings. Across 200,000 simulated runs with a fixed seed, counting only the runs that ended profitable, here is how often the best day exceeded a fifth of the total.</p>
+
+<figure><img src="/assets/hero/how-to-calculate-consistency-rule-in-trading-chart.png" alt="How to calculate consistency rule in trading, chart showing a 20 per cent cap is breached in 100 per cent of 5 day runs, 80.7 per cent of 20 day runs and 11 per cent of 60 day runs" style="width:100%;height:auto"><figcaption>How to calculate consistency rule in trading: the cap is a function of how many days you have traded, not of how well you traded.</figcaption></figure>
+
+<p>Over five trading days the cap is breached essentially always. Over ten days, 98.6 per cent of the time. Over twenty days, which is a full month of weekdays, it still binds in 80.7 per cent of profitable runs. It takes forty days to get the breach rate down to a third, and sixty days to get it to eleven per cent.</p>
+
+<p>Read that again, because it is the whole point of the article. A trader doing nothing wrong, with an ordinary distribution of results, will fail a twenty per cent consistency check four times in five after a profitable month. The rule is not primarily measuring recklessness. It is measuring elapsed time.</p>
+
+<h2>What it demands of your position sizing</h2>
+
+<p>Once you see the rule as a variance constraint, the operational response follows, and it is not the intuitive one.</p>
+
+<p>The instinct after a good day is to press. Under this rule, pressing is the single most expensive thing you can do, because every new personal best resets the total you need to five times a larger number. You can be profitable every week and move further from a withdrawal, which is an unusual way to lose and a very demoralising one.</p>
+
+<p>The constraint says: cap the upside of any single day. If your target total is 5,000 dollars and the cap is twenty per cent, then no day may contribute more than 1,000 dollars, so your maximum position size is whatever makes 1,000 dollars an unlikely outcome rather than a good one. That is a deliberate ceiling on your best days, accepted in exchange for a payout that actually clears.</p>
+
+<p>I know how that sounds. You are being asked to make less on your best days in order to be paid at all. It is still the correct operating decision, because the alternative is an account that performs well on paper and never converts. A business that cannot invoice is not a business, whatever the gross figures say.</p>
+
+<p>If you want the companion calculation, <a href="/how-to-calculate-consistency-in-trading.html">how to calculate consistency in trading</a> covers measuring the variance of your own results, which is a different question from this one. That article asks whether your results are stable. This one asks whether a contract will pay you.</p>
+
+<h2>Who writes the rule, and why that matters</h2>
+
+<p>A rule is only as trustworthy as the party enforcing it, and in this corner of the industry that deserves stating plainly.</p>
+
+<p>In its complaint against Traders Global Group, trading as My Forex Funds, the <a href="https://www.cftc.gov/media/9196/enftradersglobalgroupcomplaint082923/download" rel="noopener nofollow" target="_blank">US Commodity Futures Trading Commission alleged</a> that more than 135,000 customers signed up during the relevant period, paying at least 310 million dollars in fees, and that the firm, rather than any third party liquidity provider, was the counterparty to substantially all customer trades. Those are allegations in a filed complaint rather than findings, and the case is a matter of public record. What it establishes for our purposes is structural: in this model the entity writing the rulebook can also be the entity on the other side of your trades.</p>
+
+<p>That does not make every consistency rule improper. It does mean the rule is a commercial term set by a counterparty, not a neutral standard, and it should be read with the same attention you would give any other contract that decides whether you get paid.</p>
+
+<p>The wider context is the one <a href="https://www.esma.europa.eu/press-news/esma-news/esma-agrees-prohibit-binary-options-and-restrict-cfds-protect-retail-investors" rel="noopener nofollow" target="_blank">ESMA, the European Securities and Markets Authority</a>, set out when it restricted retail CFDs: national regulators found between 74 and 89 per cent of retail accounts typically lose money, with average losses per client ranging from 1,600 to 29,000 euros. A firm selling evaluations into that population has a business model that works whether or not you do.</p>
+
+<h2>Running it as a policy instead of a surprise</h2>
+
+<p>Here is what I would actually do, written as operating procedure rather than advice.</p>
+
+<p>Before funding, find the clause and write the cap at the top of your trading plan as a number. Not "be consistent", the actual figure.</p>
+
+<p>Then compute your target total and divide by the cap to get your maximum permitted day. That number is now a position sizing input with the same standing as your risk per trade.</p>
+
+<p>Track the ratio weekly, not at withdrawal time. Best day divided by running total, one cell in a spreadsheet. The moment it goes above the cap you know exactly how much more profit you need, and you can decide calmly whether to keep going or to reduce size and grind the ratio down.</p>
+
+<p>And set a minimum number of trading days before you request anything. On the simulation above, sixty days takes the breach rate to eleven per cent. Patience does more work here than skill does, which is an uncomfortable thing to write and a cheap thing to implement.</p>
+
+<p>If you are weighing the evaluation model as a whole, <a href="/what-happens-if-you-fail-a-prop-firm-challenge.html">what happens if you fail a prop firm challenge</a> prices the attempt side of it, and <a href="/how-to-get-funded-by-a-prop-firm.html">how to get funded by a prop firm</a> covers the route in.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free one page trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page business plan, the sheet I use to run an account like a business, including where a payout constraint like this one belongs in your sizing rules. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>How do I calculate the consistency rule quickly?</h3>
+<p>Divide your best single day's profit by your total profit. If that figure is larger than the cap in your contract, the rule binds. To find the total you need instead, divide your best day by the cap: a 1,000 dollar best day against a twenty per cent cap requires 5,000 dollars in total.</p>
+
+<h3>Does a losing day help or hurt?</h3>
+<p>It hurts, because it reduces the total while leaving your best day untouched, which pushes the ratio up. This is why the rule tightens during a choppy patch even if your best day was weeks ago.</p>
+
+<h3>Is the rule the same at every firm?</h3>
+<p>No. The cap varies, commonly twenty or twenty five per cent, and so does the definition of a day, whether it is measured on closed profit or including open positions, and whether it resets after a withdrawal. The method here works for all of them once you substitute your own cap, but you have to read your own contract for the definitions.</p>
+
+<h3>Can I fix a breach by trading more?</h3>
+<p>Only by growing the total without growing the maximum, which means trading smaller for longer. Trading bigger is the one response guaranteed to make it worse, because a new best day raises the total you need by five times the increase.</p>
+
+<h3>Where do your simulation numbers come from?</h3>
+<p>From 200,000 simulated runs with a fixed seed, assuming daily profit and loss is independent and normally distributed with a mean of 150 dollars and a standard deviation of 400 dollars, counting only runs that ended profitable. Change those assumptions and the breach rates change. The shape, that the rule binds far less as the number of days rises, does not.</p>
+
+<h3>Is a consistency rule a sign of a bad firm?</h3>
+<p>Not by itself. It is a reasonable way for a firm to filter out one lucky day. What matters is whether the clause was disclosed clearly before you paid, whether the definitions are precise, and who the counterparty to your trades actually is. Those are the questions to ask, rather than whether the rule exists.</p>
+
+<h2>Where REX fits</h2>
+
+<p>REX Trading Signal is a free journal about running a trading account the way you would run a business, with books, costs, policies and an operating manual. Everything here is free to read. The one optional piece is the one page business plan above. I do not promise profits, I do not sell a method, and I do not think anyone can tell you what your account will do. The piece this one hangs off is <a href="/one-page-trading-business-plan-template.html">the one page trading business plan</a>, which is where a constraint like this belongs once you have calculated it.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal and treats an account as a business with books, costs and an operating manual. He has read more funded account contracts than he would like, and the clause that has cost the people writing to him the most money is never the drawdown limit they worry about, it is this one. Nothing here is financial advice, and no entry, stop or target discussed should be treated as a signal.</p>
+
+ </div></div>
+</article>
+
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Price the payout clause before you fund the account.</h2>
+ <p>Follow along on Telegram for the daily record, with the reasoning stated before the outcome is known.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/one-page-trading-business-plan-template.html">
+<span class="tag">Planning</span>
+<h3>One Page Trading Business Plan Template</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/how-to-calculate-consistency-in-trading.html">
+<span class="tag">Operations</span>
+<h3>How to Calculate Consistency in Trading</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/what-happens-if-you-fail-a-prop-firm-challenge.html">
+<span class="tag">Planning</span>
+<h3>What Happens If You Fail a Prop Firm Challenge</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+</section><p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+<script defer src="/assets/portal.js"></script>
+</body>
+</html>
