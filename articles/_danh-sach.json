@@ -710,5 +710,29 @@
   "date": "2026-07-10",
   "category": "Template  /  Do it tonight",
   "image": "/assets/hero/one-page-trading-business-plan-template.png"
+ },
+ {
+  "url": "/should-i-take-a-break-from-trading.html",
+  "title": "Should I Take a Break From Trading?",
+  "desc": "Should I take a break from trading, decided as a business would decide it, from your own records rather than from how the last session felt.",
+  "date": "2026-10-01",
+  "category": "operations",
+  "image": "/assets/hero/should-i-take-a-break-from-trading.png"
+ },
+ {
+  "url": "/how-to-calculate-consistency-rule-in-trading.html",
+  "title": "How to Calculate Consistency Rule in Trading",
+  "desc": "How to calculate consistency rule in trading: divide your best day by total profit. A 20 per cent cap needs 5x your best day, and it still binds in 80.7 per cent of 20 day runs.",
+  "date": "2026-10-02",
+  "category": "operations",
+  "image": "/assets/hero/how-to-calculate-consistency-rule-in-trading.png"
+ },
+ {
+  "url": "/what-is-the-best-trading-journal.html",
+  "title": "What Is the Best Trading Journal?",
+  "desc": "What is the best trading journal: the one still running at trade 385, which is where a win rate finally narrows to plus or minus 5 points. Four formats judged as bookkeeping.",
+  "date": "2026-10-03",
+  "category": "operations",
+  "image": "/assets/hero/what-is-the-best-trading-journal.png"
  }
 ]
