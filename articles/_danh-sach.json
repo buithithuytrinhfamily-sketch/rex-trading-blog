@@ -1,5 +1,37 @@
 [
  {
+  "url": "/how-much-should-i-spend-on-my-trading-setup.html",
+  "title": "How Much Should I Spend on My Trading Setup?",
+  "desc": "How much should I spend on my trading setup: spread over the five year life the tax code assumes, a 3,000 dollar rig costs 6.00 dollars a trade at 100 trades a year, and 150 per cent of a 2,000 dollar account.",
+  "date": "2026-10-04",
+  "category": "Operations  /  Capital spending",
+  "image": "/assets/hero/how-much-should-i-spend-on-my-trading-setup.png"
+ },
+ {
+  "url": "/what-is-the-best-trading-journal.html",
+  "title": "What Is the Best Trading Journal?",
+  "desc": "What is the best trading journal: the one still running at trade 385, which is where a win rate finally narrows to plus or minus 5 points. Four formats judged as bookkeeping.",
+  "date": "2026-10-03",
+  "category": "operations",
+  "image": "/assets/hero/what-is-the-best-trading-journal.png"
+ },
+ {
+  "url": "/how-to-calculate-consistency-rule-in-trading.html",
+  "title": "How to Calculate Consistency Rule in Trading",
+  "desc": "How to calculate consistency rule in trading: divide your best day by total profit. A 20 per cent cap needs 5x your best day, and it still binds in 80.7 per cent of 20 day runs.",
+  "date": "2026-10-02",
+  "category": "operations",
+  "image": "/assets/hero/how-to-calculate-consistency-rule-in-trading.png"
+ },
+ {
+  "url": "/should-i-take-a-break-from-trading.html",
+  "title": "Should I Take a Break From Trading?",
+  "desc": "Should I take a break from trading, decided as a business would decide it, from your own records rather than from how the last session felt.",
+  "date": "2026-10-01",
+  "category": "operations",
+  "image": "/assets/hero/should-i-take-a-break-from-trading.png"
+ },
+ {
   "url": "/what-currency-should-my-trading-account-be-in.html",
   "title": "What Currency Should My Trading Account Be In?",
   "desc": "What currency should my trading account be in? Over 27 years of Federal Reserve data the currency leg alone moved a flat dollar account by a median 6.1 to 7.7 per cent a year, and up to 35.6 per cent.",
@@ -368,20 +400,20 @@
   "image": "/assets/hero/trading-business-model.png"
  },
  {
-  "url": "/how-to-think-like-a-professional-trader-mark-douglas.html",
-  "title": "How to Think Like a Professional Trader Mark Douglas Described",
-  "desc": "How to think like a professional trader mark douglas described, turned into procedure. At a 55 percent win rate a five loss run is 64.7 percent likely inside 100 trades.",
-  "date": "2026-08-09",
-  "category": "Operations  /  The mindset decision",
-  "image": "/assets/hero/how-to-think-like-a-professional-trader-mark-douglas.png"
- },
- {
   "url": "/part-time-trading-strategy.html",
   "title": "Part Time Trading Strategy: Build the Operation Around the Hours You Have",
   "desc": "A part time trading strategy priced as a business. A daily horizon asks for 250 decisions and 62.6 hours a year, a monthly one asks for 12.5 decisions and 9.4 hours.",
   "date": "2026-08-09",
   "category": "Operations  /  The capacity decision",
   "image": "/assets/hero/part-time-trading-strategy.png"
+ },
+ {
+  "url": "/how-to-think-like-a-professional-trader-mark-douglas.html",
+  "title": "How to Think Like a Professional Trader Mark Douglas Described",
+  "desc": "How to think like a professional trader mark douglas described, turned into procedure. At a 55 percent win rate a five loss run is 64.7 percent likely inside 100 trades.",
+  "date": "2026-08-09",
+  "category": "Operations  /  The mindset decision",
+  "image": "/assets/hero/how-to-think-like-a-professional-trader-mark-douglas.png"
  },
  {
   "url": "/how-to-start-compound-trading.html",
@@ -408,20 +440,20 @@
   "image": "/assets/hero/how-to-identify-trend-in-trading.png"
  },
  {
-  "url": "/forex-trading-daily-routine.html",
-  "title": "The Forex Trading Daily Routine That Fits the Hours You Actually Have",
-  "desc": "A forex trading daily routine priced in hours: eight trades a day costs 333 hours a year in prep and review alone. Build the routine around your real capacity, not your ambition.",
-  "date": "2026-08-06",
-  "category": "Operations  /  The working day",
-  "image": "/assets/hero/forex-trading-daily-routine.png"
- },
- {
   "url": "/weekly-trading-vs-day-trading.html",
   "title": "Weekly Trading vs Day Trading: Which Cost Base Can You Afford?",
   "desc": "Weekly trading vs day trading, priced as a business decision. Four trades a day costs 70R a year in dealing costs; three a week costs 10.5R plus financing. The full comparison.",
   "date": "2026-08-06",
   "category": "Operations  /  The cost base",
   "image": "/assets/hero/weekly-trading-vs-day-trading.png"
+ },
+ {
+  "url": "/forex-trading-daily-routine.html",
+  "title": "The Forex Trading Daily Routine That Fits the Hours You Actually Have",
+  "desc": "A forex trading daily routine priced in hours: eight trades a day costs 333 hours a year in prep and review alone. Build the routine around your real capacity, not your ambition.",
+  "date": "2026-08-06",
+  "category": "Operations  /  The working day",
+  "image": "/assets/hero/forex-trading-daily-routine.png"
  },
  {
   "url": "/how-to-build-a-trading-system.html",
@@ -440,6 +472,14 @@
   "image": "/assets/hero/how-to-day-trade-with-a-full-time-job.png"
  },
  {
+  "url": "/measuring-trading-results-in-pips.html",
+  "title": "Why Measuring Trading Results in Pips Hurts Your Business",
+  "desc": "Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.",
+  "date": "2026-08-03",
+  "category": "The books  /  Measurement",
+  "image": "/assets/hero/measuring-trading-results-in-pips.png"
+ },
+ {
   "url": "/leading-and-lagging-indicators-in-a-trading-business.html",
   "title": "Leading and Lagging Indicators in Your Trading Business",
   "desc": "Your P&L is a lagging indicator that takes about 41 trades to confirm a broken process. Leading and lagging indicators, and the four columns that warn you the same day.",
@@ -456,14 +496,6 @@
   "image": "/assets/hero/concentration-risk-in-your-trading-business.png"
  },
  {
-  "url": "/measuring-trading-results-in-pips.html",
-  "title": "Why Measuring Trading Results in Pips Hurts Your Business",
-  "desc": "Measuring trading results in pips hides the two things that decide your business, position size and risk. A worked example where the same +230 pips is +$230 for one operator and -$100 for another, and the three numbers to report instead.",
-  "date": "2026-08-03",
-  "category": "The books  /  Measurement",
-  "image": "/assets/hero/measuring-trading-results-in-pips.png"
- },
- {
   "url": "/when-to-retire-a-trading-strategy.html",
   "title": "When to Retire a Trading Strategy That Stopped Working",
   "desc": "A strategy is a product line, not an identity. How an operator tells variance from execution drift from changed conditions, why the retirement rule gets written while things are calm, and why you demote a strategy before you fire it.",
@@ -472,20 +504,20 @@
   "image": "/assets/hero/when-to-retire-a-trading-strategy.png"
  },
  {
-  "url": "/what-is-price-action-trading.html",
-  "title": "What Is Price Action Trading? The Five Rules That Matter",
-  "desc": "Price action means reading the market's own record instead of stacking indicators on top of it. The five rules experienced traders keep coming back to, what each one honestly claims, and the one thing that outranks all five.",
-  "date": "2026-07-29",
-  "category": "Reading the market  /  Five rules",
-  "image": "/assets/hero/what-is-price-action-trading.png"
- },
- {
   "url": "/what-is-the-break-even-point-of-your-trading-business.html",
   "title": "What Is the Break-Even Point of Your Trading Business",
   "desc": "Every business has a number it must clear before a single dollar is profit. Here is how to work out the break-even point of a trading business, why most traders count gross instead of net, and why adding costs quietly pushes you to take more risk.",
   "date": "2026-07-29",
   "category": "The books  /  Know your floor",
   "image": "/assets/hero/what-is-the-break-even-point-of-your-trading-business.png"
+ },
+ {
+  "url": "/what-is-price-action-trading.html",
+  "title": "What Is Price Action Trading? The Five Rules That Matter",
+  "desc": "Price action means reading the market's own record instead of stacking indicators on top of it. The five rules experienced traders keep coming back to, what each one honestly claims, and the one thing that outranks all five.",
+  "date": "2026-07-29",
+  "category": "Reading the market  /  Five rules",
+  "image": "/assets/hero/what-is-price-action-trading.png"
  },
  {
   "url": "/managing-an-open-trade-like-a-business.html",
@@ -552,20 +584,20 @@
   "image": "/assets/hero/how-your-trading-business-survives-a-market-shock.png"
  },
  {
-  "url": "/running-the-london-session-like-a-business.html",
-  "title": "Running the London Session Like a Business",
-  "desc": "Treat the London session like your core work shift: a plan, a start time, a fixed risk budget, and a clean shutdown. A calm, business-first routine for gold.",
-  "date": "2026-07-22",
-  "category": "Operations  /  Your trading shift",
-  "image": "/assets/hero/running-the-london-session-like-a-business.png"
- },
- {
   "url": "/your-monthly-profit-and-loss-review.html",
   "title": "The Monthly Profit and Loss Review Every Trader Needs",
   "desc": "Run a calm monthly profit and loss review of your trading like a business owner: the five numbers to pull, the questions to ask, and the discipline it builds.",
   "date": "2026-07-22",
   "category": "Operations  /  The monthly review",
   "image": "/assets/hero/your-monthly-profit-and-loss-review.png"
+ },
+ {
+  "url": "/running-the-london-session-like-a-business.html",
+  "title": "Running the London Session Like a Business",
+  "desc": "Treat the London session like your core work shift: a plan, a start time, a fixed risk budget, and a clean shutdown. A calm, business-first routine for gold.",
+  "date": "2026-07-22",
+  "category": "Operations  /  Your trading shift",
+  "image": "/assets/hero/running-the-london-session-like-a-business.png"
  },
  {
   "url": "/when-to-scale-up-your-trading-business.html",
@@ -616,14 +648,6 @@
   "image": "/img/making-money-is-easy-keeping-it-is-the-business.jpg"
  },
  {
-  "url": "/how-to-review-the-trend-like-a-business-owner.html",
-  "title": "How to Review the Trend Like a Business Owner, Not a Gambler",
-  "desc": "Read gold's trend like an operator, not a gambler: a calm, repeatable market-review routine, name the trend, mark structure, plan, then close the laptop.",
-  "date": "2026-07-15",
-  "category": "Business  /  Market review",
-  "image": "/avatar.jpg"
- },
- {
   "url": "/how-to-set-realistic-monthly-targets.html",
   "title": "How to Set Realistic Monthly Targets for Your Trading Business",
   "desc": "Setting a monthly profit target is what blows up trading accounts. Learn to run yours like a business, process targets, a risk budget, and staying solvent.",
@@ -632,11 +656,11 @@
   "image": "/assets/hero/how-to-set-realistic-monthly-targets.png"
  },
  {
-  "url": "/managing-trading-psychology-like-a-business.html",
-  "title": "Managing Your Trading Psychology Like a Business",
-  "desc": "Fear, greed and revenge are real costs on your P&L. Learn to manage trading psychology like a business with systems, rules and a nightly emotional audit.",
-  "date": "2026-07-14",
-  "category": "Psychology  /  Run it like an operator",
+  "url": "/how-to-review-the-trend-like-a-business-owner.html",
+  "title": "How to Review the Trend Like a Business Owner, Not a Gambler",
+  "desc": "Read gold's trend like an operator, not a gambler: a calm, repeatable market-review routine, name the trend, mark structure, plan, then close the laptop.",
+  "date": "2026-07-15",
+  "category": "Business  /  Market review",
   "image": "/avatar.jpg"
  },
  {
@@ -645,6 +669,14 @@
   "desc": "Missed a fast gold move and tempted to chase it? Here's why a missed trade isn't a loss, why chasing is bad business, and an operator's routine for FOMO.",
   "date": "2026-07-14",
   "category": "FOMO  /  Don't chase",
+  "image": "/avatar.jpg"
+ },
+ {
+  "url": "/managing-trading-psychology-like-a-business.html",
+  "title": "Managing Your Trading Psychology Like a Business",
+  "desc": "Fear, greed and revenge are real costs on your P&L. Learn to manage trading psychology like a business with systems, rules and a nightly emotional audit.",
+  "date": "2026-07-14",
+  "category": "Psychology  /  Run it like an operator",
   "image": "/avatar.jpg"
  },
  {
@@ -680,12 +712,12 @@
   "image": "/assets/hero/position-sizing-for-gold-trading.png"
  },
  {
-  "url": "/how-to-manage-risk-in-gold-trading.html",
-  "title": "How to Manage Risk in Gold Trading: The Risk Ceiling",
-  "desc": "One bad week shouldn't be able to end your account. How to manage risk in gold trading with a monthly loss cap that cascades down to every single trade.",
+  "url": "/why-do-most-traders-blow-their-accounts.html",
+  "title": "Why Do Most Traders Blow Their Accounts?",
+  "desc": "Why do most traders blow their accounts? Not the strategy, not bad luck. A five-year business owner names the four failure patterns, and the real root cause.",
   "date": "2026-07-10",
-  "category": "Risk  /  The ceiling",
-  "image": "/assets/hero/how-to-manage-risk-in-gold-trading.png"
+  "category": "Risk  /  Diagnosis",
+  "image": "/assets/hero/why-do-most-traders-blow-their-accounts.png"
  },
  {
   "url": "/treat-trading-like-a-business.html",
@@ -696,14 +728,6 @@
   "image": "/assets/hero/treat-trading-like-a-business.png"
  },
  {
-  "url": "/why-do-most-traders-blow-their-accounts.html",
-  "title": "Why Do Most Traders Blow Their Accounts?",
-  "desc": "Why do most traders blow their accounts? Not the strategy, not bad luck. A five-year business owner names the four failure patterns, and the real root cause.",
-  "date": "2026-07-10",
-  "category": "Risk  /  Diagnosis",
-  "image": "/assets/hero/why-do-most-traders-blow-their-accounts.png"
- },
- {
   "url": "/one-page-trading-business-plan-template.html",
   "title": "Your One-Page Trading Business Plan Template",
   "desc": "A trading business plan template that fits on one page. Walk the six fields, mission, risk ceiling, trade ticket, journal, nightly audit, and fill your own tonight. Free.",
@@ -712,27 +736,11 @@
   "image": "/assets/hero/one-page-trading-business-plan-template.png"
  },
  {
-  "url": "/should-i-take-a-break-from-trading.html",
-  "title": "Should I Take a Break From Trading?",
-  "desc": "Should I take a break from trading, decided as a business would decide it, from your own records rather than from how the last session felt.",
-  "date": "2026-10-01",
-  "category": "operations",
-  "image": "/assets/hero/should-i-take-a-break-from-trading.png"
- },
- {
-  "url": "/how-to-calculate-consistency-rule-in-trading.html",
-  "title": "How to Calculate Consistency Rule in Trading",
-  "desc": "How to calculate consistency rule in trading: divide your best day by total profit. A 20 per cent cap needs 5x your best day, and it still binds in 80.7 per cent of 20 day runs.",
-  "date": "2026-10-02",
-  "category": "operations",
-  "image": "/assets/hero/how-to-calculate-consistency-rule-in-trading.png"
- },
- {
-  "url": "/what-is-the-best-trading-journal.html",
-  "title": "What Is the Best Trading Journal?",
-  "desc": "What is the best trading journal: the one still running at trade 385, which is where a win rate finally narrows to plus or minus 5 points. Four formats judged as bookkeeping.",
-  "date": "2026-10-03",
-  "category": "operations",
-  "image": "/assets/hero/what-is-the-best-trading-journal.png"
+  "url": "/how-to-manage-risk-in-gold-trading.html",
+  "title": "How to Manage Risk in Gold Trading: The Risk Ceiling",
+  "desc": "One bad week shouldn't be able to end your account. How to manage risk in gold trading with a monthly loss cap that cascades down to every single trade.",
+  "date": "2026-07-10",
+  "category": "Risk  /  The ceiling",
+  "image": "/assets/hero/how-to-manage-risk-in-gold-trading.png"
  }
 ]
