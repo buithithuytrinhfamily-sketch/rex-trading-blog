@@ -1,5 +1,13 @@
 [
  {
+  "url": "/what-happens-if-my-internet-goes-out-while-trading.html",
+  "title": "What Happens If My Internet Goes Out While Trading?",
+  "desc": "What happens if my internet goes out while trading: over ten years there is a 70.1 per cent chance an outage lands inside your session, the typical one runs past two hours, and only a resting stop survives it.",
+  "date": "2026-10-06",
+  "category": "Operations  /  Continuity",
+  "image": "/assets/hero/what-happens-if-my-internet-goes-out-while-trading.png"
+ },
+ {
   "url": "/how-to-recover-from-a-trading-loss.html",
   "title": "How to Recover From a Trading Loss",
   "desc": "How to recover from a trading loss: at 1 per cent risk and 0.08R expectancy a 20 per cent drawdown takes about 279 trades, roughly 13 months, and half size doubles it.",
@@ -118,6 +126,14 @@
   "date": "2026-09-21",
   "category": "Operations  /  Continuity",
   "image": "/assets/hero/what-happens-if-your-broker-platform-goes-down.png"
+ },
+ {
+  "url": "/how-to-not-over-trade.html",
+  "title": "How to Not Over Trade",
+  "desc": "How to not over trade is an operations problem, not a willpower one. Friction scales exactly with trade count and edge does not: at 0.04R per round turn, 160 trades a month costs 6.4R before a single idea has been judged. Barber and Odean measured the same effect across 66,465 households.",
+  "date": "2026-09-20",
+  "category": "Operations  /  Capacity",
+  "image": "/assets/hero/how-to-not-over-trade.png"
  },
  {
   "url": "/risk-management-future-trading.html",
