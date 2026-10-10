@@ -1,5 +1,21 @@
 [
  {
+  "url": "/what-are-market-data-fees.html",
+  "title": "What Are Market Data Fees, and the Status That Multiplies Them",
+  "desc": "What are market data fees? A fixed monthly exchange charge. The same COMEX feed costs a non-professional 13.65 a month and a professional 145.00.",
+  "date": "2026-10-11",
+  "category": "Operations &middot; Costs",
+  "image": "/assets/hero/what-are-market-data-fees.png"
+ },
+ {
+  "url": "/what-is-look-ahead-bias-in-backtesting.html",
+  "title": "What Is Look Ahead Bias in Backtesting, and Why Your Forecast Lies",
+  "desc": "What is look ahead bias in backtesting? Information leaking backwards in time. In a zero edge simulation it turned a 0.55x result into 2,072x without one error message.",
+  "date": "2026-10-10",
+  "category": "Operations &middot; Testing",
+  "image": "/assets/hero/what-is-look-ahead-bias-in-backtesting.png"
+ },
+ {
   "url": "/what-does-profit-factor-mean-in-trading.html",
   "title": "What Does Profit Factor Mean in Trading: The Number That Hides the Path",
   "desc": "What does profit factor mean in trading? Gross profit divided by gross loss. Three systems can share a profit factor of 1.50 and carry median drawdowns of 7R, 15R and 21R.",
