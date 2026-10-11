@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is Overfitting in Trading: Paying for Hindsight, REX Trading Signal</title>
+<meta name="description" content="What is overfitting in trading? I ran 1,000 backtests on a market built with no edge at all. The best showed a Sharpe of 0.75, and it was worth 0.28 afterwards.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is Overfitting in Trading: Paying for Hindsight">
+<meta property="og:description" content="What is overfitting in trading? I ran 1,000 backtests on a market built with no edge at all. The best showed a Sharpe of 0.75, and it was worth 0.28 afterwards.">
+<meta property="og:url" content="https://rextradingsignal.com/what-is-overfitting-in-trading.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/what-is-overfitting-in-trading.png">
+<link rel="canonical" href="https://rextradingsignal.com/what-is-overfitting-in-trading.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What Is Overfitting in Trading: Paying for Hindsight", "description": "What is overfitting in trading? I ran 1,000 backtests on a market built with no edge at all. The best showed a Sharpe of 0.75, and it was worth 0.28 afterwards.", "image": "https://rextradingsignal.com/assets/hero/what-is-overfitting-in-trading.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-10-11", "dateModified": "2026-10-11", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/what-is-overfitting-in-trading.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "What Is Overfitting in Trading: Paying for Hindsight", "item": "https://rextradingsignal.com/what-is-overfitting-in-trading.html"}]}</script>
+<link rel="stylesheet" href="/assets/reading.css">
+<link rel="stylesheet" href="/assets/portal.css">
+<link rel="stylesheet" href="/assets/about.css"></head>
+<body>
+
+<header class="portal-header"><div class="portal-shell portal-masthead"><a class="portal-logo" href="/" aria-label="REX Trading Signal home">RE<span>X</span><small>TRADING SIGNAL</small></a><p class="portal-tagline">Learn the process. Protect your capital.</p><div class="portal-actions"><a href="/my-learning/">My learning</a><a class="rex-button" href="https://t.me/+CR21qcOU0QI4ZDg9">Join free on Telegram</a></div></div><div class="portal-shell portal-nav-control"><button class="portal-menu-toggle" aria-controls="rex-primary-nav" aria-expanded="false" hidden>Browse sections <span aria-hidden="true">☰</span></button></div><nav id="rex-primary-nav" class="portal-shell portal-nav" aria-label="Main navigation"><a href="/">Home</a><details><summary>Markets</summary><div class="portal-submenu"><a href="/markets/">Market overview</a><a href="/markets/forex/">Forex snapshot</a><a href="/markets/currency-strength/">Currency strength</a><a href="/markets/volatility/">Currency volatility</a><a href="/markets/movers/">Top movers</a><a href="/markets/heatmap/">Forex heatmap</a><a href="/markets/crypto/">Crypto snapshot</a><a href="/markets/crypto-strength/">Crypto strength</a><a href="/markets/crypto-volatility/">Crypto volatility</a><a href="/markets/crypto-heatmap/">Crypto heatmap</a></div></details><details><summary>Trading</summary><div class="portal-submenu"><a href="/trading/">All trading articles</a><a href="/trading/trade-ideas/">Trade ideas</a><a href="/trading/technical-analysis/">Technical analysis</a><a href="/trading/psychology/">Psychology</a><a href="/trading/systems/">Trading systems</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Learn Forex</summary><div class="portal-submenu"><a href="/learn/forex/">Forex &amp; gold academy</a><a href="/glossary/">Forex glossary</a><a href="/quizzes/">Forex quizzes</a><a href="/my-learning/">My learning</a></div></details><details><summary>Learn Crypto</summary><div class="portal-submenu"><a href="/learn/crypto/">Crypto academy</a><a href="/crypto/glossary/">Crypto glossary</a><a href="/crypto/quizzes/">Crypto quizzes</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Tools</summary><div class="portal-submenu"><a href="/tools/">All tools</a><a href="/tools/position-size/">Position size</a><a href="/tools/pip-value/">Pip value</a><a href="/tools/pivot-points/">Pivot points</a><a href="/tools/gain-loss/">Gain &amp; loss</a><a href="/tools/risk-reward/">Risk / reward</a><a href="/tools/currency-converter/">Currency converter</a><a href="/tools/currency-correlation/">Currency correlation</a><a href="/tools/market-hours/">Market hours</a><a href="/tools/risk-on-risk-off/">Risk appetite worksheet</a><a href="/tools/regulators/">Regulator directory</a></div></details><a href="/analysis/">Analysis</a><a href="/news/">News</a><a href="/economic-calendar/">Calendar</a><a href="/community/">Community</a><a href="/premium/">Premium</a></nav></header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>COUNT THE TRIES, NOT THE CURVE</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+  <p class="eyebrow fade">A test you can pass by accident, for a business of one</p>
+ <h1 class="fade d1">What Is <span class="q">Overfitting</span> in Trading?</h1>
+ <p class="standfirst fade d2">I built a market with no edge in it at all, then ran 1,000 backtests looking for one. The best showed an annualised Sharpe of 0.75, which is a perfectly fundable number. On the next 1,000 days it was worth 0.28.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 11 min read</div>
+ </div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<p>Every trader who has ever tuned a setting and watched the equity curve improve has brushed against this, usually without naming it. So: what is overfitting in trading? It is what happens when you keep adjusting a rule until it fits the past beautifully, and in doing so fit it to things that will not happen again.</p>
+
+<p>The reason it deserves a place in a business journal rather than a statistics one is that it is not an academic failure mode. It is a capital allocation decision made on a false reading, and the business pays for it twice: once in the months spent building the thing, and again in the money committed to it before the market gets a vote.</p>
+
+<p>Rather than argue about it, I built a market with no edge in it at all and went looking for one anyway. Every number below comes out of that experiment, the code is described well enough to rebuild, and the random seed is written down so the results can be reproduced exactly.</p>
+
+<h2>What is overfitting in trading, in the regulator's own words</h2>
+
+<p>There is a definition sitting in US federal regulation, and it is sharper than most textbook ones.</p>
+
+<p>Anybody presenting simulated or hypothetical performance to the public has to attach a prescribed warning. The text is set out in <a href="https://www.ecfr.gov/current/title-17/chapter-I/part-4/subpart-D/section-4.41" target="_blank" rel="noopener nofollow">17 CFR 4.41(b)(1)(i)</a>, and the sentence that matters reads: "Simulated or hypothetical trading programs in general are also subject to the fact that they are designed with the benefit of hindsight."</p>
+
+<p>Designed with the benefit of hindsight. That is overfitting, described by a rulemaker who had seen enough of it to make the disclosure compulsory. The regulation adds that because the trades were never executed, the results "may have under-or over-compensated for the impact, if any, of certain market factors, such as lack of liquidity".</p>
+
+<p>Note what the rule does not say. It does not say the backtest was dishonest or the arithmetic wrong. A perfectly honest backtest, computed correctly on real data, still carries this warning, because the problem is not in the computation. It is in the selection.</p>
+
+<h2>A market with nothing in it</h2>
+
+<p>Here is the experiment, stated so you can take it apart.</p>
+
+<p>I generated 2,000 days of returns, about eight years, drawn from a normal distribution with a mean of exactly zero and a standard deviation of 1 per cent a day. There is no trend, no momentum, no mean reversion and no edge of any kind. There cannot be, because I built it that way.</p>
+
+<p>Then I split it down the middle. The first 1,000 days are the backtest window. The last 1,000 days are held back and not consulted until the end, which is the discipline most strategy development skips.</p>
+
+<p>The strategy is deliberately plain: be long tomorrow if the average return over the last n days is above a threshold t, otherwise stand aside. Two dials, nothing else. I tried 40 values of n and 25 values of t, which is 1,000 backtests. No commission, no spread and no slippage are charged, which flatters the results rather than penalising them. The random seed is 20261011.</p>
+
+<p>Any trader would recognise the process. It is a parameter sweep, and it is what most strategy development actually consists of.</p>
+
+<h2>What 1,000 backtests found in a market that had nothing</h2>
+
+<p>The best of the 1,000 was a 16 day lookback with a threshold of plus 0.24 per cent a day. Over the backtest window it produced an annualised Sharpe ratio of <strong>0.75</strong>.</p>
+
+<p>That is not a spectacular number, and that is exactly why it is dangerous. A Sharpe of 0.75 on eight years of data does not look like a fluke. It looks like a modest, believable, fundable strategy. Plenty of real money has been allocated on less.</p>
+
+<p>Carried into the 1,000 days it had never seen, the same rule returned 0.28.</p>
+
+<p>The top ten rules averaged 0.50 in the backtest window and 0.13 out of it. And the average across all 1,000 backtests was negative, at minus 0.30, which is the honest baseline: in a market with no edge, the typical rule loses money to the mechanics of being in and out. Only the winners looked good, and they looked good because they were the winners.</p>
+
+<figure><img src="/assets/hero/what-is-overfitting-in-trading-chart.png" alt="What is overfitting in trading, chart showing that as the number of backtests rises from 10 to 1,000 the best in sample Sharpe ratio climbs from 0.16 to 0.75 while the same rule measured on the next 1,000 days stays flat near 0.28" style="width:100%;height:auto"><figcaption>What is overfitting in trading, in one picture: the red bars are what the search found, the dark bars are what it was worth afterwards.</figcaption></figure>
+
+<h2>More searching buys more backtest, not more performance</h2>
+
+<p>The chart above is the finding I would put on the wall. To build it I drew random subsets of the 1,000 backtests, took the best one in each subset by its backtest result, and then looked at what that winner did out of sample. Two hundred repetitions at each search size, and the figures are medians.</p>
+
+<p>Search ten rules and the best one shows 0.16. Search fifty and the best shows 0.39. A hundred, 0.43. Five hundred, 0.61. A thousand, 0.75.</p>
+
+<p>The backtest number climbs steadily with the amount of searching, in a market that contains nothing to find. Meanwhile the out of sample column sits flat between 0.25 and 0.28 the entire way across, completely indifferent to how hard anyone looked.</p>
+
+<p>That gap is the whole subject. The effort did not produce performance, it produced a better looking backtest, and those are different products.</p>
+
+<p>One honest caveat, because it is the kind of thing I would want pointed out to me. The out of sample figures are not zero, they are around 0.25. That is not residual skill, it is the realised drift of that particular stretch of random numbers, which came out slightly positive by chance. It is worth stating because it is exactly the sort of number a motivated person would present as evidence the strategy survived.</p>
+
+<h2>Twenty more markets, in case the first was a fluke</h2>
+
+<p>A single run of an experiment proves very little, so I ran twenty more, each a fresh market with no edge in it, 260 backtests apiece.</p>
+
+<p>The median best backtest across the twenty was a Sharpe of 0.70. The median out of sample result for those same winning rules was 0.08. And the winner stayed positive out of sample in 13 markets out of 20, which is a coin flip with a slight cough.</p>
+
+<p>Every one of those twenty strategies would have passed the test most traders apply, which is "the backtest looks good". None of them had anything in them, because there was nothing to have.</p>
+
+<h2>Why it happens, and the arithmetic you can do in your head</h2>
+
+<p>The mechanism is not mysterious. Each backtest is a measurement with noise in it. Take the maximum of many noisy measurements and you have selected for the noise, because the largest value is the one where chance helped most.</p>
+
+<p>Statisticians have a rough rule for how far out that maximum sits. The best of N pure noise results lands roughly the square root of twice the natural log of N standard errors above zero. Which gives:</p>
+
+<p>Best of 10 trials: about 2.15 standard errors. Best of 100: 3.03. Best of 1,000: 3.72. Best of 10,000: 4.29.</p>
+
+<p>Two things follow. First, even ten attempts buys a result that looks statistically respectable. Second, the growth is logarithmic, so grinding from a thousand attempts to ten thousand adds only about half a standard error of fake performance, while costing ten times the compute. The damage is done early, by the first few dozen tweaks, which is precisely the number a human does by hand.</p>
+
+<p>This also explains why the problem is invisible from the inside. Nobody experiences it as cheating. It is experienced as a productive afternoon.</p>
+
+<h2>What it costs a trading business</h2>
+
+<p>A business judges this by cost, so let us.</p>
+
+<p>The lost development time is the smallest line. The real cost is that the backtest number is the input to position sizing, to the capital allocated, and to how long you persist when it goes wrong. A strategy you believe has a Sharpe of 0.75 gets funded differently and defended longer than one you know is unproven. You will sit through a drawdown you should have cut, because the backtest told you to expect recovery.</p>
+
+<p>And the second order cost is the one that compounds. Every overfitted strategy that fails teaches the wrong lesson. The conclusion drawn is almost always "the market changed" or "the edge decayed", because that feels more plausible than "there was never an edge and I selected noise". So the same process runs again on a new idea, and the business never learns the thing that would have saved it.</p>
+
+<p>This is the same failure I described from a different angle in <a href="/what-is-look-ahead-bias-in-backtesting.html">look ahead bias in backtesting</a>. There the backtest knew something it could not have known at the time. Here it knows nothing it should not, it has simply been chosen from a crowd. Both end with a number that cannot be collected in the real world.</p>
+
+<h2>What actually reduces it</h2>
+
+<p>None of these make a backtest trustworthy on its own. Together they make it less of a liability.</p>
+
+<p><strong>Count your trials and write the number down.</strong> This is the single most useful habit, and almost nobody does it. The thirtieth variation you test is not the same evidence as the first, and if you do not know whether you are on attempt three or attempt three hundred, you cannot interpret the result at all.</p>
+
+<p><strong>Hold data back, and mean it.</strong> Split the sample, build on one part only, and look at the other once. The moment you go back and adjust after seeing the held back data, it has become part of the backtest and is no longer evidence of anything.</p>
+
+<p><strong>Prefer fewer dials.</strong> My toy had two and that was enough to manufacture a Sharpe of 0.75. A rule with six parameters is not six times more expressive, it is enormously more so, and every dial multiplies the number of trials you are implicitly running.</p>
+
+<p><strong>Treat a performance cliff as a warning.</strong> If 16 days works and 15 or 17 do not, you have found a feature of your sample, not of the market. Robust behaviour degrades gently around its settings.</p>
+
+<p><strong>Give it forward time before it gets size.</strong> Paper or minimum size for a defined period, measured against what the backtest predicted. Slow, and the only test that is not retrospective. The related question of when to stop trusting something that used to work is in <a href="/when-to-retire-a-trading-strategy.html">when to retire a trading strategy</a>, and the measurement framework sits in <a href="/what-does-profit-factor-mean-in-trading.html">what profit factor actually means</a>.</p>
+
+<p>For whatever it is worth, there is a well known paper on this in the academic literature, by Bailey, Borwein, Lopez de Prado and Zhu, titled "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance", published in the Notices of the American Mathematical Society in May 2014, volume 61, issue 5. Its DOI is <a href="https://doi.org/10.1090/noti1105" target="_blank" rel="noopener nofollow">10.1090/noti1105</a>, which I verified through Crossref rather than from memory. I have not quoted any figure from inside it, because I could not open the full text to check one, and quoting a statistic you have not read is the same error in a different suit.</p>
+
+<h2>What this article does not say</h2>
+
+<p>It does not say backtesting is useless. A backtest is excellent at rejecting things. If a rule fails on its own history it is finished, and that is worth knowing cheaply. The asymmetry is the point: failure is informative, success is ambiguous.</p>
+
+<p>It does not say a Sharpe of 0.75 is always noise. It says that number arose from noise in my experiment after a thousand attempts, and that you cannot tell the two apart from the number alone. What distinguishes them is how many things were tried to find it, which is why counting matters.</p>
+
+<p>And the figures above describe a simulated market, not gold and not any instrument you trade. They are a demonstration of a selection effect, not a measurement of anything real, and nothing here is a view on where any price is going.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free one page trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page business plan, the sheet where a strategy gets written down with its assumptions before any capital is committed to it. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>What is overfitting in trading, in one sentence?</h3>
+<p>Tuning a rule until it fits the past so closely that it has captured the accidents of that particular sample rather than anything repeatable, with the result that it performs far worse on data it has not seen.</p>
+
+<h3>How do I know if my strategy is overfitted?</h3>
+<p>There is no test that settles it, but three signs carry weight. You tried many variations and kept the best. Performance collapses when a parameter moves slightly. And the rule has more conditions than you can justify from how the market works. The single most informative fact is how many versions you tested, which is why that number is worth recording as you go.</p>
+
+<h3>Does more data fix overfitting?</h3>
+<p>It helps, because noise averages out over a longer sample, but it does not fix it. In the experiment above the backtest window was a thousand days and a Sharpe of 0.75 still appeared from nothing. What more data does is raise the number of trials needed to manufacture a given result. It does not change the direction of the effect.</p>
+
+<h3>Is overfitting the same as curve fitting?</h3>
+<p>In trading the two terms are used for the same thing. Curve fitting is the older phrase and tends to describe the act of tuning, while overfitting describes the state the result ends up in. The failure is identical.</p>
+
+<h3>Why is a small number of parameters safer?</h3>
+<p>Because each parameter multiplies the number of combinations you can try, and the number of trials is what drives the selection effect. Two dials produced a thousand backtests in this experiment. Four dials of similar range would produce a million, and the best of a million noise results sits noticeably further from the truth.</p>
+
+<h3>What is a realistic out of sample result?</h3>
+<p>Worse than the backtest, essentially always. The useful question is not whether it degrades but whether you decided in advance how much degradation would make you stop, and wrote that number down before seeing it.</p>
+
+<h2>Where REX Trading Signal fits</h2>
+
+<p>REX Trading Signal is a free journal about running a trading account like a business, which mostly means being honest about what you actually know before you commit money to it. Nothing here is sold on a promise of returns and there is no signal service to subscribe to. The free one page business plan is where a strategy and its assumptions get written down before any capital is allocated. The piece underneath all of it is <a href="/one-page-trading-business-plan-template.html">the one page trading business plan</a>, and the build process this article is a warning about is laid out in <a href="/how-to-build-a-trading-system.html">how to build a trading system</a>.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal. He spent a winter improving a strategy from a Sharpe of 0.4 to 1.1 and only later worked out that he had run roughly two hundred variations to get there, which is about what pure chance pays for two hundred attempts. He now writes down the number of versions tried in the same file as the result.</p>
+
+<p><strong>Risk disclosure.</strong> <em>This article is educational and is not financial advice. Trading gold and other leveraged products carries a high risk of losing money rapidly, and no entry, stop or target discussed should be treated as a signal. The definition of hindsight design and the prescribed disclosure language are quoted from 17 CFR 4.41(b)(1)(i) as published in the Electronic Code of Federal Regulations, and the cited paper's title, authors, journal and date were verified through the Crossref registry. All Sharpe ratios, search size figures and streak counts are my own simulation output on randomly generated data with a mean of exactly zero, seed 20261011, on the assumptions stated in the text, and they describe a simulated market rather than any traded instrument. Decide your own risk, and never trade money you cannot afford to lose.</em></p>
+
+ </div></div>
+</article>
+
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Know how many versions you tried before you trust the one that worked.</h2>
+ <p>Follow along on Telegram for the daily record, with the reasoning written down before the trade rather than explained after it.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/what-is-look-ahead-bias-in-backtesting.html">
+<span class="tag">Operations</span>
+<h3>What Is Look Ahead Bias in Backtesting</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/when-to-retire-a-trading-strategy.html">
+<span class="tag">Operations</span>
+<h3>When to Retire a Trading Strategy</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/how-to-build-a-trading-system.html">
+<span class="tag">Operations</span>
+<h3>How to Build a Trading System</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+<p><a href="/articles/">Browse the full article library &rarr;</a></p>
+</section><p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+<script defer src="/assets/portal.js"></script>
+</body>
+</html>
