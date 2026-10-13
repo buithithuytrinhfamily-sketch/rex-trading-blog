@@ -1,5 +1,29 @@
 [
  {
+  "url": "/what-is-survivorship-bias-in-backtesting.html",
+  "title": "What Is Survivorship Bias in Backtesting, and the Cohort You Never See",
+  "desc": "What is survivorship bias in backtesting? I ran the exact arithmetic on traders with zero edge. Remove the ones who blew up and 74.6 per cent of those left are in profit.",
+  "date": "2026-10-14",
+  "category": "Operations &middot; Testing",
+  "image": "/assets/hero/what-is-survivorship-bias-in-backtesting.png"
+ },
+ {
+  "url": "/do-i-need-business-insurance-as-a-sole-trader.html",
+  "title": "Do I Need Business Insurance as a Sole Trader?",
+  "desc": "Do I need business insurance as a sole trader? Only employers' liability is compulsory, at 5 million pounds cover and a 2,500 pound daily fine, and no policy covers a losing trade.",
+  "date": "2026-10-13",
+  "category": "Operations &middot; Costs",
+  "image": "/assets/hero/do-i-need-business-insurance-as-a-sole-trader.png"
+ },
+ {
+  "url": "/what-is-overfitting-in-trading.html",
+  "title": "What Is Overfitting in Trading: Paying for Hindsight",
+  "desc": "What is overfitting in trading? I ran 1,000 backtests on a market built with no edge at all. The best showed a Sharpe of 0.75, and it was worth 0.28 afterwards.",
+  "date": "2026-10-12",
+  "category": "Operations &middot; Testing",
+  "image": "/assets/hero/what-is-overfitting-in-trading.png"
+ },
+ {
   "url": "/what-are-market-data-fees.html",
   "title": "What Are Market Data Fees, and the Status That Multiplies Them",
   "desc": "What are market data fees? A fixed monthly exchange charge. The same COMEX feed costs a non-professional 13.65 a month and a professional 145.00.",
