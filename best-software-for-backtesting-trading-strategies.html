@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Software for Backtesting Trading Strategies, and the Five Questions That Decide It, REX Trading Signal</title>
+<meta name="description" content="Best software for backtesting trading strategies: the five questions a tool has to answer, including the 3.85 years of daily data a Sharpe of 1.0 needs to clear zero and what trying 50 variants does to your best result.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Best Software for Backtesting Trading Strategies, and the Five Questions That Decide It">
+<meta property="og:description" content="Best software for backtesting trading strategies: the five questions a tool has to answer, including the 3.85 years of daily data a Sharpe of 1.0 needs to clear zero and what trying 50 variants does to your best result.">
+<meta property="og:url" content="https://rextradingsignal.com/best-software-for-backtesting-trading-strategies.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/best-software-for-backtesting-trading-strategies.png">
+<link rel="canonical" href="https://rextradingsignal.com/best-software-for-backtesting-trading-strategies.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Best Software for Backtesting Trading Strategies, and the Five Questions That Decide It", "description": "Best software for backtesting trading strategies: the five questions a tool has to answer, including the 3.85 years of daily data a Sharpe of 1.0 needs to clear zero and what trying 50 variants does to your best result.", "image": "https://rextradingsignal.com/assets/hero/best-software-for-backtesting-trading-strategies.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-10-16", "dateModified": "2026-10-16", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/best-software-for-backtesting-trading-strategies.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "Best Software for Backtesting Trading Strategies, and the Five Questions That Decide It", "item": "https://rextradingsignal.com/best-software-for-backtesting-trading-strategies.html"}]}</script>
+<link rel="stylesheet" href="/assets/reading.css">
+<link rel="stylesheet" href="/assets/portal.css">
+<link rel="stylesheet" href="/assets/about.css"></head>
+<body>
+
+<header class="portal-header"><div class="portal-shell portal-masthead"><a class="portal-logo" href="/" aria-label="REX Trading Signal home">RE<span>X</span><small>TRADING SIGNAL</small></a><p class="portal-tagline">Learn the process. Protect your capital.</p><div class="portal-actions"><a href="/my-learning/">My learning</a><a class="rex-button" href="https://t.me/+CR21qcOU0QI4ZDg9">Join free on Telegram</a></div></div><div class="portal-shell portal-nav-control"><button class="portal-menu-toggle" aria-controls="rex-primary-nav" aria-expanded="false" hidden>Browse sections <span aria-hidden="true">☰</span></button></div><nav id="rex-primary-nav" class="portal-shell portal-nav" aria-label="Main navigation"><a href="/">Home</a><details><summary>Markets</summary><div class="portal-submenu"><a href="/markets/">Market overview</a><a href="/markets/forex/">Forex snapshot</a><a href="/markets/currency-strength/">Currency strength</a><a href="/markets/volatility/">Currency volatility</a><a href="/markets/movers/">Top movers</a><a href="/markets/heatmap/">Forex heatmap</a><a href="/markets/crypto/">Crypto snapshot</a><a href="/markets/crypto-strength/">Crypto strength</a><a href="/markets/crypto-volatility/">Crypto volatility</a><a href="/markets/crypto-heatmap/">Crypto heatmap</a></div></details><details><summary>Trading</summary><div class="portal-submenu"><a href="/trading/">All trading articles</a><a href="/trading/trade-ideas/">Trade ideas</a><a href="/trading/technical-analysis/">Technical analysis</a><a href="/trading/psychology/">Psychology</a><a href="/trading/systems/">Trading systems</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Learn Forex</summary><div class="portal-submenu"><a href="/learn/forex/">Forex &amp; gold academy</a><a href="/glossary/">Forex glossary</a><a href="/quizzes/">Forex quizzes</a><a href="/my-learning/">My learning</a></div></details><details><summary>Learn Crypto</summary><div class="portal-submenu"><a href="/learn/crypto/">Crypto academy</a><a href="/crypto/glossary/">Crypto glossary</a><a href="/crypto/quizzes/">Crypto quizzes</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Tools</summary><div class="portal-submenu"><a href="/tools/">All tools</a><a href="/tools/position-size/">Position size</a><a href="/tools/pip-value/">Pip value</a><a href="/tools/pivot-points/">Pivot points</a><a href="/tools/gain-loss/">Gain &amp; loss</a><a href="/tools/risk-reward/">Risk / reward</a><a href="/tools/currency-converter/">Currency converter</a><a href="/tools/currency-correlation/">Currency correlation</a><a href="/tools/market-hours/">Market hours</a><a href="/tools/risk-on-risk-off/">Risk appetite worksheet</a><a href="/tools/regulators/">Regulator directory</a></div></details><a href="/analysis/">Analysis</a><a href="/news/">News</a><a href="/economic-calendar/">Calendar</a><a href="/community/">Community</a><a href="/premium/">Premium</a></nav></header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>TEST THE INSTRUMENT FIRST</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+  <p class="eyebrow fade">Buying research tools the way a business buys equipment</p>
+ <h1 class="fade d1">Best Software for <span class="q">Backtesting</span> Trading Strategies</h1>
+ <p class="standfirst fade d2">A good system with a Sharpe of 1.0 needs 3.85 years of daily data before the result clears zero, and trying 50 variants gives you a 92.3 per cent chance of a false winner. Those two numbers decide which tool you need.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 10 min read</div>
+ </div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<p>Search for the best software for backtesting trading strategies and you will get a list of products, a comparison table, and almost nothing about whether any of them will stop you fooling yourself. That is the wrong order. A backtest is a measurement, and the first thing a business asks about a measurement is not which instrument took it but whether the result means anything. Buy the tool second. Decide what the tool has to prove first.</p>
+
+<p>I am going to set out five questions that separate a backtesting setup that can support a decision from one that just draws attractive curves. Each question has a number attached to it, and the numbers are the reason the question matters. If a product cannot answer all five, it is not the right tool whatever the review scores say, and if a free script can answer all five then you have what you need.</p>
+
+<h2>Why the question is usually asked backwards</h2>
+
+<p>Roughly 92 messages in my inbox use the words luck or gambling, which is a count of a keyword rather than a survey, but it points at something real. One reader wrote: "When I take a bigger lot size my luck goes on sl hit, and when I take small lot size that day I hit targets." Another put it more bluntly: "Before I was trading, very aggressive behavior, 5 lots 10 lots doesn't work with me. It was a gambling."</p>
+
+<p>Both of those people are describing the same problem, which is having no way to tell the difference between a result and a reason. That is precisely the gap a backtest is supposed to close. A third reader had already worked it out: "Getting the hang of things, I think being new I was trying to rush it and had more of a gamblers mindset. Learning to discipline and better risk management."</p>
+
+<p>A backtesting tool is the instrument that is supposed to move you from the first state to the third. It does that only if it can answer the questions below. Most of the time the thing being sold as backtesting software is a chart replay feature with a profit counter attached, which moves you nowhere at all.</p>
+
+<h2>The best software for backtesting trading strategies answers five questions</h2>
+
+<p>Here they are in order of how much damage they prevent. One, does it hold enough history. Two, does it record how many variants you tried. Three, does it model what trading actually costs. Four, can it keep data away from you until you have committed. Five, can you get your records back out of it. Everything else, the interface, the scripting language, the price, matters less than any one of these.</p>
+
+<h2>One, does it hold enough history</h2>
+
+<p>This is the question that quietly disqualifies most setups, and it has an exact answer. The standard error of a Sharpe ratio depends on how many return observations you have, which means you can calculate the minimum history needed before a result is distinguishable from zero at all.</p>
+
+<p>Run it for a system with a genuinely good true Sharpe ratio of 1.0, using daily returns and 252 trading days a year. After one year of data the 95 per cent confidence interval around that Sharpe runs from minus 0.96 to plus 2.96. After two years it is minus 0.39 to plus 2.39. It does not exclude zero until 3.85 years have passed. In other words, a two year backtest of a genuinely profitable system cannot statistically distinguish it from a system with no edge whatsoever.</p>
+
+<figure><img src="/assets/hero/best-software-for-backtesting-trading-strategies-chart.png" alt="Best software for backtesting trading strategies, bar chart of the years of daily returns needed before a 95 per cent confidence interval excludes a Sharpe ratio of zero, 15.37 years at a true Sharpe of 0.5, 3.85 years at 1.0, 1.72 years at 1.5 and 0.97 years at 2.0" style="width:100%;height:auto"><figcaption>Choosing the best software for backtesting trading strategies starts with data: a weaker edge needs far more history before the result clears zero.</figcaption></figure>
+
+<p>The weaker the edge, the longer the requirement, and it climbs fast. A true Sharpe of 0.5, which would still be a perfectly respectable system, needs 15.37 years of daily data. A Sharpe of 2.0 needs under a year, but systems with a true Sharpe of 2.0 are considerably rarer than backtests showing one. So the first thing to check in any tool is not a feature list. It is how far back the data goes for the instrument you trade, at the resolution you trade it, and whether that history is clean enough to trust.</p>
+
+<h2>Two, does it record how many variants you tried</h2>
+
+<p>This is the failure that produces most blown accounts built on apparently solid research, and almost no retail tool addresses it.</p>
+
+<p>Suppose you test a strategy and accept a result as real if it would occur by chance less than 5 per cent of the time. Test one variant and there is a 5 per cent chance of a false winner. Test ten and the chance that at least one looks good by luck alone is 40.1 per cent. Test twenty and it is 64.2 per cent. Test fifty, which is a quiet afternoon of adjusting a moving average length and a stop distance, and it is 92.3 per cent. At a hundred variants it is 99.4 per cent.</p>
+
+<figure><img src="/assets/hero/best-software-for-backtesting-trading-strategies-chart2.png" alt="Best software for backtesting trading strategies, bar chart of the probability that at least one tested variant looks profitable by luck alone at a 5 per cent threshold, 5 per cent with one variant, 40.1 per cent with 10, 64.2 per cent with 20, 92.3 per cent with 50 and 99.4 per cent with 100" style="width:100%;height:auto"><figcaption>The hidden cost in any backtesting setup: the more variants you run, the more certain it becomes that your best result is noise.</figcaption></figure>
+
+<p>This is not a fringe concern. It is the subject of a body of academic work on what is called backtest overfitting, including <a href="https://doi.org/10.21314/JCF.2016.322" rel="noopener nofollow" target="_blank">The Probability of Backtest Overfitting</a> by Bailey, Borwein, Lopez de Prado and Zhu in the Journal of Computational Finance, and the same authors' earlier paper in the Notices of the American Mathematical Society. The practical consequence for your purchase decision is simple. A tool that runs a thousand optimisation passes and reports only the best one is actively dangerous, because it has performed the search that creates the problem and then hidden the evidence. A tool that logs every run, with its parameters and its result, lets you divide by the number of attempts. Our pieces on <a href="/what-is-overfitting-in-trading.html">overfitting</a> and on <a href="/what-is-look-ahead-bias-in-backtesting.html">look ahead bias</a> go further into how the damage happens.</p>
+
+<h2>Three, does it model what trading actually costs</h2>
+
+<p>A backtest that assumes you trade at the mid price with no spread, no commission and no slippage is not a conservative approximation. It is a different business from the one you are in.</p>
+
+<p>The check is straightforward. Take any result the tool produces and ask what happens to it when you add a realistic cost per trade. A system that survives that is worth more investigation. A system that collapses was never a system, it was a measurement of the spread. The same applies to overnight financing if your positions are held, and to the assumption that your order was filled at all during fast conditions. A tool that lets you set these numbers and rerun the test in one click is doing the job. A tool that hides them in a settings file you never open is not. This also connects to the plainer business question of <a href="/how-much-should-i-spend-on-my-trading-setup.html">what your setup costs</a>, since research software is itself a fixed cost that has to earn its keep.</p>
+
+<h2>Four, can it keep data away from you</h2>
+
+<p>The single most valuable feature in backtesting software is the ability to stop you looking. Once you have seen a period of data and adjusted anything in response to it, that period can no longer test your idea, because your idea now contains it.</p>
+
+<p>In practice this means walk forward testing, a holdout period that the software refuses to show you until you have committed to a parameter set, or at minimum a clear separation between the data you develop on and the data you validate on. Note the implication, because it is uncomfortable. The history requirement from question one is for the validation data alone, so a tool holding four years of history does not give you a four year test, it gives you perhaps a two year test and a two year holdout, and neither half is long enough to clear zero for a moderate edge. Data length and honest testing pull against each other, and most people resolve the tension by quietly dropping the holdout. The <a href="/what-is-survivorship-bias-in-backtesting.html">survivorship bias</a> problem is a cousin of this one.</p>
+
+<h2>Five, can you get your records back out</h2>
+
+<p>This is the business owner's question, and it is the one that separates a hobby from an operation. Can you export every trade the backtest generated, with timestamps, parameters and costs, in a format you can open in a spreadsheet five years from now?</p>
+
+<p>You need this for three reasons. You will want to compare the backtest against the live results it was supposed to predict, which is impossible if they live in incompatible formats. You will change software at some point, and a strategy locked inside a proprietary format dies with the subscription. And if trading is a business for you, the research that justified a position is part of your records, in the same way an inventory decision is. Our list of <a href="/key-metrics-every-trading-business-should-track.html">metrics every trading business should track</a> assumes you can get at your own numbers, and a surprising number of tools make that hard on purpose.</p>
+
+<h2>How to test any tool in an afternoon</h2>
+
+<p>Take whichever product you are considering, including the free ones, and run this sequence. Load the longest history it has for your instrument and write down how many years it is. Implement the simplest version of your idea, with no optimisation at all, and record the result. Add a realistic cost per trade and record it again. Now deliberately run twenty variants and see whether the software shows you all twenty or only the winner. Finally, export everything and open the file somewhere else.</p>
+
+<p>You will know by the end of the afternoon whether the tool can support a decision. Notice that nothing in that sequence is about the interface, and nothing requires you to have found a profitable strategy. It tests the instrument, not the idea, which is the right order and the opposite of how most people buy. A tool that passes is worth paying for, and one that fails is not worth having for free, because <a href="/how-to-test-an-ea-on-mt5.html">testing an automated strategy</a> badly is worse than not testing it at all. A bad test does not leave you uninformed, it leaves you confident.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free one page trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX business plan template, one page covering your risk ceiling, your costs and the review schedule that keeps a record honest. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>What is the best software for backtesting trading strategies for a beginner?</h3>
+<p>The one that holds the most history for your instrument and lets you export your results, which is often a free scripting environment rather than a paid platform. Judge it on the five questions above rather than on the feature list, because a beginner is the person most likely to be hurt by a tool that only shows the winning run.</p>
+
+<h3>How many years of data do I need for a backtest to mean anything?</h3>
+<p>At a true Sharpe ratio of 1.0 you need 3.85 years of daily returns before a 95 per cent interval excludes zero, and 15.37 years at a Sharpe of 0.5. Those figures are for the validation data alone, so a holdout period pushes the requirement higher still.</p>
+
+<h3>Is paid backtesting software better than free?</h3>
+<p>Not inherently. Paid tools often buy you cleaner data and better cost modelling, which are worth real money. They rarely buy you trial counting or enforced holdouts, which are the two features that prevent the expensive mistakes.</p>
+
+<h3>Why does testing more variants make my result worse?</h3>
+<p>Because each test is another chance for noise to look like an edge. With 50 variants at a 5 per cent threshold there is a 92.3 per cent chance that at least one looks profitable by luck alone, so a winner selected from a large search tells you much less than a single prespecified test.</p>
+
+<h3>Does a good backtest mean the strategy will work?</h3>
+<p>No. It means the strategy has not yet been ruled out, which is a weaker and more useful statement. The purpose of the exercise is to reject bad ideas cheaply, not to confirm good ones.</p>
+
+<h3>Should I backtest by hand instead?</h3>
+<p>Manual replay is useful for learning to read a market and useless for measuring an edge, because you cannot run enough samples and you cannot avoid knowing what came next. Use it for training and use software for measurement.</p>
+
+<h2>Where REX fits</h2>
+
+<p>REX Trading Signal is a free channel about running a trading account the way you would run a small business, with a risk ceiling, a cost line and a review you actually do. There is nothing sold on a promise of returns here. The free business plan template is one page, and its job is to make you write down the limits before the market asks you about them. The piece everything else hangs off is <a href="/one-page-trading-business-plan-template.html">the one page trading business plan template</a>.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal. He once spent three weeks optimising a system across a few hundred parameter combinations, took the best one live, and watched it behave exactly like the average of the ones he discarded. He counts his trials now and writes the number down before he starts.</p>
+
+<p><strong>Sources and method.</strong> The academic treatment of backtest overfitting referred to here is The Probability of Backtest Overfitting by Bailey, Borwein, Lopez de Prado and Zhu, Journal of Computational Finance, 2016, DOI 10.21314/JCF.2016.322, linked above, and the same authors' Pseudo-Mathematics and Financial Charlatanism, Notices of the American Mathematical Society, 2014, DOI 10.1090/noti1105, which is not linked because the publisher blocks automated requests. Both references were verified through Crossref before citing. Every number on this page is my own calculation: the multiple testing probabilities are one minus 0.95 raised to the number of independent variants, and the history requirements use the standard error of the Sharpe ratio at 252 trading days a year, with the confidence level and all assumptions stated in the text so the work can be repeated or disputed.</p>
+
+<p><em>This article is educational and is not financial advice. Trading gold and other leveraged products carries a high risk of losing money rapidly, and no entry, stop or target discussed should be treated as a signal. No software product is recommended, endorsed or reviewed here, and the Sharpe ratios used are illustrative assumptions rather than results from any real system or any claim that such results are achievable. Reader quotations are real messages, anonymised and lightly edited, and the inbox count is a keyword count rather than a survey. Decide your own risk, and never trade money you cannot afford to lose.</em></p>
+
+ </div></div>
+</article>
+
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Test the instrument before you trust the measurement.</h2>
+ <p>Follow along on Telegram for the daily record, with the reasoning written down before the trade rather than explained after it.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/what-is-overfitting-in-trading.html">
+<span class="tag">Operations</span>
+<h3>What Is Overfitting in Trading</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/what-is-survivorship-bias-in-backtesting.html">
+<span class="tag">Operations</span>
+<h3>What Is Survivorship Bias in Backtesting</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/how-to-test-an-ea-on-mt5.html">
+<span class="tag">Operations</span>
+<h3>How to Test an EA on MT5</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+<p><a href="/articles/">Browse the full article library &rarr;</a></p>
+</section><p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+<script defer src="/assets/portal.js"></script>
+</body>
+</html>
