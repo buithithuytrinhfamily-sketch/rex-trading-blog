@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Set a Daily Loss Limit, and What the Number Should Be, REX Trading Signal</title>
+<meta name="description" content="How to set a daily loss limit using arithmetic instead of feelings. Published prop firm caps run 3 to 5 per cent against a 10 per cent floor, and a 10 per cent loss already needs 11.11 per cent to recover.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Set a Daily Loss Limit, and What the Number Should Be">
+<meta property="og:description" content="How to set a daily loss limit using arithmetic instead of feelings. Published prop firm caps run 3 to 5 per cent against a 10 per cent floor, and a 10 per cent loss already needs 11.11 per cent to recover.">
+<meta property="og:url" content="https://rextradingsignal.com/how-to-set-a-daily-loss-limit.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/how-to-set-a-daily-loss-limit.png">
+<link rel="canonical" href="https://rextradingsignal.com/how-to-set-a-daily-loss-limit.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Set a Daily Loss Limit, and What the Number Should Be", "description": "How to set a daily loss limit using arithmetic instead of feelings. Published prop firm caps run 3 to 5 per cent against a 10 per cent floor, and a 10 per cent loss already needs 11.11 per cent to recover.", "image": "https://rextradingsignal.com/assets/hero/how-to-set-a-daily-loss-limit.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-10-22", "dateModified": "2026-10-22", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/how-to-set-a-daily-loss-limit.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "How to Set a Daily Loss Limit, and What the Number Should Be", "item": "https://rextradingsignal.com/how-to-set-a-daily-loss-limit.html"}]}</script>
+<link rel="stylesheet" href="/assets/reading.css">
+<link rel="stylesheet" href="/assets/portal.css">
+<link rel="stylesheet" href="/assets/about.css"></head>
+<body>
+
+<header class="portal-header"><div class="portal-shell portal-masthead"><a class="portal-logo" href="/" aria-label="REX Trading Signal home">RE<span>X</span><small>TRADING SIGNAL</small></a><p class="portal-tagline">Learn the process. Protect your capital.</p><div class="portal-actions"><a href="/my-learning/">My learning</a><a class="rex-button" href="https://t.me/+CR21qcOU0QI4ZDg9">Join free on Telegram</a></div></div><div class="portal-shell portal-nav-control"><button class="portal-menu-toggle" aria-controls="rex-primary-nav" aria-expanded="false" hidden>Browse sections <span aria-hidden="true">☰</span></button></div><nav id="rex-primary-nav" class="portal-shell portal-nav" aria-label="Main navigation"><a href="/">Home</a><details><summary>Markets</summary><div class="portal-submenu"><a href="/markets/">Market overview</a><a href="/markets/forex/">Forex snapshot</a><a href="/markets/currency-strength/">Currency strength</a><a href="/markets/volatility/">Currency volatility</a><a href="/markets/movers/">Top movers</a><a href="/markets/heatmap/">Forex heatmap</a><a href="/markets/crypto/">Crypto snapshot</a><a href="/markets/crypto-strength/">Crypto strength</a><a href="/markets/crypto-volatility/">Crypto volatility</a><a href="/markets/crypto-heatmap/">Crypto heatmap</a></div></details><details><summary>Trading</summary><div class="portal-submenu"><a href="/trading/">All trading articles</a><a href="/trading/trade-ideas/">Trade ideas</a><a href="/trading/technical-analysis/">Technical analysis</a><a href="/trading/psychology/">Psychology</a><a href="/trading/systems/">Trading systems</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Learn Forex</summary><div class="portal-submenu"><a href="/learn/forex/">Forex &amp; gold academy</a><a href="/glossary/">Forex glossary</a><a href="/quizzes/">Forex quizzes</a><a href="/my-learning/">My learning</a></div></details><details><summary>Learn Crypto</summary><div class="portal-submenu"><a href="/learn/crypto/">Crypto academy</a><a href="/crypto/glossary/">Crypto glossary</a><a href="/crypto/quizzes/">Crypto quizzes</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Tools</summary><div class="portal-submenu"><a href="/tools/">All tools</a><a href="/tools/position-size/">Position size</a><a href="/tools/pip-value/">Pip value</a><a href="/tools/pivot-points/">Pivot points</a><a href="/tools/gain-loss/">Gain &amp; loss</a><a href="/tools/risk-reward/">Risk / reward</a><a href="/tools/currency-converter/">Currency converter</a><a href="/tools/currency-correlation/">Currency correlation</a><a href="/tools/market-hours/">Market hours</a><a href="/tools/risk-on-risk-off/">Risk appetite worksheet</a><a href="/tools/regulators/">Regulator directory</a></div></details><a href="/analysis/">Analysis</a><a href="/news/">News</a><a href="/economic-calendar/">Calendar</a><a href="/community/">Community</a><a href="/premium/">Premium</a></nav></header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>SURVIVE FIRST, COMPOUND LATER</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+  <p class="eyebrow fade">Every real business has a number that ends the day</p>
+ <h1 class="fade d1"><span class="q">How to Set a Daily Loss Limit</span>, and What the Number Should Be</h1>
+ <p class="standfirst fade d2">Published prop firm caps sit at 3 to 5 per cent of the day's opening balance against a 10 per cent floor. Here is the arithmetic that explains why, and how to turn it into a rule you can follow at 3pm.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 10 min read</div>
+ </div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<p>Every real business has a number that stops the day. A restaurant closes the kitchen, a workshop downs tools, a shop locks the door. Trading has no closing time, which is why <strong>how to set a daily loss limit</strong> is an operations question rather than a psychology one. Left to the market, the day ends when you run out of money or willpower, and neither of those is a plan.</p>
+
+<p>This article sets one. The arithmetic is mine and every assumption is written out so you can disagree with the inputs rather than the conclusion. The external figures come from a prop firm's published rulebook and from a peer reviewed finance paper, both linked at the end.</p>
+
+<h2>How to Set a Daily Loss Limit: Start From the Recovery, Not the Feeling</h2>
+
+<p>Most people pick a daily limit by asking how much losing they can stomach. That is the wrong input, because your stomach has opinions that change with the weather. The right input is arithmetic, and it is the least negotiable arithmetic in this business.</p>
+
+<p>Losses and gains are not symmetrical. Lose 10 per cent and you need 11.11 per cent to get back to flat, because you are now earning on a smaller base. Lose 20 per cent and you need 25 per cent. Lose 50 per cent and you need 100 per cent, which is to say you need to double what is left to get back to where you started.</p>
+
+<p>The formula is one line. The gain required equals 1 divided by (1 minus the loss), minus 1. The assumptions are that you make no deposits, take no withdrawals, and hold position size constant through the recovery. That last one matters, because the usual response to a hole is to dig faster, and increasing size after a loss changes this from a hard problem into a terminal one.</p>
+
+<figure>
+<img src="/assets/hero/how-to-set-a-daily-loss-limit-chart.png" alt="Bar chart used to show how to set a daily loss limit, giving the gain needed to recover from losses of 3, 5, 10, 20, 30 and 50 per cent" style="width:100%;height:auto;border-radius:6px">
+<figcaption>How to set a daily loss limit by working backwards from the recovery it saves you from.</figcaption>
+</figure>
+
+<p>Read the chart from the top down and the lesson is obvious. In the first two rows the recovery is barely worse than the loss. By the bottom row the recovery is twice the loss. A daily limit is the mechanism that keeps you permanently in the top rows, where a bad day is an inconvenience instead of a project.</p>
+
+<h2>What the Firms That Rent Capital Actually Use</h2>
+
+<p>You do not have to invent a number from nothing, because an entire industry has already published theirs. Prop firms hand out capital to strangers, which means they have had to work out exactly how much daily loss they can tolerate before they take the account back. Their rulebooks are the closest thing retail trading has to an industry benchmark.</p>
+
+<p>FTMO publishes its figures openly. On its two step programme the Maximum Daily Loss is 5 per cent and the Maximum Loss is 10 per cent. On the one step and Instant accounts the Maximum Daily Loss tightens to 3 per cent, with Maximum Loss again at 10 per cent. In its own worked example, a 100,000 account on the two step programme has a day one floor of 95,000, and that floor moves with the midnight balance, so a day that starts at 102,000 has a floor of 97,000.</p>
+
+<p>Two things are worth taking from that. The first is the range: somebody whose own capital is at stake landed on 3 to 5 per cent, not 15 or 20. The second is the structure. There are two limits, not one, a daily brake and a total floor, and the daily one is roughly a third to a half of the total. That ratio is the design, and it is worth copying even if you never go near a prop firm.</p>
+
+<h2>Translating a Percentage Into Trades</h2>
+
+<p>A percentage is not yet a rule you can follow at 3pm. The number that makes it operational is how many losing trades it allows, and that depends entirely on your risk per trade.</p>
+
+<p>At 1 per cent risk a trade, a 5 per cent daily limit gives you five consecutive full losses before the day ends. A 3 per cent limit gives you three. Halve your risk to 0.5 per cent and the same 5 per cent limit now allows ten. Double it to 2 per cent and the 5 per cent limit allows two and the 3 per cent limit allows one, which is not a limit so much as a coin flip on whether you get to trade at all.</p>
+
+<p>That last case is the one to notice. If your risk per trade is large relative to your daily limit, the limit stops being a safety net and starts being a tripwire you hit constantly on ordinary days. The two numbers have to be designed together.</p>
+
+<p>So how often should a well set limit actually trigger? Assume trades are independent, every loss is a full stop out with no partial exits, and you take up to five trades in a day at 1 per cent risk against a 5 per cent limit. The chance of five straight losses is the loss rate to the power of five. At a 50 per cent win rate that is 0.5 to the fifth, or 3.12 per cent, about one day in 32. At a 45 per cent win rate it is 5.03 per cent, about one day in 20. At 35 per cent it climbs to 11.6 per cent, roughly one day in nine.</p>
+
+<p>Those are rough figures and the independence assumption is doing real work, since losses in live trading cluster in bad conditions rather than scattering politely. But the shape is the useful part. A limit that trips once a month is a brake. A limit that trips every other week is telling you something about your risk per trade or your strategy, and it is worth listening to rather than widening the limit.</p>
+
+<h2>Why the Limit Earns Its Keep Twice</h2>
+
+<p>The obvious job of a daily limit is to cap the damage of a bad day. The second job is less obvious and may be the bigger one: it stops you trading when you are trading badly.</p>
+
+<p>There is good evidence that trading more is expensive by itself. Barber and Odean studied 66,465 households at a large discount broker from 1991 to 1996. The households that traded most earned a net annualised return of 11.4 per cent, while a value weighted market index returned 17.9 per cent over the same period. The average household earned 16.4 per cent net. The heaviest traders turned over more than 250 per cent of their portfolio a year and gave up roughly 6.5 percentage points a year against the index for the privilege.</p>
+
+<p>That is a different market and a different instrument, and I am not going to pretend it transfers one for one to somebody trading gold intraday. What transfers is the direction of the finding, which is that activity is not free and the most active lose the most to their own activity. A daily loss limit is, among other things, a hard cap on activity triggered precisely when you are most likely to overtrade.</p>
+
+<p>Anyone who has had a run of stop outs knows what happens next without a rule in place. The size goes up, the setup quality goes down, and the trade you take at 4pm is not one you would have taken at 9am. The limit removes the decision from the version of you least able to make it.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free one page trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page trading business plan, the document where a limit like this gets written down, dated and reviewed on a schedule instead of being remembered differently on a bad afternoon. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Writing the Rule So It Survives Contact With a Bad Day</h2>
+
+<p>A limit that lives in your head is not a limit, it is an intention. Four things turn it into an operating rule.</p>
+
+<p><strong>Fix the base, and fix when it is measured.</strong> Five per cent of what, exactly? FTMO's answer is the balance at midnight, which means the figure is set before the day starts and cannot drift. Pick your own moment, write it down, and never recalculate mid session. A limit measured against a balance that moves while you trade is a limit you can argue with.</p>
+
+<p><strong>Define what counts.</strong> Realised losses only, or open positions too? Commission and swap included or not? The honest answer is to include everything, because the account does. A limit that ignores costs will be breached before it triggers.</p>
+
+<p><strong>Decide what stopping means.</strong> Closing the platform is the clean version. Flattening open positions is a separate decision and deserves its own written rule, because the day you hit the limit with something still open is the day you will improvise, and improvising is what the limit exists to prevent.</p>
+
+<p><strong>Pair it with a total floor.</strong> Copy the structure the prop firms use. If the daily cap is 3 per cent and the total floor is 10 per cent, then at the cap it takes about 3.5 consecutive limit days to reach the floor. At a 5 per cent cap against the same floor it takes about 2.1 days. Compounding does that: losing 5 per cent twice leaves you down 9.75 per cent rather than 10, because the second loss is taken on a smaller balance.</p>
+
+<p>That pairing is what stops a daily limit from becoming a slow leak. On its own, a 5 per cent daily cap still permits a catastrophe if you hit it repeatedly. Twenty consecutive limit days at 5 per cent compounds to a 64.2 per cent drawdown, and at 3 per cent to 45.6 per cent. Neither of those is survivable, which is the entire reason the second number has to exist.</p>
+
+<h2>What This Article Does Not Say</h2>
+
+<p>It does not say 3 or 5 per cent is the right number for you. Those are the figures one firm uses to protect its own capital from strangers, which is a useful reference point and not a prescription. Your number depends on your risk per trade, how many trades you take and what you can rebuild.</p>
+
+<p>It does not say a daily limit makes you profitable. It caps a loss. Capping losses is not an edge, it is what lets an edge have time to show up, and a limit on a strategy that loses money just slows the rate of loss.</p>
+
+<p>It does not say anything about where any price is going, and nothing here is a trade instruction. No entry, stop or target discussed should be treated as a signal.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<p><strong>How do I set a daily loss limit if I am just starting out?</strong><br>Start from the published range rather than inventing one. Prop firms that risk their own capital use 3 to 5 per cent of the day's opening balance. Then check it against your risk per trade: at 1 per cent a trade, a 5 per cent limit allows five full losses, which is usually enough room for a normal bad day without being enough for a disaster.</p>
+
+<p><strong>What is a good daily loss limit percentage?</strong><br>There is no universal answer, but the structure matters more than the exact figure. Published prop firm rules sit at 3 per cent for one step and Instant accounts and 5 per cent for two step, in both cases paired with a 10 per cent total floor. A daily cap of roughly a third to a half of your total floor is a sound starting design.</p>
+
+<p><strong>Should the limit be based on realised or unrealised losses?</strong><br>Include both, along with commission and swap. The account balance does not distinguish between a loss you have booked and one you are still holding, and a limit that ignores open positions can be breached well before it ever triggers.</p>
+
+<p><strong>How often should a daily loss limit trigger?</strong><br>Rarely. On the assumptions above, a 5 per cent limit at 1 per cent risk is hit about one day in 32 at a 50 per cent win rate and about one day in 20 at 45 per cent. If yours triggers far more often than that, the problem is the size of your risk per trade or the strategy itself, not the limit, and widening the limit treats the symptom.</p>
+
+<p><strong>What do I do after I hit it?</strong><br>Stop for the day, which is the only part that is not optional. Then write down what happened while it is fresh. The record is what tells you later whether that day was ordinary variance or the start of something that needs fixing, and you cannot reconstruct it from memory a week later.</p>
+
+<p><strong>Where did the numbers in this article come from?</strong><br>The 3 per cent, 5 per cent and 10 per cent limits and the 100,000 account worked example are FTMO's published trading objectives. The 11.4, 16.4 and 17.9 per cent returns and the 66,465 household sample are from Barber and Odean in the Journal of Finance, 2000. Everything else, the recovery percentages, the consecutive loss counts, the streak probabilities and the compounding figures, is computed from the assumptions stated beside each one.</p>
+
+<h2>Where REX Trading Signal Fits</h2>
+
+<p>REX Trading Signal is free to follow. The daily record goes up on <a href="https://t.me/+CR21qcOU0QI4ZDg9" rel="noopener">Telegram</a> with the reasoning written before the trade rather than explained after it, losing days included. There is a free one page business plan for anyone who wants the operating documents in one place, and an optional Kit. Nothing here promises a profit.</p>
+
+<p>A daily limit belongs in the document where your operating rules live, which is <a href="/one-page-trading-business-plan-template.html">the one page trading business plan</a>. <a href="/risk-of-ruin-in-trading.html">Risk of ruin in trading</a> is the longer horizon version of the same question, and <a href="/trading-1-percent-rule.html">the trading 1 per cent rule</a> sets the per trade number that decides how many losses your limit actually allows. The external figures here are from <a href="https://ftmo.com/en/trading-objectives/" rel="noopener nofollow" target="_blank">FTMO's published trading objectives</a> and from <a href="https://faculty.haas.berkeley.edu/odean/papers/returns/individual_investor_performance_final.pdf" rel="noopener nofollow" target="_blank">Barber and Odean, Trading Is Hazardous to Your Wealth</a>, Journal of Finance 55(2), 2000, DOI 10.1111/0022-1082.00226.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal. He runs the account as a business, which mostly means writing rules down while calm and then obeying them while not calm. Nothing in this article is a recommendation to trade, and no entry, stop or target discussed should be treated as a signal.</p>
+
+<p><em>Disclaimer: This article is general educational content about risk control rules in a trading operation. It is not financial advice, not investment advice and not a recommendation to buy, sell or use any product, venue, broker or firm. Published rules and figures change over time and refer to the dates stated. Trading carries risk of loss. Only commit capital you can afford to lose.</em></p>
+
+</div></div>
+</article>
+
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Write the number down while you are calm.</h2>
+ <p>Follow along on Telegram for the daily record, with the reasoning written down before the trade rather than explained after it.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/risk-of-ruin-in-trading.html">
+<span class="tag">Operations</span>
+<h3>Risk of Ruin in Trading</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/trading-1-percent-rule.html">
+<span class="tag">Operations</span>
+<h3>The Trading 1 Percent Rule</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/one-page-trading-business-plan-template.html">
+<span class="tag">Operations</span>
+<h3>One Page Trading Business Plan Template</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+ </div>
+ </div>
+</section><p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+<script defer src="/assets/portal.js"></script>
+</body>
+</html>
