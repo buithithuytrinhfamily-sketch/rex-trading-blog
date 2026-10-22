@@ -1,5 +1,21 @@
 [
  {
+  "url": "/maximum-favourable-excursion.html",
+  "title": "Maximum Favourable Excursion, the Number That Settles Exit Arguments",
+  "desc": "Maximum favourable excursion measures what a trade had available, not what you took. The base rates from 200,000 zero drift simulations, and the four columns that end the exit argument.",
+  "date": "2026-10-23",
+  "category": "Operations",
+  "image": "/assets/hero/maximum-favourable-excursion.png"
+ },
+ {
+  "url": "/how-to-set-a-daily-loss-limit.html",
+  "title": "How to Set a Daily Loss Limit, and What the Number Should Be",
+  "desc": "How to set a daily loss limit using arithmetic instead of feelings. Published prop firm caps run 3 to 5 per cent against a 10 per cent floor, and a 10 per cent loss already needs 11.11 per cent to recover.",
+  "date": "2026-10-22",
+  "category": "Operations",
+  "image": "/assets/hero/how-to-set-a-daily-loss-limit.png"
+ },
+ {
   "url": "/are-trading-signals-worth-it.html",
   "title": "Are Trading Signals Worth It? Price It Like a Business Expense",
   "desc": "Are trading signals worth it? Computed as a recurring expense: at 99 a month on a 5,000 account risking 1 per cent, the service must add 23.8R a year just to cover its own fee.",
