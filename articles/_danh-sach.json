@@ -1,5 +1,29 @@
 [
  {
+  "url": "/what-is-a-buy-zone-in-trading.html",
+  "title": "What Is a Buy Zone in Trading, and What It Does to Your Risk",
+  "desc": "What is a buy zone in trading? A band of entry prices against one invalidation, which turns a fixed 1 per cent risk into 1.60 per cent on a far edge fill. Size from the far edge instead.",
+  "date": "2026-10-26",
+  "category": "Operations",
+  "image": "/assets/hero/what-is-a-buy-zone-in-trading.png"
+ },
+ {
+  "url": "/how-to-read-etf-chart.html",
+  "title": "How to Read ETF Chart Prices Before Your Business Buys One",
+  "desc": "How to read etf chart prices: the line shows what buyers paid, not what the fund holds. Buying at a premium and selling at a discount costs you at both ends.",
+  "date": "2026-10-25",
+  "category": "Operations",
+  "image": "/assets/hero/how-to-read-etf-chart.png"
+ },
+ {
+  "url": "/multiple-entries-on-the-same-trade.html",
+  "title": "Multiple Entries on the Same Trade Is One Position, Not Three",
+  "desc": "Three entries on one idea share one invalidation, so they close together. The stacked drawdown runs 14.13 per cent against 4.90 per cent for a single entry.",
+  "date": "2026-10-24",
+  "category": "Operations",
+  "image": "/assets/hero/multiple-entries-on-the-same-trade.png"
+ },
+ {
   "url": "/maximum-favourable-excursion.html",
   "title": "Maximum Favourable Excursion, the Number That Settles Exit Arguments",
   "desc": "Maximum favourable excursion measures what a trade had available, not what you took. The base rates from 200,000 zero drift simulations, and the four columns that end the exit argument.",
