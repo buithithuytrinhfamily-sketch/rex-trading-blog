@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Many Trades Do You Need to Judge a Strategy, and Why Eight Is Not Enough, REX Trading Signal</title>
+<meta name="description" content="How many trades do you need to judge a strategy? Roughly 384 to measure a win rate, 784 to beat a coin flip. Seven wins from eight proves almost nothing.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Many Trades Do You Need to Judge a Strategy">
+<meta property="og:description" content="How many trades do you need to judge a strategy? Roughly 384 to measure a win rate, 784 to beat a coin flip. Seven wins from eight proves almost nothing.">
+<meta property="og:url" content="https://rextradingsignal.com/how-many-trades-do-you-need-to-judge-a-strategy.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/how-many-trades-do-you-need-to-judge-a-strategy.png">
+<link rel="canonical" href="https://rextradingsignal.com/how-many-trades-do-you-need-to-judge-a-strategy.html">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How Many Trades Do You Need to Judge a Strategy", "description": "How many trades do you need to judge a strategy? Roughly 384 to measure a win rate, 784 to beat a coin flip. Seven wins from eight proves almost nothing.", "image": "https://rextradingsignal.com/assets/hero/how-many-trades-do-you-need-to-judge-a-strategy.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/how-many-trades-do-you-need-to-judge-a-strategy.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "How Many Trades Do You Need to Judge a Strategy", "item": "https://rextradingsignal.com/how-many-trades-do-you-need-to-judge-a-strategy.html"}]}</script>
+<link rel="stylesheet" href="/assets/reading.css">
+<link rel="stylesheet" href="/assets/portal.css">
+<link rel="stylesheet" href="/assets/about.css"></head>
+<body>
+
+<header class="portal-header"><div class="portal-shell portal-masthead"><a class="portal-logo" href="/" aria-label="REX Trading Signal home">RE<span>X</span><small>TRADING SIGNAL</small></a><p class="portal-tagline">Learn the process. Protect your capital.</p><div class="portal-actions"><a href="/my-learning/">My learning</a><a class="rex-button" href="https://t.me/+CR21qcOU0QI4ZDg9">Join free on Telegram</a></div></div><div class="portal-shell portal-nav-control"><button class="portal-menu-toggle" aria-controls="rex-primary-nav" aria-expanded="false" hidden>Browse sections <span aria-hidden="true">☰</span></button></div><nav id="rex-primary-nav" class="portal-shell portal-nav" aria-label="Main navigation"><a href="/">Home</a><details><summary>Markets</summary><div class="portal-submenu"><a href="/markets/">Market overview</a><a href="/markets/forex/">Forex snapshot</a><a href="/markets/currency-strength/">Currency strength</a><a href="/markets/volatility/">Currency volatility</a><a href="/markets/movers/">Top movers</a><a href="/markets/heatmap/">Forex heatmap</a><a href="/markets/crypto/">Crypto snapshot</a><a href="/markets/crypto-strength/">Crypto strength</a><a href="/markets/crypto-volatility/">Crypto volatility</a><a href="/markets/crypto-heatmap/">Crypto heatmap</a></div></details><details><summary>Trading</summary><div class="portal-submenu"><a href="/trading/">All trading articles</a><a href="/trading/trade-ideas/">Trade ideas</a><a href="/trading/technical-analysis/">Technical analysis</a><a href="/trading/psychology/">Psychology</a><a href="/trading/systems/">Trading systems</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Learn Forex</summary><div class="portal-submenu"><a href="/learn/forex/">Forex &amp; gold academy</a><a href="/glossary/">Forex glossary</a><a href="/quizzes/">Forex quizzes</a><a href="/my-learning/">My learning</a></div></details><details><summary>Learn Crypto</summary><div class="portal-submenu"><a href="/learn/crypto/">Crypto academy</a><a href="/crypto/glossary/">Crypto glossary</a><a href="/crypto/quizzes/">Crypto quizzes</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Tools</summary><div class="portal-submenu"><a href="/tools/">All tools</a><a href="/tools/position-size/">Position size</a><a href="/tools/pip-value/">Pip value</a><a href="/tools/pivot-points/">Pivot points</a><a href="/tools/gain-loss/">Gain &amp; loss</a><a href="/tools/risk-reward/">Risk / reward</a><a href="/tools/currency-converter/">Currency converter</a><a href="/tools/currency-correlation/">Currency correlation</a><a href="/tools/market-hours/">Market hours</a><a href="/tools/risk-on-risk-off/">Risk appetite worksheet</a><a href="/tools/regulators/">Regulator directory</a></div></details><a href="/analysis/">Analysis</a><a href="/news/">News</a><a href="/economic-calendar/">Calendar</a><a href="/community/">Community</a><a href="/premium/">Premium</a></nav></header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>SURVIVE FIRST, COMPOUND LATER</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+  <p class="eyebrow fade">A perfect week is evidence of a perfect week, and nothing else yet</p>
+ <h1 class="fade d1"><span class="q">How Many Trades Do You Need to Judge a Strategy</span>, and Why Eight Is Not Enough</h1>
+ <p class="standfirst fade d2">A system with no edge at all wins seven from eight about 3.52 per cent of the time. Telling a real five point edge from luck takes roughly 784 trades.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 11 min read</div>
+ </div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<p class="big">A screenshot lands in your inbox. Seven wins, one loss, one entry missed, and a number at the bottom with a plus sign in front of it. The question you are really being asked is whether to route capital toward whoever produced it, so the question worth asking back is <strong>how many trades do you need to judge a strategy</strong>. Most people answer it with a feeling. The arithmetic gives a different answer, and it is a long way from eight.</p>
+
+<p>This is a supplier evaluation. You are deciding whether a process, yours or somebody else's, deserves an allocation of working capital. No other business approves a supplier on one week of invoices, and a trading business should not either. Nothing below is a view on any particular strategy or service. It is the sample size question, with the numbers computed.</p>
+
+<h2>How many trades do you need to judge a strategy, and why eight is not a number</h2>
+
+<p>Start with the least flattering possible assumption and see what it can produce. Take a system with no edge at all: it wins half the time, loses half the time, the wins and losses are the same size, and each trade is independent of the last. A coin, in other words, dressed as a method.</p>
+
+<p>Run that coin for eight trades. The probability it produces seven wins or better is 9 out of 256, which is 3.52 per cent. The probability it goes a perfect eight for eight is 1 in 256, or 0.39 per cent.</p>
+
+<p>Three and a half per cent sounds small until you count the people it applies to. Out of a thousand traders with genuinely no edge whatsoever, about 35 can honestly screenshot a week of seven wins from eight. They are not lying. They did not fake the record. The coin simply did what coins occasionally do, and the 965 who had an ordinary week posted nothing at all.</p>
+
+<p>That last clause is the whole problem. You are not seeing a random sample of weeks. You are seeing the weeks that were worth posting, selected after the fact by the people who had them. A perfect week is evidence of having had a perfect week. On its own it is not yet evidence of a method.</p>
+
+<h2>The number nobody puts next to the win rate</h2>
+
+<p>Suppose you are more careful than that. You do not judge on one week. You track an actual record and you find a win rate of 60 per cent. The question is what that 60 per cent entitles you to believe, and the answer depends entirely on how many trades it came from.</p>
+
+<p>A confidence interval answers exactly that. It is the range the true long run rate could plausibly sit in, given what you observed. Assuming independent trades and using the normal approximation, here is how wide the doubt stays.</p>
+
+<figure><img src="/assets/hero/how-many-trades-do-you-need-to-judge-a-strategy-chart.png" alt="Chart for how many trades do you need to judge a strategy, showing the 95 per cent confidence interval around an observed 60 per cent win rate narrowing from plus or minus 33.9 points at 8 trades to 3.0 points at 1,000 trades" style="width:100%;height:auto;border-radius:6px"><figcaption>How many trades do you need to judge a strategy, expressed as the width of the doubt: the 95 per cent confidence interval around an observed 60 per cent win rate, computed in Python.</figcaption></figure>
+
+<p>At 8 trades, an observed 60 per cent carries an interval of plus or minus 33.9 percentage points. The true rate could plausibly be 26 per cent or 94 per cent. That range contains both a catastrophe and a fortune, which means it decides nothing at all.</p>
+
+<p>At 20 trades it is plus or minus 21.5 points. At 50 it is 13.6. At 100 trades it is plus or minus 9.6 points, so the honest statement is somewhere between 50.4 and 69.6 per cent, and only at that point does the range finally clear the coin flip. At 500 trades it is 4.3 points, and at 1,000 it is 3.0.</p>
+
+<p>Notice how slowly it improves. Going from 8 trades to 100 is more than a tenfold increase in work and it only cuts the doubt by about three quarters. The interval narrows with the square root of the sample, which is why there is no clever shortcut here and why patience is the only mechanism available.</p>
+
+<h2>What it takes to separate a real edge from a coin</h2>
+
+<p>Two thresholds are worth committing to memory, both computed on the same assumptions.</p>
+
+<p>To pin an approximately even win rate down to within plus or minus 5 percentage points at 95 per cent confidence takes about 384 trades. That is just to measure it, not to prove it beats anything.</p>
+
+<p>To actually distinguish a 55 per cent system from a 50 per cent system, at 95 per cent confidence with an 80 per cent chance of detecting the difference if it is really there, takes roughly 784 trades. At two trades a day that is about 18.7 months of trading.</p>
+
+<p>Sit with that for a second, because it reframes nearly every claim you will ever be shown. A genuine, real, money making five point edge takes something like a year and a half of consistent execution before the record alone can tell it apart from luck. Anybody presenting a conclusion after a week is not presenting a conclusion. They are presenting a week.</p>
+
+<p>This is also the honest answer to why your own results feel so hard to read. You are not failing to interpret them. There is genuinely not enough information in them yet.</p>
+
+<h2>What readers actually say about this</h2>
+
+<p>Roughly 258 messages in my inbox touch on trust and deciding whether a channel or a method is legitimate. That is a keyword count across the messages I have, not a survey, so treat it as a rough indication of how often the subject comes up rather than a measurement of anything.</p>
+
+<p>The pattern in them is consistent. One reader wrote: "I can trust you coz your signals are very good been following you since past 4months." Four months is a real amount of time. It is usually not yet a real amount of evidence, and the gap between those two things is where the money goes.</p>
+
+<p>Another put the short version of the same mistake more starkly: "First time it got profit then I trust and deposit 2 to 3 times..and lost entire capital." The first result did the persuading. The sample size did the rest.</p>
+
+<p>A third wrote simply: "One last thing this is legit right? I dont want to lose more." That question cannot be answered by a track record short enough to read in one sitting, which is uncomfortable, because a short record is usually all anybody is offered.</p>
+
+<p>And one reader, asked how long they had been at it, answered: "About 3 or 4 years. To be honest, I've pretty much lost money the whole time." That is a large sample and an unwelcome conclusion, and it is worth more than any perfect week, because at that length the number means something.</p>
+
+<h2>Why the rulebook forces a disclaimer onto simulated results</h2>
+
+<p>This is not a niche statistical worry. It is written into regulation.</p>
+
+<p>Under <a href="https://www.govinfo.gov/content/pkg/CFR-2023-title17-vol1/xml/CFR-2023-title17-vol1-sec4-41.xml" rel="noopener nofollow" target="_blank">17 CFR 4.41</a>, nobody may present simulated or hypothetical performance without attaching a prescribed statement, which says among other things that such results "do not represent actual trading" and that "Simulated or hypothetical trading programs in general are also subject to the fact that they are designed with the benefit of hindsight."</p>
+
+<p>The same rule covers testimonials. If an advertisement quotes a happy client, it must prominently disclose that the testimonial "may not be representative of the experience of other clients" and that it "is no guarantee of future performance or success," and must say so if the testimonial was paid for.</p>
+
+<p>Read those two requirements together and you have a regulator describing, in careful language, exactly the problem this article is about. The satisfied customer and the glowing backtest are both small samples chosen after the outcome was known. The rule does not ban them. It forces the limitation to be printed next to them, because the limitation is not obvious and the number is persuasive.</p>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page business plan, the document where a review date and a minimum sample size live so they survive the week you most want to ignore them. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Putting it on the books</h2>
+
+<p>None of this is useful as an attitude. It is useful as a written rule, decided before you are holding a screenshot and feeling something about it.</p>
+
+<p>Four lines are enough. Write down the minimum number of trades before you will draw any conclusion about a method, and set it in the hundreds rather than the tens. Write down the review date that follows from that number at your actual trading frequency. Write down the size you will allocate during the evaluation, small enough that being wrong for 784 trades is survivable. And write down what result would make you stop early, which should be about risk behaviour and rule breaches rather than a run of losses, because a run of losses is the one thing a small sample genuinely does produce.</p>
+
+<p>Those four lines belong in the <a href="/one-page-trading-business-plan-template.html">one page trading business plan</a>, not in your memory, for the same reason every other business writes down its supplier terms. The moment you need the rule is the moment you least want to apply it. Related reading sits in <a href="/what-is-overfitting-in-trading.html">overfitting</a>, which is what happens when you let a small sample pick your settings, and in <a href="/key-metrics-every-trading-business-should-track.html">the metrics a trading business should track</a>.</p>
+
+<h2>What this article does not say</h2>
+
+<p>It does not say that a good week means nothing. It means something. It just means much less than its emotional weight suggests, and it cannot carry a decision on its own.</p>
+
+<p>It does not say you must take 784 trades before using any method. You have other evidence: whether the logic makes sense, whether the risk per trade is controlled, whether the person showing you the record also shows you the losing days. Sample size is one input among several, and it is the one most often left out.</p>
+
+<p>It does not say the maths above is the whole story. Real trades are not perfectly independent, wins and losses are not the same size, and market conditions shift underneath you, all of which generally make the required sample larger rather than smaller. The figures here are a floor, not a ceiling.</p>
+
+<p>And it does not tell you to trade anything. It tells you what a number is worth before you act on it.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<p><strong>How many trades do you need to judge a strategy, in one line?</strong><br>To measure an approximately even win rate to within plus or minus 5 percentage points takes about 384 trades, and to tell a 55 per cent system apart from a 50 per cent one with reasonable confidence takes roughly 784. Anything under about 100 trades leaves a range too wide to decide on.</p>
+
+<p><strong>Someone showed me seven wins from eight. Is that good?</strong><br>It is a good week. A system with no edge at all produces seven or better from eight about 3.52 per cent of the time, so out of a thousand edgeless traders around 35 can show you that honestly. You are also only being shown the weeks worth showing, which makes the figure weaker than it looks.</p>
+
+<p><strong>Why does the confidence interval shrink so slowly?</strong><br>It narrows with the square root of the number of trades, so cutting the doubt in half takes four times the sample. That is why going from 8 to 100 trades only reduces the interval by about three quarters, and why there is no shortcut.</p>
+
+<p><strong>Does a long losing run mean the method is broken?</strong><br>Not by itself, and this is the mirror image of the same error. Small samples produce streaks in both directions. A stop rule based on risk behaviour and broken rules is more reliable than one based on a run of results.</p>
+
+<p><strong>Where did these numbers come from?</strong><br>The 9 in 256, the 3.52 per cent, the confidence intervals, the 384 and the 784 are my own calculations, assuming independent trades, equal win and loss sizes and the normal approximation for the intervals. The disclaimer and testimonial wording is quoted from 17 CFR 4.41, linked above and checked on 28 October 2026. The reader quotes are real messages, anonymised, counted by keyword rather than surveyed.</p>
+
+<h2>Where REX Trading Signal Fits</h2>
+
+<p>REX Trading Signal is free to follow. The daily record goes up on <a href="https://t.me/+CR21qcOU0QI4ZDg9" rel="noopener">Telegram</a> with the losing days included, because a record with the bad days removed is exactly the small biased sample this article is about. There is a free <a href="/business-plan/">one page business plan</a> for anyone who wants the operating rules in one document, and an optional Kit for people who want the full system. Nothing here promises a profit and nothing here is a signal service.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal. He runs the account as a business, which mostly means a supplier gets a sample size and a review date rather than a leap of faith. Nothing in this article is a recommendation to trade, and no entry, stop or target discussed should be treated as a signal.</p>
+</div></div>
+</article>
+
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Write the sample size down before the screenshot arrives, not after.</h2>
+ <p>Follow along on Telegram for the daily record, with the reasoning written down before the trade rather than explained after it.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/what-is-overfitting-in-trading.html">
+<span class="tag">Systems</span>
+<h3>What Is Overfitting in Trading</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/risk-of-ruin-in-trading.html">
+<span class="tag">Risk</span>
+<h3>Risk of Ruin in Trading</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/key-metrics-every-trading-business-should-track.html">
+<span class="tag">Operations</span>
+<h3>Key Metrics Every Trading Business Should Track</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+</section><p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">&copy; 2026 REX Trading Signal &middot; Telegram: @REXTradingSignal &middot; Personal views, for reference only.</p>
+ </div>
+</footer>
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+<script defer src="/assets/portal.js"></script>
+</body>
+</html>
