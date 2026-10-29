@@ -1,5 +1,37 @@
 [
  {
+  "url": "/do-i-need-a-broker-to-buy-stocks.html",
+  "title": "Do I Need a Broker to Buy Stocks, and What You Are Actually Buying",
+  "desc": "Do I need a broker to buy stocks? Yes, and the statutory cap when one fails is 500,000 dollars per customer, which is 10 per cent of a five million account.",
+  "date": "2026-10-30",
+  "category": "Operations",
+  "image": "/assets/hero/do-i-need-a-broker-to-buy-stocks.png"
+ },
+ {
+  "url": "/risk-management-swing-trading.html",
+  "title": "Risk Management Swing Trading: What the Position Costs While You Sleep",
+  "desc": "Risk management swing trading is not day trading slowed down. Hold 21 days and 36.9 per cent of trades sit through a scheduled Fed decision, and the position pays rent every night.",
+  "date": "2026-10-29",
+  "category": "Operations",
+  "image": "/assets/hero/risk-management-swing-trading.png"
+ },
+ {
+  "url": "/how-many-trades-do-you-need-to-judge-a-strategy.html",
+  "title": "How Many Trades Do You Need to Judge a Strategy, and Why Eight Is Not Enough",
+  "desc": "How many trades do you need to judge a strategy? Roughly 384 to measure a win rate, 784 to beat a coin flip. Seven wins from eight proves almost nothing.",
+  "date": "2026-10-28",
+  "category": "Operations",
+  "image": "/assets/hero/how-many-trades-do-you-need-to-judge-a-strategy.png"
+ },
+ {
+  "url": "/how-to-test-expert-advisor-mt4.html",
+  "title": "How to Test Expert Advisor MT4, and What the Report Entitles You to Believe",
+  "desc": "How to test expert advisor mt4 without fooling yourself: the modelling method, the n/a quality field, and the spread MT4 freezes at the moment you press Start.",
+  "date": "2026-10-27",
+  "category": "Operations",
+  "image": "/assets/hero/how-to-test-expert-advisor-mt4.png"
+ },
+ {
   "url": "/what-is-a-buy-zone-in-trading.html",
   "title": "What Is a Buy Zone in Trading, and What It Does to Your Risk",
   "desc": "What is a buy zone in trading? A band of entry prices against one invalidation, which turns a fixed 1 per cent risk into 1.60 per cent on a far edge fill. Size from the far edge instead.",
