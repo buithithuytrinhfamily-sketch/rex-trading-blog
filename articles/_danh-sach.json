@@ -1,5 +1,13 @@
 [
  {
+  "url": "/kelly-criterion-for-position-sizing.html",
+  "title": "The Kelly Criterion for Position Sizing, and Why a Business Stays Below It",
+  "desc": "The kelly criterion for position sizing gives a 17.5 per cent ceiling at a 45 per cent win rate, but growth turns negative above 20.4 per cent. That is why operators run 18 times below it.",
+  "date": "2026-11-03",
+  "category": "Risk",
+  "image": "/assets/hero/kelly-criterion-for-position-sizing.png"
+ },
+ {
   "url": "/binance-gold-futures.html",
   "title": "Binance Gold Futures: A Business Owner's Honest Review",
   "desc": "Binance gold futures offer up to 50x leverage, but you hold a USDT contract, not gold. A business owner's checklist on fees, weekends and this week's hack.",
