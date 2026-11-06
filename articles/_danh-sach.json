@@ -1,5 +1,21 @@
 [
  {
+  "url": "/where-to-backtest-for-free.html",
+  "title": "Where to Backtest for Free, and What Free Actually Costs You",
+  "desc": "Where to backtest for free: the tools are free, the statistics are not. Test 100 variants with no edge and one clears p below 0.05 about 99.4 per cent of the time.",
+  "date": "2026-11-07",
+  "category": "Operations",
+  "image": "/assets/hero/where-to-backtest-for-free.png"
+ },
+ {
+  "url": "/trading-sideways-market.html",
+  "title": "Trading Sideways Market Conditions, and the Cost of Filling the Time",
+  "desc": "Trading sideways market conditions is a cost problem. At 8 per cent of a risk unit per round turn, 12 forced trades cost 0.96R, more than six planned trades earn.",
+  "date": "2026-11-06",
+  "category": "Operations",
+  "image": "/assets/hero/trading-sideways-market.png"
+ },
+ {
   "url": "/prop-trading-vs-retail.html",
   "title": "Prop Trading vs Retail, and the Third Thing That Is Neither",
   "desc": "Prop trading vs retail is a statutory line at 10 million dollars, not an account size. Retail forex permits 50 to 1 against 2 to 1 in equities, and a carrying broker must hold 250,000 dollars.",
