@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL6P2VP6P9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL6P2VP6P9');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Make a Trading Journal in Google Sheets, in Twenty Minutes, REX Trading Signal</title>
+<meta name="description" content="How to make a trading journal in Google Sheets: twelve columns, five formulas, and the one column that showed a 3.0R deficit sitting entirely in the trades that broke the plan.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a Trading Journal in Google Sheets, in Twenty Minutes">
+<meta property="og:description" content="How to make a trading journal in Google Sheets: twelve columns, five formulas, and the one column that showed a 3.0R deficit sitting entirely in the trades that broke the plan.">
+<meta property="og:url" content="https://rextradingsignal.com/how-to-make-a-trading-journal-in-google-sheets.html">
+<meta property="og:image" content="https://rextradingsignal.com/assets/hero/how-to-make-a-trading-journal-in-google-sheets.png">
+<link rel="canonical" href="https://rextradingsignal.com/how-to-make-a-trading-journal-in-google-sheets.html">
+<link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+ :root{
+ --paper:#fdf6f2;
+ --sand:#f8e9e4;
+ --sand-2:#f0d6cd;
+ --ink:#23120f;
+ --muted:#85655e;
+ --gold:#d6262c;
+ --gold-deep:#a31b20;
+ --loss:#a3181d;
+ --win:#3f8557;
+ --hairline:rgba(163,27,32,.20);
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+ }
+ html{scroll-behavior:smooth}
+ body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.7;margin:0}
+ a{color:var(--gold-deep);text-decoration:none}
+ a:hover{text-decoration:underline}
+ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+ .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(35,18,15,.97);backdrop-filter:blur(8px)}
+ .topbar .wrap{display:flex;align-items:center;gap:28px;height:64px}
+ .wordmark{font-family:var(--sans);font-weight:800;font-size:1.05rem;letter-spacing:.22em;color:#faf1ee}
+ .wordmark b{color:var(--gold)}
+ .wordmark:hover{text-decoration:none}
+ nav.menu{display:flex;gap:22px;margin-left:auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em}
+ nav.menu a{color:#c9a29b;text-transform:uppercase}
+ nav.menu a[aria-current]{color:#faf1ee}
+ .tg-btn{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--gold);padding:9px 16px;border-radius:3px;white-space:nowrap}
+ .tg-btn:hover{text-decoration:none;background:var(--gold-deep)}
+ .ticker{border-bottom:1px solid var(--hairline);background:var(--sand);font-family:var(--mono);font-size:.72rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+ .ticker .wrap{display:flex;gap:34px;padding:8px 24px}
+ .ticker span b{color:var(--ink);font-weight:500}
+ .up{color:var(--win);font-style:normal} .dn{color:var(--loss);font-style:normal}
+ .hero{padding:76px 0 64px;border-bottom:1px solid var(--hairline);
+ background:
+ radial-gradient(900px 480px at 85% 0%, rgba(214,38,44,.12), transparent 62%),
+ radial-gradient(700px 380px at -5% 100%, rgba(214,38,44,.06), transparent 60%),
+ var(--paper);}
+ .hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+ .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 22px}
+ .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;font-weight:600;margin:0;max-width:19ch;text-wrap:balance}
+ .hero h1 .q{color:var(--gold-deep)}
+ .hero p.standfirst{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:26px 0 0}
+ .byline{display:flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:.82rem;color:var(--muted)}
+ .byline b{color:var(--ink);font-weight:600}
+ .portrait{justify-self:end;text-align:center}
+ .portrait img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+ box-shadow:0 0 0 1px var(--hairline),0 18px 44px rgba(163,27,32,.22);display:block;margin:0 auto}
+ .portrait .cap{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:14px}
+ .portrait .cap b{color:var(--ink)}
+ @media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .portrait{justify-self:start;text-align:left}
+ .portrait img{margin:0}
+ }
+ .fade{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+ .fade.d1{animation-delay:.12s}.fade.d2{animation-delay:.24s}.fade.d3{animation-delay:.36s}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+ .rules{border-bottom:1px solid var(--hairline);background:var(--sand)}
+ .rules .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);padding:0}
+ .rule{background:var(--sand);padding:28px 26px}
+ .rule .no{font-family:var(--mono);font-size:.72rem;color:var(--gold-deep);letter-spacing:.14em}
+ .rule h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin:10px 0 8px;letter-spacing:.01em}
+ .rule p{font-size:.92rem;color:var(--muted);margin:0;line-height:1.6}
+ @media (max-width:760px){.rules .wrap{grid-template-columns:1fr}}
+ .article{padding:72px 0 40px}
+ .article .body{max-width:65ch;margin:0 auto}
+ .article h2{font-size:1.5rem;font-weight:600;margin:60px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--hairline);text-wrap:balance}
+ .article h2:first-child{margin-top:0}
+ .article p{margin:0 0 1.15em}
+ .article p.big{font-size:1.16rem}
+ .article strong{color:var(--ink);font-weight:700}
+ .key{color:var(--gold-deep);font-style:normal;font-weight:700}
+ .pull{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-size:1.28rem;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:balance}
+ .article h3{font-family:var(--sans);font-size:1.08rem;font-weight:700;margin:36px 0 10px;letter-spacing:.01em;color:var(--ink)}
+ .article h3 + p{margin-top:0}
+ .article ol,.article ul{margin:0 0 1.15em;padding-left:1.4em}
+ .article li{margin:0 0 .55em;padding-left:.2em}
+ .article li::marker{color:var(--gold-deep)}
+ .article blockquote{border-left:3px solid var(--gold);margin:30px 0;padding:4px 0 4px 22px;font-style:italic;color:var(--ink)}
+ .article figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--sand-2)}
+ .cta{border-top:1px solid var(--hairline);background:
+ radial-gradient(700px 320px at 50% 130%, rgba(214,38,44,.28), transparent 65%), var(--ink);color:#faf1ee}
+ .cta .wrap{padding:72px 24px;text-align:center}
+ .cta h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;margin:0 auto 14px;max-width:24ch;text-wrap:balance}
+ .cta p{color:#d4aca6;max-width:46ch;margin:0 auto 30px}
+ .cta .tg-btn{font-size:.9rem;padding:14px 26px}
+ .cta .sub{display:block;font-family:var(--sans);font-size:.76rem;color:#ab837d;margin-top:16px}
+ .more{padding:70px 0;background:var(--paper)}
+ .more .label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 26px}
+ .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ .card{background:#fff;border:1px solid var(--sand-2);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+ .card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(163,27,32,.10);text-decoration:none}
+ .card .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+ .card .tag.loss{color:var(--loss)} .card .tag.win{color:var(--win)}
+ .card h3{font-size:1.12rem;font-weight:600;margin:0;line-height:1.35;text-wrap:balance}
+ .card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;font-family:var(--sans)}
+ .card .read{margin-top:auto;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+ @media (max-width:760px){.grid3{grid-template-columns:1fr}}
+ footer{background:var(--ink);color:#d4aca6}
+ footer .wrap{padding:44px 24px;display:grid;gap:18px}
+ footer .brand{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:.9rem;color:#faf1ee}
+ footer .brand b{color:var(--gold)}
+ footer p{font-family:var(--sans);font-size:.76rem;line-height:1.7;max-width:88ch;margin:0}
+ footer p strong{color:#faf1ee}
+ footer .fine{color:#97726b}
+
+ /* Bảng nhỏ xin email trước khi sang Telegram, 07/08/2026 theo yêu cầu chị Trinh. */
+ .tgate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,9,.72)}
+ .tgate[open]{display:flex}
+ .tgate__card{position:relative;width:100%;max-width:430px;background:var(--paper);color:var(--ink);border:1px solid var(--sand-2);border-radius:8px;padding:30px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+ .tgate__x{position:absolute;top:9px;right:11px;width:32px;height:32px;font:400 24px/1 var(--sans);color:var(--muted);background:none;border:0;cursor:pointer;border-radius:4px}
+ .tgate__x:hover{background:var(--sand)}
+ .tgate__k{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 8px}
+ .tgate__h{font-family:var(--serif);font-size:1.28rem;line-height:1.3;font-weight:600;margin:0 0 8px}
+ .tgate__s{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+ .tgate input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--sand-2);border-radius:4px;margin:0 0 10px}
+ .tgate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px}
+ .tgate button[type=submit]{width:100%;padding:14px 18px;font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:4px;cursor:pointer}
+ .tgate button[type=submit]:hover{background:var(--gold-deep)}
+ .tgate button[type=submit][disabled]{opacity:.6;cursor:default}
+ .tgate__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ .tgate__msg{font-family:var(--sans);font-size:.82rem;margin:10px 0 0;min-height:1em;color:var(--gold-deep)}
+ .tgate__msg.bad{color:var(--loss)}
+ .tgate__note{font-family:var(--sans);font-size:.72rem;line-height:1.55;color:var(--muted);margin:14px 0 0}
+ .tgate__skip{display:block;width:100%;margin:12px 0 0;padding:4px;font-family:var(--sans);font-size:.78rem;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a Trading Journal in Google Sheets, in Twenty Minutes", "description": "How to make a trading journal in Google Sheets: twelve columns, five formulas, and the one column that showed a 3.0R deficit sitting entirely in the trades that broke the plan.", "image": "https://rextradingsignal.com/assets/hero/how-to-make-a-trading-journal-in-google-sheets.png", "author": {"@type": "Person", "name": "Rex", "url": "https://rextradingsignal.com/about.html"}, "publisher": {"@type": "Organization", "name": "REX Trading Signal", "logo": {"@type": "ImageObject", "url": "https://rextradingsignal.com/avatar.jpg"}}, "datePublished": "2026-11-23", "dateModified": "2026-11-23", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rextradingsignal.com/how-to-make-a-trading-journal-in-google-sheets.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rextradingsignal.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://rextradingsignal.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to Make a Trading Journal in Google Sheets, in Twenty Minutes", "item": "https://rextradingsignal.com/how-to-make-a-trading-journal-in-google-sheets.html"}]}</script>
+<link rel="stylesheet" href="/assets/reading.css">
+<link rel="stylesheet" href="/assets/portal.css">
+<link rel="stylesheet" href="/assets/about.css"></head>
+<body>
+
+<header class="portal-header"><div class="portal-shell portal-masthead"><a class="portal-logo" href="/" aria-label="REX Trading Signal home">RE<span>X</span><small>TRADING SIGNAL</small></a><p class="portal-tagline">Learn the process. Protect your capital.</p><div class="portal-actions"><a href="/my-learning/">My learning</a><a class="rex-button" href="https://t.me/+CR21qcOU0QI4ZDg9">Join free on Telegram</a></div></div><div class="portal-shell portal-nav-control"><button class="portal-menu-toggle" aria-controls="rex-primary-nav" aria-expanded="false" hidden>Browse sections <span aria-hidden="true">☰</span></button></div><nav id="rex-primary-nav" class="portal-shell portal-nav" aria-label="Main navigation"><a href="/">Home</a><details><summary>Markets</summary><div class="portal-submenu"><a href="/markets/">Market overview</a><a href="/markets/forex/">Forex snapshot</a><a href="/markets/currency-strength/">Currency strength</a><a href="/markets/volatility/">Currency volatility</a><a href="/markets/movers/">Top movers</a><a href="/markets/heatmap/">Forex heatmap</a><a href="/markets/crypto/">Crypto snapshot</a><a href="/markets/crypto-strength/">Crypto strength</a><a href="/markets/crypto-volatility/">Crypto volatility</a><a href="/markets/crypto-heatmap/">Crypto heatmap</a></div></details><details><summary>Trading</summary><div class="portal-submenu"><a href="/trading/">All trading articles</a><a href="/trading/trade-ideas/">Trade ideas</a><a href="/trading/technical-analysis/">Technical analysis</a><a href="/trading/psychology/">Psychology</a><a href="/trading/systems/">Trading systems</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Learn Forex</summary><div class="portal-submenu"><a href="/learn/forex/">Forex &amp; gold academy</a><a href="/glossary/">Forex glossary</a><a href="/quizzes/">Forex quizzes</a><a href="/my-learning/">My learning</a></div></details><details><summary>Learn Crypto</summary><div class="portal-submenu"><a href="/learn/crypto/">Crypto academy</a><a href="/crypto/glossary/">Crypto glossary</a><a href="/crypto/quizzes/">Crypto quizzes</a><a href="/crypto/guides/">Crypto guides</a></div></details><details><summary>Tools</summary><div class="portal-submenu"><a href="/tools/">All tools</a><a href="/tools/position-size/">Position size</a><a href="/tools/pip-value/">Pip value</a><a href="/tools/pivot-points/">Pivot points</a><a href="/tools/gain-loss/">Gain &amp; loss</a><a href="/tools/risk-reward/">Risk / reward</a><a href="/tools/currency-converter/">Currency converter</a><a href="/tools/currency-correlation/">Currency correlation</a><a href="/tools/market-hours/">Market hours</a><a href="/tools/risk-on-risk-off/">Risk appetite worksheet</a><a href="/tools/regulators/">Regulator directory</a></div></details><a href="/articles/">Articles</a><a href="/analysis/">Analysis</a><a href="/news/">News</a><a href="/economic-calendar/">Calendar</a><a href="/community/">Community</a><a href="/premium/">Premium</a></nav></header>
+
+<div class="ticker" aria-hidden="true">
+ <div class="wrap">
+ <span>MARKET <b>XAUUSD, GOLD</b></span>
+ <span>FOCUS <b>CAPITAL PROTECTION &middot; DISCIPLINE</b></span>
+ <span>SIGNALS <b>POSTED LIVE ON TELEGRAM</b></span>
+ <span>JOURNAL <b>KEEP THE BOOKS, READ THE BOOKS</b></span>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+ <div>
+  <p class="eyebrow fade">Twelve columns, five formulas, no subscription</p>
+ <h1 class="fade d1">How to Make a <span class="q">Trading Journal in Google Sheets</span></h1>
+ <p class="standfirst fade d2">A statement records what happened to your money. A journal records what you decided. In a worked example of twenty trades, the entire 3.0R deficit sat in the four trades that broke the plan.</p>
+ <div class="byline fade d3">
+ <div>By <b>Rex</b> &nbsp;&middot;&nbsp; XAUUSD &nbsp;&middot;&nbsp; 9 min read</div>
+ </div>
+ </div>
+ </div>
+ <figure class="portrait fade d2" style="margin:0">
+ <img src="avatar.jpg" alt="REX Trading Signal logo" width="260" height="260">
+ <figcaption class="cap"><b>Rex</b> &middot; @REXTradingSignal &middot; 11.9K followers</figcaption>
+ </figure>
+ </div>
+</section>
+
+<article class="article">
+ <div class="wrap"><div class="body">
+<p class="big">Every trading business keeps books. Most new traders do not, and the reason is almost never laziness, it is that the job sounds bigger than it is. So here is the short version of <strong>how to make a trading journal in google sheets</strong>: one tab, twelve columns, five formulas, and about twenty minutes. No subscription, no app, and nothing you have to maintain beyond typing one row after you close a position.</p>
+
+<figure><img src="/assets/hero/how-to-make-a-trading-journal-in-google-sheets-chart.png" alt="How to make a trading journal in Google Sheets, educational chart grouping twenty journal rows by outcome in R, ten trades losing a full 1R or more and four gaining more than 2R" style="width:100%;height:auto;border-radius:6px" loading="lazy"><figcaption>How to make a trading journal in Google Sheets and what twenty rows start telling you. Worked example with invented numbers.</figcaption></figure>
+
+<h2>Why a spreadsheet beats the platform's history tab</h2>
+
+<p>Your broker already stores every trade, so the obvious question is why duplicate it. The answer is that a statement records what happened to your money and a journal records what you decided. Those are different books. A statement cannot tell you whether you followed your own rules, because it never knew what your rules were.</p>
+
+<p>One reader put the problem plainly: "I'm feeling like I haven't quite cracked the code to getting consistent." Another wrote, "This period i will just check and learn my self to be really disciplined." Both are asking for the same instrument. Consistency is not a mood you summon, it is a rate you measure, and you cannot measure a rate you never wrote down.</p>
+
+<p>Google Sheets is a reasonable place to keep it. It is free, it syncs to a phone so you can log a trade before you talk yourself out of recording it, and the capacity question answers itself. Google's published limit is 20 million cells per spreadsheet. A twelve column journal therefore holds about 1,666,667 rows, and at twenty trades a week that is roughly 1,603 years of records. You will not outgrow it.</p>
+
+<h2>The twelve columns, and why each one earns its place</h2>
+
+<p>Resist the urge to add more. Every extra column is a small tax you pay after every trade, and a journal you stop filling in is worth nothing. These twelve are the minimum that still answers a real question.</p>
+
+<ul>
+<li><b>A, Date.</b> Plain date. Lets you group by week and month later.</li>
+<li><b>B, Instrument.</b> XAUUSD, EURUSD, whatever. Lets you spot the one that quietly costs you money.</li>
+<li><b>C, Direction.</b> Long or short.</li>
+<li><b>D, Setup name.</b> The name of the pattern from your written plan. If you cannot name it, that is itself the finding.</li>
+<li><b>E, Risk in account currency.</b> What you decided to lose if wrong, before you entered.</li>
+<li><b>F, Result in account currency.</b> Profit or loss as the statement reports it, fees included.</li>
+<li><b>G, R multiple.</b> Column F divided by column E. This is the column that makes everything comparable.</li>
+<li><b>H, Followed plan.</b> A strict yes or no. No "mostly".</li>
+<li><b>I, Reason for entry.</b> One sentence, written before or at entry, never after.</li>
+<li><b>J, Reason for exit.</b> One sentence. "Changed my mind" is a legitimate and very informative answer.</li>
+<li><b>K, Mistake.</b> Blank when there was none. A short tag when there was: oversized, moved stop, no setup, revenge.</li>
+<li><b>L, Screenshot link.</b> Paste the image into Drive and link it. Optional, but it stops arguments with yourself later.</li>
+</ul>
+
+<p>Columns E and G are the two that beginners leave out, and they are the two that make the journal work. Recording a result in money tells you very little, because a 200 dollar loss on a trade where you risked 50 and a 200 dollar loss on a trade where you risked 400 are opposite events. Dividing by the risk you accepted turns every trade into the same unit, and the unit is R.</p>
+
+<h2>The five formulas</h2>
+
+<p>Put these in a small block to the side, say N1 to N5, and point them at the whole column so they keep working as rows arrive. Assuming data starts in row 2:</p>
+
+<ul>
+<li><b>R multiple</b>, in G2 and filled down: <code>=IF(E2=0,"",F2/E2)</code></li>
+<li><b>Expectancy in R</b>, the average outcome per trade: <code>=AVERAGE(G2:G)</code></li>
+<li><b>Win rate</b>: <code>=COUNTIF(G2:G,"&gt;0")/COUNT(G2:G)</code></li>
+<li><b>Profit factor</b>, gross wins divided by gross losses: <code>=SUMIF(G2:G,"&gt;0")/ABS(SUMIF(G2:G,"&lt;0"))</code></li>
+<li><b>Plan adherence rate</b>: <code>=COUNTIF(H2:H,"yes")/COUNTA(H2:H)</code></li>
+</ul>
+
+<p>That is the entire build. Freeze the top row, set column G to two decimal places, and you are finished. If you want a running equity line, add <code>=SUM($G$2:G2)</code> in column M and chart it, but that is decoration rather than structure.</p>
+
+<h2>What twenty rows actually tell you</h2>
+
+<p>Numbers make this concrete, so here is a worked example. The figures below are invented to show the arithmetic, they are not anybody's results. Twenty trades, risk fixed at 1R each, recorded as described above:</p>
+
+<ul>
+<li>8 winners and 12 losers, a win rate of 40 per cent</li>
+<li>total of plus 6.0R, so expectancy is plus 0.300R a trade</li>
+<li>average win plus 2.12R, average loss minus 0.92R</li>
+<li>profit factor 1.55, that is 17.0R of gains against 11.0R of losses</li>
+<li>deepest peak to trough on the running total, 2.1R</li>
+<li>plan adherence 16 out of 20, or 80 per cent</li>
+</ul>
+
+<p>A trader looking only at the statement sees that they lost more often than they won and concludes something is broken. The journal says the opposite. Losing 60 per cent of the time is perfectly survivable when the average winner is a little over twice the average loser, and the expectancy column states that in one figure.</p>
+
+<p>Then there is the finding that only column H can produce. Split the same twenty trades by whether the plan was followed. The 16 trades that followed it returned plus 9.0R, an average of plus 0.562R each. The 4 that did not returned minus 3.0R, an average of minus 0.750R each. In this example the entire deficit sits in the rule breaks, and the method was never the problem.</p>
+
+<p>That is the specific thing a journal buys you, and no statement, screenshot folder or memory will produce it. It is also why the adherence column has to be a strict yes or no. The moment you allow "mostly", the most useful number in the book stops meaning anything.</p>
+
+<h2>How long to keep it, and why that is not just tidiness</h2>
+
+<p>If your trading is a business, the journal is a business record, and the retention period is not a matter of taste. The United States Internal Revenue Service sets the general period at <a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records" rel="noopener nofollow" target="_blank">three years</a> for income tax records, extending to six years where more than 25 per cent of gross income was left off a return, seven years for a worthless securities or bad debt claim, four years for employment tax records, and indefinitely where no return was filed at all.</p>
+
+<p>Rules differ by country and none of this is tax advice, so check what applies where you file. The general point survives the detail: a spreadsheet that quietly holds a decade of rows at no cost is doing a second job beyond making you a better operator.</p>
+
+<p>One practical note. Sheets keeps revision history, but it lives in one Google account. Once a year, download the file as .xlsx and keep the copy somewhere else. An account recovery problem should not also be a records problem.</p>
+
+<h2>The four mistakes that kill a journal in a month</h2>
+
+<ul>
+<li><b>Logging the trade before it closes.</b> You will edit it to match the outcome. Write the reason for entry at entry, then do not touch it.</li>
+<li><b>Too many columns.</b> Twenty five fields feels thorough on day one and becomes a chore by day nine. Add a column only after you have twice wanted a number you did not have.</li>
+<li><b>Recording in money instead of R.</b> If position size moves around, a money column cannot be averaged into anything meaningful.</li>
+<li><b>Reviewing only after a bad week.</b> A journal read only in a drawdown teaches you that trading is painful. Read it on a schedule instead, which is the whole point of a <a href="/how-to-run-a-weekly-review-for-your-trading-business.html">weekly review</a>.</li>
+</ul>
+
+<div style="background:#faf3e2;border:1px solid rgba(199,147,49,.35);border-left:4px solid #c79331;border-radius:8px;padding:22px 24px;margin:34px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><div style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9a6f1e;margin-bottom:8px">Free trading business plan</div><p style="margin:0 0 14px;color:#2a2418;font-size:1rem;line-height:1.55">Get the free REX one page trading business plan, including the risk ceilings and the review cycle that turn a journal from a diary into a management report. One email, no spam, unsubscribe anytime.</p><a href="/business-plan/" style="display:inline-block;background:#c79331;color:#1c1710;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:4px">Get the free business plan &rarr;</a></div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>How to make a trading journal in Google Sheets if I have never used formulas?</h3>
+<p>Type the twelve headers into row 1, then copy the five formulas above into cells and change nothing. Only one of them, the R multiple in column G, needs filling down the column. Click the small square at the bottom right of the cell and drag it down a few hundred rows, and new trades will calculate themselves.</p>
+
+<h3>Is Google Sheets good enough, or should I buy journal software?</h3>
+<p>A spreadsheet is enough to answer the questions in this article, and you will have it running today for nothing. Paid tools mainly add automatic trade import and charting. If your journal is already a habit and typing rows is the thing stopping you, that import is worth paying for. If the habit is not there yet, software will not create it.</p>
+
+<h3>What is R and why not just record profit in dollars?</h3>
+<p>R is the trade's result divided by the amount you decided to risk on it. It makes trades of different sizes comparable, so a column of R values can be averaged into expectancy. A column of dollar results cannot, unless every position was the same size.</p>
+
+<h3>Should I log trades I thought about but did not take?</h3>
+<p>Yes, on a second tab, with the reason you passed. Over a few months this becomes the most honest record of whether hesitation or impulse is the bigger cost, and it will not pollute the statistics on your main tab.</p>
+
+<h3>How many trades before the numbers mean anything?</h3>
+<p>Twenty rows will show you obvious problems such as rule breaks clustering on one day of the week. They are far too few to prove an edge exists. Treat early figures as a description of what you did, not a forecast of what the method will do.</p>
+
+<h3>Will my journal get too big for Google Sheets?</h3>
+<p>No. The published ceiling is 20 million cells per spreadsheet, which is roughly 1,666,667 rows at twelve columns, or about 1,603 years at twenty trades a week. Keep one file per year anyway, because it opens faster and makes the annual download easier.</p>
+
+<h2>Where this leaves you</h2>
+
+<p>The build is small on purpose. Knowing <strong>how to make a trading journal in google sheets</strong> is twelve columns and five formulas, and the hard part was never the spreadsheet, it is typing the row on the evening you would rather not think about the trade. The twenty row example above is invented, but the shape of it is ordinary: a 40 per cent win rate that looks like failure until you divide by risk, and a deficit that lives entirely in the four trades where the plan was ignored.</p>
+
+<p>You cannot find that second fact without column H, and you cannot argue with it once it is there. That is the whole return on twenty minutes of setup.</p>
+
+<p>The spreadsheet limit of 20 million cells is from <a href="https://support.google.com/drive/answer/37603" rel="noopener nofollow" target="_blank">Google's published Drive and Sheets limits</a>. The retention periods of three, six, seven and four years are from the <a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records" rel="noopener nofollow" target="_blank">IRS guidance on how long to keep records</a>. The row capacity of 1,666,667, the span of about 1,603 years, and every figure in the worked example, the plus 6.0R total, the plus 0.300R expectancy, the 1.55 profit factor, the 2.1R drawdown, the 80 per cent adherence and the split of plus 9.0R against minus 3.0R, were calculated here from the stated assumptions. The trades themselves are invented to show the arithmetic and are not anyone's results.</p>
+
+<p>If you want the surrounding system rather than the sheet, the <a href="/one-page-trading-business-plan-template.html">one page trading business plan</a> is where the rules the journal measures get written down, and <a href="/key-metrics-every-trading-business-should-track.html">the key metrics every trading business should track</a> covers what to do with the numbers once a few hundred rows exist. If you would rather start from a filled in layout, there is also the <a href="/trading-journal-template.html">trading journal template</a>.</p>
+
+<p>REX Trading Signal publishes the daily record with the quiet days and the losing days left in, and the free business plan above is the one page version of the operating rules used here. Following along is free, the Kit is optional, and nothing here promises a profit.</p>
+
+<p><strong>About the author.</strong> <a href="/about.html">Rex</a> writes REX Trading Signal for traders who treat the account as a business with books, limits and a review cycle, because the operators who last are the ones who wrote the rules down before the market tested them. This is education and not financial, legal or tax advice, and no entry, stop or target discussed should be treated as a signal.</p>
+
+</div></div>
+</article>
+
+
+<section class="cta">
+ <div class="wrap">
+ <h2>Keep the books, then read them.</h2>
+ <p>Follow along on Telegram for the daily record, quiet days and losing days included, so you can judge the process instead of a highlight reel.</p>
+ <a class="tg-btn" href="https://t.me/+CR21qcOU0QI4ZDg9">Follow REX Trading Signal &rarr;</a>
+ <span class="sub">Free to follow. No pressure, no countdown, stay as long as it earns your trust.</span>
+ </div>
+</section>
+
+<section class="more">
+ <div class="wrap">
+ <p class="label">More from the journal</p>
+  <div class="grid3">
+<a class="card" href="/trading-journal-template.html">
+<span class="tag">Operations</span>
+<h3>Trading Journal Template</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/key-metrics-every-trading-business-should-track.html">
+<span class="tag">Metrics</span>
+<h3>Key Metrics Every Trading Business Should Track</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+<a class="card" href="/how-to-run-a-weekly-review-for-your-trading-business.html">
+<span class="tag">Planning</span>
+<h3>How to Run a Weekly Review</h3>
+<span class="read">Read the article &rarr;</span>
+</a>
+</div>
+</section>
+
+<footer>
+ <div class="wrap">
+ <section class="rex-about" aria-label="About REX Trading Signal"><div class="rex-about-inner"><div class="rex-about-head"><a class="rex-about-brand" href="/" translate="no"><img class="rex-about-logo" src="/assets/rex-mark.png" width="104" height="58" alt="REX TRADING SIGNAL" loading="lazy"></a><div class="rex-about-social"><a class="rex-about-social-link" href="https://t.me/rextrading_gold" aria-label="REX Trading Signal on Telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.04 15.47 8.7 20.2c.48 0 .69-.21.94-.46l2.25-2.15 4.67 3.42c.86.47 1.47.22 1.7-.79l3.08-14.44c.3-1.26-.46-1.76-1.29-1.45L1.9 9.86c-1.23.48-1.21 1.17-.21 1.48l4.6 1.43 10.68-6.73c.5-.33.96-.15.58.18z"/></svg></a><a class="rex-about-social-link" href="https://www.youtube.com/channel/UCqwjPkS27s3TZf0ruMZQSHw" aria-label="REX Trading Signal on YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.9a3 3 0 0 0-2.12-2.13C19.5 4.25 12 4.25 12 4.25s-7.5 0-9.38.52A3 3 0 0 0 .5 6.9C0 8.79 0 12 0 12s0 3.21.5 5.1a3 3 0 0 0 2.12 2.13c1.88.52 9.38.52 9.38.52s7.5 0 9.38-.52a3 3 0 0 0 2.12-2.13C24 15.21 24 12 24 12s0-3.21-.5-5.1ZM9.6 15.57V8.43L15.82 12 9.6 15.57Z"/></svg></a><a class="rex-about-social-link" href="https://www.instagram.com/rextradingsignalss" aria-label="REX Trading Signal on Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91a5.88 5.88 0 0 0 1.38 2.13 5.88 5.88 0 0 0 2.13 1.38c.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a6.13 6.13 0 0 0 3.51-3.51c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84ZM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4Zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z"/></svg></a><a class="rex-about-social-link" href="https://www.facebook.com/rextradingsignal" aria-label="REX Trading Signal on Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></a></div></div><p class="rex-about-lead">REX Trading Signal helps new traders run the market like a business instead of a guessing game, in plain words that will not put you to sleep.</p><p class="rex-about-copy">We cover gold, forex and crypto through the numbers any owner would track, costs, risk, written records and a weekly review, in plain language with examples you can copy straight into your own journal. We are also a community of traders who support each other day after day in the market.</p></div></section><p><strong>Risk disclosure.</strong> Trading gold (XAUUSD) and other leveraged products involves substantial risk of loss and is not suitable for every investor. Past performance, including any results shared on this site or on Telegram, does not guarantee future results. Nothing here is financial advice; it is personal experience shared for education. Never trade money you cannot afford to lose.</p>
+ <p class="fine">© 2026 REX Trading Signal · Telegram: @REXTradingSignal · Personal views, for reference only.</p>
+ </div>
+</footer>
+
+
+<script defer src="/assets/track.js"></script>
+<div class="tgate" id="tgate" role="dialog" aria-modal="true" aria-labelledby="tgateH">
+ <div class="tgate__card">
+ <button class="tgate__x" id="tgateX" aria-label="Close">&times;</button>
+ <p class="tgate__k">One step first</p>
+ <h2 class="tgate__h" id="tgateH">Where should we send the trading business plan?</h2>
+ <p class="tgate__s">Leave your email and we will send the free one page plan, then take you straight to the Telegram channel.</p>
+ <form id="tgateF" novalidate>
+ <input id="tgateEmail" type="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+ <div class="tgate__hp" aria-hidden="true"><input id="tgateHp" type="text" tabindex="-1" autocomplete="off"></div>
+ <button type="submit" id="tgateBtn">Continue to Telegram</button>
+ <p class="tgate__msg" id="tgateMsg" role="status" aria-live="polite"></p>
+ </form>
+ <button class="tgate__skip" id="tgateSkip">No thanks, just take me to the channel</button>
+ <p class="tgate__note">No cost and no obligation. Educational only, not financial advice, and nothing here promises a return. Unsubscribe any time in one click.</p>
+ </div>
+</div>
+<!-- rex-tg-gate -->
+<script>
+/* Bấm link Telegram thì hiện bảng xin email, điền xong mới chuyển sang.
+   Hỏi đúng một lần cho mỗi người, lần sau đi thẳng. */
+(function(){
+  var API = 'https://harcos-dashboard.vercel.app/api/rex-subscribe';
+  var KEY = 'rexTgGate';
+  var g = document.getElementById('tgate');
+  if (!g) return;
+  var f = document.getElementById('tgateF'),
+      inp = document.getElementById('tgateEmail'),
+      btn = document.getElementById('tgateBtn'),
+      msg = document.getElementById('tgateMsg'),
+      hp  = document.getElementById('tgateHp'),
+      dest = null;
+
+  function seen(){ try { return localStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+  function remember(){ try { localStorage.setItem(KEY,'1'); } catch(e){} }
+  function open(url){ dest = url; g.setAttribute('open',''); setTimeout(function(){ inp.focus(); }, 40); }
+  function close(){ g.removeAttribute('open'); dest = null; }
+  function go(){ var u = dest || 'https://t.me/'; close(); window.location.href = u; }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('t.me/') === -1) return;
+    if (seen()) return;                 /* da cho email roi thi di thang */
+    ev.preventDefault();
+    open(h);
+  }, true);
+
+  document.getElementById('tgateX').addEventListener('click', close);
+  document.getElementById('tgateSkip').addEventListener('click', go);
+  g.addEventListener('click', function(ev){ if (ev.target === g) close(); });
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && g.hasAttribute('open')) close(); });
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (inp.value || '').trim();
+    msg.className = 'tgate__msg';
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) {
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'Please check that email address.';
+      return;
+    }
+    /* bay bot: o an nay nguoi that khong bao gio dien. Khong goi may chu, khong dem. */
+    if ((hp.value || '').trim() !== '') { remember(); go(); return; }
+    var nhan = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    function loi(ly){
+      if (window.gtag) gtag('event', 'lead_form_error', {form: 'rex_telegram_gate', reason: ly});
+      btn.disabled = false; btn.textContent = nhan;
+      msg.className = 'tgate__msg bad';
+      msg.textContent = 'We could not save that just now. Please try again, or use the link below.';
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, firstName: '', website: (hp.value || '')})
+    }).then(function(r){
+      /* fetch KHONG nem loi khi may chu tra 4xx/5xx, nen phai tu kiem */
+      return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j && j.ok === true; });
+    }).then(function(ok){
+      if (!ok) { loi('upstream'); return; }
+      if (window.gtag) gtag('event', 'lead_form_submit', {form: 'rex_telegram_gate'});
+      remember(); go();
+    }).catch(function(){
+      loi('network');
+    });
+  });
+})();
+</script>
+<script defer src="/assets/portal.js"></script>
+</body>
+</html>
